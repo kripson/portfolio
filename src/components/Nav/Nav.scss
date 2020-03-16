@@ -1,8 +1,11 @@
 .Nav
 {
   display: grid;
-  grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+  grid-template-columns:1fr 1fr;
   justify-content: space-between;
+  .hamburger {
+    display: none;
+  }
   .NavigationLinks
   {
     ul
@@ -10,11 +13,11 @@
       list-style: none;
       display: flex;
       flex-wrap: wrap;
-      gap: 2em;
       li
       {
         transition: all 0.15s;
         font-size: 1.15em;
+        margin-right: 2em;
         a
         {
           color: white;
@@ -26,6 +29,7 @@
           cursor: pointer;
         }
       }
+
     }
 
   }
@@ -38,12 +42,11 @@
       display: flex;
       list-style: none;
       flex-wrap: wrap;
-      margin-right: 2em;
-      gap: 2em;
 
       li
       {
         transition: all 0.15s;
+        margin-right: 2em;
         &:hover
         {
           border-bottom: 2px solid aquamarine;
@@ -58,3 +61,116 @@
     }
   }
 }
+
+
+@media only screen and (max-width: 1100px) {
+  .Nav
+  {
+    .NavigationLinks{
+      ul
+      {
+        li
+        {
+          font-size: 1em;
+        }
+      }
+    }
+  }
+
+}
+@media only screen and (min-width: 968px)
+{
+  .Nav
+  {
+
+    .hamburgermenu
+    {
+      display: none;
+    }
+  }
+}
+@media only screen and (max-width: 968px) {
+  .Nav
+  {
+    .hamburger
+    {
+      display: block;
+      align-self: center;
+      justify-self: start;
+      margin-left: 1rem;
+      z-index: 1000;
+
+      img
+      {
+        width: 30px;
+        height: 30px;
+      }
+
+      &:hover
+      {
+        cursor: pointer;
+      }
+    }
+
+    .hamburgermenu
+    {
+      background-color: rgb(50,50,50);
+      position: absolute;
+      width: 100vw;
+      transition: all 1s;
+      ul
+      {
+        display: grid;
+        position: relative;
+        list-style: none;
+        overflow: scroll;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+
+
+
+        li
+        {
+          justify-self: center;
+          border-bottom: 1px solid rgb(40,40,40);
+          width: 100vw;
+          height: 40px;
+          display: grid;
+          
+          &:hover
+          {
+            cursor: pointer;
+            background-color: rgb(30,30,30);
+            a
+            {
+              color: #61dafb;
+            }
+
+
+          }
+          a
+          {
+            align-self: center;
+            text-decoration: none;
+            color:white;
+          }
+        }
+      }
+    }
+    .NavigationLinks{
+      display: none;
+
+    }
+    .ContactLinks{
+
+      ul
+      {
+
+      }
+
+    }
+  }
+
+}
+

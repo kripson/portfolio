@@ -1,6 +1,6 @@
 .Intro
 {
-  height: 95vh;
+  min-height: 100vh;
   display: grid;
   text-align: left;
   grid-template-columns: repeat(auto-fit,minmax(500px,1fr));

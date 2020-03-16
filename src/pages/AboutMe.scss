@@ -1,6 +1,6 @@
 .AboutMe
 {
-  height: 100vh;
+  min-height: 100vh;
   display: grid;
   text-align: justify;
   justify-content: center;
@@ -23,7 +23,7 @@
   {
     margin: 0;
     width: 50%;
-    font-size: 2.25em;
+    font-size: 2em;
     line-height: 1.6em;
     justify-self: center;
 
@@ -31,7 +31,7 @@
 
     img
     {
-      height: 60px;
+      height: 50px;
       width: 100px;
       position: relative;
       top:10px;
@@ -61,6 +61,26 @@
   0%{text-shadow: 0px 0px white}
   50%{text-shadow: 0px 0px white;}
   100%{text-shadow: 2px 2px white;}
+
+}
+
+
+
+@media only screen and (max-width: 1100px) {
+  .AboutMe
+  {
+    p
+    {
+      font-size: 1.5em;
+      line-height: 1.2em;
+    }
+
+    img
+    {
+      height: 40px;
+      width: 80px;
+    }
+  }
 
 }
 

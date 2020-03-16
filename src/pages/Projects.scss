@@ -1,7 +1,8 @@
 .Projects
 {
-  height: 100vh;
+  min-height: 100vh;
   overflow: scroll;
+  display: grid;
 
 
   h1
@@ -28,10 +29,12 @@
     grid-row-gap: 50px;
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(400px,1fr));
+    justify-self: center;
 
 
     .project
     {
+      justify-self: center;
       height: 300px;
       width: 500px;
       animation-name: projectanimation;
