@@ -1,0 +1,67 @@
+.AboutMe
+{
+  height: 100vh;
+  display: grid;
+  text-align: justify;
+  justify-content: center;
+  position: relative;
+  h1
+  {
+    text-align: center;
+    margin: 0;
+    font-size: 4em;
+    color:rgba(23, 235, 220,0.75);
+    animation-name: h1animation;
+    animation-duration: 0.25s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+    font-weight: bold;
+    align-self: center;
+
+  }
+  p
+  {
+    margin: 0;
+    width: 50%;
+    font-size: 2.25em;
+    line-height: 1.6em;
+    justify-self: center;
+
+
+
+    img
+    {
+      height: 60px;
+      width: 100px;
+      position: relative;
+      top:10px;
+      animation-name:imageanimation;
+      animation-duration: 0.5s;
+      animation-fill-mode: forwards;
+      animation-timing-function: ease-in-out;
+
+    }
+  }
+
+}
+
+
+
+@keyframes imageanimation {
+
+  0%{visibility: hidden;transform: scale(0)}
+ 50%{visibility: visible;transform: scale(2)}
+  100%{visibility: visible;transform: scale(1)}
+
+}
+
+
+@keyframes h1animation {
+
+  0%{text-shadow: 0px 0px white}
+  50%{text-shadow: 0px 0px white;}
+  100%{text-shadow: 2px 2px white;}
+
+}
+
+

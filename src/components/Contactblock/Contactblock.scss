@@ -1,0 +1,29 @@
+.Contactblock
+{
+  position: absolute;
+  bottom: 0;
+  transition: all 0.5s;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0.25s;
+  display: grid;
+  background-color: rgb(50,50,50);
+
+  div
+  {
+    padding: 1em;
+    img
+    {
+      align-self: center;
+      justify-self: center;
+      height: 40px;
+      width: 40px;
+
+    }
+    &:first-child
+    {
+      border-bottom: 1px solid black;
+    }
+  }
+
+
+}

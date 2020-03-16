@@ -1,0 +1,118 @@
+.Skills
+{
+  height: 100vh;
+  width: 75vw;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(700px,1fr));
+
+
+  .SkillsDescription
+  {
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    text-align: justify;
+
+    *
+    {
+      justify-self: center;
+
+    }
+
+    h1
+    {
+      font-size: 4em;
+      color:rgba(23, 235, 220,0.75);
+      animation-name: h1animation;
+      position: relative;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+      animation-timing-function: ease-in-out;
+      font-weight: bold;
+    }
+    p
+    {
+      font-size: 1.75em;
+      line-height: 1.43em;
+      letter-spacing: 1px;
+      position:relative;
+      animation-name: paragraphanimation;
+      animation-duration: 1.25s;
+      animation-timing-function: ease-in-out;
+      animation-fill-mode: forwards;
+
+    }
+
+  }
+
+  .scene {
+    width: 200px;
+    height: 200px;
+    perspective: 600px;
+    justify-self: center;
+    align-self: center;
+
+
+    .cube {
+      transform: translateZ(-100px);
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      animation-name: cubeanimation;
+      animation-direction: alternate;
+      animation-iteration-count: infinite;
+      animation-duration: 8s;
+      animation-timing-function: ease-in-out;
+
+      .cube__face {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background-color: rgba(0,0,0,0.75);
+        display: grid;
+
+        img
+        {
+          width: 75%;
+          height: 75%;
+          align-self: center;
+          justify-self: center;
+        }
+      }
+
+      .cube__face--front  { transform: rotateY(  0deg) translateZ(100px); }
+      .cube__face--right  { transform: rotateY( 90deg) translateZ(100px); }
+      .cube__face--back   { transform: rotateY(180deg) translateZ(100px); }
+      .cube__face--left   { transform: rotateY(-90deg) translateZ(100px); }
+      .cube__face--top    { transform: rotateX( 90deg) translateZ(100px); }
+      .cube__face--bottom { transform: rotateX(-90deg) translateZ(100px); }
+
+    }
+  }
+}
+
+
+@keyframes cubeanimation {
+
+  0%{transform: rotateX(0deg) rotateY(0deg)}
+  25%{transform: rotateX(90deg) rotateY(-30deg)}
+  50%{transform: rotateX(-90deg) rotateY(30deg)}
+  100%{transform: rotateX(145deg) rotateY(50deg)}
+
+}
+
+@keyframes h1animation {
+
+  0%{text-shadow: 0px 0px white;top:-500px;opacity: 0}
+  100%{text-shadow: 2px 2px white;top:0;opacity: 1}
+
+}
+
+@keyframes paragraphanimation {
+  0%{top:500px;opacity: 0}
+  100%{top:0;opacity: 1}
+
+}

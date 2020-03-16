@@ -1,0 +1,40 @@
+.Timeline
+{
+  position: fixed;
+  top:35vh;
+  max-width: 100px;
+  display: grid;
+  gap: 50px;
+  transition: all 0.35s;
+  z-index: 1000;
+
+
+  .MiddleBar
+  {
+    height: 100%;
+    position: absolute;
+    width: 10%;
+    background-color: white;
+    margin-left: 45%;
+    z-index: -1;
+  }
+
+  span
+  {
+    border-radius: 200px;
+    padding: 8px;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    transition: all 0.35s;
+    position: relative;
+    z-index: 1;
+
+    img
+    {
+      height: 20px;
+      width: 20px;
+
+    }
+  }
+}

@@ -1,0 +1,60 @@
+.Nav
+{
+  display: grid;
+  grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+  justify-content: space-between;
+  .NavigationLinks
+  {
+    ul
+    {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2em;
+      li
+      {
+        transition: all 0.15s;
+        font-size: 1.15em;
+        a
+        {
+          color: white;
+          text-decoration: none;
+        }
+        &:hover
+        {
+          border-bottom: 2px solid aquamarine;
+          cursor: pointer;
+        }
+      }
+    }
+
+  }
+  .ContactLinks
+  {
+    display: grid;
+    justify-content: end;
+    ul
+    {
+      display: flex;
+      list-style: none;
+      flex-wrap: wrap;
+      margin-right: 2em;
+      gap: 2em;
+
+      li
+      {
+        transition: all 0.15s;
+        &:hover
+        {
+          border-bottom: 2px solid aquamarine;
+          cursor: pointer;
+        }
+        img
+        {
+          width: 30px;
+          height: 30px;
+        }
+      }
+    }
+  }
+}
