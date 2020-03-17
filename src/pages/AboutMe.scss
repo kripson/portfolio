@@ -84,4 +84,23 @@
 
 }
 
+@media only screen and (max-width: 700px) {
+  .AboutMe
+  {
+    p
+    {
+      font-size: 1.25em;
+      line-height: 1.43em;
+      word-spacing: 0.2 5em;
+      width: 75%;
+    }
+
+    img
+    {
+      display: none;
+    }
+  }
+
+}
+
 

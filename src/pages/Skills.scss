@@ -5,7 +5,7 @@
   margin-left: auto;
   margin-right: auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(600px,1fr));
+  grid-template-columns: repeat(auto-fit,minmax(500px,1fr));
   grid-row-gap: 10em;
   margin-bottom: 5em;
 
@@ -116,5 +116,44 @@
 @keyframes paragraphanimation {
   0%{top:500px;opacity: 0}
   100%{top:0;opacity: 1}
+
+}
+
+
+
+@media only screen and (max-width: 1300px) {
+  .Skills
+  {
+
+    .SkillsDescription
+    {
+      p
+      {
+        font-size: 1.15em;
+        line-height: 1.2em;
+      }
+    }
+
+
+  }
+
+}
+
+
+@media only screen and (max-width: 500px) {
+  .Skills
+  {
+    width: 100vw;
+    .SkillsDescription
+    {
+      p
+      {
+        font-size: 1em;
+        line-height: 1.2em;
+      }
+    }
+
+
+  }
 
 }
