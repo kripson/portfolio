@@ -19,7 +19,7 @@ const Intro = ()=>
            </h1>
            <h2>{"<h2>Web Developer</h2>"}</h2>
 
-           <div className="GetInTouchSection"><span className="GetInTouch">Get In Touch</span></div>
+           <a href = "#contactscontainer"><div className="GetInTouchSection"><span className="GetInTouch">Get In Touch</span></div></a>
        </div>
        <div className="RightSection">
         <img src={WebDev} alt = "Wevdev"/>

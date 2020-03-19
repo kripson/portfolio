@@ -140,12 +140,41 @@
 }
 
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 768px) {
   .Skills
   {
-    width: 100vw;
+    width: 75vw;
     .SkillsDescription
     {
+      h1
+      {
+        text-align: center;
+      }
+      p
+      {
+        font-size: 1em;
+        line-height: 1.2em;
+      }
+    }
+
+
+  }
+
+}
+
+@media only screen and (max-width: 575px) {
+  .Skills
+  {
+    width: 95vw;
+    grid-template-columns: 1fr;
+    margin-bottom: 10em;
+    .SkillsDescription
+    {
+      h1
+      {
+        font-size: 2em;
+        text-align: center;
+      }
       p
       {
         font-size: 1em;

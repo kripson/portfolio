@@ -80,10 +80,10 @@ const Nav = () =>
             <div className="ContactLinks">
                 <ul>
                     <li>
-                        <img src={Linkedin} alt="linkedin"/>
+                        <a href = "https://www.linkedin.com/in/sankit-shrestha-14a397170/"><img src={Linkedin} alt="linkedin"/></a>
                     </li>
                     <li>
-                        <img src={Facebook} alt="Facebook"/>
+                        <a href = "https://www.facebook.com/sankit.shrestha.1?ref=bookmarks"><img src={Facebook} alt="Facebook"/></a>
                     </li>
                 </ul>
             </div>

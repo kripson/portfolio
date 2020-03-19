@@ -36,7 +36,6 @@
     {
       justify-self: center;
       height: 300px;
-      width: 500px;
       animation-name: projectanimation;
       animation-timing-function: ease-in-out;
       animation-duration: 1s;
@@ -64,4 +63,50 @@
 
   100%{transform: rotateZ(0);top:0;opacity: 1;visibility: visible}
   
+}
+
+
+
+
+@media only screen and (max-width: 768px) {
+  .Projects
+  {
+    h1
+    {
+      text-align: center;
+
+    }
+    .ProjectsSection
+    {
+      width: 95%;
+
+    }
+
+
+  }
+
+}
+
+@media only screen and (max-width: 575px) {
+  .Projects
+  {
+    h1
+    {
+      font-size: 2em;
+    }
+    .ProjectsSection
+    {
+      grid-template-columns: 1fr;
+      width: 95%;
+      left: 0;
+      h1
+      {
+        text-align: center;
+
+      }
+    }
+
+
+  }
+
 }

@@ -7,7 +7,7 @@ const Projects = ()=>
 {
     var projects = projectsarray.map((project)=>(<Lazyload><div style = {{animationDelay:`${project.id/9}s`}} className="project">
 
-        <img src={project.imageUrl}/>
+        <a href = {project.websiteUrl ? project.websiteUrl : ""}><img src={project.imageUrl}/></a>
     </div></Lazyload>))
 
 

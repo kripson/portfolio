@@ -2,12 +2,14 @@ export const projectsarray = [
     {
         id:1,
         name:'Ruby',
-        imageUrl:require("../assets/ruby.png")
+        imageUrl:require("../assets/ruby.png"),
     },
     {
         id:2,
         name:'Clothingapp',
-        imageUrl:require("../assets/clothingapp.png")
+        imageUrl:require("../assets/clothingapp.png"),
+        websiteUrl: 'https://kripson-store.herokuapp.com/'
+
     },
     {
         id:3,
@@ -22,7 +24,8 @@ export const projectsarray = [
     {
         id:5,
         name:'Clothingapp',
-        imageUrl:require("../assets/clothingapp.png")
+        imageUrl:require("../assets/clothingapp.png"),
+        websiteUrl: 'https://kripson-store.herokuapp.com/'
     },
     {
         id:6,
@@ -37,7 +40,8 @@ export const projectsarray = [
     {
         id:8,
         name:'Clothingapp',
-        imageUrl:require("../assets/clothingapp.png")
+        imageUrl:require("../assets/clothingapp.png"),
+        websiteUrl: 'https://kripson-store.herokuapp.com/'
     },
     {
         id:9,

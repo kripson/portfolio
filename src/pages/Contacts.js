@@ -8,10 +8,10 @@ const Contacts = ()=>
         <h1>Get in touch</h1>
         <h3>I am open to projects and would definitely love to hear your ideas.<br/>Let's connect.</h3>
     <div className= "form">
-        <div>
+            <div>
             <input type = "text" placeholder="Name"/>
             <input type = "text" placeholder="Email"/>
-        </div>
+            </div>
         <input type = "text" placeholder="Subject"/>
         <textarea type = "text" placeholder="Message"></textarea>
         <button> Send</button>

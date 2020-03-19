@@ -7,8 +7,8 @@ import Facebook from '../../assets/facebook.png';
 const Contactblock = ({show})=>
 {
  return(<div className = "Contactblock" style = {{right:show}}>
-        <div> <img src = {Linkedin}/></div>
-        <div> <img src = {Facebook}/></div>
+        <div><a href = "https://www.linkedin.com/in/sankit-shrestha-14a397170/"><img src = {Linkedin}/></a></div>
+        <div><a href = "https://www.facebook.com/sankit.shrestha.1?ref=bookmarks"><img src = {Facebook}/></a></div>
  </div>
  )
 
