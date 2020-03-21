@@ -71,7 +71,7 @@ const Contacts = ()=>
 
     const HandleChange = (event) =>
     {
-        
+
         switch (event.target.name) {
             case 'name':
                 setName(event.target.value);

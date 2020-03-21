@@ -2,13 +2,11 @@ import React from "react";
 import './Projects.scss';
 import {projectsarray} from './projectsarray';
 import Lazyload from 'react-lazyload';
+import ProjectFrame from "../components/ProjectFrame/ProjectFile";
 
 const Projects = ()=>
 {
-    var projects = projectsarray.map((project)=>(<Lazyload><div style = {{animationDelay:`${project.id/9}s`}} className="project">
-
-        <a href = {project.websiteUrl ? project.websiteUrl : ""}><img src={project.imageUrl}/></a>
-    </div></Lazyload>))
+    var projects = projectsarray.map((project)=>(<Lazyload><ProjectFrame project={project}/></Lazyload> ))
 
 
     return(<div className="Projects">
