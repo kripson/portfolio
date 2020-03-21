@@ -11,13 +11,18 @@ const ProjectFrame = ({project}) =>
     var projectcontent = '';
 
     if(loaded) {
-        projectcontent = <a href={project.websiteUrl ? project.websiteUrl : ""}><img className = "projectimage" src={project.imageUrl}/></a>
+        projectcontent = <a href = {project.websiteUrl ? project.websiteUrl : ""}><img className = "projectimage" src={project.imageUrl}/></a>
     }
     else
     {
-        projectcontent = <div><img className="image-loader" src={ImageLoader} alt = "ImageLoader"/><img className = "projectimage"  onLoad={()=> {setLoaded(true)}} src={project.imageUrl}/></div>
+        projectcontent = <a href = {project.websiteUrl ? project.websiteUrl : ""}><img className="image-loader" src={ImageLoader} alt = "ImageLoader"/></a>
 
     }
+
+    setTimeout(()=>
+    {
+        setLoaded(true);
+    },3000);
 
     return(<div style={{animationDelay: `${project.id / 9}s`}} className="project">
         {projectcontent}
@@ -29,3 +34,7 @@ const ProjectFrame = ({project}) =>
 
 
 export default ProjectFrame;
+
+
+
+
