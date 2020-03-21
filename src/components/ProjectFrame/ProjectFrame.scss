@@ -1,3 +1,60 @@
 
+.project
+{
+
+  &:hover
+  {
+    .underconstruction
+    {
+      display:block;
+      height: 100%;
+      width: 100%;
+      z-index: 10;
+      background-color: rgba(0,0,0,0.75);
+      display: grid;
+      align-content: center;
+      justify-items: center;
+
+      .toolsused
+      {
+        position: absolute;
+        top:10px;
+        left:10px;
+        display: flex;
+        min-height: 42px;
+        min-width: 200px;
+
+        span
+        {
+          align-self: center;
+        }
 
 
+        img
+        {
+          height: 40px;
+          width: 50px;
+        }
+      }
+
+      span
+      {
+        color: white;
+      }
+
+      .underconstructionicon
+      {
+        position: absolute;
+        top:10px;
+        right:10px;
+        height: 40px;
+        width: 40px;
+      }
+    }
+  }
+  .underconstruction
+  {
+    display: none;
+    position: absolute;
+  }
+}
