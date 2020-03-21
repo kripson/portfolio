@@ -71,16 +71,22 @@ const Contacts = ()=>
 
     const HandleChange = (event) =>
     {
+        
         switch (event.target.name) {
             case 'name':
                 setName(event.target.value);
+                break;
             case 'email':
                 setEmail(event.target.value);
+                break;
             case 'subject':
                 setSubject(event.target.value);
+                break;
             case 'message':
                 setMessage(event.target.value);
+                break;
             default:
+                break;
 
 
         }
