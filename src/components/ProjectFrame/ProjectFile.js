@@ -11,7 +11,7 @@ const ProjectFrame = ({project}) =>
     var projectcontent = '';
 
     if(loaded) {
-        projectcontent = <a href={project.websiteUrl ? project.websiteUrl : ""}><img onLoad={()=> {setLoaded(true)}} src={project.imageUrl}/></a>
+        projectcontent = <a href={project.websiteUrl ? project.websiteUrl : ""}><img src={project.imageUrl}/></a>
     }
     else
     {
