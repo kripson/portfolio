@@ -86,11 +86,13 @@
 @media only screen and (max-width: 768px) {
   .AboutMe
   {
+    min-height: 75vh;
     p
     {
       font-size: 1.25em;
       line-height: 1.43em;
       width: 75%;
+
     }
 
     img
@@ -106,7 +108,11 @@
   .AboutMe
   {
     width: 95vw;
+    margin-left: auto;
+    margin-right: auto;
     grid-template-columns: 1fr;
+    min-height: 50vh;
+
 
       h1
       {
@@ -117,6 +123,7 @@
       {
         font-size: 1em;
         line-height: 1.2em;
+        width: 95vw;
       }
 
 
