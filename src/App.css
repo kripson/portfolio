@@ -46,3 +46,23 @@ body
   color: white;
 
 }
+
+
+
+
+.first
+{
+  height: 100%;
+  width: 100%;
+  background-color:rgb(20,20,20);
+  display: grid;
+  align-items: center;
+  justify-items: center;
+
+}
+
+.first img
+{
+  height: 300px;
+  width: 400px;
+}

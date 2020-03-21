@@ -8,6 +8,8 @@ import Skills from "./pages/Skills";
 import Projects from "./pages/Projects";
 import Contacts from "./pages/Contacts";
 import Contactblock from './components/Contactblock/Contactblock';
+import { Preloader, Placeholder } from 'react-preloading-screen';
+import  Preloaderimage from './assets/loading.gif';
 
 function App() {
     const [currentSection,setSection] = useState('Home');
@@ -63,6 +65,11 @@ function App() {
 
   return (
     <div className="App">
+        <Preloader fadeDuration = {3000}>
+            <Placeholder className = "placeholder">
+                <div className = "first"><img src = {Preloaderimage}></img></div>
+            </Placeholder>
+        </Preloader>
         <Contactblock show = {contactblockshow}/>
         <Timeline show = {timelineshow} currentSection = {currentSection} />
         <div className="homecontainer" id = "homecontainer" ref = {homepage}>
