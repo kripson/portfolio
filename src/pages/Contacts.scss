@@ -47,7 +47,9 @@
 
       &:focus
       {
-        border-bottom: 1px solid aqua;
+        border-bottom: 2px solid aqua;
+        outline: none;
+
       }
     }
 
@@ -65,7 +67,8 @@
 
       &:focus
       {
-        border-bottom: 1px solid aqua;
+        border-bottom: 2px solid aqua;
+        outline: none;
       }
 
     }

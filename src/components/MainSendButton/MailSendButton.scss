@@ -1,0 +1,64 @@
+.sending
+{
+  width: 150px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 40px;
+  background-color: black;
+  color: white;
+  border: 2px solid rgba(23, 235, 220,0.75);
+  font-size: 1em;
+  transition: all 0.25s;
+  margin-left: auto;
+  align-content: center;
+  text-align: center;
+  span
+  {
+    display: grid;
+    align-content: center;
+    justify-content: center;
+  }
+
+  img
+  {
+    animation-name: sendingimganimation;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+  }
+
+}
+
+
+.sent
+{
+  width: 120px;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  grid-template-columns: 1fr 1fr;
+  background-color: chartreuse;
+  color:white;
+  height: 40px;
+  border: 2px solid rgba(23, 235, 220,0.75);
+  font-size: 1em;
+  transition: all 0.25s;
+  margin-left: auto;
+
+  span
+  {
+    display: grid;
+    align-content: center;
+    text-align: center;
+  }
+}
+
+
+
+@keyframes sendingimganimation {
+
+  0%{transform:rotateZ(0)}
+  100%{transform:rotateZ(360deg)}
+
+}
