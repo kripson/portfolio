@@ -11,11 +11,11 @@ const ProjectFrame = ({project}) =>
     var projectcontent = '';
 
     if(loaded) {
-        projectcontent = <a href={project.websiteUrl ? project.websiteUrl : ""}><img src={project.imageUrl}/></a>
+        projectcontent = <a href={project.websiteUrl ? project.websiteUrl : ""}><img className = "projectimage" src={project.imageUrl}/></a>
     }
     else
     {
-        projectcontent = <div><img className="image-loader" src={ImageLoader} alt = "ImageLoader"/><img onLoad={()=> {setLoaded(true)}} src={project.imageUrl}/></div>
+        projectcontent = <div><img className="image-loader" src={ImageLoader} alt = "ImageLoader"/><img className = "projectimage"  onLoad={()=> {setLoaded(true)}} src={project.imageUrl}/></div>
 
     }
 
