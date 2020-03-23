@@ -3,7 +3,9 @@ import './Nav.scss';
 import Linkedin from '../../assets/linkedinactive.png';
 import Facebook from '../../assets/facebook.png';
 import Hamburger from '../../assets/menu.png';
+import Github from '../../assets/github.png';
 import Close from '../../assets/close.png';
+
 
 
 const Nav = () =>
@@ -81,6 +83,9 @@ const Nav = () =>
                 <ul>
                     <li>
                         <a href = "https://www.linkedin.com/in/sankit-shrestha-14a397170/"><img src={Linkedin} alt="linkedin"/></a>
+                    </li>
+                    <li>
+                        <a href = "https://github.com/kripson"><img style = {{position:'relative', top:'2px'}}src={Github} alt="github"/></a>
                     </li>
                     <li>
                         <a href = "https://www.facebook.com/sankit.shrestha.1?ref=bookmarks"><img src={Facebook} alt="Facebook"/></a>

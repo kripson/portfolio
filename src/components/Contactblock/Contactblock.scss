@@ -11,6 +11,7 @@
   div
   {
     padding: 1em;
+    border-bottom: 1px solid black;
     img
     {
       align-self: center;
@@ -19,9 +20,9 @@
       width: 40px;
 
     }
-    &:first-child
+    &:last-child
     {
-      border-bottom: 1px solid black;
+      border-bottom: none;
     }
   }
 
