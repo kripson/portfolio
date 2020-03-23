@@ -104,7 +104,7 @@ const Contacts = ()=>
         <h1>Get in touch</h1>
         <h3>I am open to projects and would definitely love to hear your ideas.<br/>Let's connect.</h3>
     <div className= "form">
-            <div>
+            <div className="nameemail">
             <input type = "text" placeholder="Name" name = "name" value = {name} onChange={HandleChange} required/>
             <input type = "text" placeholder="Email" name="email" value = {email} onChange={HandleChange} required/>
             </div>
