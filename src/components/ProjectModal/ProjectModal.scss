@@ -88,7 +88,6 @@
     .projectLinks
     {
       display: flex;
-      column-gap: 1em;
       margin-bottom: 50px;
 
       a{
@@ -117,6 +116,7 @@
       .CloseLink
       {
         margin-top: 50px;
+        margin-left: 1em;
         height: 50px;
         width: 250px;
         display: grid;
