@@ -98,7 +98,8 @@
       align-self: center;
       justify-self: start;
       margin-left: 1rem;
-      z-index: 1000;
+      z-index: 11;
+
 
       img
       {
@@ -170,6 +171,23 @@
 
       }
 
+    }
+  }
+
+}
+
+
+@media only screen and (min-width: 0px) and (max-width: 500px) {
+
+  .Nav
+  {
+    .ContactLinks
+    {
+      ul
+      {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+      }
     }
   }
 

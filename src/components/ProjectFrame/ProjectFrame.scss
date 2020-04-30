@@ -1,9 +1,22 @@
 
 .project
 {
+  overflow: hidden;
+
+
 
   &:hover
   {
+    cursor: pointer;
+
+
+    .projectimage
+    {
+      transform: scale(1.2);
+      transition: all 0.25s;
+    }
+
+
     .underconstruction
     {
       display:block;

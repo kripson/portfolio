@@ -1,0 +1,209 @@
+.Skills
+{
+  min-height: 100vh;
+  width: 85vw;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  grid-row-gap: 10em;
+  margin-bottom: 5em;
+
+
+  .SkillsDescription
+  {
+    display: grid;
+    align-content: center;
+    justify-content: center;
+
+    *
+    {
+      justify-self: center;
+
+    }
+
+    h1
+    {
+      font-size: 4em;
+      text-align: center;
+      color:rgba(23, 235, 220,0.75);
+      position: relative;
+      font-weight: bold;
+      text-shadow: 2px 2px 1px white;
+
+    }
+    p
+    {
+      font-size: 1.75em;
+      line-height: 1.43em;
+      letter-spacing: 1px;
+      position:relative;
+      opacity: 0;
+      animation-name: paragraphanimation;
+      animation-duration: 1.75s;
+      animation-timing-function: ease-in-out;
+      animation-fill-mode: forwards;
+      visibility: hidden;
+      font-family: 'Lato', sans-serif;
+      text-align: justify;
+
+    }
+
+  }
+
+  .scene {
+    width: 200px;
+    height: 200px;
+    perspective: 600px;
+    display: grid;
+    justify-items: center;
+    justify-self: center;
+    align-self: center;
+
+
+    .cube {
+      transform: translateZ(-100px);
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      animation-name: cubeanimation;
+      animation-direction: alternate;
+      animation-iteration-count: infinite;
+      animation-duration: 8s;
+      animation-timing-function: ease-in-out;
+
+      .cube__face {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background-color: rgba(0,0,0,0.75);
+        display: grid;
+
+        img
+        {
+          width: 75%;
+          height: 75%;
+          align-self: center;
+          justify-self: center;
+        }
+      }
+
+      .cube__face--front  { transform: rotateY(  0deg) translateZ(100px); }
+      .cube__face--right  { transform: rotateY( 90deg) translateZ(100px); }
+      .cube__face--back   { transform: rotateY(180deg) translateZ(100px); }
+      .cube__face--left   { transform: rotateY(-90deg) translateZ(100px); }
+      .cube__face--top    { transform: rotateX( 90deg) translateZ(100px); }
+      .cube__face--bottom { transform: rotateX(-90deg) translateZ(100px); }
+
+    }
+  }
+}
+
+
+@keyframes cubeanimation {
+
+  0%{transform: rotateX(0deg) rotateY(0deg)}
+  25%{transform: rotateX(90deg) rotateY(-30deg)}
+  50%{transform: rotateX(-90deg) rotateY(30deg)}
+  100%{transform: rotateX(145deg) rotateY(50deg)}
+
+}
+
+@keyframes paragraphanimation {
+  0%{top:250px;opacity: 0;visibility: hidden}
+  100%{top:0;opacity: 1;visibility: visible}
+
+}
+
+
+
+@media only screen and (min-width:1300px) and (max-width: 1700px) {
+  .Skills
+  {
+    margin-left: auto;
+    margin-right: auto;
+
+    .SkillsDescription
+    {
+      p
+      {
+        font-size: 1.5em;
+
+      }
+    }
+
+  }
+}
+
+
+@media only screen and (min-width:1100px) and (max-width: 1300px) {
+  .Skills
+  {
+    margin-left: auto;
+    margin-right: auto;
+
+    .SkillsDescription
+    {
+      p
+      {
+        font-size: 1.35em;
+        line-height: 1.2em;
+      }
+    }
+
+
+  }
+
+}
+
+
+@media only screen and (max-width: 1100px) {
+  .Skills
+  {
+    width: 75vw;
+    margin-left: auto;
+    margin-right: auto;
+    grid-template-columns: 1fr;
+    .SkillsDescription
+    {
+      h1
+      {
+        text-align: center;
+      }
+      p
+      {
+        font-size: 1.35em;
+        line-height: 1.2em;
+      }
+    }
+
+
+  }
+
+}
+
+@media only screen and (max-width: 575px) {
+  .Skills
+  {
+    width: 95vw;
+    grid-template-columns: 1fr;
+    margin-bottom: 10em;
+    .SkillsDescription
+    {
+      h1
+      {
+        font-size: 2em;
+        text-align: center;
+      }
+      p
+      {
+        font-size: 1em;
+        line-height: 1.2em;
+      }
+    }
+
+
+  }
+
+}

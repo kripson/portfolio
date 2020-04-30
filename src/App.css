@@ -58,6 +58,7 @@ body
   display: grid;
   align-items: center;
   justify-items: center;
+  z-index: 2000;
 
 }
 
@@ -66,3 +67,15 @@ body
   height: 300px;
   width: 400px;
 }
+
+
+@media only screen and (min-width : 0px)and (max-width: 400px)
+{
+  .first img
+  {
+    width: 100vw;
+  }
+
+}
+
+

@@ -1,0 +1,152 @@
+.AboutMe
+{
+  min-height: 100vh;
+  display: grid;
+  text-align: justify;
+  justify-content: center;
+  position: relative;
+  h1
+  {
+    text-align: center;
+    margin: 0;
+    font-size: 4em;
+    color:rgba(23, 235, 220,0.75);
+    animation-name: Aboutmeh1animation;
+    animation-duration: 0.25s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+    font-weight: bold;
+    align-self: center;
+
+  }
+  p
+  {
+    margin: 0;
+    width: 50%;
+    font-size: 1.75em;
+    line-height: 1.6em;
+    justify-self: center;
+    font-family: 'Lato', sans-serif;
+
+  }
+
+  img
+  {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 75px;
+  }
+
+}
+
+
+
+@keyframes imageanimation {
+
+  0%{visibility: hidden;transform: scale(0)}
+ 50%{visibility: visible;transform: scale(2)}
+  100%{visibility: visible;transform: scale(1)}
+
+}
+
+
+@keyframes Aboutmeh1animation {
+
+  0%{text-shadow: 0px 0px white}
+  100%{text-shadow: 2px 2px 1px rgb(255,255,255);}
+
+}
+
+
+
+@media only screen and (min-width: 1200px) and (max-width: 1450px) {
+  .AboutMe
+  {
+    p
+    {
+      font-size: 1.75em;
+      line-height: 1.2em;
+    }
+
+  }
+
+}
+
+
+
+@media only screen and (min-width: 768px) and (max-width: 1200px) {
+  .AboutMe
+  {
+    p
+    {
+      font-size: 1.5em;
+      line-height: 1.2em;
+      width: 60%;
+    }
+
+    img
+    {
+      width: 60%;
+    }
+
+  }
+
+}
+
+@media only screen and (min-width: 0px) and (max-width: 768px) {
+  .AboutMe
+  {
+    min-height: 75vh;
+    p
+    {
+      font-size: 1.25em;
+      line-height: 1.43em;
+      width: 75%;
+
+    }
+    img
+    {
+      width: 75%;
+    }
+  }
+
+}
+
+
+@media only screen and (max-width: 575px) {
+  .AboutMe
+  {
+    width: 95vw;
+    margin-left: auto;
+    margin-right: auto;
+    grid-template-columns: 1fr;
+    min-height: 50vh;
+    margin-bottom: 100px;
+
+
+      h1
+      {
+        font-size: 2em;
+        text-align: center;
+        margin-bottom: 50px;
+      }
+      p
+      {
+        font-size: 1em;
+        line-height: 1.43em;
+        width: 95vw;
+      }
+
+
+    img
+    {
+      width: 95vw;
+    }
+
+
+  }
+
+}
+
+

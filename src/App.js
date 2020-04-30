@@ -1,15 +1,18 @@
 import React,{useState,useEffect} from 'react';
 import { useScrollPosition } from '@n8tb1t/use-scroll-position';
 import './App.css';
-import Homesection from './pages/Homesection';
+import Homesection from './section/Homesection';
 import Timeline from "./components/Timeline/Timeline";
-import AboutMe from "./pages/AboutMe";
-import Skills from "./pages/Skills";
-import Projects from "./pages/Projects";
-import Contacts from "./pages/Contacts";
+import AboutMe from "./section/AboutMe";
+import Skills from "./section/Skills";
+import Projects from "./section/Projects";
+import Contacts from "./section/Contacts";
 import Contactblock from './components/Contactblock/Contactblock';
 import { Preloader, Placeholder } from 'react-preloading-screen';
 import  Preloaderimage from './assets/loading.gif';
+import {projectsarray} from './section/projectsarray';
+import ProjectModal from "./components/ProjectModal/ProjectModal";
+import Lazyload from 'react-lazyload';
 
 function App() {
     const [currentSection,setSection] = useState('Home');
