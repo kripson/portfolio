@@ -2,7 +2,7 @@ import React from "react";
 import "./AboutMe.scss";
 import Nepal from "../assets/nepal.png";
 import Australia from "../assets/australia.png";
-import timeLine from "../assets/timeline.png";
+import timeLine from "../assets/timeline_new.png";
 import LazyLoad from "react-lazyload";
 
 const AboutMe = () => {
@@ -19,8 +19,8 @@ const AboutMe = () => {
           life and software development allowed me to do exactly that.
         </p>
         <p>
-          I have experience in developing websites scaling from small
-          service-advertising sites to large e-commerce sites. I also am
+          I have experience in developing websites and applications scaling from small
+          service-advertising ones to large e-commerce sites.  I also am
           familiar with basic design principles as I designed most of my recent
           projects myself.
         </p>
