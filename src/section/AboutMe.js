@@ -12,11 +12,11 @@ const AboutMe = () => {
         <h1>About Me</h1>
         <p>
           Let me talk a little bit about my roots. I was born and raised in
-          Butwal which is a city in South-Western Nepal. I travelled to
+          Butwal, which is a city in South-Western Nepal. I travelled to
           Australia in 2017 to pursue my Bachelor's degree in IT. During my
           pursuit of academic qualification, I stumbled upon software development and
           fell in love with it. I like the idea of bringing my imagination to
-          life and software development allowed me to do exactly that.
+          life, and software development allowed me to do exactly that.
         </p>
         <p>
           I have experience in developing websites and applications scaling from small
