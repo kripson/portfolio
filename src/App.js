@@ -34,32 +34,32 @@ function App() {
         else if(currPos.y * -1 >= contacts.current.offsetTop -200)
         {
             setSection('Contacts');
-            setTimeLineShow('1em');
+            setTimeLineShow('0');
             setContactBlockShow('0')
 
         }
         else if(currPos.y * -1 >= projects.current.offsetTop -200)
         {
             setSection('Projects');
-            setTimeLineShow('1em');
+            setTimeLineShow('0');
             setContactBlockShow('-5em')
         }
         else if(currPos.y * -1 >= skills.current.offsetTop -200)
         {
             setSection('Skills');
-            setTimeLineShow('1em');
+            setTimeLineShow('0');
             setContactBlockShow('-5em')
         }
         else if(currPos.y * -1 >= aboutme.current.offsetTop -200)
         {
             setSection('AboutMe');
-            setTimeLineShow('1em');
+            setTimeLineShow('0');
             setContactBlockShow('-5em')
         }
         else
         {
             setSection('Home');
-            setTimeLineShow('1em');
+            setTimeLineShow('0');
             setContactBlockShow('-5em')
         }
 

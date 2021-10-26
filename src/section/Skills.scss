@@ -198,12 +198,30 @@
       }
       p
       {
-        font-size: 1em;
+        font-size: 0.75em;
         line-height: 1.2em;
       }
     }
 
 
+  }
+
+}
+
+
+
+
+@media only screen and (max-height: 800px) and (min-width: 600px) {
+  .Skills
+  {
+    .SkillsDescription
+    {
+      p
+      {
+        font-size: 1.25em;
+        line-height: 1.2em;
+      }
+    }
   }
 
 }

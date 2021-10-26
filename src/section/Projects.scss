@@ -31,7 +31,6 @@
     .project
     {
       justify-self: center;
-      height: 300px;
       animation-name: projectanimation;
       animation-timing-function: ease-in-out;
       animation-duration: 1s;
@@ -68,9 +67,6 @@
   100%{transform: rotateZ(0);top:0;opacity: 1;visibility: visible}
   
 }
-
-
-
 
 @media only screen and (max-width: 768px) {
   .Projects

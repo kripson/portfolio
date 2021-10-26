@@ -9,8 +9,8 @@ const AboutMe = ()=>
 {
     return(<LazyLoad><div className="AboutMe">
             <h1>About Me</h1>
-            <p>Let me talk a little bit about my roots. I was born and raised in Butwal which is a city in South-Western Nepal. I have always been fascinated by computers since my childhood. So, after my high school, I decided to write a new chapter of my life and pursue a degree in IT in Australia.<br/>
-                <br/>I travelled to Australia in 2017 and am currently pursuing my Bachelor's degree in IT. During my pursual of academic qualification, I stumbled upon web development and fell in love with it. I like the idea of bringing my imagination to life and web development allowed me to do exactly that. Hence, I turned into an aspiring web developer.</p>
+            <p>Let me talk a little bit about my roots. I was born and raised in Butwal which is a city in South-Western Nepal. I travelled to Australia in 2017 to pursue my Bachelor's degree in IT. During my pursuit of academic qualification, I stumbled upon web development and fell in love with it. I like the idea of bringing my imagination to life and web development allowed me to do exactly that.</p>
+            <p>I have experience in developing websites scaling from small service-advertising sites to large e-commerce sites. I also am familiar with basic design principles as I designed most of my recent projects myself.</p>
         <img src = {timeLine} alt = "timeline"/>
 
     </div></LazyLoad>

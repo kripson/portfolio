@@ -31,8 +31,6 @@ const Timeline = ({show,currentSection})=>
     }
 
     return(<div className="Timeline" style = {{left:show}}>
-        <div className= "MiddleBar">
-        </div>
         {Home}
         {AboutMe}
         {Skills}

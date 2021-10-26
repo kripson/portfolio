@@ -17,8 +17,9 @@ const Skills = ()=>
                 <h1>Skills & Expertise</h1>
 
                 <p>Currently, in terms of front end development tools, I mostly work with React and redux. However, I am also familiar with other tools and frameworks like Angular and Vue.
-                    In terms of back end development, I mostly work with NodeJs (Express) to create the server and then choose between SQL or NoSQL(MongoDb, Postgress) database depending on the project. I am also familiar with firebase(Google Service). </p>
-               <p>Apart from Single Page Applications, I have also worked with Laravel. I started with Laravel as some clients prefer not to work with SPA due to SEO related challenges.</p>
+                    In terms of back end development, NodeJs (Express) is my weapon of choice to create the server and then I choose between SQL or NoSQL database depending on the project. I am also familiar with firebase(Google Service). </p>
+               <p>Apart from Single Page Applications, I have also worked with Laravel. I started with Laravel as some clients do not prefer SPAs due to SEO related challenges.</p>
+               <p>Later on, I discovered NextJs which allowed my applications to retain the seamless nature of SPAs while being SEO friendly.</p>
 
             </div>
         </LazyLoad>
