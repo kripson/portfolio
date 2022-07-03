@@ -13,13 +13,13 @@ export const projectsarray = [
     },
     {
         id:2,
-        title:'Hans Driving Training Center',
-        imageUrl:require("../assets/Drivingschool.jpeg"),
-        mobileLayout: require("../assets/hansmobile.png"),
-        laptopLayout: require("../assets/hanslaptop.png"),
-        description: ["Project developed for Hans Driving Training Center. The project's objective was to establish the client's online presence. The website is a part of a bigger branding project for the client. I was responsible for designing, developing, testing and deploying the application. Hence, this is entirely my creation.",
+        title:'Little Hideout Cafe',
+        imageUrl:require("../assets/littlehideout.jpg"),
+        mobileLayout: require("../assets/littlehideoutmobile.png"),
+        laptopLayout: require("../assets/littlehideoutlaptop.png"),
+        description: ["Project developed for Little Hideout Cafe. The project's objective was to give the outdated website a new look and feel and also develop a custom booking feature. I was responsible for designing, developing, testing and deploying the application. Hence, this is entirely my creation.",
             " The front-end was created using React and styled using custom css. The back-end server was developed using Express Js which is connected to a MongoDB database."],
-        websiteUrl: 'https://hans-driving.web.app',
+        websiteUrl: 'https://littlehideoutcafe.com.au',
         ready:true,
         tools:['react','node']
     },
@@ -63,9 +63,14 @@ export const projectsarray = [
     },
     {
         id:6,
-        title:'Bootcamp',
-        imageUrl:require("../assets/Bootcamp.png"),
-        ready:false,
-        tools:['laravel']
-    }
+        title:'Hans Driving Training Center',
+        imageUrl:require("../assets/Drivingschool.jpeg"),
+        mobileLayout: require("../assets/hansmobile.png"),
+        laptopLayout: require("../assets/hanslaptop.png"),
+        description: ["Project developed for Hans Driving Training Center. The project's objective was to establish the client's online presence. The website is a part of a bigger branding project for the client. I was responsible for designing, developing, testing and deploying the application. Hence, this is entirely my creation.",
+            " The front-end was created using React and styled using custom css. The back-end server was developed using Express Js which is connected to a MongoDB database."],
+        websiteUrl: 'https://hans-driving.web.app',
+        ready:true,
+        tools:['react','node']
+    },
 ];
