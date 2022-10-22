@@ -16,7 +16,7 @@
     "react-icons": "^4.6.0",
     "react-lazy-load": "^4.0.1",
     "react-preloading-screen": "^1.0.2",
-    "react-scripts": "^3.4.0",
+    "react-scripts": "^5.0.1",
     "sass": "^1.55.0",
     "sass-loader": "^13.1.0"
   },
