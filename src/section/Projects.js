@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import './Projects.scss';
 import {projectsarray} from './projectsarray';
-import Lazyload from 'react-lazyload';
+import Lazyload from 'react-lazy-load';
 import ProjectFrame from "../components/ProjectFrame/ProjectFrame";
 import ProjectModal from "../components/ProjectModal/ProjectModal";
 

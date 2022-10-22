@@ -1,6 +1,5 @@
 import React,{useState,useEffect} from 'react';
-import { useScrollPosition } from '@n8tb1t/use-scroll-position';
-import './App.css';
+import './App.scss';
 import Homesection from './section/Homesection';
 import Timeline from "./components/Timeline/Timeline";
 import AboutMe from "./section/AboutMe";
@@ -12,7 +11,7 @@ import { Preloader, Placeholder } from 'react-preloading-screen';
 import  Preloaderimage from './assets/loading.gif';
 import {projectsarray} from './section/projectsarray';
 import ProjectModal from "./components/ProjectModal/ProjectModal";
-import Lazyload from 'react-lazyload';
+import Lazyload from 'react-lazy-load';
 
 function App() {
     const [currentSection,setSection] = useState('Home');
@@ -24,57 +23,57 @@ function App() {
     const projects = React.createRef();
     const contacts = React.createRef();
 
-    useScrollPosition(({ prevPos, currPos }) => {
+    // useScrollPosition(({ prevPos, currPos }) => {
 
-        if(currPos.y === 0 )
-        {
-            setTimeLineShow('-5em');
-            setContactBlockShow('-5em')
-        }
-        else if(currPos.y * -1 >= contacts.current.offsetTop -200)
-        {
-            setSection('Contacts');
-            setTimeLineShow('0');
-            setContactBlockShow('0')
+    //     if(currPos.y === 0 )
+    //     {
+    //         setTimeLineShow('-5em');
+    //         setContactBlockShow('-5em')
+    //     }
+    //     else if(currPos.y * -1 >= contacts.current.offsetTop -200)
+    //     {
+    //         setSection('Contacts');
+    //         setTimeLineShow('0');
+    //         setContactBlockShow('0')
 
-        }
-        else if(currPos.y * -1 >= projects.current.offsetTop -200)
-        {
-            setSection('Projects');
-            setTimeLineShow('0');
-            setContactBlockShow('-5em')
-        }
-        else if(currPos.y * -1 >= skills.current.offsetTop -200)
-        {
-            setSection('Skills');
-            setTimeLineShow('0');
-            setContactBlockShow('-5em')
-        }
-        else if(currPos.y * -1 >= aboutme.current.offsetTop -200)
-        {
-            setSection('AboutMe');
-            setTimeLineShow('0');
-            setContactBlockShow('-5em')
-        }
-        else
-        {
-            setSection('Home');
-            setTimeLineShow('0');
-            setContactBlockShow('-5em')
-        }
+    //     }
+    //     else if(currPos.y * -1 >= projects.current.offsetTop -200)
+    //     {
+    //         setSection('Projects');
+    //         setTimeLineShow('0');
+    //         setContactBlockShow('-5em')
+    //     }
+    //     else if(currPos.y * -1 >= skills.current.offsetTop -200)
+    //     {
+    //         setSection('Skills');
+    //         setTimeLineShow('0');
+    //         setContactBlockShow('-5em')
+    //     }
+    //     else if(currPos.y * -1 >= aboutme.current.offsetTop -200)
+    //     {
+    //         setSection('AboutMe');
+    //         setTimeLineShow('0');
+    //         setContactBlockShow('-5em')
+    //     }
+    //     else
+    //     {
+    //         setSection('Home');
+    //         setTimeLineShow('0');
+    //         setContactBlockShow('-5em')
+    //     }
 
 
-    });
+    // });
 
   return (
     <div className="App">
-        <Preloader fadeDuration = {3000}>
+        {/* <Preloader fadeDuration = {3000}>
             <Placeholder className = "placeholder">
                 <div className = "first"><img src = {Preloaderimage}></img></div>
             </Placeholder>
-        </Preloader>
+        </Preloader> */}
         <Contactblock show = {contactblockshow}/>
-        <Timeline show = {timelineshow} currentSection = {currentSection} />
+        {/* <Timeline show = {timelineshow} currentSection = {currentSection} /> */}
         <div className="homecontainer" id = "homecontainer" ref = {homepage}>
             <Homesection></Homesection>
 

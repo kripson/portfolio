@@ -1,65 +1,47 @@
+@import '../../../variables.scss';
+
 .Intro
 {
-  min-height: 100vh;
-  display: grid;
+  min-height: calc(100vh - 144px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: left;
-  grid-template-columns: repeat(auto-fit,minmax(500px,1fr));
+  padding: 0 $s10;
+  gap: $s8;
+  max-width: 1200px;
+  
   .LeftSection
   {
     display: grid;
+    align-items: center;
     align-content: center;
-    h1
+    width: 50%;
+    h3
     {
-      font-size: 5em;
-      width: 50%;
-      margin-right: auto;
-      margin-left: auto;
       margin-bottom: 0;
       span
       {
         animation-name: nameanimation;
         animation-duration: 2s;
-
-
       }
 
     }
-    h2
+    h1
     {
       margin: 0;
-      width: 50%;
-      margin-right: auto;
-      margin-left: auto;
-      font-weight: normal;
-      margin-bottom: 1em;
-      font-family: 'Source Code Pro', monospace;
-
-      .blinkingcursor
-      {
-        animation-name: blinkingcursoranimation;
-        animation-duration: 1.25s;
-        animation-timing-function: ease-in-out;
-        animation-iteration-count: infinite;
-
-      }
-
+      margin-bottom: $s6;
+      word-break: keep-all;
+      white-space: nowrap;
+      text-shadow: $s4 $s4 10px solid $primary-text-colour;
+      z-index: 2;
     }
     a {
       text-decoration: none;
       color:white;
-
-
-
       .GetInTouchSection {
-        width: 50%;
-        margin-right: auto;
-        margin-left: auto;
 
         .GetInTouch {
-          height: 40px;
-          max-width: 200px;
-          border: 2px solid rgba(23, 235, 220, 0.75);
-          font-size: 1em;
           display: grid;
           justify-content: center;
           align-content: center;
@@ -68,7 +50,6 @@
 
           &:hover {
             transform: translateY(-10px);
-            background-color: rgba(23, 235, 220, 0.75);
             cursor: pointer;
           }
         }
@@ -80,17 +61,27 @@
 
   .RightSection
   {
-    display: grid;
+    display: flex;
+    justify-content: flex-end;
+    z-index: 1;
     align-content: center;
-
+    width: 50%;
     img
     {
-      max-width: 100%;
-      animation-name: imganimation;
+      width: 100%;
+      height: 100%;
+      position: relative;
+      left: $s10;
+      // animation-name: imganimation;
       animation-fill-mode: forwards;
       animation-duration: 1s;
-      animation-timing-function: ease-in-out;
+      animation-timing-function: cubic-bezier(0.68, -0.6, 0.32, 1.6);
       position: relative;
+      filter: grayscale(100%);
+      transition: all 0.25s;
+      &:hover{
+        filter: grayscale(10%);
+      }
 
     }
   }
@@ -105,42 +96,51 @@
 }
 
 @keyframes imganimation {
-  0%{opacity: 0;left:100px}
-  100%{opacity: 1;left: 0}
+  0%{opacity: 0; width:0}
+  100%{opacity: 1; width: 512px}
 
 }
 
 
-@media only screen and (max-width: 1000px) {
-  .Intro
-  {
-    text-align: center;
+
+@media screen and (max-width: $largeScreen) {
+  .Intro{
+    display: grid;
     grid-template-columns: 1fr;
-    margin-bottom: 2em;
+    justify-content: center;
+    text-align: center;
 
-    .LeftSection
-    {
-      h1
-      {
-        font-size: 3em;
-        width: 100%;
-        text-align: center;
+    .LeftSection{
+      width: 100%;
+
+      h1{
+        white-space: unset;
+        margin-bottom: $s4;
       }
-      .GetInTouchSection
-      {
-        .GetInTouch
-        {
-          margin-left: auto;
-          margin-right: auto;
-          width: 100%;
 
+      a{
+        display: flex;
+        justify-content: center;
+        .GetInTouchSection{
+          display: flex;
+          justify-content: center;
         }
       }
     }
 
-  }
+    .RightSection{
+      width: 100%;
+      justify-content: center;
 
+      img{
+        left: unset;
+        width: calc(100vw - 128px);
+      }
+    }
+  }
 }
+
+
 
 
 @keyframes blinkingcursoranimation {

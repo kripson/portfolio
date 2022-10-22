@@ -3,19 +3,22 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@n8tb1t/use-scroll-position": "^1.0.43",
+    "@splinetool/react-spline": "^2.2.3",
+    "@splinetool/runtime": "^0.9.128",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "axios": "^0.19.2",
     "firebase-tools": "^7.15.1",
-    "node-sass": "^4.14.1",
-    "react": "^16.13.0",
-    "react-dom": "^16.13.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-google-recaptcha": "^2.0.1",
-    "react-lazyload": "^2.6.5",
+    "react-icons": "^4.6.0",
+    "react-lazy-load": "^4.0.1",
     "react-preloading-screen": "^1.0.2",
-    "react-scripts": "3.4.0"
+    "react-scripts": "^3.4.0",
+    "sass": "^1.55.0",
+    "sass-loader": "^13.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -26,16 +29,9 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+  "browserslist": [
+    ">0.2%",
+   "not dead",
+   "not op_mini all"
+ ]
 }

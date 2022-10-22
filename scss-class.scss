@@ -1,0 +1,81 @@
+@import './variables.scss';
+
+//typography classes
+.heading, h1, h2, h3, h4, h5, h6{
+    font-family: $headerFont;
+}
+
+.body{
+    font-family: $bodyFont;
+}
+
+.h1, h1{
+    font-size: $header1;
+}
+
+.h2, h2{
+    font-size: $header2;
+}
+
+.h3, h3{
+    font-size: $header3;
+}
+
+.h4, h4{
+    font-size: $header4;
+}
+
+.h5, h5{
+    font-size: $header5;
+}
+
+.h6, h6{
+    font-size: $header6;
+}
+
+
+.primary-text{
+    color: $primary-text-colour;
+}
+
+.secondary-text{
+    color: $secondary-text-colour;
+}
+
+.primary-colour-text{
+    color: $primary-colour;
+}
+
+
+
+
+@media screen and (max-width: $tabletScreen) {
+    .body{
+        font-family: $bodyFont;
+    }
+    
+    .h1, h1{
+        font-size: $header3;
+    }
+    
+    .h2, h2{
+        font-size: $header4;
+    }
+    
+    .h3, h3{
+        font-size: $header5;
+    }
+    
+    .h4, h4{
+        font-size: $header6;
+    }
+    
+    .h5, h5{
+        font-size: $header6;
+    }
+    
+    .h6, h6{
+        font-size: $header6;
+    }
+    
+}

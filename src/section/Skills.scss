@@ -1,106 +1,142 @@
-.Skills
-{
-  min-height: 100vh;
-  width: 85vw;
-  margin-left: auto;
-  margin-right: auto;
+
+@import "../../variables.scss";
+
+.Skills {
+  min-height: 75vh;
   display: grid;
-  grid-template-columns: 1.35fr 1fr;
-  grid-row-gap: 10em;
-  margin-top: 75px;
+  position: relative;
+  align-items: center;
+  margin: $s10 $s8;
+  grid-template-columns: 1fr 1fr;
+  text-align: left;
+  background: $panel-background-colour;
 
+  .rightSection {
+    position: relative;
+    height: 100%;
 
-  .SkillsDescription
-  {
-    display: grid;
-    align-content: center;
-    justify-content: center;
-
-    *
-    {
-      justify-self: center;
-
+    h1 {
+      position: absolute;
+      left: -15%;
+      top: 50px;
+      font-size: $billboard;
+      opacity: 0.05;
+      margin: $s4;
     }
-
-    h1
-    {
-      font-size: 4em;
-      text-align: center;
-      color:rgba(23, 235, 220,0.75);
-      position: relative;
-      font-weight: bold;
-      text-shadow: 2px 2px 1px white;
-
+    img {
+      position: absolute;
+      bottom: -$s8;
+      right: -$s1;
     }
-    p
-    {
-      font-size: 1.75em;
-      line-height: 1.43em;
-      letter-spacing: 1px;
-      position:relative;
-      opacity: 0;
-      animation-name: paragraphanimation;
-      animation-duration: 1.75s;
-      animation-timing-function: ease-in-out;
-      animation-fill-mode: forwards;
-      visibility: hidden;
-      font-family: 'Lato', sans-serif;
-      text-align: justify;
-
-    }
-
   }
 
-  .scene {
-    width: 200px;
-    height: 200px;
-    perspective: 600px;
-    display: grid;
-    justify-items: center;
-    justify-self: center;
-    align-self: center;
+  
 
+  h3 {
+    margin-bottom: $s6;
+    font-weight: bold;
+    position: relative;
+    left: -$s4;
+  }
+  p {
+    line-height: 1.2em;
+    font-size: $header6;
+    width: calc(100% + 48px);
+    position: relative;
+    left: -$s4;
 
-    .cube {
-      transform: translateZ(-100px);
-      width: 100%;
-      height: 100%;
-      position: relative;
-      transform-style: preserve-3d;
-      animation-name: cubeanimation;
-      animation-direction: alternate;
-      animation-iteration-count: infinite;
-      animation-duration: 8s;
-      animation-timing-function: ease-in-out;
+    a {
+      color: unset;
+      text-decoration: unset;
+    }
+  }
+}
 
-      .cube__face {
-        position: absolute;
-        width: 200px;
-        height: 200px;
-        background-color: rgba(0,0,0,0.75);
-        display: grid;
+@media screen and (max-width: $largeScreen) {
+  .Skills {
+    grid-template-columns: 0.75fr 1fr;
 
-        img
-        {
-          width: 75%;
-          height: 75%;
-          align-self: center;
-          justify-self: center;
-        }
+    .rightSection {
+      h1 {
+        font-size: 150px;
       }
-
-      .cube__face--front  { transform: rotateY(  0deg) translateZ(100px); }
-      .cube__face--right  { transform: rotateY( 90deg) translateZ(100px); }
-      .cube__face--back   { transform: rotateY(180deg) translateZ(100px); }
-      .cube__face--left   { transform: rotateY(-90deg) translateZ(100px); }
-      .cube__face--top    { transform: rotateX( 90deg) translateZ(100px); }
-      .cube__face--bottom { transform: rotateX(-90deg) translateZ(100px); }
-
     }
   }
 }
 
 
+@media screen and (max-width: $tabletScreen) {
+  .Skills {
+    grid-template-columns: 0.05fr 1fr;
+    margin: $s10 $s2;
+
+    .rightSection {
+      h1 {
+        font-size: 150px;
+      }
+
+      img {
+        transform: scale(0.75);
+      }
+    }
+
+    .leftSection{
+      p{
+        position: unset;
+        width: unset;
+      }
+    }
+  }
+}
+
+
+.scene {
+  width: 200px;
+  height: 200px;
+  perspective: 600px;
+  display: grid;
+  justify-items: center;
+  justify-self: center;
+  align-self: center;
+
+
+  .cube {
+    transform: translateZ(-100px);
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    animation-name: cubeanimation;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-duration: 8s;
+    animation-timing-function: ease-in-out;
+
+    .cube__face {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      background-color: rgba(0,0,0,0.75);
+      display: grid;
+
+      img
+      {
+        width: 75%;
+        height: 75%;
+        align-self: center;
+        justify-self: center;
+      }
+    }
+
+    .cube__face--front  { transform: rotateY(  0deg) translateZ(100px); }
+    .cube__face--right  { transform: rotateY( 90deg) translateZ(100px); }
+    .cube__face--back   { transform: rotateY(180deg) translateZ(100px); }
+    .cube__face--left   { transform: rotateY(-90deg) translateZ(100px); }
+    .cube__face--top    { transform: rotateX( 90deg) translateZ(100px); }
+    .cube__face--bottom { transform: rotateX(-90deg) translateZ(100px); }
+
+  }
+}
 @keyframes cubeanimation {
 
   0%{transform: rotateX(0deg) rotateY(0deg)}
@@ -116,112 +152,3 @@
 
 }
 
-
-
-@media only screen and (min-width:1300px) and (max-width: 1700px) {
-  .Skills
-  {
-    margin-left: auto;
-    margin-right: auto;
-
-    .SkillsDescription
-    {
-      p
-      {
-        font-size: 1.5em;
-
-      }
-    }
-
-  }
-}
-
-
-@media only screen and (min-width:1100px) and (max-width: 1300px) {
-  .Skills
-  {
-    margin-left: auto;
-    margin-right: auto;
-
-    .SkillsDescription
-    {
-      p
-      {
-        font-size: 1.35em;
-        line-height: 1.2em;
-      }
-    }
-
-
-  }
-
-}
-
-
-@media only screen and (max-width: 1100px) {
-  .Skills
-  {
-    width: 75vw;
-    margin-left: auto;
-    margin-right: auto;
-    grid-template-columns: 1fr;
-    .SkillsDescription
-    {
-      h1
-      {
-        text-align: center;
-      }
-      p
-      {
-        font-size: 1.35em;
-        line-height: 1.2em;
-      }
-    }
-
-
-  }
-
-}
-
-@media only screen and (max-width: 575px) {
-  .Skills
-  {
-    width: 95vw;
-    grid-template-columns: 1fr;
-    margin-bottom: 10em;
-    .SkillsDescription
-    {
-      h1
-      {
-        font-size: 2em;
-        text-align: center;
-      }
-      p
-      {
-        font-size: 0.75em;
-        line-height: 1.2em;
-      }
-    }
-
-
-  }
-
-}
-
-
-
-
-@media only screen and (max-height: 800px) and (min-width: 600px) {
-  .Skills
-  {
-    .SkillsDescription
-    {
-      p
-      {
-        font-size: 1.25em;
-        line-height: 1.2em;
-      }
-    }
-  }
-
-}

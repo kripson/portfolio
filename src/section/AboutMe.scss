@@ -1,168 +1,81 @@
-.AboutMe
-{
-  min-height: 100vh;
+@import "../../variables.scss";
+
+.AboutMe {
+  min-height: 75vh;
   display: grid;
-  text-align: justify;
-  justify-content: center;
   position: relative;
-  h1
-  {
-    text-align: center;
-    margin-bottom: 50px;
-    font-size: 4em;
-    color:rgba(23, 235, 220,0.75);
-    animation-name: Aboutmeh1animation;
-    animation-duration: 0.25s;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-in-out;
+  align-items: center;
+  margin: $s10 $s8;
+  grid-template-columns: 1fr 1fr;
+  text-align: left;
+  background: $panel-background-colour;
+
+  .leftSection {
+    position: relative;
+    height: 100%;
+
+    h1 {
+      position: absolute;
+      left: 15%;
+      font-size: $billboard;
+      opacity: 0.05;
+      margin: $s4;
+    }
+    img {
+      position: absolute;
+      bottom: -$s1;
+      left: -$s1;
+    }
+  }
+
+  h3 {
+    margin-bottom: $s6;
     font-weight: bold;
-    align-self: center;
-     margin-bottom: 75px;
-
   }
-  p
-  {
-    margin: 0;
-    width: 50%;
-    font-size: 26px;
-    line-height: 1.6em;
-    justify-self: center;
-    font-family: 'Lato', sans-serif;
+  p {
+    line-height: 1.2em;
+    font-size: $header6;
+    width: calc(100% + 48px);
 
-  }
-
-  img
-  {
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 75px;
-  }
-
-}
-
-
-
-@keyframes imageanimation {
-
-  0%{visibility: hidden;transform: scale(0)}
- 50%{visibility: visible;transform: scale(2)}
-  100%{visibility: visible;transform: scale(1)}
-
-}
-
-
-@keyframes Aboutmeh1animation {
-
-  0%{text-shadow: 0px 0px white}
-  100%{text-shadow: 2px 2px 1px rgb(255,255,255);}
-
-}
-
-
-
-@media only screen and (min-height: 1200px) and (max-width: 1450px) {
-  .AboutMe
-  {
-    p
-    {
-      font-size: 21px;
-      line-height: 1.2em;
-    }
-
-  }
-
-}
-
-
-
-@media only screen and (min-height: 768px) and (max-width: 1200px) {
-  .AboutMe
-  {
-    p
-    {
-      font-size: 1.5rem;
-      line-height: 1.2em;
-      width: 60%;
-    }
-
-    img
-    {
-      width: 60%;
-    }
-
-  }
-
-}
-
-@media only screen and (max-width: 768px) {
-  .AboutMe
-  {
-    min-height: 75vh;
-    p
-    {
-      font-size: 1.25rem;
-      line-height: 1.43em;
-      width: 75%;
-
-    }
-    img
-    {
-      width: 75%;
+    a {
+      color: unset;
+      text-decoration: unset;
     }
   }
-
 }
 
+@media screen and (max-width: $largeScreen) {
+  .AboutMe {
+    grid-template-columns: 0.75fr 1fr;
 
-@media only screen and (max-width: 575px) {
-  .AboutMe
-  {
-    width: 95vw;
-    margin-left: auto;
-    margin-right: auto;
-    grid-template-columns: 1fr;
-    min-height: 50vh;
-    margin-bottom: 100px;
-
-
-      h1
-      {
-        font-size: 2rem;
-        text-align: center;
+    .leftSection {
+      h1 {
+        font-size: 150px;
       }
-      p
-      {
-        font-size: 0.75em;
-        line-height: 1.43em;
-        width: 95vw;
+    }
+  }
+}
+
+@media screen and (max-width: $tabletScreen) {
+  .AboutMe {
+    grid-template-columns: 0.05fr 1fr;
+    margin: $s10 $s2;
+
+    .leftSection {
+      h1 {
+        font-size: 150px;
       }
 
-
-    img
-    {
-      width: 95vw;
+      img {
+        transform: scale(0.75);
+      }
     }
 
-
-  }
-
-}
-
-
-
-@media only screen and (max-height: 800px) and (min-width: 600px) {
-  .AboutMe
-  {
-    p
-    {
-      font-size: 1.25em;
-      line-height: 1.2em;
+    .rightSection{
+      p{
+        position: unset;
+        width: unset;
+      }
     }
-
   }
-
 }
-
-
-

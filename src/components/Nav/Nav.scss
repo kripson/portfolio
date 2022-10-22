@@ -1,195 +1,159 @@
-.Nav
-{
+@import "../../../variables.scss";
+
+.Nav {
   display: grid;
-  grid-template-columns:1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   justify-content: space-between;
-  .hamburger {
-    display: none;
-  }
-  .NavigationLinks
-  {
-    ul
-    {
-      list-style: none;
-      display: flex;
-      flex-wrap: wrap;
-      li
-      {
-        transition: all 0.15s;
-        font-size: 1.15em;
-        margin-right: 2em;
-        a
-        {
-          color: white;
-          text-decoration: none;
-        }
-        &:hover
-        {
-          border-bottom: 2px solid aquamarine;
-          cursor: pointer;
-        }
-      }
+  padding: $s4 $s8;
+  z-index: 11;
 
-    }
+  .leftSection {
+    display: flex;
+    align-items: center;
+    gap: $s6;
 
-  }
-  .ContactLinks
-  {
-    display: grid;
-    justify-content: end;
-    ul
-    {
-      display: flex;
-      list-style: none;
-      flex-wrap: wrap;
+    .ContactLinks {
+      display: grid;
+      justify-content: end;
 
-      li
-      {
-        transition: all 0.15s;
-        margin-right: 2em;
-        &:hover
-        {
-          border-bottom: 2px solid aquamarine;
-          cursor: pointer;
-        }
-        img
-        {
-          width: 30px;
-          height: 30px;
-        }
-      }
-    }
-  }
-}
+      ul {
+        display: flex;
+        list-style: none;
+        flex-wrap: wrap;
+        margin: 0 !important;
+        padding: 0;
+        li {
+          transition: all 0.15s;
+          display: flex;
+          align-items: center;
+          margin-right: $s4;
+          &:hover {
+            border-bottom: 2px solid aquamarine;
+            cursor: pointer;
+          }
+          font-size: $s4;
 
-
-@media only screen and (max-width: 1100px) {
-  .Nav
-  {
-    .NavigationLinks{
-      ul
-      {
-        li
-        {
-          font-size: 1em;
+          a {
+            color: $primary-text-colour;
+          }
         }
       }
     }
   }
 
-}
-@media only screen and (min-width: 968px)
-{
-  .Nav
-  {
-
-    .hamburgermenu
-    {
-      display: none;
-    }
-  }
-}
-@media only screen and (max-width: 968px) {
-  .Nav
-  {
-    .hamburger
-    {
+  .rightSection {
+    display: flex;
+    justify-content: flex-end;
+    .hamburger {
       display: block;
       align-self: center;
       justify-self: start;
-      margin-left: 1rem;
       z-index: 11;
 
-
-      img
-      {
-        width: 30px;
-        height: 30px;
+      svg {
+        font-size: $s4;
       }
 
-      &:hover
-      {
+      &:hover {
         cursor: pointer;
       }
     }
 
-    .hamburgermenu
-    {
-      background-color: rgb(50,50,50);
-      position: absolute;
+    .hamburgermenu {
+      background-color: rgb(50, 50, 50);
+      position: fixed;
+      left: 0;
       width: 100vw;
+      height: 100vh;
       transition: all 1s;
+      transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
       z-index: 10;
-      ul
-      {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    
+      ul {
         display: grid;
         position: relative;
         list-style: none;
         overflow: scroll;
-        justify-content: center;
+       
         margin: 0;
         padding: 0;
 
-
-
-        li
-        {
+        li {
           justify-self: center;
-          border-bottom: 1px solid rgb(40,40,40);
           width: 100vw;
-          height: 40px;
+          height: $s10;
           display: grid;
-          
-          &:hover
-          {
+          font-family: $headerFont;
+
+          &:hover {
             cursor: pointer;
-            background-color: rgb(30,30,30);
-            a
-            {
-              color: #61dafb;
+            background-color: rgb(30, 30, 30);
+            a {
+              color: $primary-colour;
             }
-
-
           }
-          a
-          {
+          a {
             align-self: center;
             text-decoration: none;
-            color:white;
+            color: white;
           }
         }
       }
     }
-    .NavigationLinks{
+  }
+
+  .NavigationLinks {
+    ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      li {
+        transition: all 0.15s;
+        font-size: 1.15em;
+        margin-right: 2em;
+        a {
+          color: white;
+          text-decoration: none;
+        }
+        &:hover {
+          border-bottom: 2px solid aquamarine;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 968px) {
+  .Nav {
+    .NavigationLinks {
       display: none;
-
     }
-    .ContactLinks{
-
-      ul
-      {
-
+    .leftSection{
+      .ContactLinks {
+        ul {
+        }
       }
-
     }
-  }
 
+  }
 }
 
+@media only screen and (max-width: $tabletScreen) {
+  .Nav {
+    padding: $s4 $s3;
+    .leftSection {
 
-@media only screen and (min-width: 0px) and (max-width: 500px) {
-
-  .Nav
-  {
-    .ContactLinks
-    {
-      ul
-      {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+      .logo{
+        height: $s6;
+        width: $s6;
+      }
+      .ContactLinks {
+        display: none;
       }
     }
   }
-
 }
-

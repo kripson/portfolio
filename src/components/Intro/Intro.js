@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from "react";
 import './Intro.scss';
-import WebDev from '../../assets/webdev.png';
+import HeroImage from '../../assets/hero-image.svg';
+import Button from "../Button/Button";
 
 
 
@@ -8,21 +9,15 @@ import WebDev from '../../assets/webdev.png';
 const Intro = ()=>
 {
 
-
-
-
-
-
    return(<div className="Intro">
        <div className="LeftSection">
-           <h1>Hi!<br/>I am <span>Sankit.</span>
-           </h1>
-           <h2>{"Software Developer"}<span className = "blinkingcursor">_</span></h2>
+           <h3 className="body">Hi! I am Sankit</h3>
+           <h1 className="h1 primary-colour-text ">{"Software Developer"}</h1>
 
-           <a href = "#contactscontainer"><div className="GetInTouchSection"><span className="GetInTouch">Get In Touch</span></div></a>
+           <a href = "#contactscontainer"><div className="GetInTouchSection"><Button label="Get In Touch" onClick={()=>{}}></Button></div></a>
        </div>
        <div className="RightSection">
-        <img src={WebDev} alt = "Wevdev"/>
+        <img src={HeroImage} alt = "Wevdev"/>
        </div>
 
     </div>)
