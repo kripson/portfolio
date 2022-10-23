@@ -1,18 +1,30 @@
 export const projectsarray = [
     {
         id:1,
+        title:'Kzen8',
+        imageUrl:require("../assets/kzen8.webp"),
+        mobileLayout: require("../assets/kzen8mobile.png"),
+        laptopLayout: require("../assets/kzen8laptop.png"),
+        description: ["Project developed for Kzen8 Pty Ltd. This project serves as a landing page for a no-code business software platform provided by kzen8 and is part of a much bigger marketing campaign. I was responsible for designing, developing, testing and deploying the application.",
+            "The front-end was created using React and styled using custom css."],
+        websiteUrl: 'https://kzen8.com',
+        ready:true,
+        tools:['React']
+    },
+    {
+        id:2,
         title:'Car Vendor',
         imageUrl:require("../assets/carvendor.png"),
         mobileLayout: require("../assets/carvendormobile.png"),
         laptopLayout: require("../assets/carvendorlaptop.png"),
         description: ["Project developed for Car Vendor Pty Ltd. The project's objective was to create an online platform for selling, buying and renting cars. I was responsible for designing, developing, testing and deploying the application. Hence, this is entirely my creation.",
             "The front-end was created using React and Redux and styled using custom css. The back-end server was developed using Express Js which is connected to a MongoDB database."],
-        websiteUrl: 'http://carvendornepal.com',
+        websiteUrl: 'https://carvendornepal.com',
         ready:true,
         tools:['React','Redux','NodeJs','MongoDB']
     },
     {
-        id:2,
+        id:3,
         title:'Little Hideout Cafe',
         imageUrl:require("../assets/littlehideout.jpg"),
         mobileLayout: require("../assets/littlehideoutmobile.png"),
@@ -24,7 +36,7 @@ export const projectsarray = [
         tools:['react','node']
     },
     {
-        id:3,
+        id:4,
         title:'One Wish Cleaning',
         imageUrl:require("../assets/onewish.png"),
         mobileLayout: require("../assets/onewishmobile.png"),
@@ -36,7 +48,7 @@ export const projectsarray = [
         tools:['NextJs']
     },
     {
-        id:4,
+        id:5,
         title:'Kripson Clothing Store',
         imageUrl:require("../assets/clothingapp.jpeg"),
         mobileLayout: require("../assets/storemobile.png"),
@@ -49,18 +61,18 @@ export const projectsarray = [
         tools:['react','node']
 
     },
-    {
-        id:5,
-        title:'Kripson Eportfolio',
-        imageUrl:require("../assets/Eportfolio.jpeg"),
-        websiteUrl: 'https://portfolio-kripson.web.app/',
-        mobileLayout: require("../assets/portfoliomobile.png"),
-        laptopLayout: require("../assets/portfoliolaptop.png"),
-        description: ["This is a showcase for my projects.",
-            " The front-end was created using React and styled using custom css."],
-        ready:true,
-        tools:['react']
-    },
+    // {
+    //     id:6,
+    //     title:'Kripson Eportfolio',
+    //     imageUrl:require("../assets/Eportfolio.jpeg"),
+    //     websiteUrl: 'https://portfolio-kripson.web.app/',
+    //     mobileLayout: require("../assets/portfoliomobile.png"),
+    //     laptopLayout: require("../assets/portfoliolaptop.png"),
+    //     description: ["This is a showcase for my projects.",
+    //         " The front-end was created using React and styled using custom css."],
+    //     ready:true,
+    //     tools:['react']
+    // },
     {
         id:6,
         title:'Hans Driving Training Center',
