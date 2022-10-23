@@ -62,12 +62,17 @@
     margin: $s10 $s2;
 
     .leftSection {
+      position: unset;
       h1 {
         font-size: 150px;
+        left: 0;
+        margin: 0;
+        word-break: break-all;
       }
 
       img {
-        transform: scale(0.75);
+        left: 0;
+        width: 100%;
       }
     }
 
