@@ -1,3 +1,5 @@
+@import '../../../variables.scss';
+
 .ProjectModal
 {
   display: grid;
@@ -5,7 +7,7 @@
   height: 100vh;
   width: 100vw;
   position: fixed;
-  background-color: black;
+  background-color: $appBackgroundColour;
   top:0;
   left: 0;
   z-index: 12;
@@ -64,10 +66,6 @@
       font-size: 5em;
       font-weight: 800;
       position: relative;
-      animation-name: layoutanimation;
-      animation-duration: 0.75s;
-      animation-timing-function: ease-in-out;
-      animation-fill-mode: forwards;
     }
 
     .projectDescription
@@ -84,11 +82,6 @@
       font-size: 1.45em;
       width: 90%;
       position: relative;
-      animation-name: layoutanimation;
-      animation-duration: 1s;
-      animation-timing-function: ease-in-out;
-      animation-fill-mode: forwards;
-      font-family: 'Lato', sans-serif;
     }
 
 

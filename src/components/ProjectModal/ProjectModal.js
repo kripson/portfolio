@@ -13,9 +13,9 @@ const ProjectModal = ({project,display,toggleDetail})=>
         </div>
 
         <div className = "ProjectModalLeftSection">
-                <h1 className = "projectTitle">{project.title}</h1>
+                <h1 className = "projectTitle pseudo-after-animated">{project.title}</h1>
 
-                <div className = "projectDescription">
+                <div className = "projectDescription body pseudo-after-animated">
                     {project.description.map((descriptionpart,idx)=><p key = {idx}>{descriptionpart}</p>)}
                 </div>
 

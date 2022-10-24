@@ -4,16 +4,24 @@ import Australia from "../assets/australia.png";
 import timeLine from "../assets/timeline_new.png";
 import LazyLoad from "react-lazy-load";
 import Nepal from '../assets/Nepal.svg';
+import { useParallax } from 'react-scroll-parallax';
 
 const AboutMe = () => {
+
+  const h1Ref = useParallax({speed: 10});
+  const nepalImageRef = useParallax({speed: 15});  
+  const rightSectionRef = useParallax({speed: 2.5});
+
+
+
+
   return (
-    <LazyLoad>
-      <div className="AboutMe">
+      <div className="AboutMe" >
         <div className="leftSection">
-          <h1 className="body">ABOUT <br />ME </h1>
-          <img src={Nepal} alt={'nepal'}></img>
+          <h1 className="body" ref={h1Ref.ref}>ABOUT <br />ME </h1>
+          <img src={Nepal} alt={'nepal'} ref={nepalImageRef.ref}></img>
         </div>
-        <div className="rightSection">
+        <div className="rightSection" ref={rightSectionRef.ref}>
 
           <h3 className="primary-colour-text">About Me</h3>
           <p>
@@ -29,7 +37,6 @@ const AboutMe = () => {
         </div>
         {/* <img src={timeLine} alt="timeline" /> */}
       </div>
-    </LazyLoad>
   );
 };
 

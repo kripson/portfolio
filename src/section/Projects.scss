@@ -1,109 +1,71 @@
+@import '../../variables.scss';
+
+
+.swiper-button-next, .swiper-button-prev, .swiper-button-disabled{
+  opacity: 0 !important;
+}
 .Projects
 {
   min-height: 100vh;
-  display: grid;
-  margin-top: 75px;
+  margin: $s10 $s8;
 
 
   .sectionTitle
   {
     margin-top: 2em;
     font-size: 4em;
-    color:rgba(23, 235, 220,0.75);
+    color:$primary-colour;
     font-weight: bold;
     margin-bottom: 2em;
-    text-shadow: 2px 2px 1px white;
   }
 
-  .ProjectsSection
-  {
+  .customNavButtons{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    z-index: 10;
     position: relative;
-    left: 10px;
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    grid-column-gap: 50px;
-    grid-row-gap: 50px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(400px,1fr));
-    justify-self: center;
 
-
-    .project
-    {
-      justify-self: center;
-      animation-name: projectanimation;
-      animation-timing-function: ease-in-out;
-      animation-duration: 1s;
-      animation-fill-mode: forwards;
-      visibility: hidden;
-
-      a
-      {
-        width: 100%;
-        height: 100%;
-      }
-      .projectimage
-      {
-        width: 100%;
-        height: 100%;
+    h5{
+      display: flex;
+      align-items: center;
+      gap: $s2;
+      color: $linkArrowColour;
+      &:hover{
+        cursor: pointer;
       }
 
-
-
-
-
-
-
+      svg{
+        height: 80px;
+        width: 80px;
+        &:hover{
+          path{
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: strokeanimation 1s linear forwards;
+          }
+        }
+      }
     }
+  }
+
+
+}
+
+
+@media screen and (max-width: $tabletScreen) {
+  .Projects{
+    margin: $s10 $s2;
   }
 }
 
 
 
-@keyframes projectanimation {
-
-  0%{transform: rotateZ(10deg);top: 100px;opacity: 0 }
-
-  100%{transform: rotateZ(0);top:0;opacity: 1;visibility: visible}
-  
-}
-
-@media only screen and (max-width: 768px) {
-  .Projects
-  {
-    h1
-    {
-      text-align: center;
-
-    }
-    .ProjectsSection
-    {
-      width: 95%;
-
-    }
-
-
+@keyframes strokeanimation {
+  to {
+    stroke-dashoffset: 0;
   }
-
 }
 
-@media only screen and (max-width: 575px) {
-  .Projects
-  {
-    .sectionTitle
-    {
-      font-size: 2em;
-      text-align: center;
-    }
-    .ProjectsSection
-    {
-      grid-template-columns: 1fr;
-      width: 95%;
-      left: 0;
-    }
 
 
-  }
-
-}

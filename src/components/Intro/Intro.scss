@@ -22,10 +22,10 @@
     h3
     {
       margin-bottom: 0;
-      span
-      {
-        animation-name: nameanimation;
-        animation-duration: 2s;
+      animation-delay: 4s;
+
+      &::after{
+        animation-delay: 4s;
       }
 
     }
@@ -37,10 +37,17 @@
       white-space: nowrap;
       text-shadow: $s4 $s4 10px solid $primary-text-colour;
       z-index: 2;
+      animation-delay: 4.25s;
+
+      &::after{
+        animation-delay: 4.25s;
+      }
+
     }
     a {
       text-decoration: none;
       color:white;
+
       .GetInTouchSection {
 
         .GetInTouch {
@@ -65,7 +72,7 @@
   {
     display: flex;
     justify-content: flex-end;
-    z-index: 1;
+    z-index: 3;
     align-content: center;
     width: 50%;
     img

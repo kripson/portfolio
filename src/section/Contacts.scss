@@ -1,23 +1,14 @@
+@import '../../variables.scss';
+
 .Contacts
 {
   min-height: 100vh;
   display: grid;
   align-content: center;
   justify-items: center;
-  margin-top: 100px;
+  margin: $s10 $s8;
 
-  h1
-  {
-    font-size: 4em;
-    font-weight: bold;
-    text-shadow: 2px 2px 1px rgb(255,255,255);
-    color: rgba(23, 235, 220,0.75);
-  }
 
-  h3
-  {
-    font-family: 'Lato', sans-serif;
-  }
 
   .form
   {
@@ -84,35 +75,13 @@
 
     button
     {
-      width: 100px;
-      height: 40px;
-      background-color: black;
-      color: white;
-      border: 2px solid rgba(23, 235, 220,0.75);
-      font-size: 1em;
-      transition: all 0.25s;
       margin-left: auto;
-
-
-      &:hover
-      {
-        transform: translateY(-10px);
-        background-color: rgba(23, 235, 220,0.75);
-        cursor: pointer;
-        color: black;
-      }
     }
 
   }
 }
 
 
-
-@keyframes formanimation {
-0%{
-}
-
-}
 
 
 @media only screen  and (min-width: 500px) and (max-width: 900px) {
@@ -134,11 +103,6 @@
     {
       text-align: center;
       width: 100%;
-    }
-
-    h1
-    {
-      font-size: 3em;
     }
 
 
@@ -165,24 +129,16 @@
       {
         margin-left: auto;
         margin-right: auto;
-        width: 250px;
-        height: 50px;
       }
     }
 
-    h3
-    {
-      text-align: center;
-      width: 100%;
-      font-size: 1em;
-    }
-
-    h1
-    {
-      font-size: 2em;
-    }
+  }
+}
 
 
+@media screen and (max-width: 500px) {
+  .Contacts{
+    margin: $s10 $s2;
   }
 }
 

@@ -9,10 +9,12 @@ import Laravel from "../assets/laravel.png";
 import LazyLoad from "react-lazy-load";
 import Spline from "@splinetool/react-spline";
 import Tshirt from "../assets/T-Shirt.svg";
+import { useParallax } from 'react-scroll-parallax';
 
 const Skills = () => {
 
     const spline = useRef();
+    const rightSectionRef = useParallax({speed: 50, rootMargin: {top: 100, left: 100, right: 100, bottom: 100}});
 
     function onLoad(splineApp) {
       // save the app in a ref for later use
@@ -44,7 +46,7 @@ const Skills = () => {
       <div className="rightSection">
         <h1 className="body">SKILLS</h1>
 
-        <div className="imageSection">
+        <div className="imageSection"  ref={rightSectionRef.ref}>
 
           <div className="scene">
             <div className="cube">

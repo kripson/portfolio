@@ -6,7 +6,7 @@
   display: grid;
   position: relative;
   align-items: center;
-  margin: $s10 $s8;
+  margin: calc($s1 * 32) $s8;
   grid-template-columns: 1fr 1fr;
   text-align: left;
   background: $panel-background-colour;
@@ -55,7 +55,7 @@
           animation-name: cubeanimation;
           animation-direction: alternate;
           animation-iteration-count: infinite;
-          animation-duration: 8s;
+          animation-duration: 16s;
           animation-timing-function:ease-in-out;
       
           .core{

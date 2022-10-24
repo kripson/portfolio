@@ -1,7 +1,8 @@
 import React,{useState} from 'react';
-import './MailSendButton.scss';
+// import './MailSendButton.scss';
 import Spinner from '../../assets/refresh.png';
 import Tick from '../../assets/tick.png';
+import Button from '../Button/Button';
 
 
 
@@ -13,11 +14,11 @@ const MailSendButton = ({buttonstate, SendMail})=>
 
     if(buttonstate === 'idle')
     {
-       return (<button onClick = {SendMail}>Send</button>)
+       return (<Button onClick = {SendMail} label="Send"></Button>)
     }
     else if(buttonstate === "sending")
     {
-        return(<div className = "sending"><span>Sending</span><img src={Spinner} alt = "refresher"/></div> )
+        return(<Button className = "sending" label="Sending"><img src={Spinner} alt = "refresher"/></Button> )
     }
     else
     {

@@ -1,4 +1,5 @@
 @import '../scss-class.scss';
+
 .App {
   text-align: center;
   position: relative;
@@ -6,6 +7,8 @@
   background: $appBackgroundColour;
   font-family: $bodyFont;
   box-sizing: border-box;
+
+  scroll-behavior: smooth;
 }
 
 .App-logo {
@@ -38,15 +41,15 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
 
 
-body
-{
-  background-color: rgb(20,20,20);
+body {
+  background-color: rgb(20, 20, 20);
   color: white;
 
 }
@@ -54,35 +57,175 @@ body
 
 
 
-.first
-{
-  height: 100%;
-  width: 100%;
-  background-color:rgb(20,20,20);
+.first {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  background-color: $appBackgroundColour;
   display: grid;
   align-items: center;
   justify-items: center;
   z-index: 2000;
-
+  animation-name: hidePreloader;
+  animation-timing-function: cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  animation-duration: 0.0000001s;
+  animation-fill-mode: forwards;
+  animation-delay: 4.05s;
 }
 
-.first img
-{
-  height: 300px;
-  width: 400px;
+.first img {
+  height: 200px;
+  width: 200px;
+  animation-name: moveit;
+  animation-timing-function: cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  animation-duration: 4s;
+  animation-fill-mode: forwards;
+  animation-delay: 0.05s;
+  opacity: 0;
+}
+
+#backgroundVideo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  opacity: 0.25;
+  z-index: -1;
+}
+
+
+
+@keyframes moveit {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  1% {
+    transform: scale(0);
+    opacity: 0.01;
+  }
+
+  30% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  80% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  82% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes hidePreloader {
+  0% {
+    height: 100vh;
+    width: 100vw;
+  }
+
+  1% {
+    height: 0;
+    width: 0;
+  }
+
+  100% {
+    height: 0;
+    width: 0;
+  }
 }
 
 
 
 
 
-@media only screen and (min-width : 0px)and (max-width: 400px)
-{
-  .first img
-  {
+@media only screen and (min-width : 0px)and (max-width: 400px) {
+  .first img {
     width: 100vw;
   }
 
 }
 
 
+
+// .background-animation {
+//   position: relative;
+
+//   &::before {
+//     content: '';
+//     position: absolute;
+//     bottom: 0;
+//     left: 0;
+//     width: 0;
+//     height: 10px;
+
+//     background-color: $primary-colour;
+//     transition: all 0.25s;
+
+//   }
+
+//   &:hover {
+//     &::before {
+//       width: 100%;
+//     }
+//   }
+// }
+
+
+
+.pseudo-after-animated {
+  position: relative;
+  animation-name: pseudoAnimated;
+  animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  animation-duration: 1s;
+  animation-delay: 0.5s;
+ 
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $appBackgroundColour;
+    animation-name: pseudoAfterAnimation;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.5s;
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+
+  &:after {
+    &::before {
+      width: 100%;
+    }
+  }
+}
+
+
+@keyframes pseudoAnimated{
+  0%{bottom: -100px;  transform: rotateZ(5deg);}
+  100%{bottom: 0;  transform: rotateZ(0);}
+}
+
+@keyframes pseudoAfterAnimation {
+  0% {
+    height: 100%;
+  }
+
+  100% {
+    height: 0%;
+  }
+}

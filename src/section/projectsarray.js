@@ -2,7 +2,7 @@ export const projectsarray = [
     {
         id:1,
         title:'Kzen8',
-        imageUrl:require("../assets/kzen8.webp"),
+        imageUrl:require("../assets/Kzen8-project.svg"),
         mobileLayout: require("../assets/kzen8mobile.png"),
         laptopLayout: require("../assets/kzen8laptop.png"),
         description: ["Project developed for Kzen8 Pty Ltd. This project serves as a landing page for a no-code business software platform provided by kzen8 and is part of a much bigger marketing campaign. I was responsible for designing, developing, testing and deploying the application.",
@@ -13,18 +13,6 @@ export const projectsarray = [
     },
     {
         id:2,
-        title:'Car Vendor',
-        imageUrl:require("../assets/carvendor.png"),
-        mobileLayout: require("../assets/carvendormobile.png"),
-        laptopLayout: require("../assets/carvendorlaptop.png"),
-        description: ["Project developed for Car Vendor Pty Ltd. The project's objective was to create an online platform for selling, buying and renting cars. I was responsible for designing, developing, testing and deploying the application. Hence, this is entirely my creation.",
-            "The front-end was created using React and Redux and styled using custom css. The back-end server was developed using Express Js which is connected to a MongoDB database."],
-        websiteUrl: 'https://carvendornepal.com',
-        ready:true,
-        tools:['React','Redux','NodeJs','MongoDB']
-    },
-    {
-        id:3,
         title:'Little Hideout Cafe',
         imageUrl:require("../assets/littlehideout.jpg"),
         mobileLayout: require("../assets/littlehideoutmobile.png"),
@@ -60,6 +48,18 @@ export const projectsarray = [
         ready: true,
         tools:['react','node']
 
+    },
+    {
+        id:3,
+        title:'Car Vendor',
+        imageUrl:require("../assets/car-vendor-project.PNG"),
+        mobileLayout: require("../assets/carvendormobile.png"),
+        laptopLayout: require("../assets/carvendorlaptop.png"),
+        description: ["Project developed for Car Vendor Pty Ltd. The project's objective was to create an online platform for selling, buying and renting cars. I was responsible for designing, developing, testing and deploying the application. Hence, this is entirely my creation.",
+            "The front-end was created using React and Redux and styled using custom css. The back-end server was developed using Express Js which is connected to a MongoDB database."],
+        websiteUrl: 'https://carvendornepal.com',
+        ready:true,
+        tools:['React','Redux','NodeJs','MongoDB']
     },
     // {
     //     id:6,

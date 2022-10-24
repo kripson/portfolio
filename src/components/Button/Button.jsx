@@ -4,7 +4,7 @@ import Arrow from '../../assets/Arrow 1.svg';
 
 const Button = ({ label, onClick }) => {
     return (
-        <div className="button">
+        <div className="button body">
             {/* <div>
                 {label}
             </div> */}

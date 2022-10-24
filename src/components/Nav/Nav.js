@@ -60,20 +60,21 @@ const Nav = () => {
                     {hamburgerbutton}
                 </div>
                 <div className="hamburgermenu" style={{ top: hamburger }}>
+                    
                     <ul>
-                        <li className="h3">
+                        <li className={`h3 ${hamburger === '-100vh' ? '' : 'pseudo-after-animated'}`}>
                             <a onClick={() => sethamburger('-100vh')} href="#homecontainer">Home</a>
                         </li>
-                        <li className="h3">
+                        <li className={`h3 ${hamburger === '-100vh' ? '' : 'pseudo-after-animated'}`}>
                             <a onClick={() => sethamburger('-100vh')} href="#aboutmecontainer">About Me</a>
                         </li>
-                        <li className="h3">
+                        <li className={`h3 ${hamburger === '-100vh' ? '' : 'pseudo-after-animated'}`}>
                             <a onClick={() => sethamburger('-100vh')} href="#skillscontainer">Skills</a>
                         </li>
-                        <li className="h3">
+                        <li className={`h3 ${hamburger === '-100vh' ? '' : 'pseudo-after-animated'}`}>
                             <a onClick={() => sethamburger('-100vh')} href="#projectscontainer"> Projects</a>
                         </li>
-                        <li className="h3">
+                        <li className={`h3 ${hamburger === '-100vh' ? '' : 'pseudo-after-animated'}`}>
                             <a onClick={() => sethamburger('-100vh')} href="#contactscontainer">Contact</a>
                         </li>
                     </ul>

@@ -22,15 +22,18 @@
         flex-wrap: wrap;
         margin: 0 !important;
         padding: 0;
+
         li {
           transition: all 0.15s;
           display: flex;
           align-items: center;
           margin-right: $s4;
+
           &:hover {
             border-bottom: 2px solid aquamarine;
             cursor: pointer;
           }
+
           font-size: $s4;
 
           a {
@@ -44,6 +47,7 @@
   .rightSection {
     display: flex;
     justify-content: flex-end;
+
     .hamburger {
       display: block;
       align-self: center;
@@ -71,12 +75,14 @@
       display: flex;
       justify-content: center;
       align-items: center;
-    
+
       ul {
         display: grid;
         position: relative;
         list-style: none;
-       
+
+
+
         margin: 0;
         padding: 0;
 
@@ -87,13 +93,20 @@
           display: grid;
           font-family: $headerFont;
 
+          
+          &::after {
+            background-color: rgb(50, 50, 50);
+          }
+
           &:hover {
             cursor: pointer;
             background-color: rgb(30, 30, 30);
+
             a {
               color: $primary-colour;
             }
           }
+
           a {
             align-self: center;
             text-decoration: none;
@@ -109,14 +122,17 @@
       list-style: none;
       display: flex;
       flex-wrap: wrap;
+
       li {
         transition: all 0.15s;
         font-size: 1.15em;
         margin-right: 2em;
+
         a {
           color: white;
           text-decoration: none;
         }
+
         &:hover {
           border-bottom: 2px solid aquamarine;
           cursor: pointer;
@@ -131,10 +147,10 @@
     .NavigationLinks {
       display: none;
     }
-    .leftSection{
+
+    .leftSection {
       .ContactLinks {
-        ul {
-        }
+        ul {}
       }
     }
 
@@ -144,12 +160,14 @@
 @media only screen and (max-width: $tabletScreen) {
   .Nav {
     padding: $s4 $s3;
+
     .leftSection {
 
-      .logo{
+      .logo {
         height: $s6;
         width: $s6;
       }
+
       .ContactLinks {
         display: none;
       }
