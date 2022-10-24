@@ -24,7 +24,7 @@ export const projectsarray = [
         tools:['react','node']
     },
     {
-        id:4,
+        id:3,
         title:'One Wish Cleaning',
         imageUrl:require("../assets/onewish.png"),
         mobileLayout: require("../assets/onewishmobile.png"),
@@ -36,7 +36,7 @@ export const projectsarray = [
         tools:['NextJs']
     },
     {
-        id:5,
+        id:4,
         title:'Kripson Clothing Store',
         imageUrl:require("../assets/clothingapp.jpeg"),
         mobileLayout: require("../assets/storemobile.png"),
@@ -50,7 +50,7 @@ export const projectsarray = [
 
     },
     {
-        id:3,
+        id:5,
         title:'Car Vendor',
         imageUrl:require("../assets/car-vendor-project.PNG"),
         mobileLayout: require("../assets/carvendormobile.png"),
