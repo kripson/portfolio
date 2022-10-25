@@ -2,7 +2,7 @@ export const projectsarray = [
     {
         id:1,
         title:'Kzen8',
-        imageUrl:require("../assets/Kzen8-project.svg"),
+        imageUrl:require("../assets/Kzen8-project.png"),
         mobileLayout: require("../assets/kzen8mobile.png"),
         laptopLayout: require("../assets/kzen8laptop.png"),
         description: ["Project developed for Kzen8 Pty Ltd. This project serves as a landing page for a no-code business software platform provided by kzen8 and is part of a much bigger marketing campaign. I was responsible for designing, developing, testing and deploying the application.",
@@ -26,7 +26,7 @@ export const projectsarray = [
     {
         id:3,
         title:'One Wish Cleaning',
-        imageUrl:require("../assets/onewish.png"),
+        imageUrl:require("../assets/onewish.webp"),
         mobileLayout: require("../assets/onewishmobile.png"),
         laptopLayout: require("../assets/onewishlaptop.png"),
         description: ["Project developed for One Wish Cleaning Pty Ltd. The project's objective was to establish the client's online presence. I was responsible for designing, developing, testing and deploying the application. Hence, this is entirely my creation.",
@@ -52,7 +52,7 @@ export const projectsarray = [
     {
         id:5,
         title:'Car Vendor',
-        imageUrl:require("../assets/car-vendor-project.PNG"),
+        imageUrl:require("../assets/car-vendor-project.webp"),
         mobileLayout: require("../assets/carvendormobile.png"),
         laptopLayout: require("../assets/carvendorlaptop.png"),
         description: ["Project developed for Car Vendor Pty Ltd. The project's objective was to create an online platform for selling, buying and renting cars. I was responsible for designing, developing, testing and deploying the application. Hence, this is entirely my creation.",

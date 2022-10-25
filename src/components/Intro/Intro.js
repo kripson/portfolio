@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Intro.scss";
-import HeroImage from "../../assets/hero-image.svg";
+import HeroImage from "../../assets/hero-image.png";
 import Button from "../Button/Button";
 import { useParallax } from "react-scroll-parallax";
 import { useWindowWidth } from "@react-hook/window-size";
