@@ -43,7 +43,7 @@ const ProjectFrame = ({ project, toggleDetail }) => {
 
   if (loaded) {
     projectcontent = project.ready ? (
-      <div onClick={() => toggleDetail(project.id)} className="projectimage" key={project.id} style={{ backgroundImage: `url(${project.imageUrl})`, backgroundSize: 'cover' }}></div>
+      <div className="projectimage" key={project.id} style={{ backgroundImage: `url(${project.imageUrl})` }}></div>
     ) : (
       <img className="projectimage" src={project.imageUrl} alt={`project No: ${project.id}`} />
     );
@@ -59,6 +59,9 @@ const ProjectFrame = ({ project, toggleDetail }) => {
     <div style={{ animationDelay: `${project.id / 9}s` }} className="project">
       {construction}
       {projectcontent}
+      <div className="overlay"  onClick={() => toggleDetail(project.id)}>
+          <h6>See Details</h6>
+      </div>
     </div>
   );
 };

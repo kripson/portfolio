@@ -48,17 +48,17 @@ const Projects = () => {
       if (onlyWidth > 1400) {
         setSliderSettings({
           numberOfSlides: 3,
-          sliderGap: 50,
+          sliderGap: 20,
         });
       } else if (onlyWidth > 1000) {
         setSliderSettings({
           numberOfSlides: 2,
-          sliderGap: 25,
+          sliderGap: 15,
         });
       } else {
         setSliderSettings({
           numberOfSlides: 1,
-          sliderGap: 10,
+          sliderGap: 5,
         });
       }
     }
