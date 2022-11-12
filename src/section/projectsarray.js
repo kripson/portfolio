@@ -25,6 +25,18 @@ export const projectsarray = [
     },
     {
         id:3,
+        title:'Studio K',
+        imageUrl:require("../assets/studio-k.png"),
+        mobileLayout: require("../assets/studio-k-mobile.png"),
+        laptopLayout: require("../assets/studio-k-laptop.png"),
+        description: ["Studio K is a platform that I developed and personally use to store all of my design ideas and assets. It is currently under construction and will be available to everyone soon." ,
+    "Please, use the guest login to get a demo of the platform. Features are deliberately limited until the platform is ready to be released."],
+        websiteUrl: 'https://studiok.pro',
+        ready:true,
+        tools:['React','Redux','NodeJs','MongoDB']
+    },
+    {
+        id:4,
         title:'One Wish Cleaning',
         imageUrl:require("../assets/onewish.webp"),
         mobileLayout: require("../assets/onewishmobile.png"),
@@ -36,7 +48,7 @@ export const projectsarray = [
         tools:['NextJs']
     },
     {
-        id:4,
+        id:5,
         title:'Kripson Clothing Store',
         imageUrl:require("../assets/clothingapp.jpeg"),
         mobileLayout: require("../assets/storemobile.png"),
@@ -48,18 +60,6 @@ export const projectsarray = [
         ready: true,
         tools:['react','node']
 
-    },
-    {
-        id:5,
-        title:'Car Vendor',
-        imageUrl:require("../assets/car-vendor-project.webp"),
-        mobileLayout: require("../assets/carvendormobile.png"),
-        laptopLayout: require("../assets/carvendorlaptop.png"),
-        description: ["Project developed for Car Vendor Pty Ltd. The project's objective was to create an online platform for selling, buying and renting cars. I was responsible for designing, developing, testing and deploying the application. Hence, this is entirely my creation.",
-            "The front-end was created using React and Redux and styled using custom css. The back-end server was developed using Express Js which is connected to a MongoDB database."],
-        websiteUrl: 'https://carvendornepal.com',
-        ready:true,
-        tools:['React','Redux','NodeJs','MongoDB']
     },
     // {
     //     id:6,
