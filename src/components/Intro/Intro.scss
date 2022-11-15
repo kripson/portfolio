@@ -29,7 +29,7 @@
     padding: $s1;
     box-sizing: border-box;
 
-    img{
+    img {
       position: relative;
       left: -$s1;
       width: 100%;
@@ -38,12 +38,12 @@
     }
 
 
-    &:hover{
-      img{
+    &:hover {
+      img {
         left: $s2;
       }
     }
-    
+
   }
 
   .LeftSection {
@@ -82,7 +82,7 @@
 
   }
 
-  .middleSection{
+  .middleSection {
     display: none;
   }
 
@@ -110,15 +110,15 @@
         padding: $s1;
         display: grid;
 
-        img{
+        img {
           position: relative;
           left: -$s1;
           transition: all 0.25s;
         }
 
 
-        &:hover{
-          img{
+        &:hover {
+          img {
             left: $s2;
           }
         }
@@ -199,7 +199,7 @@
   .Intro {
 
     .RightSection {
-      .name{
+      .name {
         left: - calc($s1 * 15);
         font-size: calc($s1 * 17.5);
       }
@@ -214,52 +214,58 @@
     grid-template-columns: 1fr;
     text-align: center;
 
-    .LeftSection{
+    .LeftSection {
       display: flex;
-      .job-title{
+
+      .job-title {
         max-width: 500px;
       }
     }
 
-    .RightSection{
-      .name{
+    .RightSection {
+      .name {
         left: 0;
       }
     }
-    .arrowDown{
+
+    .arrowDown {
       bottom: $s1;
     }
   }
 }
 
 @media screen and (max-width: $largeScreen) {
-  .Cursor{
+  .Cursor {
     display: none;
   }
-  
+
   .Intro {
     display: grid;
     grid-template-columns: 1fr;
     text-align: center;
     gap: $s4;
 
-    .LeftSection{
+    .LeftSection {
       display: flex;
-      .job-title{
+
+      .job-title {
         max-width: 500px;
         font-size: calc($s1 * 12);
         left: unset;
+
+
       }
     }
 
-    .RightSection{
-      .name{
+    .RightSection {
+      .name {
         left: 0;
         font-size: calc($s1 * 12);
         max-width: 600px;
       }
     }
-    .arrowDown{
+
+    .arrowDown {
       bottom: -$s2;
     }
   }
@@ -269,28 +275,39 @@
 @media screen and (max-width: 550px) {
 
   .Intro {
+    min-height: unset;
+    align-items: center;
 
-    .arrowDown{
+
+    .arrowDown {
       display: none;
     }
-    .LeftSection{
 
-      .job-title{
+    .LeftSection {
+      height: unset;
+
+      .job-title {
         max-width: 500px;
         font-size: calc($s1 * 8);
         left: 0;
         margin-bottom: 0;
+
+        .CircularText {
+          display: none;
+        }
       }
     }
 
-    .RightSection{
+    .RightSection {
       display: grid;
-      .name{
+
+      .name {
         font-size: calc($s1 * 8);
         max-width: 600px;
       }
-      a{
-        .GetInTouchSection{
+
+      a {
+        .GetInTouchSection {
           position: relative !important;
           right: unset !important;
           left: unset !important;
@@ -298,7 +315,8 @@
           display: flex;
           justify-content: center;
           align-items: center;
-          img{
+
+          img {
             position: absolute;
             left: unset;
             right: -$s2;
