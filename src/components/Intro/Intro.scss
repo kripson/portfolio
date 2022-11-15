@@ -93,6 +93,8 @@
     z-index: 3;
     align-items: flex-end;
     position: relative;
+    min-height: 350px;
+
     a {
       text-decoration: none;
       color: white;
@@ -231,6 +233,10 @@
 }
 
 @media screen and (max-width: $largeScreen) {
+  .Cursor{
+    display: none;
+  }
+  
   .Intro {
     display: grid;
     grid-template-columns: 1fr;
@@ -261,8 +267,12 @@
 
 
 @media screen and (max-width: 550px) {
+
   .Intro {
 
+    .arrowDown{
+      display: none;
+    }
     .LeftSection{
 
       .job-title{
@@ -273,20 +283,29 @@
       }
     }
 
-    .middleSection{
-      display: block;
-
-      img{
-        width: 95vw;
-      }
-    }
-
     .RightSection{
-      min-height: 350px;
+      display: grid;
       .name{
         font-size: calc($s1 * 8);
         max-width: 600px;
       }
+      a{
+        .GetInTouchSection{
+          position: relative !important;
+          right: unset !important;
+          left: unset !important;
+          width: unset;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          img{
+            position: absolute;
+            left: unset;
+            right: -$s2;
+          }
+        }
+      }
+
     }
   }
 }
