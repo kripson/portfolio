@@ -56,7 +56,7 @@
     .job-title {
       margin: 0;
       margin-bottom: $s6;
-      text-shadow: 0 0 1px $primary-colour;
+      text-shadow: 0 0 1px $primary-text-colour;
       color: $appBackgroundColour;
       animation-delay: 4.75s;
       mix-blend-mode: luminosity;
@@ -80,6 +80,10 @@
     }
 
 
+  }
+
+  .middleSection{
+    display: none;
   }
 
 
@@ -269,7 +273,16 @@
       }
     }
 
+    .middleSection{
+      display: block;
+
+      img{
+        width: 95vw;
+      }
+    }
+
     .RightSection{
+      min-height: 350px;
       .name{
         font-size: calc($s1 * 8);
         max-width: 600px;

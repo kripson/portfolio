@@ -24,10 +24,10 @@ const Intro = () => {
           <CircularText text="What I do" deg={12} color="white" backgroundColor="black" />
         </h1>
       </div>
-      {/* <div className="middleSection pseudo-after-animated">
+      <div className="middleSection pseudo-after-animated">
         <img src={HeroImage} style={{ display: onlyWidth >= 1200 ? "block" : "none" }} alt="Wevdev" />
         {onlyWidth >= 1200 ? "" : <img src={HeroImage} alt="Wevdev" />}
-      </div> */}
+      </div>
       <div className="RightSection">
         <a href="#contactscontainer">
           <div className="GetInTouchSection">
