@@ -59,7 +59,7 @@
       text-shadow: 0 0 1px $primary-text-colour;
       color: $appBackgroundColour;
       animation-delay: 4.75s;
-      mix-blend-mode: luminosity;
+      // mix-blend-mode: luminosity;
       z-index: 1;
       position: relative;
       left: calc($s1 * 20);
@@ -304,6 +304,11 @@
       .name {
         font-size: calc($s1 * 8);
         max-width: 600px;
+
+        
+        .CircularText {
+          display: none;
+        }
       }
 
       a {
