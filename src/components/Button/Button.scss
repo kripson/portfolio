@@ -2,38 +2,23 @@
 
 .button {
     position: relative;
-    min-width: 200px;
-    div {
-        background: $primary-colour;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid white;
+    border-radius: $s10;
+    height: $s10;
+    
+    img{
         position: absolute;
-        padding: $s3 $s6;
-        left: 20px;
-        top: 20px;
-    }
-    button {
-        padding: $s3 $s6;
-        background: $appBackgroundColour;
-        color: $primary-text-colour;
-        position: relative;
-        border: calc($s1/2) solid $primary-colour;
-        font-size: $s2;
+        right: -$s2;
         transition: all 0.25s;
-        display: flex;
-        align-items: center;
-        gap: $s4;
+    }
 
-        box-shadow: 10px 10px 0 $primary-colour;
-
-        img {
-            position: absolute;
+    &:hover{
+        img{
             right: -$s4;
-            width: $s8;
-            height: $s6;
-        }
-
-        &:hover {
-            box-shadow: 5px 5px 0 $primary-colour;
-            transform: translate(5px, 5px);
         }
     }
 }

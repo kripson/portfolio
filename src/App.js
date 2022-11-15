@@ -1,4 +1,4 @@
-import React, { useState, useMemo  } from "react";
+import React, { useState, useMemo } from "react";
 import "./App.scss";
 import Homesection from "./section/Homesection";
 import AboutMe from "./section/AboutMe";
@@ -20,14 +20,14 @@ function App() {
   const contacts = React.createRef();
   const [pointerPosition, setPointerPosition] = useState({
     x: 0,
-    y: 0
+    y: 0,
   });
 
   const onMouseMove = (e) => {
     setPointerPosition({
       x: e.clientX,
-      y: e.clientY
-    })
+      y: e.clientY,
+    });
   };
 
   return (
@@ -40,13 +40,16 @@ function App() {
         className="aspect-[2/1]"
       > */}
       <div className="App" onMouseMove={onMouseMove}>
-        <Cursor pointerPosition={pointerPosition}/>
+        <Cursor pointerPosition={pointerPosition} />
         <div className="first">
           <img src={logo}></img>
         </div>
-      <div className="splineContainer scaleIn">
-        <Spline scene="https://prod.spline.design/Vj6hmalV1i5tlR6B/scene.splinecode" />
-      </div>
+        <div className="splineContainer scaleIn">
+          <Spline scene="https://prod.spline.design/Vj6hmalV1i5tlR6B/scene.splinecode" />
+          <div className="appBackground">
+
+          </div>
+        </div>
         <Contactblock show={contactblockshow} />
         {/* <Timeline show = {timelineshow} currentSection = {currentSection} /> */}
         <div className="homecontainer" id="homecontainer" ref={homepage}>

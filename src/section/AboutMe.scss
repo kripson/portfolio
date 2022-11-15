@@ -38,13 +38,15 @@
     line-height: 1.2em;
     font-size: $header5;
     width: calc(100% + 48px);
-
+    
     a {
       color: unset;
       text-decoration: unset;
     }
   }
 }
+
+
 
 @media screen and (max-width: $largeScreen) {
   .AboutMe {

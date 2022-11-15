@@ -1,4 +1,3 @@
-
 @import "../../variables.scss";
 
 .Skills {
@@ -26,7 +25,7 @@
       mix-blend-mode: luminosity;
     }
 
-    .imageSection{
+    .imageSection {
       display: grid;
       align-content: center;
       justify-items: center;
@@ -34,7 +33,7 @@
       height: 100%;
 
       position: absolute;
-      bottom: calc($s10 * -2) ;
+      bottom: calc($s10 * -2);
       right: -$s10;
 
       .scene {
@@ -46,8 +45,8 @@
         justify-self: center;
         align-self: center;
         z-index: 1;
-      
-      
+
+
         .cube {
           transform: translateZ(-75px);
           width: 100%;
@@ -58,9 +57,9 @@
           animation-direction: alternate;
           animation-iteration-count: infinite;
           animation-duration: 16s;
-          animation-timing-function:ease-in-out;
-      
-          .core{
+          animation-timing-function: ease-in-out;
+
+          .core {
             background-color: red;
             width: 20px;
             height: 20px;
@@ -68,7 +67,7 @@
             left: 50%;
             top: 50%;
           }
-      
+
           .cube__face {
             position: absolute;
             width: 150px;
@@ -76,33 +75,49 @@
             background-color: black;
             opacity: 0.85;
             display: grid;
-      
-            img
-            {
+
+            img {
               width: 75%;
               height: 75%;
               align-self: center;
               justify-self: center;
             }
           }
-      
-          .cube__face--front  { transform: rotateY(  0deg) translateZ(75px); }
-          .cube__face--right  { transform: rotateY( 90deg) translateZ(75px); }
-          .cube__face--back   { transform: rotateY(180deg) translateZ(75px); }
-          .cube__face--left   { transform: rotateY(-90deg) translateZ(75px); }
-          .cube__face--top    { transform: rotateX( 90deg) translateZ(75px); }
-          .cube__face--bottom { transform: rotateX(-90deg) translateZ(75px); }
-      
+
+          .cube__face--front {
+            transform: rotateY(0deg) translateZ(75px);
+          }
+
+          .cube__face--right {
+            transform: rotateY(90deg) translateZ(75px);
+          }
+
+          .cube__face--back {
+            transform: rotateY(180deg) translateZ(75px);
+          }
+
+          .cube__face--left {
+            transform: rotateY(-90deg) translateZ(75px);
+          }
+
+          .cube__face--top {
+            transform: rotateX(90deg) translateZ(75px);
+          }
+
+          .cube__face--bottom {
+            transform: rotateX(-90deg) translateZ(75px);
+          }
+
         }
-      
-        
+
+
       }
     }
   }
 
-  
-  .leftSection{
-    
+
+  .leftSection {
+
     h1 {
       display: none;
       position: absolute;
@@ -119,13 +134,14 @@
       position: relative;
       left: -$s4;
     }
+
     p {
       line-height: 1.2em;
       font-size: $header5;
       width: calc(100% + 48px);
       position: relative;
       left: -$s4;
-  
+
       a {
         color: unset;
         text-decoration: unset;
@@ -145,25 +161,26 @@
 
       display: flex;
       justify-content: center;
+
       h1 {
         font-size: 150px;
         display: none;
       }
 
-      img{
+      img {
         opacity: 0.95;
         position: relative;
       }
 
-      .imageSection{  
+      .imageSection {
         position: relative;
         bottom: unset;
         right: unset;
       }
     }
 
-    .leftSection{
-      h1{
+    .leftSection {
+      h1 {
         display: block;
         font-size: 150px;
         word-break: break-all;
@@ -194,9 +211,10 @@
         left: 0;
       }
 
-      .imageSection{
+      .imageSection {
         position: relative;
         top: 50px;
+
         .scene {
           width: 75px;
           height: 75px;
@@ -206,8 +224,8 @@
           justify-self: center;
           align-self: center;
           z-index: 1;
-        
-        
+
+
           .cube {
             transform: translateZ(-35px);
             width: 100%;
@@ -218,9 +236,9 @@
             animation-direction: alternate;
             animation-iteration-count: infinite;
             animation-duration: 8s;
-            animation-timing-function:ease-in-out;
-        
-            .core{
+            animation-timing-function: ease-in-out;
+
+            .core {
               background-color: red;
               width: 20px;
               height: 20px;
@@ -228,7 +246,7 @@
               left: 50%;
               top: 50%;
             }
-        
+
             .cube__face {
               position: absolute;
               width: 75px;
@@ -236,40 +254,56 @@
               background-color: black;
               opacity: 0.85;
               display: grid;
-        
-              img
-              {
+
+              img {
                 width: 75%;
                 height: 75%;
                 align-self: center;
                 justify-self: center;
               }
             }
-        
-            .cube__face--front  { transform: rotateY(  0deg) translateZ(35px); }
-            .cube__face--right  { transform: rotateY( 90deg) translateZ(35px); }
-            .cube__face--back   { transform: rotateY(180deg) translateZ(35px); }
-            .cube__face--left   { transform: rotateY(-90deg) translateZ(35px); }
-            .cube__face--top    { transform: rotateX( 90deg) translateZ(35px); }
-            .cube__face--bottom { transform: rotateX(-90deg) translateZ(35px); }
-        
+
+            .cube__face--front {
+              transform: rotateY(0deg) translateZ(35px);
+            }
+
+            .cube__face--right {
+              transform: rotateY(90deg) translateZ(35px);
+            }
+
+            .cube__face--back {
+              transform: rotateY(180deg) translateZ(35px);
+            }
+
+            .cube__face--left {
+              transform: rotateY(-90deg) translateZ(35px);
+            }
+
+            .cube__face--top {
+              transform: rotateX(90deg) translateZ(35px);
+            }
+
+            .cube__face--bottom {
+              transform: rotateX(-90deg) translateZ(35px);
+            }
+
           }
-        
-          
+
+
         }
       }
 
     }
 
-    .leftSection{
-      p{
+    .leftSection {
+      p {
         position: unset;
         margin-left: $s2;
         font-size: $header6;
         width: unset;
       }
 
-      h3{
+      h3 {
         position: unset;
         margin-left: $s2;
       }
@@ -278,16 +312,33 @@
 }
 
 
-
+@media screen and (max-width: $mobileScreen) {
+  .Skills {
+    .rightSection {
+      .imageSection {
+        display: none;
+      }
+    }
+  }
+}
 
 
 @keyframes cubeanimation {
 
-  0%{transform: rotateX(0deg) rotateY(0deg)}
-  25%{transform: rotateX(45deg) rotateY(-30deg)}
-  50%{transform: rotateX(-90deg) rotateY(30deg)}
-  100%{transform: rotateX(145deg) rotateY(50deg)}
+  0% {
+    transform: rotateX(0deg) rotateY(0deg)
+  }
+
+  25% {
+    transform: rotateX(45deg) rotateY(-30deg)
+  }
+
+  50% {
+    transform: rotateX(-90deg) rotateY(30deg)
+  }
+
+  100% {
+    transform: rotateX(145deg) rotateY(50deg)
+  }
 
 }
-
-

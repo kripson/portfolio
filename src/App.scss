@@ -196,6 +196,14 @@ body {
   left: 0;
   height: 100vh;
   mix-blend-mode: difference;
+
+  .appBackground{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 }
 
 
@@ -248,6 +256,17 @@ body {
 
 
 
+.stretchedOnHover{
+  transition: all 0.25s;
+  position: relative;
+  width: fit-content;
+  &:hover{
+    transform: scaleY(1.15);
+  }
+}
+
+
+
 @keyframes pseudoAnimated {
   0% {
     bottom: -100px;
@@ -279,3 +298,6 @@ body {
   }
 
 }
+
+
+

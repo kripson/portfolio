@@ -23,7 +23,7 @@ const AboutMe = () => {
         </div>
         <div className="rightSection" ref={rightSectionRef.ref}>
 
-          <h3 className="primary-colour-text">About Me</h3>
+          <h3 className="primary-colour-text stretchedOnHover">About Me</h3>
           <p>
             Hello, I am Sankit Shrestha but I go by <span className="primary-colour-text">kripson</span> in most of my socials.
           </p>

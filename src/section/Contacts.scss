@@ -1,80 +1,75 @@
 @import '../../variables.scss';
 
-.Contacts
-{
+.Contacts {
   min-height: 100vh;
   display: grid;
   align-content: center;
   justify-items: center;
   margin: $s10 $s8;
+  position: relative;
+  z-index: 1;
 
 
-
-  .form
-  {
+  .form {
     display: grid;
     width: 50%;
     margin-left: auto;
     margin-right: auto;
     grid-row-gap: 20px;
 
+    .button {
+      margin-left: auto;
+    }
 
-    .RecaptchaBox
-    {
+    .RecaptchaBox {
       display: grid;
       justify-content: center;
     }
 
 
 
-    .nameemail
-    {
+    .nameemail {
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-column-gap: 20px;
     }
 
 
-    input
-    {
+    input {
       height: 50px;
-      background-color: rgba(50,50,50,0.75);
+      background-color: rgba(50, 50, 50, 0.75);
       font-size: 1em;
       color: white;
       padding: 10px;
-      border:none;
+      border: none;
       font-family: 'Lato', sans-serif;
 
-      &:focus
-      {
+      &:focus {
         border-bottom: 2px solid aqua;
         outline: none;
 
       }
     }
 
-    textarea
-    {
+    textarea {
       height: 150px;
-      background-color: rgba(50,50,50,0.75);
+      background-color: rgba(50, 50, 50, 0.75);
       font-family: 'Lato', sans-serif;
       padding: 10px;
       font-size: 1em;
       color: white;
-      border:none;
+      border: none;
 
       position: relative;
 
-      &:focus
-      {
+      &:focus {
         border-bottom: 2px solid aqua;
         outline: none;
       }
 
     }
 
-    button
-    {
+    button {
       margin-left: auto;
     }
 
@@ -84,23 +79,23 @@
 
 
 
-@media only screen  and (min-width: 500px) and (max-width: 900px) {
+@media only screen and (min-width: 500px) and (max-width: 900px) {
   .Contacts {
     margin-bottom: 2em;
-    .form
-    {
+
+    .form {
       width: 75%;
 
-
-      .nameemail
-      {
+      .button {
+        margin-right: auto;
+      }
+      .nameemail {
         grid-template-columns: 1fr;
         grid-row-gap: 20px;
       }
     }
 
-    h3
-    {
+    h3 {
       text-align: center;
       width: 100%;
     }
@@ -111,22 +106,23 @@
 
 
 
-@media only screen  and (min-width: 0px) and (max-width: 500px) {
+@media only screen and (min-width: 0px) and (max-width: 500px) {
   .Contacts {
     margin-bottom: 2em;
-    .form
-    {
+
+    .form {
       width: 100%;
 
-
-      .nameemail
-      {
+      .button {
+        margin-right: auto;
+      }
+      
+      .nameemail {
         grid-template-columns: 1fr;
         grid-row-gap: 20px;
       }
 
-      button
-      {
+      button {
         margin-left: auto;
         margin-right: auto;
       }
@@ -137,8 +133,7 @@
 
 
 @media screen and (max-width: 500px) {
-  .Contacts{
+  .Contacts {
     margin: $s10 $s2;
   }
 }
-

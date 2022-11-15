@@ -291,10 +291,12 @@
         font-size: calc($s1 * 8);
         left: 0;
         margin-bottom: 0;
+        letter-spacing: $s1;
 
         .CircularText {
           display: none;
         }
+
       }
     }
 
@@ -320,6 +322,56 @@
           display: flex;
           justify-content: center;
           align-items: center;
+
+          img {
+            position: absolute;
+            left: unset;
+            right: -$s2;
+          }
+        }
+      }
+
+    }
+  }
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 425px) {
+
+  .Intro {
+
+
+    .LeftSection {
+
+      .job-title {
+        font-size: calc($s1 * 7);
+
+      }
+    }
+
+    .RightSection {
+      display: grid;
+      justify-items: center;
+      .name {
+        font-size: calc($s1 * 8);
+
+      }
+
+      a {
+        .GetInTouchSection {
+          position: relative !important;
+          right: unset !important;
+          left: unset !important;
+          width: unset;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          min-width: 300px;
 
           img {
             position: absolute;
