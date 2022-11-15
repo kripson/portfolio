@@ -28,7 +28,7 @@
     opacity: 0.85;
 
     h6{
-      border: $s1/4 solid $primary-colour;
+      border: calc($s1/4) solid $primary-colour;
       padding: $s2 $s4;
     }
   }
