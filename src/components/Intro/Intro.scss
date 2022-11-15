@@ -1,55 +1,121 @@
 @import '../../../variables.scss';
 
-.Intro
-{
+.Intro {
   min-height: calc(100vh - 144px);
   display: flex;
   justify-content: center;
-  align-items: center;
+  position: relative;
   text-align: left;
   margin-left: auto;
   margin-right: auto;
-  padding: 0 $s10;
+  padding: $s4 $s10;
   gap: $s8;
   max-width: 1200px;
-  
-  .LeftSection
-  {
-    display: grid;
-    align-items: center;
-    align-content: center;
-    width: 50%;
-    h3
-    {
-      margin-bottom: 0;
-      animation-delay: 4s;
-      font-weight: normal;
 
-      &::after{
-        animation-delay: 4s;
-      }
 
+
+  .arrowDown {
+    position: absolute;
+    bottom: $s10;
+    left: 0;
+    border-radius: calc($s1 * 100);
+    width: calc($s1 * 10);
+    height: calc($s1 * 10);
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    transform: rotateZ(90deg);
+    transition: all 0.25s;
+    padding: $s1;
+    box-sizing: border-box;
+
+    img{
+      position: relative;
+      left: -$s1;
+      width: 100%;
+      height: 100%;
+      transition: all 0.25s;
     }
-    h1
-    {
+
+
+    &:hover{
+      img{
+        left: $s2;
+      }
+    }
+    
+  }
+
+  .LeftSection {
+    display: grid;
+    height: 100%;
+    position: relative;
+
+
+
+    .job-title {
       margin: 0;
       margin-bottom: $s6;
-      word-break: keep-all;
-      white-space: nowrap;
-      text-shadow: $s4 $s4 10px solid $primary-text-colour;
-      z-index: 2;
-      animation-delay: 4.25s;
+      text-shadow: 0 0 1px $primary-colour;
+      color: $appBackgroundColour;
+      animation-delay: 4.75s;
+      mix-blend-mode: luminosity;
+      z-index: 1;
+      position: relative;
+      left: calc($s1 * 20);
 
-      &::after{
-        animation-delay: 4.25s;
+      &::after {
+        animation-delay: 4.75s;
+      }
+
+
+      .CircularText {
+        color: white;
+        position: absolute;
+        top: 0;
+        right: $s10;
+        font-size: $s2;
       }
 
     }
+
+
+  }
+
+
+  .RightSection {
+    display: flex;
+    justify-content: flex-end;
+    z-index: 3;
+    align-items: flex-end;
+    position: relative;
     a {
       text-decoration: none;
-      color:white;
+      color: white;
 
       .GetInTouchSection {
+        position: absolute;
+        top: 0;
+        right: calc($s1 * 12);
+        width: $s10;
+        height: $s10;
+        border-radius: calc($s1 * 100);
+        border: 1px solid white;
+        padding: $s1;
+        display: grid;
+
+        img{
+          position: relative;
+          left: -$s1;
+          transition: all 0.25s;
+        }
+
+
+        &:hover{
+          img{
+            left: $s2;
+          }
+        }
 
         .GetInTouch {
           display: grid;
@@ -60,105 +126,154 @@
 
           &:hover {
             transform: translateY(-10px);
-            cursor: pointer;
+
           }
         }
 
 
       }
     }
-  }
 
-  .RightSection
-  {
-    display: flex;
-    justify-content: flex-end;
-    z-index: 3;
-    align-content: center;
-    width: 50%;
-    img
-    {
-      width: 100%;
-      height: 100%;
+    .name {
+      z-index: 2;
+      font-size: calc($s1 * 20);
+      animation-delay: 4.25s;
       position: relative;
-      left: $s10;
-      // animation-name: imganimation;
-      animation-fill-mode: forwards;
-      animation-duration: 1s;
-      animation-timing-function: cubic-bezier(0.68, -0.6, 0.32, 1.6);
-      position: relative;
-      filter: grayscale(100%);
-      transition: all 0.25s;
-      &:hover{
-        filter: grayscale(10%);
+
+      &::after {
+        animation-delay: 4.25s;
+      }
+
+
+      .CircularText {
+        color: white;
+        position: absolute;
+        left: -$s1;
+        top: 0;
+        font-size: $s2;
+        animation-direction: reverse;
       }
 
     }
   }
-
 }
 
 
 
 @keyframes nameanimation {
-  0%{letter-spacing: 10px;opacity: 0}
-  100%{letter-spacing: normal;opacity: 1}
+  0% {
+    letter-spacing: 10px;
+    opacity: 0
+  }
+
+  100% {
+    letter-spacing: normal;
+    opacity: 1
+  }
 }
 
-@keyframes imganimation {
-  0%{opacity: 0; width:0}
-  100%{opacity: 1; width: 512px}
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 100;
+  }
 
 }
 
 
 
-@media screen and (max-width: $largeScreen) {
-  .Intro{
-    display: grid;
-    grid-template-columns: 1fr;
-    justify-content: center;
-    text-align: center;
 
-    .LeftSection{
-      width: 100%;
 
-      h1{
-        white-space: unset;
-        margin-bottom: $s4;
-      }
 
-      a{
-        display: flex;
-        justify-content: center;
-        .GetInTouchSection{
-          display: flex;
-          justify-content: center;
-        }
-      }
-    }
 
-    .RightSection{
-      width: 100%;
-      justify-content: center;
+@media screen and (max-width: 1550px) {
+  .Intro {
 
-      img{
-        left: unset;
-        width: calc(100vw - 128px);
+    .RightSection {
+      .name{
+        left: - calc($s1 * 15);
+        font-size: calc($s1 * 17.5);
       }
     }
   }
 }
 
 
+@media screen and (max-width: $largeScreen) {
+  .Intro {
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: center;
+
+    .LeftSection{
+      display: flex;
+      .job-title{
+        max-width: 500px;
+      }
+    }
+
+    .RightSection{
+      .name{
+        left: 0;
+      }
+    }
+    .arrowDown{
+      bottom: $s1;
+    }
+  }
+}
+
+@media screen and (max-width: $largeScreen) {
+  .Intro {
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: $s4;
+
+    .LeftSection{
+      display: flex;
+      .job-title{
+        max-width: 500px;
+        font-size: calc($s1 * 12);
+        left: unset;
+      }
+    }
+
+    .RightSection{
+      .name{
+        left: 0;
+        font-size: calc($s1 * 12);
+        max-width: 600px;
+      }
+    }
+    .arrowDown{
+      bottom: -$s2;
+    }
+  }
+}
 
 
-@keyframes blinkingcursoranimation {
+@media screen and (max-width: 550px) {
+  .Intro {
 
-  0%{opacity: 1}
-  49%{opacity: 1}
-  50%{opacity: 0}
-  100%{opacity: 0}
+    .LeftSection{
 
+      .job-title{
+        max-width: 500px;
+        font-size: calc($s1 * 8);
+        left: 0;
+        margin-bottom: 0;
+      }
+    }
 
+    .RightSection{
+      .name{
+        font-size: calc($s1 * 8);
+        max-width: 600px;
+      }
+    }
+  }
 }

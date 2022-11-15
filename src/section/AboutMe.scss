@@ -8,8 +8,8 @@
   margin: $s10 $s8;
   grid-template-columns: 1fr 1fr;
   text-align: left;
-  background: $panel-background-colour;
-
+  // background: $panel-background-colour;
+  
   .leftSection {
     position: relative;
     height: 100%;
@@ -18,8 +18,10 @@
       position: absolute;
       left: 15%;
       font-size: $billboard;
-      opacity: 0.05;
       margin: $s4;
+      text-shadow: 0 0 1px $primary-colour;
+      color: $appBackgroundColour;
+      mix-blend-mode: luminosity;
     }
     img {
       position: absolute;
@@ -34,7 +36,7 @@
   }
   p {
     line-height: 1.2em;
-    font-size: $header6;
+    font-size: $header5;
     width: calc(100% + 48px);
 
     a {
@@ -46,7 +48,7 @@
 
 @media screen and (max-width: $largeScreen) {
   .AboutMe {
-    grid-template-columns: 0.75fr 1fr;
+    grid-template-columns:  1fr;
 
     .leftSection {
       h1 {
@@ -80,6 +82,7 @@
       p{
         position: unset;
         width: unset;
+        font-size: $header6;
       }
     }
   }

@@ -28,13 +28,12 @@
           display: flex;
           align-items: center;
           margin-right: $s4;
+          font-size: $s3;
 
           &:hover {
             border-bottom: 2px solid aquamarine;
-            cursor: pointer;
+            
           }
-
-          font-size: $s4;
 
           a {
             color: $primary-text-colour;
@@ -53,18 +52,40 @@
       align-self: center;
       justify-self: start;
       z-index: 11;
+      position: relative;
 
       svg {
         font-size: $s4;
       }
 
+      &::after{
+        content: '';
+        position: absolute;
+        background-color: white;
+        width: 0;
+        height: 0;
+        top: -50%;
+        left: -50%;
+        border-radius: 1000px;
+        transition: all 0.25s;
+        z-index: -1;
+      }
+
       &:hover {
-        cursor: pointer;
+        label span {
+          background-color: black;
+        }
+
+        &::after{
+          width: 200%;
+          height: 200%;
+        }
+
       }
     }
 
     .hamburgermenu {
-      background-color: rgb(50, 50, 50);
+      background-color: rgb(218, 218, 218);
       position: fixed;
       left: 0;
       width: 100vw;
@@ -92,14 +113,15 @@
           height: $s10;
           display: grid;
           font-family: $headerFont;
+          font-weight: bold;
 
           
           &::after {
-            background-color: rgb(50, 50, 50);
+            background-color: rgb(218, 218, 218);
           }
 
           &:hover {
-            cursor: pointer;
+            
             background-color: rgb(30, 30, 30);
 
             a {
@@ -110,7 +132,7 @@
           a {
             align-self: center;
             text-decoration: none;
-            color: white;
+            color: black;
           }
         }
       }
@@ -135,7 +157,7 @@
 
         &:hover {
           border-bottom: 2px solid aquamarine;
-          cursor: pointer;
+          
         }
       }
     }

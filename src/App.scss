@@ -7,8 +7,12 @@
   background: $appBackgroundColour;
   font-family: $bodyFont;
   box-sizing: border-box;
-
   scroll-behavior: smooth;
+  cursor: none !important;
+
+  * {
+    cursor: none;
+  }
 }
 
 .App-logo {
@@ -182,6 +186,25 @@ body {
 //   }
 // }
 
+.splineContainer {
+  position: fixed;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100vw;
+  animation-delay: 5.5s;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  mix-blend-mode: difference;
+}
+
+
+@media screen and (max-width: $largeScreen) {
+  .splineContainer {
+    display: none;
+  }
+}
+
 
 
 .pseudo-after-animated {
@@ -190,7 +213,7 @@ body {
   animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
   animation-duration: 1s;
   animation-delay: 0.5s;
- 
+
 
   &::after {
     content: '';
@@ -199,6 +222,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
+    transform: scale(1.05);
     background-color: $appBackgroundColour;
     animation-name: pseudoAfterAnimation;
     animation-duration: 1s;
@@ -214,10 +238,24 @@ body {
   }
 }
 
+.scaleIn {
+  animation-name: scaleInAnimation;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  transform: scale(0);
+}
 
-@keyframes pseudoAnimated{
-  0%{bottom: -100px;  transform: rotateZ(5deg);}
-  100%{bottom: 0;  transform: rotateZ(0);}
+
+
+@keyframes pseudoAnimated {
+  0% {
+    bottom: -100px;
+  }
+
+  100% {
+    bottom: 0;
+  }
 }
 
 @keyframes pseudoAfterAnimation {
@@ -228,4 +266,16 @@ body {
   100% {
     height: 0%;
   }
+}
+
+
+@keyframes scaleInAnimation {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+
 }

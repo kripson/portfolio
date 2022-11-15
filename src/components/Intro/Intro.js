@@ -4,26 +4,41 @@ import HeroImage from "../../assets/hero-image.png";
 import Button from "../Button/Button";
 import { useParallax } from "react-scroll-parallax";
 import { useWindowWidth } from "@react-hook/window-size";
+import { CircularText } from "../CircularText/CircularText";
+import Arrow from "../../assets/Arrow 1.svg";
 
 const Intro = () => {
-  const heroImageRef = useParallax({ speed: 10, translateX: [-75, 75] });
   const onlyWidth = useWindowWidth();
 
   return (
     <div className="Intro">
-      <div className="LeftSection">
-        <h3 className="body pseudo-after-animated">Hi! I am Sankit</h3>
-        <h1 className="h1 primary-colour-text pseudo-after-animated">{"Software Developer"}</h1>
 
+      <div className="arrowDown">
+        {" "}
+        <img src={Arrow} alt="" />
+        Scroll
+      </div>
+      <div className="LeftSection">
+        <h1 className="h1 job-title primary-colour-text pseudo-after-animated">
+          {"Software Developer"}
+          <CircularText text="What I do" deg={12} color="white" backgroundColor="black" />
+        </h1>
+      </div>
+      {/* <div className="middleSection pseudo-after-animated">
+        <img src={HeroImage} style={{ display: onlyWidth >= 1200 ? "block" : "none" }} alt="Wevdev" />
+        {onlyWidth >= 1200 ? "" : <img src={HeroImage} alt="Wevdev" />}
+      </div> */}
+      <div className="RightSection">
         <a href="#contactscontainer">
           <div className="GetInTouchSection">
-            <Button label="Let's work together" className="pseudo-after-animated" onClick={() => {}}></Button>
+            <img src={Arrow} alt="" />
+            Let's work together
           </div>
         </a>
-      </div>
-      <div className="RightSection">
-        <img src={HeroImage} style={{display: onlyWidth >= 1200 ? 'block' : 'none'}} alt="Wevdev" ref={heroImageRef.ref} />
-        {onlyWidth >= 1200 ? "" : <img src={HeroImage} alt="Wevdev" />}
+        <h1 className="pseudo-after-animated name">
+          SANKIT SHRESTHA
+          <CircularText text="Who I am" deg={12} color="black" backgroundColor="white" />
+        </h1>
       </div>
     </div>
   );

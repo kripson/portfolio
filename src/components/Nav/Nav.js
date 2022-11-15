@@ -42,14 +42,14 @@ const Nav = () => {
                 <img className="logo" src={logo} alt="logo"></img>
                 <div className="ContactLinks">
                     <ul>
-                        <li>
-                            <a href="https://www.linkedin.com/in/sankit-shrestha-14a397170/"><TfiLinkedin /></a>
+                        <li className="heading">
+                            <a href="https://www.linkedin.com/in/sankit-shrestha-14a397170/">LinkedIn</a>
                         </li>
-                        <li>
-                            <a href="https://github.com/kripson"><TfiGithub /></a>
+                        <li className="heading">
+                            <a href="https://github.com/kripson">Github</a>
                         </li>
-                        <li>
-                            <a href="https://www.facebook.com/sankit.shrestha.1?ref=bookmarks"><TfiFacebook /></a>
+                        <li className="heading">
+                            <a href="https://www.facebook.com/sankit.shrestha.1?ref=bookmarks">Facebook</a>
                         </li>
                     </ul>
                 </div>
