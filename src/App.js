@@ -89,11 +89,12 @@ function App() {
         <div className="first">
           <img src={logo}></img>
         </div>
-        <div className="splineContainer scaleIn" style={getSplinePositionStyling()}>
-          <Spline scene="https://prod.spline.design/Vj6hmalV1i5tlR6B/scene.splinecode" onLoad={onLoad}/>
-          <div className="appBackground">
-
+        <div className="appBackground">
           </div>
+        <div className="splineContainer scaleIn"  style={getSplinePositionStyling()}>
+
+          <Spline scene="https://prod.spline.design/Vj6hmalV1i5tlR6B/scene.splinecode" onLoad={onLoad} />
+
         </div>
         <Contactblock show={contactblockshow} />
         {/* <Timeline show = {timelineshow} currentSection = {currentSection} /> */}

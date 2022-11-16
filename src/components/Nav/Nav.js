@@ -43,7 +43,7 @@ const Nav = () => {
                 <div className="ContactLinks">
                     <ul>
                         <li className="heading">
-                            <a href="https://www.linkedin.com/in/sankit-shrestha-14a397170/">LinkedIn</a>
+                            <a href="https://www.linkedin.com/in/sankit-shrestha-14a397170/" onClick={(e)=>console.log(e)}>LinkedIn</a>
                         </li>
                         <li className="heading">
                             <a href="https://github.com/kripson">Github</a>
