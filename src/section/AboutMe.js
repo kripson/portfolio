@@ -13,7 +13,7 @@ const AboutMe = () => {
   return (
       <div className="AboutMe scaleIn" >
         <div className="leftSection">
-          <h1 className="body" ref={h1Ref.ref}>ABOUT <br />ME </h1>
+          <h1 className="header" ref={h1Ref.ref}>ABOUT <br />ME </h1>
           <img src={Nepal} alt={'nepal'} ref={nepalImageRef.ref}></img>
         </div>
         <div className="rightSection" ref={rightSectionRef.ref}>
