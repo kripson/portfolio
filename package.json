@@ -16,6 +16,7 @@
     "react-google-recaptcha": "^2.0.1",
     "react-icons": "^4.6.0",
     "react-lazy-load": "^4.0.1",
+    "react-parallax-mouse": "^2.0.1",
     "react-preloading-screen": "^1.0.2",
     "react-scripts": "^3.4.0",
     "react-scroll-parallax": "^3.3.1",

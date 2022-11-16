@@ -29,7 +29,7 @@ const Skills = () => {
   return (
     <div className="Skills">
       <div className="leftSection">
-        <h3 className="primary-colour-text">SKILLS</h3>
+        <h3 className="primary-colour-text stretchedOnHover">SKILLS</h3>
 
         <h1 className="body">SKILLS</h1>
 

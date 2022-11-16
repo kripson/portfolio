@@ -39,7 +39,7 @@ const Nav = () => {
     return (
         <div className="Nav">
             <div className="leftSection">
-                <img className="logo" src={logo} alt="logo"></img>
+                <img className="logo stretchedOnHover" src={logo} alt="logo"></img>
                 <div className="ContactLinks">
                     <ul>
                         <li className="heading">

@@ -5,8 +5,8 @@ export const HamburgerMenuButton = ({checked}) => {
 
 
     return (
-        <label for="check">
-            <input type="checkbox" id="check" checked={checked} onClick={e=>e.stopPropagation()}/>
+        <label htmlFor="check">
+            <input type="checkbox" id="check" checked={checked} onClick={e=>e.stopPropagation()} readOnly/>
             <span></span>
             <span></span>
             <span></span>

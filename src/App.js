@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useRef } from "react";
 import "./App.scss";
 import Homesection from "./section/Homesection";
 import AboutMe from "./section/AboutMe";
@@ -30,6 +30,51 @@ function App() {
     });
   };
 
+  const spline = useRef();
+
+  function onLoad(splineApp) {
+    // save the app in a ref for later use
+    spline.current = splineApp;
+    spline.current.setZoom(0.85)
+  }
+
+
+
+  const getSplinePositionStyling = ()=>{
+    if(![null, undefined].includes(pointerPosition.x) && ![null, undefined].includes(pointerPosition.y))
+    {
+      let pos = {
+        top: 0,
+        left: 0
+      }
+
+      if(pointerPosition.x > window.innerWidth/2){
+        pos.left = `${- (pointerPosition.x - window.innerWidth/2) * 0.05}px`; 
+      }
+
+      
+      if(pointerPosition.y > window.innerHeight/2){
+        pos.top = `${- (pointerPosition.y - window.innerHeight/2) * 0.05}px`; 
+      }
+
+      if(pointerPosition.x <= window.innerWidth/2){
+        pos.left = `${- (pointerPosition.x - window.innerWidth/2) * 0.05}px`; 
+      }
+
+      
+      if(pointerPosition.y <= window.innerHeight/2){
+        pos.top = `${- (pointerPosition.y - window.innerHeight/2) * 0.05}px`; 
+      }
+      console.log(pos);
+      return pos
+
+    }
+    else
+    {
+      return {top: 0, left: 0}
+    }
+  }
+
   return (
     <ParallaxProvider>
       {/* <ParallaxBanner
@@ -44,8 +89,8 @@ function App() {
         <div className="first">
           <img src={logo}></img>
         </div>
-        <div className="splineContainer scaleIn">
-          <Spline scene="https://prod.spline.design/Vj6hmalV1i5tlR6B/scene.splinecode" />
+        <div className="splineContainer scaleIn" style={getSplinePositionStyling()}>
+          <Spline scene="https://prod.spline.design/Vj6hmalV1i5tlR6B/scene.splinecode" onLoad={onLoad}/>
           <div className="appBackground">
 
           </div>

@@ -130,7 +130,7 @@ const Contacts = ()=>
 
 
     return(<div className="Contacts">
-        <h1 className="primary-colour-text">Get in touch</h1>
+        <h1 className="primary-colour-text stretchedOnHover">Get in touch</h1>
         <h5 className="body">I am open to projects and would definitely love to hear your ideas.<br/>Let's connect.</h5>
     <div className= "form">
             <div className="nameemail">

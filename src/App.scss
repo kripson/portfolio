@@ -190,11 +190,11 @@ body {
   position: fixed;
   margin-left: auto;
   margin-right: auto;
-  width: 100vw;
+  min-width: 100vw;
   animation-delay: 5.5s;
   top: 0;
-  left: 0;
-  height: 100vh;
+  left: 0;  
+  min-width: 100vw;
   mix-blend-mode: difference;
 
   .appBackground{
