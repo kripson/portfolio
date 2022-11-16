@@ -10,6 +10,7 @@ import { ParallaxProvider } from "react-scroll-parallax";
 import logo from "./assets/Kripson Logo 1.svg";
 import { Cursor } from "./components/Cursor/cursor";
 import Spline from "@splinetool/react-spline";
+import LazyLoad from "react-lazy-load";
 
 function App() {
   const [contactblockshow, setContactBlockShow] = useState("none");
@@ -35,45 +36,37 @@ function App() {
   function onLoad(splineApp) {
     // save the app in a ref for later use
     spline.current = splineApp;
-    spline.current.setZoom(0.85)
+    spline.current.setZoom(0.85);
   }
 
-
-
-  const getSplinePositionStyling = ()=>{
-    if(![null, undefined].includes(pointerPosition.x) && ![null, undefined].includes(pointerPosition.y))
-    {
+  const getSplinePositionStyling = () => {
+    if (![null, undefined].includes(pointerPosition.x) && ![null, undefined].includes(pointerPosition.y)) {
       let pos = {
         top: 0,
-        left: 0
+        left: 0,
+      };
+
+      if (pointerPosition.x > window.innerWidth / 2) {
+        pos.left = `${-(pointerPosition.x - window.innerWidth / 2) * 0.05}px`;
       }
 
-      if(pointerPosition.x > window.innerWidth/2){
-        pos.left = `${- (pointerPosition.x - window.innerWidth/2) * 0.05}px`; 
+      if (pointerPosition.y > window.innerHeight / 2) {
+        pos.top = `${-(pointerPosition.y - window.innerHeight / 2) * 0.05}px`;
       }
 
-      
-      if(pointerPosition.y > window.innerHeight/2){
-        pos.top = `${- (pointerPosition.y - window.innerHeight/2) * 0.05}px`; 
+      if (pointerPosition.x <= window.innerWidth / 2) {
+        pos.left = `${-(pointerPosition.x - window.innerWidth / 2) * 0.05}px`;
       }
 
-      if(pointerPosition.x <= window.innerWidth/2){
-        pos.left = `${- (pointerPosition.x - window.innerWidth/2) * 0.05}px`; 
+      if (pointerPosition.y <= window.innerHeight / 2) {
+        pos.top = `${-(pointerPosition.y - window.innerHeight / 2) * 0.05}px`;
       }
 
-      
-      if(pointerPosition.y <= window.innerHeight/2){
-        pos.top = `${- (pointerPosition.y - window.innerHeight/2) * 0.05}px`; 
-      }
-      console.log(pos);
-      return pos
-
+      return pos;
+    } else {
+      return { top: 0, left: 0 };
     }
-    else
-    {
-      return {top: 0, left: 0}
-    }
-  }
+  };
 
   return (
     <ParallaxProvider>
@@ -89,30 +82,35 @@ function App() {
         <div className="first">
           <img src={logo}></img>
         </div>
-        <div className="appBackground">
-          </div>
-        <div className="splineContainer scaleIn"  style={getSplinePositionStyling()}>
-
+        <div className="appBackground"></div>
+        <div className="splineContainer scaleIn" style={getSplinePositionStyling()}>
           <Spline scene="https://prod.spline.design/Vj6hmalV1i5tlR6B/scene.splinecode" onLoad={onLoad} />
-
         </div>
-        <Contactblock show={contactblockshow} />
+        {/* <Contactblock show={contactblockshow} /> */}
         {/* <Timeline show = {timelineshow} currentSection = {currentSection} /> */}
         <div className="homecontainer" id="homecontainer" ref={homepage}>
           <Homesection></Homesection>
         </div>
 
-        <div className="aboutmecontainer" id="aboutmecontainer" ref={aboutme}>
-          <AboutMe />
+        <div className="aboutmecontainer section" id="aboutmecontainer" ref={aboutme}>
+          <LazyLoad offset={-100}>
+            <AboutMe />
+          </LazyLoad>
         </div>
-        <div className="skillscontainer" id="skillscontainer" ref={skills}>
-          <Skills />
+        <div className="skillscontainer section" id="skillscontainer" ref={skills}>
+          <LazyLoad offset={-100}>
+            <Skills />
+          </LazyLoad>
         </div>
-        <div className="projectscontainer" id="projectscontainer" ref={projects}>
-          <Projects />
+        <div className="projectscontainer section" id="projectscontainer" ref={projects}>
+          <LazyLoad offset={-100}>
+            <Projects />
+          </LazyLoad>
         </div>
-        <div className="contactscontainer" id="contactscontainer" ref={contacts}>
-          <Contacts />
+        <div className="contactscontainer section" id="contactscontainer" ref={contacts}>
+          <LazyLoad offset={-100}>
+            <Contacts />
+          </LazyLoad>
         </div>
       </div>
       {/* </ParallaxBanner> */}

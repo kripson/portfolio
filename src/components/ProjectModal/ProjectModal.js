@@ -24,8 +24,8 @@ const ProjectModal = ({project,display,toggleDetail})=>
 
 
                 <div className = "projectLinks">
-                    <a href = {project.websiteUrl}><div className = "GoToWebsiteLink">Go to Website</div></a>
-                    <span className = "CloseLink" onClick={()=>toggleDetail(0)}>
+                    <a href = {project.websiteUrl}><div className = "GoToWebsiteLink scaleIn">Go to Website</div></a>
+                    <span className = "CloseLink  scaleIn" onClick={()=>toggleDetail(0)}>
             Go Back
         </span>
                 </div>

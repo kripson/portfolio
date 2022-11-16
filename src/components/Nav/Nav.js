@@ -17,7 +17,6 @@ const Nav = () => {
     const [hamburger, sethamburger] = useState('-100vh');
 
     const toggleHamburger = ()=>{
-        console.log('test');
         if (hamburger === "0") {
             sethamburger('-100vh');
         }
@@ -43,13 +42,13 @@ const Nav = () => {
                 <div className="ContactLinks">
                     <ul>
                         <li className="heading">
-                            <a href="https://www.linkedin.com/in/sankit-shrestha-14a397170/" onClick={(e)=>console.log(e)}>LinkedIn</a>
+                            <a className="animatedBorderBottomOnHover" href="https://www.linkedin.com/in/sankit-shrestha-14a397170/" target="_blank" rel="noreferrer">LinkedIn</a>
                         </li>
                         <li className="heading">
-                            <a href="https://github.com/kripson">Github</a>
+                            <a className="animatedBorderBottomOnHover" href="https://github.com/kripson" target="_blank" rel="noreferrer">Github</a>
                         </li>
                         <li className="heading">
-                            <a href="https://www.facebook.com/sankit.shrestha.1?ref=bookmarks">Facebook</a>
+                            <a className="animatedBorderBottomOnHover" href="https://www.facebook.com/sankit.shrestha.1?ref=bookmarks" target="_blank" rel="noreferrer">Facebook</a>
                         </li>
                     </ul>
                 </div>

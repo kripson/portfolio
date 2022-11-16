@@ -133,6 +133,7 @@
       font-weight: bold;
       position: relative;
       left: -$s4;
+
     }
 
     p {
@@ -141,7 +142,7 @@
       width: calc(100% + 48px);
       position: relative;
       left: -$s4;
-
+      z-index: 1;
       a {
         color: unset;
         text-decoration: unset;

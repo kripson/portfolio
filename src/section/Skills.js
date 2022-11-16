@@ -13,21 +13,11 @@ import { useParallax } from 'react-scroll-parallax';
 
 const Skills = () => {
 
-    const spline = useRef();
     const rightSectionRef = useParallax({speed: 50, rootMargin: {top: 100, left: 100, right: 100, bottom: 100}});
 
-    function onLoad(splineApp) {
-      // save the app in a ref for later use
-      spline.current = splineApp;
-    }
-  
-    function triggerAnimation() {
-        console.log('test');
-      spline.current.emitEvent('mouseHover', 'EACCD229-DF79-45BF-A4AF-7904C47067D9');
-    }
 
   return (
-    <div className="Skills">
+    <div className="Skills scaleIn">
       <div className="leftSection">
         <h3 className="primary-colour-text stretchedOnHover">SKILLS</h3>
 
@@ -44,7 +34,7 @@ const Skills = () => {
         </p>
       </div>
       <div className="rightSection">
-        <h1 className="body">SKILLS</h1>
+        <h1 className="header">SKILLS</h1>
 
         <div className="imageSection"  ref={rightSectionRef.ref}>
 

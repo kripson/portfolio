@@ -58,7 +58,9 @@ body {
 }
 
 
-
+.section{
+  min-height: 50vh;
+}
 
 .first {
   height: 100vh;
@@ -270,6 +272,34 @@ body {
 }
 
 
+.animatedBorderBottomOnHover{
+  position: relative;
+  transition: all 0.25s;
+
+  &::after{
+    content: '';
+    height: 10%;
+    width: 0;
+    position: absolute;
+    bottom: -10%;
+    left:0;
+    background-color: $primary-colour;
+  }
+
+  &::after{
+    transition: all 0.25s;
+  }
+
+  &:hover{
+  text-decoration: none;
+
+    &::after{
+      width: 100%;
+    }
+  }
+}
+
+
 
 @keyframes pseudoAnimated {
   0% {
@@ -302,3 +332,6 @@ body {
   }
 
 }
+
+
+

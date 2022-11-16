@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Projects.scss";
 import { projectsarray } from "./projectsarray";
-import Lazyload from "react-lazy-load";
 import ProjectFrame from "../components/ProjectFrame/ProjectFrame";
 import ProjectModal from "../components/ProjectModal/ProjectModal";
 // Import Swiper React components
@@ -11,7 +10,7 @@ import "swiper/modules/pagination/pagination.min.css";
 import "swiper/swiper-bundle.min.css";
 import "swiper/modules/navigation/navigation.min.css";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
-import Arrow from "../assets/Arrow 2.svg";
+
 import { Parallax } from "react-scroll-parallax";
 import { useWindowWidth } from "@react-hook/window-size";
 
@@ -88,8 +87,6 @@ const Projects = () => {
     <div className="Projects">
       <h1 className="sectionTitle stretchedOnHover">Projects</h1>
 
-      {/* <Spline scene="https://prod.spline.design/oiOsLvhYwuzPJNe6/scene.splinecode" /> */}
-
       <div className="ProjectsSection">
         {projectsarray && projectsarray.map ? (
           <Swiper
@@ -103,7 +100,9 @@ const Projects = () => {
             {projectsarray.map((project, idx) => (
               <SwiperSlide>
                 <Parallax speed={-30}>
-                  <ProjectFrame project={project} key={project.id} toggleDetail={toggleDetail} />
+                  <div className="scaleIn" style={{animationDelay: `${idx * 0.15}s`}}>
+                    <ProjectFrame project={project} key={project.id} toggleDetail={toggleDetail} />
+                  </div>
                 </Parallax>
               </SwiperSlide>
             ))}
