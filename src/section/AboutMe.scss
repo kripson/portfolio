@@ -50,7 +50,8 @@
 
 @media screen and (max-width: $largeScreen) {
   .AboutMe {
-    grid-template-columns:  1fr;
+    grid-template-columns: 0.05fr 1fr;
+
 
     .leftSection {
       h1 {

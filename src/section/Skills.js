@@ -21,7 +21,7 @@ const Skills = () => {
       <div className="leftSection">
         <h3 className="primary-colour-text stretchedOnHover">SKILLS</h3>
 
-        <h1 className="body">SKILLS</h1>
+        <h1 className="header">SKILLS</h1>
 
         <p>
           Currently, in terms of front end development tools, I mostly work with <span className="primary-colour-text">React and redux </span>. However, I am also proficient in using other frameworks like{" "}

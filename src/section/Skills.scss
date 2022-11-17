@@ -23,6 +23,7 @@
       text-shadow: 0 0 1px $primary-text-colour;
       color: $appBackgroundColour;
       mix-blend-mode: luminosity;
+      z-index: -1;
     }
 
     .imageSection {
@@ -123,9 +124,13 @@
       position: absolute;
       left: 15%;
       top: 50px;
-      font-size: $billboard;
-      opacity: 0.05;
+      font-size: $billboard;  
       margin: $s4;
+      text-shadow: 0 0 1px $primary-text-colour;
+      color: $appBackgroundColour;
+      mix-blend-mode: luminosity;
+      z-index: -1;
+
     }
 
     h3 {

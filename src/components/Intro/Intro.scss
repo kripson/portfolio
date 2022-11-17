@@ -235,9 +235,7 @@
 }
 
 @media screen and (max-width: $largeScreen) {
-  .Cursor {
-    display: none;
-  }
+
 
   .Intro {
     display: grid;
@@ -268,6 +266,12 @@
     .arrowDown {
       bottom: -$s2;
     }
+  }
+}
+
+@media screen and (max-width: $tabletScreen) {
+  .Cursor {
+    display: none;
   }
 }
 
