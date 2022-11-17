@@ -9,6 +9,7 @@ export const projectsarray = [
             "The front-end was created using React and styled using custom css."],
         websiteUrl: 'https://kzen8.com',
         ready:true,
+        year: '2022',
         tools:['React']
     },
     {
@@ -21,6 +22,7 @@ export const projectsarray = [
             " The front-end was created using React and styled using custom css. The back-end server was developed using Express Js which is connected to a MongoDB database."],
         websiteUrl: 'https://littlehideoutcafe.com.au',
         ready:true,
+        year: '2021',
         tools:['react','node']
     },
     {
@@ -33,6 +35,7 @@ export const projectsarray = [
     "Please, use the guest login to get a demo of the platform. Features are deliberately limited until the platform is ready to be released."],
         websiteUrl: 'https://studiok.pro',
         ready:true,
+        year: '2022',
         tools:['React','Redux','NodeJs','MongoDB']
     },
     {
@@ -45,6 +48,7 @@ export const projectsarray = [
             "The website is developed using NextJs for better SEO performance. Due to the nature of client's business, SEO is highly prioritized for this project. I was also responsible for performing basic SEO for the site. The site has received a score of 100 in Google's Lighthouse audit."],
         websiteUrl: 'https://onewishcleaning.com.au',
         ready:true,
+        year: '2020',
         tools:['NextJs']
     },
     {
@@ -58,6 +62,7 @@ export const projectsarray = [
             "The back-end was created using Express(NodeJs) for the server and firebase as a database. Payment method is supported by Stripe."],
         websiteUrl: 'https://kripson-store.herokuapp.com/',
         ready: true,
+        year: '2021',
         tools:['react','node']
 
     },
@@ -83,6 +88,7 @@ export const projectsarray = [
             " The front-end was created using React and styled using custom css. The back-end server was developed using Express Js which is connected to a MongoDB database."],
         websiteUrl: 'https://hans-driving.web.app',
         ready:true,
+        year: '2020',
         tools:['react','node']
     },
 ];
