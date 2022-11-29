@@ -35,7 +35,7 @@ const Intro = () => {
             Let's work together
           </div>
         </a>
-        <h1 className="pseudo-after-animated name stretchedOnHover">
+        <h1 className="pseudo-after-animated name">
           SANKIT SHRESTHA
           <CircularText text="Who I am" deg={12} color="black" backgroundColor="white" />
         </h1>

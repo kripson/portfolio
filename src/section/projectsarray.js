@@ -28,7 +28,7 @@ export const projectsarray = [
     {
         id:3,
         title:'Studio K',
-        imageUrl:require("../assets/studio-k.png"),
+        imageUrl:require("../assets/studio-k.webp"),
         mobileLayout: require("../assets/studio-k-mobile.png"),
         laptopLayout: require("../assets/studio-k-laptop.png"),
         description: ["Studio K is a platform that I developed and personally use to store all of my design ideas and assets. It is currently under construction and will be available to everyone soon." ,

@@ -11,6 +11,8 @@ import logo from "./assets/Kripson Logo 1.svg";
 import { Cursor } from "./components/Cursor/cursor";
 import Spline from "@splinetool/react-spline";
 import LazyLoad from "react-lazy-load";
+import {DoubleMouseCursor} from 'kripson-ui';
+import 'kripson-ui/dist/style.css';
 
 function App() {
   const [contactblockshow, setContactBlockShow] = useState("none");
@@ -78,7 +80,8 @@ function App() {
         className="aspect-[2/1]"
       > */}
       <div className="App" onMouseMove={onMouseMove}>
-        <Cursor pointerPosition={pointerPosition} />
+        {/* <Cursor pointerPosition={pointerPosition} /> */}
+        <DoubleMouseCursor/>
         <div className="first">
           <img src={logo}></img>
         </div>
