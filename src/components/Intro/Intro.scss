@@ -327,6 +327,12 @@
           justify-content: center;
           align-items: center;
 
+          &:hover{
+            img{
+              left: unset;
+            }
+          }
+
           img {
             position: absolute;
             left: unset;
@@ -376,12 +382,6 @@
           justify-content: center;
           align-items: center;
           min-width: 300px;
-
-          img {
-            position: absolute;
-            left: unset;
-            right: -$s2;
-          }
         }
       }
 
