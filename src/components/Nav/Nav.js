@@ -48,7 +48,7 @@ const Nav = () => {
                             <a className="animatedBorderBottomOnHover" href="https://github.com/kripson" target="_blank" rel="noreferrer">Github</a>
                         </li>
                         <li className="heading">
-                            <a className="animatedBorderBottomOnHover" href="https://www.facebook.com/sankit.shrestha.1?ref=bookmarks" target="_blank" rel="noreferrer">Facebook</a>
+                            <a className="animatedBorderBottomOnHover" href="https://www.instagram.com/kripson.dev/" target="_blank" rel="noreferrer">Instagram</a>
                         </li>
                     </ul>
                 </div>

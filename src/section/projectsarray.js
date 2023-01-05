@@ -1,6 +1,19 @@
 export const projectsarray = [
     {
         id:1,
+        title:'Smile your way to happy',
+        imageUrl:require("../assets/smileyourwaytohappy.webp"),
+        mobileLayout: require("../assets/smileyourwaytohappymobile.webp"),
+        laptopLayout: require("../assets/smileyourwaytohappylaptop.webp"),
+        description: ["Project developed for Bernie Hayne. This project serves as a landing page for Bernie's first children book called smileyourwaytohappy. I was responsible for designing, developing, testing and deploying the application.",
+            "The front-end was created using NextJs and styled using custom css."],
+        websiteUrl: 'https://smileyourwaytohappy.com',
+        ready:true,
+        year: '2022/23',
+        tools:['NextJs']
+    },
+    {
+        id:2,
         title:'Kzen8',
         imageUrl:require("../assets/Kzen8-project.png"),
         mobileLayout: require("../assets/kzen8mobile.png"),
@@ -13,9 +26,9 @@ export const projectsarray = [
         tools:['React']
     },
     {
-        id:2,
+        id:3,
         title:'Little Hideout Cafe',
-        imageUrl:require("../assets/littlehideout.png"),
+        imageUrl:require("../assets/littlehideout.webp"),
         mobileLayout: require("../assets/littlehideoutmobile.png"),
         laptopLayout: require("../assets/littlehideoutlaptop.png"),
         description: ["Project developed for Little Hideout Cafe. The project's objective was to give the outdated website a new look and feel and also develop a custom booking feature. I was responsible for designing, developing, testing and deploying the application.",
@@ -26,9 +39,9 @@ export const projectsarray = [
         tools:['react','node']
     },
     {
-        id:3,
+        id:4,
         title:'Studio K',
-        imageUrl:require("../assets/studio-k.webp"),
+        imageUrl:require("../assets/studiok.webp"),
         mobileLayout: require("../assets/studio-k-mobile.png"),
         laptopLayout: require("../assets/studio-k-laptop.png"),
         description: ["Studio K is a platform that I developed and personally use to store all of my design ideas and assets. It is currently under construction and will be available to everyone soon." ,
@@ -39,7 +52,7 @@ export const projectsarray = [
         tools:['React','Redux','NodeJs','MongoDB']
     },
     {
-        id:4,
+        id:5,
         title:'One Wish Cleaning',
         imageUrl:require("../assets/onewish.webp"),
         mobileLayout: require("../assets/onewishmobile.png"),
@@ -52,7 +65,7 @@ export const projectsarray = [
         tools:['NextJs']
     },
     {
-        id:5,
+        id:6,
         title:'Kripson Clothing Store',
         imageUrl:require("../assets/clothingapp.jpeg"),
         mobileLayout: require("../assets/storemobile.png"),
@@ -79,7 +92,7 @@ export const projectsarray = [
     //     tools:['react']
     // },
     {
-        id:6,
+        id:7,
         title:'Hans Driving Training Center',
         imageUrl:require("../assets/Drivingschool.jpeg"),
         mobileLayout: require("../assets/hansmobile.png"),
