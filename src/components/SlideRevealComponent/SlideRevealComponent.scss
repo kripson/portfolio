@@ -1,0 +1,104 @@
+.SlideRevealComponent {
+    overflow: hidden;
+    width: max-content;
+
+    .childrenContainer {
+
+        position: relative;
+        width: max-content;
+
+        &.leftReveal {
+            animation-name: leftRevealAnimation;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+            animation-timing-function: ease-in-out;
+            left: -100%;
+
+        }
+
+
+        &.rightReveal {
+            // right: -100%;
+            clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%);
+            animation-name: rightRevealAnimation;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+            animation-timing-function: cubic-bezier(.93,-0.01,.58,1.01);
+        }
+
+
+        &.topReveal {
+            clip-path: polygon(0% 0%, 100% 0%, 100% 0, 1% 1%);
+            top: -100%;
+            animation-name: topRevealAnimation;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+            animation-timing-function: ease-in-out;
+        }
+
+
+        &.bottomReveal {
+            // bottom: -100%;
+            clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+            animation-name: bottomRevealAnimation;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+            animation-timing-function: cubic-bezier(.93,-0.01,.58,1.01);
+        }
+    }
+}
+
+
+
+
+
+
+
+@keyframes leftRevealAnimation {
+    0% {
+        left: -100%;
+        clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+
+    }
+
+    100% {
+        left: 0;
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+
+    }
+}
+
+@keyframes rightRevealAnimation {
+    0% {
+        // right: -100%;
+        clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%);
+    }
+
+    100% {
+        // right: 0;
+        clip-path: polygon(0% 0%, 100% 1%, 100% 100%, 0% 100%);
+    }
+}
+
+@keyframes topRevealAnimation {
+    0% {
+        // top: -100%;
+        clip-path: polygon(0% 0%, 100% 0%, 100% 0, 1% 1%);
+
+    }
+
+    100% {
+        // top: 0;
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0 100%);
+    }
+}
+
+@keyframes bottomRevealAnimation {
+    0% {
+        clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+    }
+
+    100% {
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    }
+}

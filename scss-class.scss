@@ -1,5 +1,13 @@
 @import './variables.scss';
+@font-face {
+    font-family: Proxima Nova;
+    src: url('/fonts/Proxima Nova Font.otf');
+}
 
+@font-face {
+    font-family: Tusker Grotesk;
+    src: url('/fonts/TuskerGrotesk-4500Medium.otf');
+}
 //typography classes
 .heading, h1, h2, h3, h4, h5, h6{
     font-family: $headerFont;
@@ -8,6 +16,12 @@
 .body{
     font-family: $bodyFont;
 }
+
+.billboard{
+    font-size: $billboard;
+}
+
+
 
 .h1, h1{
     font-size: $header1;

@@ -1,18 +1,14 @@
 @import '../../../variables.scss';
 
 .Intro {
-  min-height: calc(100vh - 144px);
-  display: flex;
-  justify-content: center;
+  height: calc(100vh - 144px);
+  display: grid;
   position: relative;
   text-align: left;
-  margin-left: auto;
-  margin-right: auto;
   padding: $s4 $s10;
-  gap: $s8;
-  max-width: 1200px;
-
-
+  gap: $s2;
+  max-width: 1350px;
+  margin: 0 auto 0 auto;
 
   .arrowDown {
     position: absolute;
@@ -46,27 +42,64 @@
 
   }
 
-  .LeftSection {
-    display: grid;
-    height: 100%;
-    position: relative;
+  a {
+    text-decoration: none;
+    color: white;
 
+    .GetInTouchSection {
+      position: absolute;
+      top: 0;
+      right: calc($s1 * 12);
+      width: $s10;
+      height: $s10;
+      border-radius: calc($s1 * 100);
+      border: 1px solid white;
+      padding: $s1;
+      display: grid;
+
+      img {
+        position: relative;
+        left: -$s1;
+        transition: all 0.25s;
+      }
+
+
+      &:hover {
+        img {
+          left: $s2;
+        }
+      }
+
+      .GetInTouch {
+        display: grid;
+        justify-content: center;
+        align-content: center;
+        transition: all 0.25s;
+
+
+        &:hover {
+          transform: translateY(-10px);
+
+        }
+      }
+
+
+    }
+  }
+
+  .TopSection {
+    display: grid;
+    position: relative;
+    justify-content: start;
+    z-index: 2;
 
 
     .job-title {
       margin: 0;
-      margin-bottom: $s6;
-      text-shadow: 0 0 1px $primary-text-colour;
-      color: $appBackgroundColour;
       animation-delay: 4.75s;
-      // mix-blend-mode: luminosity;
       z-index: 1;
-      position: relative;
-      left: calc($s1 * 20);
 
-      &::after {
-        animation-delay: 4.75s;
-      }
+
 
 
       .CircularText {
@@ -83,72 +116,34 @@
   }
 
   .middleSection {
-    display: none;
+    // display: none;
+    max-height: 200px;
+    max-width: 200px;
+    position: absolute;
+    justify-self: center;
+    z-index: 1;
+    img{
+      max-height: 500px;
+      
+    }
   }
 
 
-  .RightSection {
-    display: flex;
-    justify-content: flex-end;
-    z-index: 3;
-    align-items: flex-end;
+  .BottomSection {
+    display: grid;
+    justify-content: end;
+    z-index: 3;  
     position: relative;
-    min-height: 350px;
-
-    a {
-      text-decoration: none;
-      color: white;
-
-      .GetInTouchSection {
-        position: absolute;
-        top: 0;
-        right: calc($s1 * 12);
-        width: $s10;
-        height: $s10;
-        border-radius: calc($s1 * 100);
-        border: 1px solid white;
-        padding: $s1;
-        display: grid;
-
-        img {
-          position: relative;
-          left: -$s1;
-          transition: all 0.25s;
-        }
-
-
-        &:hover {
-          img {
-            left: $s2;
-          }
-        }
-
-        .GetInTouch {
-          display: grid;
-          justify-content: center;
-          align-content: center;
-          transition: all 0.25s;
-
-
-          &:hover {
-            transform: translateY(-10px);
-
-          }
-        }
-
-
-      }
-    }
+  
 
     .name {
       z-index: 2;
-      font-size: calc($s1 * 20);
-      animation-delay: 4.25s;
-      position: relative;
-
-      &::after {
-        animation-delay: 4.25s;
-      }
+      font-size: calc($s1 * 12);
+      -webkit-text-stroke: calc($s1/4) $primary-text-colour;
+      color: $appBackgroundColour;
+      margin: 0;
+      text-align: right;
+    
 
 
       .CircularText {
@@ -198,7 +193,7 @@
 @media screen and (max-width: 1550px) {
   .Intro {
 
-    .RightSection {
+    .BottomSection {
       .name {
         left: - calc($s1 * 15);
         font-size: calc($s1 * 17.5);
@@ -214,7 +209,7 @@
     grid-template-columns: 1fr;
     text-align: center;
 
-    .LeftSection {
+    .TopSection {
       display: flex;
 
       .job-title {
@@ -222,7 +217,7 @@
       }
     }
 
-    .RightSection {
+    .BottomSection {
       .name {
         left: 0;
       }
@@ -243,7 +238,7 @@
     text-align: center;
     gap: $s4;
 
-    .LeftSection {
+    .TopSection {
       display: flex;
 
       .job-title {
@@ -255,7 +250,7 @@
       }
     }
 
-    .RightSection {
+    .BottomSection {
       .name {
         left: 0;
         font-size: calc($s1 * 12);
@@ -287,7 +282,7 @@
       display: none;
     }
 
-    .LeftSection {
+    .TopSection {
       height: unset;
 
       .job-title {
@@ -304,14 +299,14 @@
       }
     }
 
-    .RightSection {
+    .BottomSection {
       display: grid;
 
       .name {
         font-size: calc($s1 * 8);
         max-width: 600px;
 
-        
+
         .CircularText {
           display: none;
         }
@@ -327,8 +322,8 @@
           justify-content: center;
           align-items: center;
 
-          &:hover{
-            img{
+          &:hover {
+            img {
               left: unset;
             }
           }
@@ -356,7 +351,7 @@
   .Intro {
 
 
-    .LeftSection {
+    .TopSection {
 
       .job-title {
         font-size: calc($s1 * 7);
@@ -364,9 +359,10 @@
       }
     }
 
-    .RightSection {
+    .BottomSection {
       display: grid;
       justify-items: center;
+
       .name {
         font-size: calc($s1 * 8);
 

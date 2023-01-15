@@ -8,7 +8,6 @@
   margin: calc($s1 * 32) $s8;
   grid-template-columns: 1fr 1fr;
   text-align: left;
-  // background: $panel-background-colour;
 
   .rightSection {
     position: relative;
@@ -20,7 +19,7 @@
       top: 50px;
       font-size: $billboard;
       margin: $s4;
-      text-shadow: 0 0 1px $primary-text-colour;
+      -webkit-text-stroke: 1px $primary-text-colour;
       color: $appBackgroundColour;
       mix-blend-mode: luminosity;
       z-index: -1;
@@ -119,19 +118,16 @@
 
   .leftSection {
 
-    h1 {
-      display: none;
-      position: absolute;
-      left: 15%;
-      top: 50px;
-      font-size: $billboard;  
-      margin: $s4;
-      text-shadow: 0 0 1px $primary-text-colour;
-      color: $appBackgroundColour;
-      mix-blend-mode: luminosity;
-      z-index: -1;
-
+    .skillBubble{
+      border: 1px solid $primary-text-colour;
+      border-radius: 100px;
+      width: 100px;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
+
 
     h3 {
       margin-bottom: $s6;
@@ -143,10 +139,6 @@
 
     p {
       line-height: 1.2em;
-      font-size: $header5;
-      width: calc(100% + 48px);
-      position: relative;
-      left: -$s4;
       z-index: 1;
       a {
         color: unset;
@@ -204,6 +196,11 @@
 
     margin: $s10 $s2;
 
+    .leftSection{
+      h1{
+        display: none;
+      }
+    }
     .rightSection {
       h1 {
         font-size: 150px;

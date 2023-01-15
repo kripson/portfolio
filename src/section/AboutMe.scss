@@ -1,32 +1,95 @@
 @import "../../variables.scss";
 
 .AboutMe {
-  min-height: 75vh;
+  min-height: 100vh;
   display: grid;
   position: relative;
   align-items: center;
-  margin: $s10 $s8;
-  grid-template-columns: 1fr 1fr;
+  padding: $s10 $s8;
   text-align: left;
-  // background: $panel-background-colour;
-  
-  .leftSection {
+  gap: $s8;
+
+  // background-color: rgb(49, 49, 49);
+  box-sizing: border-box;
+
+  h1{
+    display: grid;
+    align-content: start;
+  }
+
+  .location{
+    font-size: $s2 !important;
+    font-weight: normal;
+  }
+
+  .topSection {
     position: relative;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: $s2;
 
-    h1 {
-      position: absolute;
-      left: 15%;
-      font-size: $billboard;
-      margin: $s4;
-      text-shadow: 0 0 1px $primary-text-colour;
-      color: $appBackgroundColour;
-      mix-blend-mode: luminosity;
+    p{
+      position: relative;
+      top: -$s5;
     }
+
     img {
       position: absolute;
       bottom: -$s1;
       left: -$s1;
+      max-width: 90vw;
+    }
+  }
+
+  .middleSection {
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: $s2;
+
+    img {
+      position: absolute;
+      bottom: -$s1;
+      right: -$s1;
+      height: calc(100vh/2);
+      max-height: 275px;
+      max-width: 90vw;
+      z-index: 1;
+    }
+
+    p {
+      z-index: 2;
+      position: relative;
+      bottom: -$s5;
+    }
+  }
+
+  .bottomSection {
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: $s2;
+
+    img {
+      position: absolute;
+      bottom: -$s1;
+      left: -$s1;
+      height: calc(100vh/2);
+      max-height: 300px;
+      max-width: 90vw;
+      z-index: 1;
+    }
+
+    p {
+      z-index: 2;
+      position: relative;
+      bottom: -$s5;
     }
   }
 
@@ -34,11 +97,12 @@
     margin-bottom: $s6;
     font-weight: bold;
   }
+
   p {
     line-height: 1.2em;
-    font-size: $header5;
-    width: calc(100% + 48px);
-    
+    // font-size: $header5;
+    max-width: 300px;
+
     a {
       color: unset;
       text-decoration: unset;
@@ -48,45 +112,11 @@
 
 
 
-@media screen and (max-width: $largeScreen) {
-  .AboutMe {
-    grid-template-columns: 0.05fr 1fr;
 
-
-    .leftSection {
-      h1 {
-        font-size: 150px;
-      }
-    }
-  }
-}
 
 @media screen and (max-width: $tabletScreen) {
   .AboutMe {
-    grid-template-columns: 0.05fr 1fr;
     margin: $s10 $s2;
 
-    .leftSection {
-      position: unset;
-      h1 {
-        font-size: 150px;
-        left: 0;
-        margin: 0;
-        word-break: break-all;
-      }
-
-      img {
-        left: 0;
-        width: 100%;
-      }
-    }
-
-    .rightSection{
-      p{
-        position: unset;
-        width: unset;
-        font-size: $header6;
-      }
-    }
   }
 }

@@ -9,21 +9,40 @@ import Laravel from "../assets/laravel.png";
 import LazyLoad from "react-lazy-load";
 import Spline from "@splinetool/react-spline";
 import Tshirt from "../assets/T-Shirt.svg";
-import { useParallax } from 'react-scroll-parallax';
+import { useParallax } from "react-scroll-parallax";
 
 const Skills = () => {
-
-    const rightSectionRef = useParallax({speed: 50, rootMargin: {top: 100, left: 100, right: 100, bottom: 100}});
-
+  const skills = [
+    {
+      name: "React",
+    },
+    {
+      name: "Angular",
+    },
+    {
+      name: "Vue",
+    },
+    {
+      name: "Firebase",
+    },
+    {
+      name: "Laravel",
+    },
+    {
+      name: "NodeJs",
+    },
+    {
+      name: "MongoDB",
+    },
+  ];
 
   return (
     <div className="Skills scaleIn">
       <div className="leftSection">
-        <h3 className="primary-colour-text stretchedOnHover">SKILLS</h3>
-
         <h1 className="header">SKILLS</h1>
 
-        <p>
+        {skills.map((skill,idx)=><div key={idx} className="skillBubble">{skill.name}</div>)}
+        {/* <p>
           Currently, in terms of front end development tools, I mostly work with <span className="primary-colour-text">React and redux </span>. However, I am also proficient in using other frameworks like{" "}
           <span className="primary-colour-text">Angular and Vue</span>. In terms of back end development,<span className="primary-colour-text"> NodeJs (Express)</span> is my weapon of choice to create the server and then I choose between
           SQL or NoSQL database depending on the project. I am also familiar with firebase(Google Service).
@@ -31,9 +50,9 @@ const Skills = () => {
         <p>Apart from Single Page Applications, I have also worked with Laravel. I started with Laravel as some clients do not prefer SPAs due to SEO related challenges.</p>
         <p>
           Later on, I discovered <span className="primary-colour-text">NextJs</span> which allowed my javascript applications to retain the seamless nature of SPAs while being SEO friendly.
-        </p>
+        </p> */}
       </div>
-      <div className="rightSection">
+      {/* <div className="rightSection">
         <h1 className="header">SKILLS</h1>
 
         <div className="imageSection"  ref={rightSectionRef.ref}>
@@ -64,7 +83,7 @@ const Skills = () => {
           </div>
           <img src={Tshirt} alt={"logo-tshirt"} className="logo-tshirt" />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

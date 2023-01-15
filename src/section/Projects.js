@@ -113,21 +113,21 @@ const Projects = () => {
 
         {detailedProject ? <ProjectModal project={detailedProject} display={detailshow.display} toggleDetail={toggleDetail} /> : null}
         <div className="customNavButtons body">
-          <Parallax speed={-10}>
+         
             <h5 onClick={onPreviousClick} className="body">
               <svg width="281" height="179" viewBox="0 0 281 179" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M107.5 123.5L279.5 123.5V55.5L107.5 55.5L162 1H90.5L2 89.5L90.5 178H162L107.5 123.5Z" stroke="white" stroke-width="2" />
               </svg>
             </h5>
-          </Parallax>
 
-          <Parallax speed={-10}>
+
+     
             <h5 onClick={onNextClick} className="body">
               <svg width="280" height="179" viewBox="0 0 280 179" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M173 55.5H1V123.5H173L118.5 178H190L278.5 89.5L190 1H118.5L173 55.5Z" stroke="white" stroke-width="2" />
               </svg>
             </h5>
-          </Parallax>
+   
         </div>
       </div>
     </div>

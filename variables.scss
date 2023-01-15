@@ -1,19 +1,22 @@
 //typography
-$billboard: 200px;
-$header1:102px;
-$header2:72px;
-$header3:51px;
-$header4:36px;
-$header5:26px;
-$header6:18px;
+$billboard: 150px;
+$header1: 102px;
+$header2: 72px;
+$header3: 51px;
+$header4: 36px;
+$header5: 26px;
+$header6: 18px;
 
-$headerFont:'Clash Display', sans-serif;
-$bodyFont:  'DM Sans', sans-serif;
+
+
+$headerFont: 'Proxima Nova', sans-serif;
+$bodyFont: 'DM Sans', sans-serif;
+$billBoardFont: 'Tusker Grotesk', sans-serif; 
 
 
 //breakpoints
 $fourkscreen: 1800px;
-$largeScreen:1300px;
+$largeScreen: 1300px;
 $tabletScreen: 850px;
 $mobileScreen: 550px;
 
@@ -41,16 +44,9 @@ $section-spacing: 256px;
 
 
 //colour pallete
-$primary-colour: #3EFFDC;
+$primary-colour: #FF8000;
 $panel-background-colour: #1F1F1F;
-$primary-text-colour: white;
-$secondary-text-colour: #696969;
+$primary-text-colour: #E6E2E2;
+$secondary-text-colour: #dfdfdf;
 $appBackgroundColour: #0A0A0A;
 $linkArrowColour: #838383;
-
-
-
-
-
-
-

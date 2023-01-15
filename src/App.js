@@ -11,8 +11,11 @@ import logo from "./assets/Kripson Logo 1.svg";
 import { Cursor } from "./components/Cursor/cursor";
 import Spline from "@splinetool/react-spline";
 import LazyLoad from "react-lazy-load";
-import {DoubleMouseCursor} from 'kripson-ui';
-import 'kripson-ui/dist/style.css';
+import { DoubleMouseCursor } from "kripson-ui";
+import "kripson-ui/dist/style.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Nav from "./components/Nav/Nav";
+import { useEffect } from "react";
 
 function App() {
   const [contactblockshow, setContactBlockShow] = useState("none");
@@ -25,6 +28,8 @@ function App() {
     x: 0,
     y: 0,
   });
+
+
 
   const onMouseMove = (e) => {
     setPointerPosition({
@@ -71,53 +76,86 @@ function App() {
   };
 
   return (
-    <ParallaxProvider>
-      {/* <ParallaxBanner
-        layers={[
-          { image: backgroundImage, speed: -40 },
-          { image: logo, speed: -10 },
-        ]}
-        className="aspect-[2/1]"
-      > */}
-      <div className="App" onMouseMove={onMouseMove}>
-        {/* <Cursor pointerPosition={pointerPosition} /> */}
-        <DoubleMouseCursor/>
-        <div className="first">
-          <img src={logo}></img>
-        </div>
-        <div className="appBackground"></div>
-        <div className="splineContainer scaleIn" style={getSplinePositionStyling()}>
-          <Spline scene="https://prod.spline.design/Vj6hmalV1i5tlR6B/scene.splinecode" onLoad={onLoad} />
-        </div>
-        {/* <Contactblock show={contactblockshow} /> */}
-        {/* <Timeline show = {timelineshow} currentSection = {currentSection} /> */}
-        <div className="homecontainer" id="homecontainer" ref={homepage}>
-          <Homesection></Homesection>
-        </div>
+    <BrowserRouter>
+      <ParallaxProvider>
+        <div className="App" onMouseMove={onMouseMove}>
+          <DoubleMouseCursor/>
+          {/* <div className="first">
+            <img src={logo}></img>
+          </div> */}
+          {/* <div className="appBackground">
+            <div className="glassCard">
 
-        <div className="aboutmecontainer section" id="aboutmecontainer" ref={aboutme}>
-          <LazyLoad offset={-100}>
-            <AboutMe />
-          </LazyLoad>
+            </div>
+            <svg width="1000" height="1000" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="linearGradientId" gradientTransform="rotate(-15 0.5 0.5)">
+                  <stop offset="0%" stop-color="#3EFFDC" />
+                  <stop offset="100%" stop-color="#f52a2a" />
+                </linearGradient>
+
+                <clipPath id="shape">
+                  <path fill="currentColor" d="M792,591.5Q683,683,591.5,762Q500,841,365.5,805Q231,769,181,634.5Q131,500,186,370.5Q241,241,370.5,188Q500,135,665,152.5Q830,170,865.5,335Q901,500,792,591.5Z"></path>
+                </clipPath>
+              </defs>
+
+              <g clip-path="url(#shape)">
+                <path fill="url(#linearGradientId)" d="M792,591.5Q683,683,591.5,762Q500,841,365.5,805Q231,769,181,634.5Q131,500,186,370.5Q241,241,370.5,188Q500,135,665,152.5Q830,170,865.5,335Q901,500,792,591.5Z" />
+              </g>
+            </svg>
+          </div> */}
+          <Nav></Nav>
+          <Homesection></Homesection>
+          <AboutMe />
+          <Skills />
+          <Projects />
+          <Contacts />
+
+          {/* <Routes>
+            <Route
+              path="/"
+              element={
+                <div className="homecontainer" id="homecontainer" ref={homepage}>
+                </div>
+              }
+            ></Route>
+
+            <Route
+              path="/aboutme"
+              element={
+                <div className="aboutmecontainer section" id="aboutmecontainer" ref={aboutme}>
+                </div>
+              }
+            ></Route>
+
+            <Route
+              path="/skills"
+              element={
+                <div className="skillscontainer section" id="skillscontainer" ref={skills}>
+                </div>
+              }
+            ></Route>
+
+            <Route
+              path="/projects"
+              element={
+                <div className="projectscontainer section" id="projectscontainer" ref={projects}>
+                </div>
+              }
+            ></Route>
+
+            <Route
+              path="/contacts"
+              element={
+                <div className="contactscontainer section" id="contactscontainer" ref={contacts}>
+                </div>
+              }
+            ></Route>
+          </Routes> */}
         </div>
-        <div className="skillscontainer section" id="skillscontainer" ref={skills}>
-          <LazyLoad offset={-100}>
-            <Skills />
-          </LazyLoad>
-        </div>
-        <div className="projectscontainer section" id="projectscontainer" ref={projects}>
-          <LazyLoad offset={-100}>
-            <Projects />
-          </LazyLoad>
-        </div>
-        <div className="contactscontainer section" id="contactscontainer" ref={contacts}>
-          <LazyLoad offset={-100}>
-            <Contacts />
-          </LazyLoad>
-        </div>
-      </div>
-      {/* </ParallaxBanner> */}
-    </ParallaxProvider>
+        {/* </ParallaxBanner> */}
+      </ParallaxProvider>
+    </BrowserRouter>
   );
 }
 

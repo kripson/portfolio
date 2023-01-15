@@ -1,89 +1,94 @@
 import React, { useState } from "react";
-import './Nav.scss';
-import Linkedin from '../../assets/linkedinactive.png';
-import Facebook from '../../assets/facebook.png';
-import Hamburger from '../../assets/menu.png';
-import Github from '../../assets/github.png';
-import Close from '../../assets/close.png';
-import logo from '../../assets/Kripson Logo 1.svg';
-import { TfiFacebook, TfiLinkedin, TfiGithub } from 'react-icons/tfi';
-import {GiHamburgerMenu} from 'react-icons/gi';
+import "./Nav.scss";
+import logo from "../../assets/Kripson Logo 1.svg";
+import { TfiFacebook, TfiLinkedin, TfiGithub } from "react-icons/tfi";
+import { RiArrowRightDownLine } from "react-icons/ri";
 import { HamburgerMenuButton } from "../HamburgerMenuButton/HamburgerMenuButton";
-
-
+import { Link } from "react-router-dom";
+import { StaggerTextReveal } from "stagger-text-reveal-animation";
 
 const Nav = () => {
-    var hamburgerbutton = "";
-    const [hamburger, sethamburger] = useState('-100vh');
+  var hamburgerbutton = "";
+  const [hamburger, sethamburger] = useState("-100vh");
 
-    const toggleHamburger = ()=>{
-        if (hamburger === "0") {
-            sethamburger('-100vh');
-        }
-        else {
-            sethamburger('0');
-        }
+  const toggleHamburger = () => {
+    if (hamburger === "0") {
+      sethamburger("-100vh");
+    } else {
+      sethamburger("0");
     }
+  };
 
+  if (hamburger === "-100vh") {
+    hamburgerbutton = <HamburgerMenuButton checked={false} />;
+  } else {
+    hamburgerbutton = <HamburgerMenuButton checked={true} />;
+  }
 
-    if (hamburger === '-100vh') {
-        hamburgerbutton = <HamburgerMenuButton checked={false}/>;
+  return (
+    <div className="Nav">
+      <div className="leftSection">
+        {/* <Link to="/">
+          <img className="logo" src={logo} alt="logo"></img>
+        </Link> */}
 
-    }
-    else {
-        hamburgerbutton = <HamburgerMenuButton checked={true}/>;
-    }
-
-
-    return (
-        <div className="Nav">
-            <div className="leftSection">
-                <img className="logo stretchedOnHover" src={logo} alt="logo"></img>
-                <div className="ContactLinks">
-                    <ul>
-                        <li className="heading">
-                            <a className="animatedBorderBottomOnHover" href="https://www.linkedin.com/in/sankit-shrestha-14a397170/" target="_blank" rel="noreferrer">LinkedIn</a>
-                        </li>
-                        <li className="heading">
-                            <a className="animatedBorderBottomOnHover" href="https://github.com/kripson" target="_blank" rel="noreferrer">Github</a>
-                        </li>
-                        <li className="heading">
-                            <a className="animatedBorderBottomOnHover" href="https://www.instagram.com/kripson.dev/" target="_blank" rel="noreferrer">Instagram</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div className="rightSection">
-                <div className="hamburger" onClick={toggleHamburger}>
-                    {hamburgerbutton}
-                </div>
-                <div className="hamburgermenu" style={{ top: hamburger }}>
-                    
-                    <ul>
-                        <li className={`h3 ${hamburger === '-100vh' ? '' : 'pseudo-after-animated'}`}>
-                            <a onClick={() => sethamburger('-100vh')} href="#homecontainer">Home</a>
-                        </li>
-                        <li className={`h3 ${hamburger === '-100vh' ? '' : 'pseudo-after-animated'}`}>
-                            <a onClick={() => sethamburger('-100vh')} href="#aboutmecontainer">About Me</a>
-                        </li>
-                        <li className={`h3 ${hamburger === '-100vh' ? '' : 'pseudo-after-animated'}`}>
-                            <a onClick={() => sethamburger('-100vh')} href="#skillscontainer">Skills</a>
-                        </li>
-                        <li className={`h3 ${hamburger === '-100vh' ? '' : 'pseudo-after-animated'}`}>
-                            <a onClick={() => sethamburger('-100vh')} href="#projectscontainer"> Projects</a>
-                        </li>
-                        <li className={`h3 ${hamburger === '-100vh' ? '' : 'pseudo-after-animated'}`}>
-                            <a onClick={() => sethamburger('-100vh')} href="#contactscontainer">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-
-
-
+        <div className="ContactLinks">
+          <ul>
+            <li className="heading">
+              <a className="animatedBorderBottomOnHover" href="https://www.linkedin.com/in/sankit-shrestha-14a397170/" target="_blank" rel="noreferrer">
+              <StaggerTextReveal text={"LINKEDIN"} fontSize={24} direction={'down'}></StaggerTextReveal>   <RiArrowRightDownLine/>
+              </a>
+            </li>
+            <li className="heading">
+              <a className="animatedBorderBottomOnHover" href="https://github.com/kripson" target="_blank" rel="noreferrer">
+                <StaggerTextReveal text={"GITHUB"} fontSize={24}></StaggerTextReveal><RiArrowRightDownLine/>
+              </a>
+            </li>
+            <li className="heading">
+              <a className="animatedBorderBottomOnHover" href="https://www.instagram.com/kripson.dev/" target="_blank" rel="noreferrer">
+                <StaggerTextReveal text={"INSTAGRAM"} fontSize={24} direction={'down'}></StaggerTextReveal><RiArrowRightDownLine/>
+              </a>
+            </li>
+          </ul>
         </div>
-    )
+      </div>
+
+      <div className="rightSection">
+        <div className="hamburger" onClick={toggleHamburger}>
+          {/* <span style={hamburger === '-100vh' ? {} : {color: 'black'}}>{hamburger === "-100vh" ? 'menu' : 'close'}</span>  */}
+          {hamburgerbutton}
+        </div>
+        <div className="hamburgermenu" style={{ top: hamburger }}>
+          <ul>
+            <li className={`h3 ${hamburger === "-100vh" ? "" : "pseudo-after-animated"}`}>
+              <Link onClick={() => sethamburger("-100vh")} to="/">
+                <span className="nav-index-number">01</span> Home
+              </Link>
+            </li>
+            <li className={`h3 ${hamburger === "-100vh" ? "" : "pseudo-after-animated"}`}>
+              <Link onClick={() => sethamburger("-100vh")} to="/aboutme">
+                <span className="nav-index-number">02</span> About Me
+              </Link>
+            </li>
+            <li className={`h3 ${hamburger === "-100vh" ? "" : "pseudo-after-animated"}`}>
+              <Link onClick={() => sethamburger("-100vh")} to="/skills">
+                <span className="nav-index-number">03</span> Skills
+              </Link>
+            </li>
+            <li className={`h3 ${hamburger === "-100vh" ? "" : "pseudo-after-animated"}`}>
+              <Link onClick={() => sethamburger("-100vh")} to="/projects">
+                <span className="nav-index-number">04</span> Projects
+              </Link>
+            </li>
+            <li className={`h3 ${hamburger === "-100vh" ? "" : "pseudo-after-animated"}`}>
+              <Link onClick={() => sethamburger("-100vh")} to="/contacts">
+                <span className="nav-index-number">05</span> Contact
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
 };
 export default Nav;

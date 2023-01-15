@@ -32,6 +32,18 @@
 
           a {
             color: $primary-text-colour;
+            text-decoration: none;
+            display: flex;
+
+            svg{
+              transition: all 0.25s;
+            }
+
+            &:hover{
+              svg{
+                transform: rotateZ(-90deg);
+              }
+            }
           }
         }
       }
@@ -43,11 +55,15 @@
     justify-content: flex-end;
 
     .hamburger {
-      display: block;
+      display: flex;
+      align-items: center;
+      gap: $s1;
       align-self: center;
       justify-self: start;
       z-index: 11;
       position: relative;
+      // mix-blend-mode: difference;
+
 
       svg {
         font-size: $s4;
@@ -85,49 +101,74 @@
       left: 0;
       width: 100vw;
       height: 100vh;
-      transition: all 1s;
-      transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+      transition: 0.75s cubic-bezier(1, .01, .62, 1.01);
       z-index: 10;
       display: flex;
       justify-content: center;
       align-items: center;
 
+      .socials{
+        position: absolute;
+        bottom: 8px;
+        right: 100px;
+        display: flex;
+        gap: 16px;
+        align-items: center;
+
+        svg{
+          width: 24px;
+          height: 24px;
+        }
+      }
+
       ul {
         display: grid;
         position: relative;
         list-style: none;
-
-
+        width: 100vw;
+        justify-content: end;
 
         margin: 0;
-        padding: 0;
+        padding: $s8;
 
         li {
           justify-self: center;
-          width: 100vw;
-          height: $s10;
+          height: calc(100vw/15);
+          font-size: calc(100vw/15);
           display: grid;
           font-family: $headerFont;
           font-weight: bold;
+          transition: all 0.25s;
+          animation-delay: 1s;
+
+          .nav-index-number{
+            font-size: 16px;
+            font-weight: normal;
+            margin-right: 4px;
+          }
 
           
           &::after {
             background-color: rgb(218, 218, 218);
+            transition: all 0.5s;
+            animation-delay: 1s;
           }
 
-          &:hover {
-            
-            background-color: rgb(30, 30, 30);
 
-            a {
-              color: $primary-colour;
-            }
-          }
 
           a {
             align-self: center;
             text-decoration: none;
             color: black;
+            position: relative;
+            transition: all 0.25s;
+            top:0;
+            &:hover {
+          
+              a {
+                top: -10px;
+              }
+            }
           }
         }
       }
