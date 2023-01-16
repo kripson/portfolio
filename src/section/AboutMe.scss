@@ -8,8 +8,8 @@
   padding: $s10 $s8;
   text-align: left;
   gap: $s8;
-
-  // background-color: rgb(49, 49, 49);
+  
+  background-color: $panel-background-colour;
   box-sizing: border-box;
 
   h1{
@@ -29,6 +29,8 @@
     justify-content: center;
     align-items: center;
     gap: $s2;
+
+
 
     p{
       position: relative;
@@ -116,7 +118,7 @@
 
 @media screen and (max-width: $tabletScreen) {
   .AboutMe {
-    margin: $s10 $s2;
+    padding: $s10 $s2;
 
   }
 }

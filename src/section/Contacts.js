@@ -130,8 +130,8 @@ const Contacts = ()=>
 
 
     return(<div className="Contacts">
-        <h1 className="primary-colour-text stretchedOnHover">Get in touch</h1>
-        <h5 className="body">I am open to projects and would definitely love to hear your ideas.<br/>Let's connect.</h5>
+        <h1>Let's create your <br/> website</h1>
+        <span className="body">I am open to projects and would definitely love to hear your ideas.<br/>Let's connect.</span>
     <div className= "form">
             <div className="nameemail">
             <input type = "text" placeholder="Name" name = "name" value = {name} onChange={HandleChange} required/>

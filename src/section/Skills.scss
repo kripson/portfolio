@@ -1,12 +1,11 @@
 @import "../../variables.scss";
 
 .Skills {
-  min-height: 75vh;
+  min-height: 400px;
   display: grid;
   position: relative;
   align-items: center;
-  margin: calc($s1 * 32) $s8;
-  grid-template-columns: 1fr 1fr;
+  margin: calc($s1 * 16) $s8;
   text-align: left;
 
   .rightSection {
@@ -115,17 +114,47 @@
     }
   }
 
+  p, h1{
+    position: absolute;
+    justify-self: center;
+  }
+
+  p{
+    bottom: 100px;
+  }
+
+  .LazyLoad{
+    justify-self: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
 
   .leftSection {
-
+    justify-self: center;
+    align-self: start;
+    height: 1px;
+    width: 1px;
     .skillBubble{
       border: 1px solid $primary-text-colour;
       border-radius: 100px;
       width: 100px;
       height: 100px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      display: grid;
+      justify-items: center;
+      align-content: center;
+      position: absolute;
+
+      img{
+        max-width: 60%;
+        transition: all 0.25s;
+        // filter: grayscale(1);
+        &:hover{
+          filter:  grayscale(0);
+        }
+      }
     }
 
 

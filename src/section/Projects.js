@@ -85,7 +85,7 @@ const Projects = () => {
 
   return (
     <div className="Projects">
-      <h1 className="sectionTitle stretchedOnHover">Projects</h1>
+      <h1 className="sectionTitle">Projects</h1>
 
       <div className="ProjectsSection">
         {projectsarray && projectsarray.map ? (

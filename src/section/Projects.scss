@@ -6,15 +6,15 @@
 }
 .Projects
 {
-  min-height: 100vh;
-  margin: $s10 $s8;
+  min-height: 75vh;
+  padding: $s10 $s8;
+  background-color: $panel-background-colour;
 
 
   .sectionTitle
   {
     margin-top: 2em;
     font-size: 4em;
-    color:$primary-colour;
     font-weight: bold;
     margin-bottom: 2em;
   }
@@ -55,7 +55,7 @@
 
 @media screen and (max-width: $tabletScreen) {
   .Projects{
-    margin: $s10 $s2;
+    padding: $s10 $s2;
   }
 }
 

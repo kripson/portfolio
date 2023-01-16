@@ -29,8 +29,6 @@ function App() {
     y: 0,
   });
 
-
-
   const onMouseMove = (e) => {
     setPointerPosition({
       x: e.clientX,
@@ -78,13 +76,13 @@ function App() {
   return (
     <BrowserRouter>
       <ParallaxProvider>
-        <div className="App" onMouseMove={onMouseMove}>
-          <DoubleMouseCursor/>
+        <div className="App">
+          <DoubleMouseCursor />
           {/* <div className="first">
             <img src={logo}></img>
           </div> */}
-          {/* <div className="appBackground">
-            <div className="glassCard">
+          {/* <div className="appBackground"> */}
+          {/* <div className="glassCard">
 
             </div>
             <svg width="1000" height="1000" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
@@ -102,12 +100,15 @@ function App() {
               <g clip-path="url(#shape)">
                 <path fill="url(#linearGradientId)" d="M792,591.5Q683,683,591.5,762Q500,841,365.5,805Q231,769,181,634.5Q131,500,186,370.5Q241,241,370.5,188Q500,135,665,152.5Q830,170,865.5,335Q901,500,792,591.5Z" />
               </g>
-            </svg>
-          </div> */}
+            </svg> */}
+          {/* </div> */}
           <Nav></Nav>
           <Homesection></Homesection>
+
           <AboutMe />
-          <Skills />
+          <LazyLoad offset={100}>
+            <Skills />
+          </LazyLoad>
           <Projects />
           <Contacts />
 

@@ -8,7 +8,11 @@
   margin: $s10 $s8;
   position: relative;
   z-index: 1;
+  gap: $s4;
 
+  h1{
+    margin: 0;
+  }
 
   .form {
     display: grid;
