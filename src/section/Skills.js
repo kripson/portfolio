@@ -107,7 +107,7 @@ const Skills = () => {
                 }}
                 transition={{ type: "spring", duration: 1, stiffness: 100 }}
               >
-                <img src={skill.iconPath} alt={skill.name} />
+                {skill.iconPath ? <img src={skill.iconPath} alt={skill.name} />: skill.name}
                 {/* {skill.name} */}
               </motion.div>
             </Parallax>

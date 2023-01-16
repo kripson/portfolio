@@ -123,8 +123,8 @@
     justify-self: center;
     z-index: 1;
     img{
-      max-height: 500px;
-      
+      height: 500px;
+      max-height: 50vh;
     }
   }
 
@@ -223,9 +223,6 @@
       }
     }
 
-    .arrowDown {
-      bottom: $s1;
-    }
   }
 }
 
