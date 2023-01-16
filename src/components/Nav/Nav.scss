@@ -28,7 +28,6 @@
           display: flex;
           align-items: center;
           margin-right: $s4;
-          font-size: $s3;
 
           a {
             color: $primary-text-colour;
@@ -203,7 +202,7 @@
 @media only screen and (max-width: 968px) {
   .Nav {
     .NavigationLinks {
-      display: none;
+      // display: none;
     }
 
     .leftSection {
@@ -227,7 +226,15 @@
       }
 
       .ContactLinks {
-        display: none;
+        // display: none;
+        ul {
+          display: flex;
+          li {
+            span{
+              font-size: $s2 !important;
+            }
+          }
+        }
       }
     }
   }
