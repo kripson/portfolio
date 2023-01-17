@@ -15,9 +15,11 @@ import Spline from "@splinetool/react-spline";
 import Tshirt from "../assets/T-Shirt.svg";
 import { Parallax, useParallax } from "react-scroll-parallax";
 import { motion } from "framer-motion/dist/framer-motion";
+import { useWindowWidth } from "@react-hook/window-size";
 // import React  from "../assets/react.png"
 
 const Skills = () => {
+  const width = useWindowWidth();
   const skills = [
     {
       name: "React",
@@ -80,7 +82,7 @@ const Skills = () => {
     <div className="Skills">
       <h1 className="header">SKILLS</h1>
       <p>Some of my spells include: </p>
-      <LazyLoad offset={200}>
+
         <div className="leftSection">
           {skills.map((skill, idx) => (
             // <motion.div
@@ -93,13 +95,13 @@ const Skills = () => {
             // >
             //   {skill.name}
             // </motion.div>
-            <Parallax speed={idx * 2}>
+            <Parallax speed={idx * (Math.random() < 1 ? -1.25 : 1.25 )}>
               <motion.div
                 drag
                 key={idx}
                 className="skillBubble"
-                initial={{ opacity: 0, filter: "sepia(1)", scale: (skill.value / 55) * Math.max(Math.random(), 0.75) }}
-                animate={{ opacity: 1, x: skill.x, y: skill.y}}
+                initial={{ opacity: 0, filter: "sepia(1)", scale: width > 1200 ? (skill.value / 55) * Math.max(Math.random(), 0.75) : (skill.value / 90) * Math.max(Math.random(), 0.75) }}
+                animate={{ opacity: 1, x: width >800 ? skill.x : skill.x/2, y: width > 800 ? skill.y : skill.y/2}}
                 whileHover={{
                   x: skill.x * 1.25,
                   y: skill.y * 1.25,
@@ -122,7 +124,6 @@ const Skills = () => {
           Later on, I discovered <span className="primary-colour-text">NextJs</span> which allowed my javascript applications to retain the seamless nature of SPAs while being SEO friendly.
         </p> */}
         </div>
-      </LazyLoad>
 
       {/* <div className="rightSection">
         <h1 className="header">SKILLS</h1>

@@ -61,29 +61,29 @@ const Nav = () => {
         <div className="hamburgermenu" style={{ top: hamburger }}>
           <ul>
             <li className={`h3 ${hamburger === "-100vh" ? "" : "pseudo-after-animated"}`}>
-              <Link onClick={() => sethamburger("-100vh")} to="/">
+              <a onClick={() => sethamburger("-100vh")} href="/">
                 <span className="nav-index-number">01</span> Home
-              </Link>
+              </a>
             </li>
             <li className={`h3 ${hamburger === "-100vh" ? "" : "pseudo-after-animated"}`}>
-              <Link onClick={() => sethamburger("-100vh")} to="/aboutme">
+              <a onClick={() => sethamburger("-100vh")} href="#aboutme">
                 <span className="nav-index-number">02</span> About Me
-              </Link>
+              </a>
             </li>
             <li className={`h3 ${hamburger === "-100vh" ? "" : "pseudo-after-animated"}`}>
-              <Link onClick={() => sethamburger("-100vh")} to="/skills">
+              <a onClick={() => sethamburger("-100vh")} href="#skills">
                 <span className="nav-index-number">03</span> Skills
-              </Link>
+              </a>
             </li>
             <li className={`h3 ${hamburger === "-100vh" ? "" : "pseudo-after-animated"}`}>
-              <Link onClick={() => sethamburger("-100vh")} to="/projects">
-                <span className="nav-index-number">04</span> Projects
-              </Link>
+              <a onClick={() => sethamburger("-100vh")} href="#projects">
+                <span className="nav-index-number">03</span> Projects
+              </a>
             </li>
             <li className={`h3 ${hamburger === "-100vh" ? "" : "pseudo-after-animated"}`}>
-              <Link onClick={() => sethamburger("-100vh")} to="/contacts">
-                <span className="nav-index-number">05</span> Contact
-              </Link>
+              <a onClick={() => sethamburger("-100vh")} href="#contacts">
+                <span className="nav-index-number">04</span> Contact
+              </a>
             </li>
           </ul>
         </div>

@@ -11,7 +11,7 @@
   // background-image: url('../src/assets/background-5.jpg');
   // backdrop-filter: blur(100px);
   // background-blend-mode: luminosity;
-
+  min-height: 100vh;
   color: white;
   cursor: none !important;
 
@@ -81,17 +81,17 @@
   animation-duration: 0.1s;
   animation-fill-mode: forwards;
   animation-delay: 4.05s;
+  overflow: hidden;
 }
 
-.first img {
-  height: 200px;
-  width: 200px;
-  animation-name: moveit;
-  animation-timing-function: cubic-bezier(0.68, -0.6, 0.32, 1.6);
-  animation-duration: 4s;
-  animation-fill-mode: forwards;
-  animation-delay: 0.05s;
-  opacity: 0;
+.first {
+  .progressBar{
+    width: 400px;
+    height: 10px;
+    // position: absolute;
+    // left: $s1;
+    // top: $s2;
+  }
 }
 
 #backgroundVideo {
@@ -191,6 +191,10 @@
 //     }
 //   }
 // }
+
+.sectionContainer{
+  min-height: 50vh;
+}
 
 .splineContainer {
   position: fixed;

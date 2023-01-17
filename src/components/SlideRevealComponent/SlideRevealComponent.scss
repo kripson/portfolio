@@ -23,7 +23,7 @@
             animation-name: rightRevealAnimation;
             animation-duration: 1s;
             animation-fill-mode: forwards;
-            animation-timing-function: cubic-bezier(.93,-0.01,.58,1.01);
+            animation-timing-function: cubic-bezier(.93, -0.01, .58, 1.01);
         }
 
 
@@ -38,12 +38,12 @@
 
 
         &.bottomReveal {
-            // bottom: -100%;
+            bottom: -100%;
             clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
             animation-name: bottomRevealAnimation;
             animation-duration: 1s;
             animation-fill-mode: forwards;
-            animation-timing-function: cubic-bezier(.93,-0.01,.58,1.01);
+            animation-timing-function: cubic-bezier(.93, -0.01, .58, 1.01);
         }
     }
 }
@@ -82,23 +82,25 @@
 
 @keyframes topRevealAnimation {
     0% {
-        // top: -100%;
+        top: -100%;
         clip-path: polygon(0% 0%, 100% 0%, 100% 0, 1% 1%);
 
     }
 
     100% {
-        // top: 0;
+        top: 0;
         clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0 100%);
     }
 }
 
 @keyframes bottomRevealAnimation {
     0% {
+        bottom: -100%;
         clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
     }
 
     100% {
+        bottom: 0;
         clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
     }
 }

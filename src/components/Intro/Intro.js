@@ -19,12 +19,7 @@ const Intro = ({ firstLoaded }) => {
         Scroll
       </div>
 
-      <a href="#contactscontainer">
-        <div className="GetInTouchSection">
-          <img src={Arrow} alt="" />
-          Let's work together
-        </div>
-      </a>
+
       <div className="TopSection">
         {/* <SlideRevealComponent
           delay={2}
@@ -39,9 +34,16 @@ const Intro = ({ firstLoaded }) => {
           {/* }
         ></SlideRevealComponent> */}
         <div>
-          <SlideRevealComponent delay={2} reveal={"topReveal"} children={<span className={`primary-text`}>WHO I AM</span>}></SlideRevealComponent>
+          <SlideRevealComponent delay={2} reveal={"bottomReveal"} children={<span className={`primary-text`}>WHO I AM</span>}></SlideRevealComponent>
         </div>
       </div>
+
+      <a href="#contacts">
+        <div className="GetInTouchSection">
+          <img src={Arrow} alt="" />
+          Let's work together
+        </div>
+      </a>
       <div className="middleSection">
         <SlideRevealComponent delay={1} reveal={"rightReveal"} children={<img src={HeroImage} alt="Wevdev" />}></SlideRevealComponent>
 

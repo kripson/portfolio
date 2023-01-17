@@ -7,37 +7,39 @@ import { Parallax, useParallax } from "react-scroll-parallax";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { StaggerTextReveal } from "stagger-text-reveal-animation";
 import LazyLoad from "react-lazy-load";
+import { useWindowWidth } from "@react-hook/window-size";
+import SlideRevealComponent from "../components/SlideRevealComponent/SlideRevealComponent";
 
 const AboutMe = () => {
+  const width = useWindowWidth();
+
   return (
     <div className="AboutMe full-width-element">
       <div className="topSection">
-        <Parallax speed={15} style={{ position: "relative", top: "100px", left: "100px" }}>
+        <Parallax speed={5} style={{ position: "relative", top: "100px", left: "100px" }}>
           <img src={Nepal} alt={"nepal"}></img>
         </Parallax>
 
-        <LazyLoad>
-          <p className="secondary-text">
-            Hi, I am Sankit but I go by <span className="primary-colour-text">kripson</span> on all my socials. <br />I was born in Butwal, Nepal where I spent my childhood and most of my teen years.
-          </p>
-        </LazyLoad>
+        <p className="secondary-text">
+          Hi, I am Sankit but I go by <span className="primary-colour-text">kripson</span> on all my socials. <br />I was born in Butwal, Nepal where I spent my childhood and most of my teen years.
+        </p>
 
-        <Parallax speed={10}>
+        <Parallax speed={1}>
           <h1 className="header">
-            1998
+            <StaggerTextReveal text={"1998"} fontSize={width > 1200 ? 102 : 51}></StaggerTextReveal>
             <span className="location"> Nepal</span>
           </h1>
         </Parallax>
       </div>
       <div className="middleSection">
-        <Parallax speed={12}>
+        <Parallax speed={2}>
           <h1 className="header">
-            2017 <br />
+            <StaggerTextReveal text={"2017"} fontSize={width > 1200 ? 102 : 51}></StaggerTextReveal>
             <span className="location"> Brisbane</span>
           </h1>
         </Parallax>
 
-        <Parallax speed={20}>
+        <Parallax speed={width > 1200 ? 20 : 5}>
           <img src={Brisbane} alt={"Brisbane"}></img>
         </Parallax>
         <p className="secondary-text">
@@ -45,16 +47,16 @@ const AboutMe = () => {
         </p>
       </div>
       <div className="bottomSection">
-        <Parallax speed={18} style={{ position: "relative", left: "100px" }}>
+        <Parallax speed={8} style={{ position: "relative", left: "100px" }}>
           <img src={GoldCoast} alt={"GoldCoast"}></img>
         </Parallax>
         <p className="secondary-text">
           Currently, located at Gold Coast, I am working as a software engineer at <span className="primary-colour-text"> Kzen8</span>. <br /> <br />I use my technological superpowers to bring my imagination to life and to help businesses
           solve their issues.
         </p>
-        <Parallax speed={15}>
+        <Parallax speed={5}>
           <h1 className="header">
-            2020 <br />
+            <StaggerTextReveal text={"2020"} fontSize={width > 1200 ? 102 : 51}></StaggerTextReveal>
             <span className="location"> Gold Coast</span>
           </h1>
         </Parallax>

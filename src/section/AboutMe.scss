@@ -16,6 +16,10 @@
   h1{
     display: grid;
     align-content: start;
+
+    &>div{
+      width: min-content;
+    }
   }
 
   .location{
@@ -58,7 +62,6 @@
       position: absolute;
       bottom: -$s1;
       right: -$s1;
-      height: calc(100vh/2);
       max-height: 275px;
       max-width: 90vw;
       z-index: 1;
@@ -83,7 +86,6 @@
       position: absolute;
       bottom: -$s1;
       left: -$s1;
-      height: calc(100vh/2);
       max-height: 300px;
       max-width: 90vw;
       z-index: 1;

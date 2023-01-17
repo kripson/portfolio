@@ -99,11 +99,11 @@ const Projects = () => {
           >
             {projectsarray.map((project, idx) => (
               <SwiperSlide>
-                <Parallax speed={-30}>
+
                   <div className="scaleIn" style={{animationDelay: `${idx * 0.15}s`}}>
                     <ProjectFrame project={project} key={project.id} toggleDetail={toggleDetail} />
                   </div>
-                </Parallax>
+           
               </SwiperSlide>
             ))}
           </Swiper>
