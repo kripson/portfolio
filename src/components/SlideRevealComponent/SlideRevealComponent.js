@@ -3,7 +3,6 @@ import './SlideRevealComponent.scss';
 
 const SlideRevealComponent = ({ children, reveal, delay }) => {
 
-  console.log('test');
 
   return (
     <div className="SlideRevealComponent">

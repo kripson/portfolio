@@ -39,7 +39,7 @@ const AboutMe = () => {
           </h1>
         </Parallax>
 
-        <Parallax speed={width > 1200 ? 20 : 5}>
+        <Parallax speed={width > 1200 ? 5 : 3}>
           <img src={Brisbane} alt={"Brisbane"}></img>
         </Parallax>
         <p className="secondary-text">
@@ -47,7 +47,7 @@ const AboutMe = () => {
         </p>
       </div>
       <div className="bottomSection">
-        <Parallax speed={8} style={{ position: "relative", left: "100px" }}>
+        <Parallax speed={2} style={{ position: "relative", left: "100px" }}>
           <img src={GoldCoast} alt={"GoldCoast"}></img>
         </Parallax>
         <p className="secondary-text">

@@ -9,6 +9,7 @@ export const projectsarray = [
             "The front-end was created using NextJs and styled using custom css."],
         websiteUrl: 'https://smileyourwaytohappy.com',
         ready:true,
+        height: '35vh',
         year: '2022/23',
         tools:['NextJs']
     },
@@ -23,6 +24,7 @@ export const projectsarray = [
         websiteUrl: 'https://kzen8.com',
         ready:true,
         year: '2022',
+        height: '45vh',
         tools:['React']
     },
     {
@@ -36,6 +38,7 @@ export const projectsarray = [
         websiteUrl: 'https://littlehideoutcafe.com.au',
         ready:true,
         year: '2021',
+        height: '40vh',
         tools:['react','node']
     },
     {
@@ -49,6 +52,7 @@ export const projectsarray = [
         websiteUrl: 'https://studiok.pro',
         ready:true,
         year: '2022',
+        height: '50vh',
         tools:['React','Redux','NodeJs','MongoDB']
     },
     {
@@ -62,6 +66,7 @@ export const projectsarray = [
         websiteUrl: 'https://onewishcleaning.com.au',
         ready:true,
         year: '2020',
+        height: '30vh',
         tools:['NextJs']
     },
     {
@@ -76,6 +81,7 @@ export const projectsarray = [
         websiteUrl: 'https://kripson-store.herokuapp.com/',
         ready: true,
         year: '2021',
+        height: '40vh',
         tools:['react','node']
 
     },
@@ -102,6 +108,7 @@ export const projectsarray = [
         websiteUrl: 'https://hans-driving.web.app',
         ready:true,
         year: '2020',
+        height: '25vh',
         tools:['react','node']
     },
 ];

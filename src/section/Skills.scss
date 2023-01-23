@@ -3,141 +3,72 @@
 .Skills {
   min-height: 400px;
   display: grid;
+  grid-template-columns: 1fr 1fr;
   position: relative;
   align-items: center;
-  margin: calc($s1 * 16) $s8;
+  margin: $s5 $s8;
   text-align: left;
 
   .rightSection {
     position: relative;
     height: 100%;
+    display: grid;
+    gap: $s1;
 
-    h1 {
-      position: absolute;
-      left: -15%;
-      top: 50px;
-      font-size: $billboard;
-      margin: $s4;
-      -webkit-text-stroke: 1px $primary-text-colour;
-      color: $appBackgroundColour;
-      mix-blend-mode: luminosity;
-      z-index: -1;
-    }
-
-    .imageSection {
-      display: grid;
-      align-content: center;
-      justify-items: center;
+    .skill {
       width: 100%;
-      height: 100%;
+      border-bottom: calc($s1/4) solid white;
+      padding: $s1;
+      display: grid;
+      align-items: center;
 
-      position: absolute;
-      bottom: calc($s10 * -2);
-      right: -$s10;
+      .toolsContainer {
+        display: flex;
+        gap: $s1;
 
-      .scene {
-        width: 150px;
-        height: 150px;
-        perspective: 600px;
-        display: grid;
-        justify-items: center;
-        justify-self: center;
-        align-self: center;
-        z-index: 1;
+        .tool {
+          background-color: $panel-background-colour;
+          padding: $s1 $s2;
+          border-radius: $s2;
+          display: flex;
+          align-items: center;
+          gap: $s1;
+          transition: all 0.25s;
+          
+          &:hover{
+            background-color: $primary-colour;
 
+          }
+          img {
+            height: $s3;
 
-        .cube {
-          transform: translateZ(-75px);
-          width: 100%;
-          height: 100%;
-          position: relative;
-          transform-style: preserve-3d;
-          animation-name: cubeanimation;
-          animation-direction: alternate;
-          animation-iteration-count: infinite;
-          animation-duration: 16s;
-          animation-timing-function: ease-in-out;
-
-          .core {
-            background-color: red;
-            width: 20px;
-            height: 20px;
-            position: relative;
-            left: 50%;
-            top: 50%;
           }
 
-          .cube__face {
-            position: absolute;
-            width: 150px;
-            height: 150px;
-            background-color: black;
-            opacity: 0.85;
-            display: grid;
-
-            img {
-              width: 75%;
-              height: 75%;
-              align-self: center;
-              justify-self: center;
+          div {
+            span {
+              font-size: $header6 !important;
             }
-          }
 
-          .cube__face--front {
-            transform: rotateY(0deg) translateZ(75px);
+            align-items: center;
           }
-
-          .cube__face--right {
-            transform: rotateY(90deg) translateZ(75px);
-          }
-
-          .cube__face--back {
-            transform: rotateY(180deg) translateZ(75px);
-          }
-
-          .cube__face--left {
-            transform: rotateY(-90deg) translateZ(75px);
-          }
-
-          .cube__face--top {
-            transform: rotateX(90deg) translateZ(75px);
-          }
-
-          .cube__face--bottom {
-            transform: rotateX(-90deg) translateZ(75px);
-          }
-
         }
-
-
       }
     }
+
   }
 
-  p, h1{
-    position: absolute;
-    justify-self: center;
-  }
 
-  p{
+  p {
     bottom: 100px;
   }
 
-  .LazyLoad{
-    justify-self: center;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-  }
+
 
 
   .leftSection {
-    justify-self: center;
-    align-self: start;
-    height: 1px;
-    width: 1px;
-    .skillBubble{
+
+
+    .skillBubble {
       border: 1px solid $primary-text-colour;
       border-radius: 100px;
       width: 100px;
@@ -147,28 +78,24 @@
       align-content: center;
       position: absolute;
 
-      img{
+      img {
         max-width: 60%;
         transition: all 0.25s;
+
         // filter: grayscale(1);
-        &:hover{
-          filter:  grayscale(0);
+        &:hover {
+          filter: grayscale(0);
         }
       }
     }
 
 
-    h3 {
-      margin-bottom: $s6;
-      font-weight: bold;
-      position: relative;
-      left: -$s4;
 
-    }
 
     p {
       line-height: 1.2em;
       z-index: 1;
+
       a {
         color: unset;
         text-decoration: unset;
@@ -225,11 +152,12 @@
 
     margin: $s10 $s2;
 
-    .leftSection{
-      h1{
+    .leftSection {
+      h1 {
         display: none;
       }
     }
+
     .rightSection {
       h1 {
         font-size: 150px;

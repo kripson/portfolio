@@ -3,7 +3,7 @@
 .App {
   text-align: center;
   position: relative;
-  overflow-x: hidden;
+  // overflow-x: hidden;
   font-family: $bodyFont;
   box-sizing: border-box;
   scroll-behavior: smooth;
@@ -72,6 +72,7 @@
   width: 100vw;
   position: fixed;
   background-color: $appBackgroundColour;
+  font-family: $billBoardFont;
   display: grid;
   align-items: center;
   justify-items: center;
@@ -237,14 +238,13 @@
   animation-duration: 1s;
   animation-delay: 0.5s;
 
-
   &::after {
     content: '';
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 110%;
     transform: scale(1.05);
     background-color: $appBackgroundColour;
     animation-name: pseudoAfterAnimation;
@@ -309,11 +309,13 @@
   }
 }
 
-
+#projects{
+  height: 100vh;
+}
 
 @keyframes pseudoAnimated {
   0% {
-    bottom: -100px;
+    bottom: -150px;
     opacity: 0;
   }
 
@@ -325,7 +327,7 @@
 
 @keyframes pseudoAfterAnimation {
   0% {
-    height: 100%;
+    height: 110%;
   }
 
   100% {

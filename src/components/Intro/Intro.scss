@@ -122,9 +122,11 @@
     position: absolute;
     justify-self: center;
     z-index: 1;
+    display: grid;
     img{
       max-height: 50vh;
       max-width: 50vw;
+      justify-self: center;
     }
   }
 
@@ -140,8 +142,7 @@
     .name {
       z-index: 2;
       font-size: calc($s1 * 12);
-      -webkit-text-stroke: calc($s1/4) $primary-text-colour;
-      color: $appBackgroundColour;
+      color: $linkArrowColour;
       margin: 0;
       text-align: right;
     

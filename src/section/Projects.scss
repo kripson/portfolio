@@ -6,11 +6,38 @@
 }
 .Projects
 {
-  min-height: 75vh;
-  padding: $s10 $s8;
-  background-color: $panel-background-colour;
+  min-height: 100vh;
+  // background-color: $panel-background-colour;
+  background-color: black;
+  position: relative;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 
+  h1{
+    position: sticky;
+    top: $s2;
+    left: $s1;
+    z-index: 2;
+  }
 
+  .ProjectsSection{
+    height: 100%;
+    .projectsContainer{
+      display: flex;
+      height: 100%;
+      transform: rotateZ(5deg);
+      gap: $s1;
+      position: absolute;
+      top: 35vh;
+      align-items: center;
+    }
+    .project{
+      height: 50vh;
+      width: 40vw;
+      background-size: cover;
+      border-radius: $s1;
+    }
+  }
 
   .customNavButtons{
     display: flex;

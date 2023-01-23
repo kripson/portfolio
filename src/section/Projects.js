@@ -84,35 +84,44 @@ const Projects = () => {
   };
 
   return (
-    <div className="Projects">
+    <div className="Projects full-width-element">
       <h1 className="sectionTitle">Projects</h1>
 
       <div className="ProjectsSection">
         {projectsarray && projectsarray.map ? (
-          <Swiper
-            modules={[Navigation, Pagination, Scrollbar, A11y]}
-            navigation
-            spaceBetween={sliderSettings.sliderGap}
-            slidesPerView={sliderSettings.numberOfSlides}
-            onSlideChange={() => console.log("slide change")}
-            onSwiper={(swiper) => console.log(swiper)}
-          >
-            {projectsarray.map((project, idx) => (
-              <SwiperSlide>
+          // <Swiper
+          //   modules={[Navigation, Pagination, Scrollbar, A11y]}
+          //   navigation
+          //   spaceBetween={sliderSettings.sliderGap}
+          //   slidesPerView={sliderSettings.numberOfSlides}
+          //   onSlideChange={() => console.log("slide change")}
+          //   onSwiper={(swiper) => console.log(swiper)}
+          // >
+          //   {projectsarray.map((project, idx) => (
+          //     <SwiperSlide>
 
-                  <div className="scaleIn" style={{animationDelay: `${idx * 0.15}s`}}>
-                    <ProjectFrame project={project} key={project.id} toggleDetail={toggleDetail} />
-                  </div>
-           
-              </SwiperSlide>
-            ))}
-          </Swiper>
+          //         <div className="scaleIn" style={{animationDelay: `${idx * 0.15}s`}}>
+          //           <ProjectFrame project={project} key={project.id} toggleDetail={toggleDetail} />
+          //         </div>
+
+          //     </SwiperSlide>
+          //   ))}
+          // </Swiper>
+          <>
+            <Parallax translateX={[-100, 0]} opacity={[0.75, 1]}>
+              <div className="projectsContainer">
+                {projectsarray.map((project, idx) => (
+                  <div style={{ backgroundImage: `url(${project.imageUrl})` }} className="project"></div>
+                ))}
+              </div>
+            </Parallax>
+          </>
         ) : (
           ""
         )}
 
         {detailedProject ? <ProjectModal project={detailedProject} display={detailshow.display} toggleDetail={toggleDetail} /> : null}
-        <div className="customNavButtons body">
+        {/* <div className="customNavButtons body">
          
             <h5 onClick={onPreviousClick} className="body">
               <svg width="281" height="179" viewBox="0 0 281 179" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -128,7 +137,7 @@ const Projects = () => {
               </svg>
             </h5>
    
-        </div>
+        </div> */}
       </div>
     </div>
   );
