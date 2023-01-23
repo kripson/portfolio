@@ -12,7 +12,7 @@
   position: relative;
   scrollbar-width: none;
   -ms-overflow-style: none;
-
+  overflow: hidden;
   h1{
     position: sticky;
     top: $s2;
@@ -32,8 +32,10 @@
       align-items: center;
     }
     .project{
-      height: 50vh;
-      width: 40vw;
+      height: 400px;
+      max-height: 40vh; 
+      width: 500px;
+      max-width: 40vw;
       background-size: cover;
       border-radius: $s1;
     }

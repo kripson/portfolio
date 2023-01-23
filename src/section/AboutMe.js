@@ -13,6 +13,8 @@ import SlideRevealComponent from "../components/SlideRevealComponent/SlideReveal
 const AboutMe = () => {
   const width = useWindowWidth();
 
+
+
   return (
     <div className="AboutMe full-width-element">
       <div className="topSection">
@@ -26,7 +28,7 @@ const AboutMe = () => {
 
         <Parallax speed={1}>
           <h1 className="header">
-            <StaggerTextReveal text={"1998"} fontSize={width > 1200 ? 102 : 51}></StaggerTextReveal>
+            <StaggerTextReveal text={"1998"} fontSize={width > 850 ? 102 : 51}></StaggerTextReveal>
             <span className="location"> Nepal</span>
           </h1>
         </Parallax>
@@ -34,12 +36,12 @@ const AboutMe = () => {
       <div className="middleSection">
         <Parallax speed={2}>
           <h1 className="header">
-            <StaggerTextReveal text={"2017"} fontSize={width > 1200 ? 102 : 51}></StaggerTextReveal>
+            <StaggerTextReveal text={"2017"} fontSize={width > 850 ? 102 : 51}></StaggerTextReveal>
             <span className="location"> Brisbane</span>
           </h1>
         </Parallax>
 
-        <Parallax speed={width > 1200 ? 5 : 3}>
+        <Parallax speed={width > 850 ? 5 : 3}>
           <img src={Brisbane} alt={"Brisbane"}></img>
         </Parallax>
         <p className="secondary-text">
@@ -56,7 +58,7 @@ const AboutMe = () => {
         </p>
         <Parallax speed={5}>
           <h1 className="header">
-            <StaggerTextReveal text={"2020"} fontSize={width > 1200 ? 102 : 51}></StaggerTextReveal>
+            <StaggerTextReveal text={"2020"} fontSize={width > 850 ? 102 : 51}></StaggerTextReveal>
             <span className="location"> Gold Coast</span>
           </h1>
         </Parallax>

@@ -77,12 +77,12 @@ const Nav = () => {
             </li>
             <li className={`h3 ${hamburger === "-100vh" ? "" : "pseudo-after-animated"}`}>
               <a onClick={() => sethamburger("-100vh")} href="#projects">
-                <span className="nav-index-number">03</span> Projects
+                <span className="nav-index-number">04</span> Projects
               </a>
             </li>
             <li className={`h3 ${hamburger === "-100vh" ? "" : "pseudo-after-animated"}`}>
               <a onClick={() => sethamburger("-100vh")} href="#contacts">
-                <span className="nav-index-number">04</span> Contact
+                <span className="nav-index-number">05</span> Contact
               </a>
             </li>
           </ul>

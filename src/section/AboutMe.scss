@@ -8,20 +8,27 @@
   padding: $s10 $s8;
   text-align: left;
   gap: $s8;
-  
+
   background-color: $panel-background-colour;
   box-sizing: border-box;
 
-  h1{
+
+
+
+  h1 {
     display: grid;
     align-content: start;
 
-    &>div{
+    .stagger-animation-character {
+      font-size: calc($header1 - 20px) !important;
+    }
+
+    &>div {
       width: min-content;
     }
   }
 
-  .location{
+  .location {
     font-size: $s2 !important;
     font-weight: normal;
   }
@@ -36,7 +43,9 @@
 
 
 
-    p{
+
+
+    p {
       position: relative;
       top: -$s5;
     }
@@ -122,5 +131,11 @@
   .AboutMe {
     padding: $s10 $s2;
 
+
+    h1 {
+      .stagger-animation-character {
+        font-size: calc($header3 - 20px) !important;
+      }
+    }
   }
 }

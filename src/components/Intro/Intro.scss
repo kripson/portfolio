@@ -48,6 +48,7 @@
     position: absolute;
     top: 0;
     right: calc($s1 * 12);
+
     .GetInTouchSection {
 
       width: $s10;
@@ -123,7 +124,8 @@
     justify-self: center;
     z-index: 1;
     display: grid;
-    img{
+
+    img {
       max-height: 50vh;
       max-width: 50vw;
       justify-self: center;
@@ -134,10 +136,10 @@
   .BottomSection {
     display: grid;
     justify-content: end;
-    z-index: 3;  
+    z-index: 3;
     position: relative;
     align-content: center;
-  
+
 
     .name {
       z-index: 2;
@@ -145,7 +147,7 @@
       color: $linkArrowColour;
       margin: 0;
       text-align: right;
-    
+
 
 
       .CircularText {
@@ -156,8 +158,9 @@
         font-size: $s2;
         animation-direction: reverse;
       }
-
     }
+
+
   }
 }
 
@@ -238,6 +241,7 @@
 
     .TopSection {
       display: grid;
+
       .job-title {
         max-width: 500px;
         font-size: calc($s1 * 12);
@@ -247,10 +251,11 @@
       }
     }
 
-    .middleSection{
+    .middleSection {
       position: unset;
       display: none;
-      img{
+
+      img {
         border-radius: 100%;
         right: $s2;
       }
@@ -291,14 +296,13 @@
     padding: 0 $s3;
     align-content: center;
 
-    a{
+    a {
       position: relative;
       left: unset;
       right: unset;
-
     }
 
-    .arrowDown {
+    .arrowDown, a .GetInTouchSection {
       display: none;
     }
 
@@ -324,7 +328,7 @@
 
       .name {
         font-size: calc($s1 * 8);
-        
+
 
 
         .CircularText {
@@ -332,29 +336,29 @@
         }
       }
 
-      a {
-        .GetInTouchSection {
-          position: relative !important;
-          right: unset !important;
-          left: unset !important;
-          width: unset;
-          display: flex;
-          justify-content: center;
-          align-items: center;
+      // a {
+      //   .GetInTouchSection {
+      //     position: relative !important;
+      //     right: unset !important;
+      //     left: unset !important;
+      //     width: unset;
+      //     display: flex;
+      //     justify-content: center;
+      //     align-items: center;
 
-          &:hover {
-            img {
-              left: unset;
-            }
-          }
+      //     &:hover {
+      //       img {
+      //         left: unset;
+      //       }
+      //     }
 
-          img {
-            position: absolute;
-            left: unset;
-            right: -$s2;
-          }
-        }
-      }
+      //     img {
+      //       position: absolute;
+      //       left: unset;
+      //       right: -$s2;
+      //     }
+      //   }
+      // }
 
     }
   }
@@ -387,18 +391,18 @@
 
       }
 
-      a {
-        .GetInTouchSection {
-          position: relative !important;
-          right: unset !important;
-          left: unset !important;
-          width: unset;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          min-width: 300px;
-        }
-      }
+      // a {
+      //   .GetInTouchSection {
+      //     position: relative !important;
+      //     right: unset !important;
+      //     left: unset !important;
+      //     width: unset;
+      //     display: flex;
+      //     justify-content: center;
+      //     align-items: center;
+      //     min-width: 300px;
+      //   }
+      // }
 
     }
   }

@@ -37,12 +37,12 @@
             text-decoration: none;
             display: flex;
             align-items: center;
-            
-            span{
+
+            span {
               display: flex;
               align-items: center;
             }
-            
+
             svg {
               transition: all 0.25s;
             }
@@ -141,18 +141,28 @@
 
         li {
           justify-self: center;
-          height: max(calc(100vw/15), $s6);
-          font-size: max(calc(100vw/15), $s6);
+          font-size: max(calc(100vw/20), $s6);
           display: grid;
           font-family: $headerFont;
           font-weight: bold;
           transition: all 0.25s;
           animation-delay: 1s;
 
+          &:hover {
+            .nav-index-number {
+              position: relative;
+              top: -$s1;
+              color: $primary-colour;
+            }
+          }
+
           .nav-index-number {
+            position: relative;
+            top: 0;
             font-size: 16px;
             font-weight: normal;
             margin-right: 4px;
+            transition: all 0.25s;
           }
 
 
