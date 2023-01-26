@@ -7,8 +7,9 @@
   justify-items: center;
   padding: $s10 $s8;
   position: relative;
-  z-index: 1;
+  z-index: 4;
   gap: $s4;
+  background-color: $appBackgroundColour;
 
   h1{
     margin: 0;

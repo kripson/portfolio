@@ -8,7 +8,12 @@
   align-items: center;
   margin: $s5 $s8;
   text-align: left;
-
+  
+  .sectionTitle {
+    position: sticky;
+    top: $s8;
+  }
+  
   .rightSection {
     position: relative;
     height: 100%;

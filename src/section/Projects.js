@@ -85,60 +85,27 @@ const Projects = () => {
 
   return (
     <div className="Projects full-width-element">
-      <h1 className="sectionTitle">Projects</h1>
+      <h1 className="sectionTitle">
+        Projects
+        <span>Some of my selected work</span>
+      </h1>
+      <div className="overlay"></div>
 
-      <div className="ProjectsSection">
-        {projectsarray && projectsarray.map ? (
-          // <Swiper
-          //   modules={[Navigation, Pagination, Scrollbar, A11y]}
-          //   navigation
-          //   spaceBetween={sliderSettings.sliderGap}
-          //   slidesPerView={sliderSettings.numberOfSlides}
-          //   onSlideChange={() => console.log("slide change")}
-          //   onSwiper={(swiper) => console.log(swiper)}
-          // >
-          //   {projectsarray.map((project, idx) => (
-          //     <SwiperSlide>
+      <Parallax speed={-10}>
+        <div className="ProjectsSection">
+          {projectsarray && projectsarray.map ? (
+            <div className="projectsContainer">
+              {projectsarray.map((project, idx) => (
+                <div className="project"><img src={project.imageUrl}></img></div>
+              ))}
+            </div>
+          ) : (
+            ""
+          )}
 
-          //         <div className="scaleIn" style={{animationDelay: `${idx * 0.15}s`}}>
-          //           <ProjectFrame project={project} key={project.id} toggleDetail={toggleDetail} />
-          //         </div>
-
-          //     </SwiperSlide>
-          //   ))}
-          // </Swiper>
-          <>
-            <Parallax translateX={[-100, 0]} opacity={[0.75, 1]}>
-              <div className="projectsContainer">
-                {projectsarray.map((project, idx) => (
-                  <div style={{ backgroundImage: `url(${project.imageUrl})` }} className="project"></div>
-                ))}
-              </div>
-            </Parallax>
-          </>
-        ) : (
-          ""
-        )}
-
-        {detailedProject ? <ProjectModal project={detailedProject} display={detailshow.display} toggleDetail={toggleDetail} /> : null}
-        {/* <div className="customNavButtons body">
-         
-            <h5 onClick={onPreviousClick} className="body">
-              <svg width="281" height="179" viewBox="0 0 281 179" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M107.5 123.5L279.5 123.5V55.5L107.5 55.5L162 1H90.5L2 89.5L90.5 178H162L107.5 123.5Z" stroke="white" stroke-width="2" />
-              </svg>
-            </h5>
-
-
-     
-            <h5 onClick={onNextClick} className="body">
-              <svg width="280" height="179" viewBox="0 0 280 179" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M173 55.5H1V123.5H173L118.5 178H190L278.5 89.5L190 1H118.5L173 55.5Z" stroke="white" stroke-width="2" />
-              </svg>
-            </h5>
-   
-        </div> */}
-      </div>
+          {detailedProject ? <ProjectModal project={detailedProject} display={detailshow.display} toggleDetail={toggleDetail} /> : null}
+        </div>
+      </Parallax>
     </div>
   );
 };

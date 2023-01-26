@@ -13,8 +13,6 @@ import SlideRevealComponent from "../components/SlideRevealComponent/SlideReveal
 const AboutMe = () => {
   const width = useWindowWidth();
 
-
-
   return (
     <div className="AboutMe full-width-element">
       <div className="topSection">
@@ -27,18 +25,22 @@ const AboutMe = () => {
         </p>
 
         <Parallax speed={1}>
-          <h1 className="header">
-            <StaggerTextReveal text={"1998"} fontSize={width > 850 ? 102 : 51}></StaggerTextReveal>
-            <span className="location"> Nepal</span>
-          </h1>
+          <LazyLoad unmountIfInvisible>
+            <h1 className="header">
+              <StaggerTextReveal text={"1998"} fontSize={width > 850 ? 102 : 51}></StaggerTextReveal>
+              <span className="location"> Nepal</span>
+            </h1>
+          </LazyLoad>
         </Parallax>
       </div>
       <div className="middleSection">
         <Parallax speed={2}>
-          <h1 className="header">
-            <StaggerTextReveal text={"2017"} fontSize={width > 850 ? 102 : 51}></StaggerTextReveal>
-            <span className="location"> Brisbane</span>
-          </h1>
+          <LazyLoad unmountIfInvisible>
+            <h1 className="header">
+              <StaggerTextReveal text={"2017"} fontSize={width > 850 ? 102 : 51}></StaggerTextReveal>
+              <span className="location"> Brisbane</span>
+            </h1>
+          </LazyLoad>
         </Parallax>
 
         <Parallax speed={width > 850 ? 5 : 3}>
@@ -56,12 +58,14 @@ const AboutMe = () => {
           Currently, located at Gold Coast, I am working as a software engineer at <span className="primary-colour-text"> Kzen8</span>. <br /> <br />I use my technological superpowers to bring my imagination to life and to help businesses
           solve their issues.
         </p>
-        <Parallax speed={5}>
-          <h1 className="header">
-            <StaggerTextReveal text={"2020"} fontSize={width > 850 ? 102 : 51}></StaggerTextReveal>
-            <span className="location"> Gold Coast</span>
-          </h1>
-        </Parallax>
+        {/* <Parallax speed={5}> */}
+          <LazyLoad unmountIfInvisible={true}>
+            <h1 className="header">
+              <StaggerTextReveal text={"2020"} fontSize={width > 850 ? 102 : 51}></StaggerTextReveal>
+              <span className="location"> Gold Coast</span>
+            </h1>
+          </LazyLoad>
+        {/* </Parallax> */}
       </div>
     </div>
   );

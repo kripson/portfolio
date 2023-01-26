@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Nav.scss";
-import logo from "../../assets/Kripson Logo 1.svg";
+import logo from "../../assets/tshirt.png";
 import { TfiFacebook, TfiLinkedin, TfiGithub } from "react-icons/tfi";
 import { RiArrowRightDownLine } from "react-icons/ri";
 import { HamburgerMenuButton } from "../HamburgerMenuButton/HamburgerMenuButton";

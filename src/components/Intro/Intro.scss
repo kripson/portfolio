@@ -1,19 +1,19 @@
 @import '../../../variables.scss';
 
 .Intro {
-  height: calc(100vh - 144px);
+  min-height: calc(100vh - 144px);
   display: grid;
   position: relative;
   text-align: left;
   padding: $s4 $s10;
   gap: $s2;
-  max-width: 1350px;
+  max-width: 1250px;
   margin: 0 auto 0 auto;
 
   .arrowDown {
     position: absolute;
     bottom: $s10;
-    left: 0;
+    left: calc($s1 * 12);
     border-radius: calc($s1 * 100);
     width: calc($s1 * 10);
     height: calc($s1 * 10);
@@ -23,7 +23,6 @@
     transform: rotateZ(90deg);
     transition: all 0.25s;
     padding: $s1;
-    box-sizing: border-box;
 
     img {
       position: relative;
@@ -92,14 +91,13 @@
     display: grid;
     position: relative;
     justify-content: start;
-    z-index: 2;
     align-content: center;
-
+    
     .job-title {
       margin: 0;
       animation-delay: 4.75s;
-      z-index: 1;
-
+      z-index: 4;
+      background-color: $appBackgroundColour;
 
 
 
@@ -117,18 +115,53 @@
   }
 
   .middleSection {
-    // display: none;
-    max-height: 200px;
-    max-width: 200px;
+    max-height: 800px;
+    max-width: 800px;
     position: absolute;
     justify-self: center;
-    z-index: 1;
+    z-index: 3;
     display: grid;
+    // display: none;
+
+    .SlideRevealComponent{
+      .childrenContainer{
+        line-height: 0;
+      }
+    }
+
+    &:hover {
+      .SlideRevealComponent {
+        .childrenContainer {
+          .blockers {
+            width: 0 !important;
+          }
+
+          img {
+            filter: grayscale(0);
+
+          }
+        }
+      }
+
+    }
+
+    .blockers {
+      background-color: $appBackgroundColour;
+      z-index: 4;
+      transition: all 0.25s;
+    }
+
+
 
     img {
-      max-height: 50vh;
-      max-width: 50vw;
+      width: 50vh;
+      height:auto;
       justify-self: center;
+      filter: grayscale(1);
+      border-style: none;
+      outline: 0;
+      border: 0;
+      object-fit: fill;
     }
   }
 
@@ -143,20 +176,21 @@
 
     .name {
       z-index: 2;
-      font-size: calc($s1 * 12);
       color: $linkArrowColour;
       margin: 0;
       text-align: right;
+      background-color: $appBackgroundColour;
 
 
 
-      .CircularText {
-        color: white;
-        position: absolute;
-        left: -$s1;
-        top: 0;
-        font-size: $s2;
-        animation-direction: reverse;
+    }
+
+    .SlideRevealComponent {
+      width: 100% !important;
+      text-align: right;
+
+      .childrenContainer {
+        width: 100%;
       }
     }
 
@@ -253,7 +287,7 @@
 
     .middleSection {
       position: unset;
-      display: none;
+
 
       img {
         border-radius: 100%;
@@ -267,6 +301,8 @@
         font-size: calc($s1 * 12);
         max-width: 600px;
       }
+
+
     }
 
     .arrowDown {
@@ -302,7 +338,8 @@
       right: unset;
     }
 
-    .arrowDown, a .GetInTouchSection {
+    .arrowDown,
+    a .GetInTouchSection {
       display: none;
     }
 

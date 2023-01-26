@@ -24,18 +24,17 @@ function App() {
   const [firstLoaded, setFirstLoaded] = useState(false);
   const { scrollYProgress } = useScroll();
 
-
   useEffect(() => {
     setTimeout(() => {
       setFirstLoaded(true);
     }, 4250);
   }, []);
 
-  useEffect(()=>{
-    scrollYProgress.onChange((e)=>{
+  useEffect(() => {
+    scrollYProgress.onChange((e) => {
       console.log(e);
-    })
-  }, [scrollYProgress ])
+    });
+  }, [scrollYProgress]);
 
   return (
     <BrowserRouter>
@@ -44,9 +43,7 @@ function App() {
           <DoubleMouseCursor />
           <div className="first">
             <div className="progressBar h6">
-
-                <CountUp end={100} suffix={"%"} duration={3.5}/>
-
+              <CountUp end={100} suffix={"%"} duration={3.5} />
 
               <motion.div initial={{ width: "1%", backgroundColor: "white", height: "100%" }} animate={{ width: "100%", transition: { duration: 5, type: "spring", stiffness: 10 } }}></motion.div>
             </div>
@@ -78,7 +75,6 @@ function App() {
           )}
         </div>
       </ParallaxProvider>
-
     </BrowserRouter>
   );
 }

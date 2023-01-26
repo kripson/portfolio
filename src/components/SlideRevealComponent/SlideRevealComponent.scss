@@ -1,12 +1,8 @@
 .SlideRevealComponent {
-    overflow: hidden;
-    width: max-content;
-
+    // overflow: hidden;
     .childrenContainer {
 
         position: relative;
-        width: max-content;
-
         &.leftReveal {
             animation-name: leftRevealAnimation;
             animation-duration: 1s;
@@ -20,6 +16,7 @@
         &.rightReveal {
             // right: -100%;
             clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%);
+
             animation-name: rightRevealAnimation;
             animation-duration: 1s;
             animation-fill-mode: forwards;
@@ -28,7 +25,7 @@
 
 
         &.topReveal {
-            clip-path: polygon(0% 0%, 100% 0%, 100% 0, 1% 1%);
+            clip-path: polygon(0% 0%, 100% 0%, 100% 0, 0% 0%);
             top: -100%;
             animation-name: topRevealAnimation;
             animation-duration: 1s;
@@ -76,7 +73,7 @@
 
     100% {
         // right: 0;
-        clip-path: polygon(0% 0%, 100% 1%, 100% 100%, 0% 100%);
+        clip-path: polygon(-1% 0%, 101% 0%, 101% 100%, -1% 100%);
     }
 }
 
