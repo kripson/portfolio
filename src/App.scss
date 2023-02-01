@@ -1,24 +1,38 @@
 @import '../scss-class.scss';
 
+body {}
+
+.background {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  object-fit: cover;
+
+  video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+
+  }
+}
+
 .App {
   text-align: center;
-  position: relative;
-  max-width: 100vw;
+  width: 100vw;
   font-family: $bodyFont;
   box-sizing: border-box;
   scroll-behavior: smooth;
   background-color: $appBackgroundColour;
-  // background-image: url('../src/assets/background-5.jpg');
-  // backdrop-filter: blur(100px);
-  // background-blend-mode: luminosity;
   min-height: 100vh;
   color: white;
+  // overflow: hidden;
 
-  cursor: none !important;
+  // cursor: none !important;
 
-  * {
-    cursor: none;
-  }
+  // * {
+  //   cursor: none;
+  // }
 }
 
 .App-logo {
@@ -32,7 +46,7 @@
   }
 }
 
-.kripsonui-double-mouse-cursor .kripsonui-cursor-trail{
+.kripsonui-double-mouse-cursor .kripsonui-cursor-trail {
   background-color: $primary-colour !important;
 }
 
@@ -64,7 +78,7 @@
 
 
 
-.section{
+.section {
   min-height: 50vh;
 }
 
@@ -75,9 +89,10 @@
   background-color: $appBackgroundColour;
   font-family: $billBoardFont;
   display: grid;
+  align-content: center;
   align-items: center;
   justify-items: center;
-  z-index: 2000;
+  z-index: 19;
   animation-name: hidePreloader;
   animation-timing-function: cubic-bezier(0.68, -0.6, 0.32, 1.6);
   animation-duration: 0.1s;
@@ -86,8 +101,29 @@
   overflow: hidden;
 }
 
+.logoContainer {
+  width: 100%;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 50vh;
+  z-index: 20;
+  overflow: visible;
+  box-sizing: border-box;
+  
+  .logo {
+    width: 300px;
+  }
+}
+
 .first {
-  .progressBar{
+
+
+
+  .progressBar {
     width: 400px;
     height: 10px;
     // position: absolute;
@@ -107,7 +143,20 @@
   z-index: -1;
 }
 
+@keyframes logoAnimation {
+  0% {
+    top: 30vh;
+    scale: 1;
+    left: 45%;
+  }
 
+  100% {
+    top: 32px;
+    scale: 0.5;
+    left: $s8;
+
+  }
+}
 
 @keyframes moveit {
   0% {
@@ -194,7 +243,7 @@
 //   }
 // }
 
-.sectionContainer{
+.sectionContainer {
   min-height: 50vh;
 }
 
@@ -228,6 +277,12 @@
   .splineContainer {
     display: none;
   }
+
+  .kripsonui-double-mouse-cursor {
+    display: none !important;
+  }
+
+
 }
 
 
@@ -283,36 +338,33 @@
 }
 
 
-.animatedBorderBottomOnHover{
+.animatedBorderBottomOnHover {
   position: relative;
   transition: all 0.25s;
 
-  &::after{
+  &::after {
     content: '';
     height: 10%;
     width: 0;
     position: absolute;
     bottom: -10%;
-    left:0;
+    left: 0;
     background-color: $primary-colour;
   }
 
-  &::after{
+  &::after {
     transition: all 0.25s;
   }
 
-  &:hover{
-  text-decoration: none;
+  &:hover {
+    text-decoration: none;
 
-    &::after{
+    &::after {
       width: 100%;
     }
   }
 }
 
-#projects{
-  height: 100vh;
-}
 
 @keyframes pseudoAnimated {
   0% {
@@ -347,6 +399,3 @@
   }
 
 }
-
-
-

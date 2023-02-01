@@ -1,7 +1,7 @@
 @import './variables.scss';
 @font-face {
     font-family: Proxima Nova;
-    src: url('/Apercu Font Family/Apercu Bold.otf');
+    src: url('/fonts/FreightSansProMedium-Regular.ttf');
 }
 
 @font-face {
@@ -11,6 +11,7 @@
 //typography classes
 .heading, h1, h2, h3, h4, h5, h6{
     font-family: $headerFont;
+    font-weight: 600;
 }
 
 .body{
@@ -90,6 +91,10 @@
     
     .h6, h6{
         font-size: $header6;
+    }
+
+    .billboard{
+        font-size: $header2;
     }
     
 }

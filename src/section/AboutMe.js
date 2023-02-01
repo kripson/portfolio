@@ -3,7 +3,7 @@ import "./AboutMe.scss";
 import Nepal from "../assets/Nepal.svg";
 import Brisbane from "../assets/Brisbane.svg";
 import GoldCoast from "../assets/GoldCoast.svg";
-import { Parallax, useParallax } from "react-scroll-parallax";
+
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { StaggerTextReveal } from "stagger-text-reveal-animation";
 import LazyLoad from "react-lazy-load";
@@ -14,60 +14,57 @@ const AboutMe = () => {
   const width = useWindowWidth();
 
   return (
-    <div className="AboutMe full-width-element">
-      <div className="topSection">
-        <Parallax speed={5} style={{ position: "relative", top: "100px", left: "100px" }}>
-          <img src={Nepal} alt={"nepal"}></img>
-        </Parallax>
+      <div className="AboutMe full-width-element">
+        <div className="topSection">
 
-        <p className="secondary-text">
-          Hi, I am Sankit but I go by <span className="primary-colour-text">kripson</span> on all my socials. <br />I was born in Butwal, Nepal where I spent my childhood and most of my teen years.
-        </p>
+            <img src={Nepal} alt={"nepal"}></img>
 
-        <Parallax speed={1}>
-          <LazyLoad unmountIfInvisible>
+
+          <p className="secondary-text">
+            Hi, I am Sankit but I go by <span className="primary-colour-text">kripson</span> on all my socials. <br />I was born in Butwal, Nepal where I spent my childhood and most of my teen years.
+          </p>
+
+
             <h1 className="header">
               <StaggerTextReveal text={"1998"} fontSize={width > 850 ? 102 : 51}></StaggerTextReveal>
               <span className="location"> Nepal</span>
             </h1>
-          </LazyLoad>
-        </Parallax>
-      </div>
-      <div className="middleSection">
-        <Parallax speed={2}>
-          <LazyLoad unmountIfInvisible>
+      
+        </div>
+        <div className="middleSection">
+
             <h1 className="header">
               <StaggerTextReveal text={"2017"} fontSize={width > 850 ? 102 : 51}></StaggerTextReveal>
               <span className="location"> Brisbane</span>
             </h1>
-          </LazyLoad>
-        </Parallax>
 
-        <Parallax speed={width > 850 ? 5 : 3}>
-          <img src={Brisbane} alt={"Brisbane"}></img>
-        </Parallax>
-        <p className="secondary-text">
-          I moved to Brisbane, Australia in 2017 to pursue my degree in IT. <br /> As a university student, I came across <span className="primary-colour-text">Software Development </span> and fell in love with it.
-        </p>
+
+
+            <img src={Brisbane} alt={"Brisbane"}></img>
+
+          <p className="secondary-text">
+            I moved to Brisbane, Australia in 2017 to pursue my degree in IT. <br /> As a university student, I came across <span className="primary-colour-text">Software Development </span> and fell in love with it.
+          </p>
+        </div>
+        <div className="bottomSection">
+
+            <img src={GoldCoast} alt={"GoldCoast"}></img>
+    
+          <p className="secondary-text">
+            Currently, located at Gold Coast, I am working as a software engineer at <span className="primary-colour-text"> Kzen8</span>. <br /> <br />I use my technological superpowers to bring my imagination to life and to help businesses
+            solve their issues.
+          </p>
+
+
+          <h1 className="header">
+            <StaggerTextReveal text={"2020"} fontSize={width > 850 ? 102 : 51}></StaggerTextReveal>
+            <span className="location"> Gold Coast</span>
+          </h1>
+
+
+        </div>
       </div>
-      <div className="bottomSection">
-        <Parallax speed={2} style={{ position: "relative", left: "100px" }}>
-          <img src={GoldCoast} alt={"GoldCoast"}></img>
-        </Parallax>
-        <p className="secondary-text">
-          Currently, located at Gold Coast, I am working as a software engineer at <span className="primary-colour-text"> Kzen8</span>. <br /> <br />I use my technological superpowers to bring my imagination to life and to help businesses
-          solve their issues.
-        </p>
-        {/* <Parallax speed={5}> */}
-          <LazyLoad unmountIfInvisible={true}>
-            <h1 className="header">
-              <StaggerTextReveal text={"2020"} fontSize={width > 850 ? 102 : 51}></StaggerTextReveal>
-              <span className="location"> Gold Coast</span>
-            </h1>
-          </LazyLoad>
-        {/* </Parallax> */}
-      </div>
-    </div>
+
   );
 };
 

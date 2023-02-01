@@ -1,11 +1,15 @@
-import React, { useState } from "react";
+import React, { useLayoutEffect, useState } from "react";
 import "./Nav.scss";
-import logo from "../../assets/tshirt.png";
+import logo from "../../assets/logo.png";
 import { TfiFacebook, TfiLinkedin, TfiGithub } from "react-icons/tfi";
 import { RiArrowRightDownLine } from "react-icons/ri";
 import { HamburgerMenuButton } from "../HamburgerMenuButton/HamburgerMenuButton";
 import { Link } from "react-router-dom";
 import { StaggerTextReveal } from "stagger-text-reveal-animation";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Nav = () => {
   var hamburgerbutton = "";
@@ -25,35 +29,47 @@ const Nav = () => {
     hamburgerbutton = <HamburgerMenuButton checked={true} />;
   }
 
+  useLayoutEffect(() => {
+    gsap.to(".Nav", {
+      borderBottom: "none",
+      delay: 0,
+      duration: 0.1,
+      scrollTrigger: {
+        trigger: ".Nav",
+        start: "bottom top",
+        markers: true,
+        toggleActions: "play none reverse none",
+      },
+    });
+  });
+
   return (
     <div className="Nav">
-      <div className="leftSection">
-        {/* <Link to="/">
-          <img className="logo" src={logo} alt="logo"></img>
-        </Link> */}
 
+      <div className="leftSection"></div>
+
+      <div className="rightSection">
         <div className="ContactLinks">
           <ul>
             <li className="heading">
               <a className="animatedBorderBottomOnHover" href="https://www.linkedin.com/in/sankit-shrestha-14a397170/" target="_blank" rel="noreferrer">
-              <StaggerTextReveal text={"LINKEDIN"} fontSize={24} direction={'down'}></StaggerTextReveal>   <RiArrowRightDownLine/>
+                <StaggerTextReveal text={"LINKEDIN"} fontSize={24} direction={"down"}></StaggerTextReveal> <RiArrowRightDownLine />
               </a>
             </li>
             <li className="heading">
               <a className="animatedBorderBottomOnHover" href="https://github.com/kripson" target="_blank" rel="noreferrer">
-                <StaggerTextReveal text={"GITHUB"} fontSize={24}></StaggerTextReveal><RiArrowRightDownLine/>
+                <StaggerTextReveal text={"GITHUB"} fontSize={24}></StaggerTextReveal>
+                <RiArrowRightDownLine />
               </a>
             </li>
             <li className="heading">
               <a className="animatedBorderBottomOnHover" href="https://www.instagram.com/kripson.dev/" target="_blank" rel="noreferrer">
-                <StaggerTextReveal text={"INSTAGRAM"} fontSize={24} direction={'down'}></StaggerTextReveal><RiArrowRightDownLine/>
+                <StaggerTextReveal text={"INSTAGRAM"} fontSize={24} direction={"down"}></StaggerTextReveal>
+                <RiArrowRightDownLine />
               </a>
             </li>
           </ul>
         </div>
-      </div>
-
-      <div className="rightSection">
         <div className="hamburger" onClick={toggleHamburger}>
           {/* <span style={hamburger === '-100vh' ? {} : {color: 'black'}}>{hamburger === "-100vh" ? 'menu' : 'close'}</span>  */}
           {hamburgerbutton}

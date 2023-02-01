@@ -1,14 +1,16 @@
 @import '../../../variables.scss';
 
 .Intro {
-  min-height: calc(100vh - 144px);
+  height: calc(100vh - 144px);
   display: grid;
   position: relative;
+  grid-template-columns: 1fr 1fr;
   text-align: left;
   padding: $s4 $s10;
   gap: $s2;
   max-width: 1250px;
   margin: 0 auto 0 auto;
+  
 
   .arrowDown {
     position: absolute;
@@ -91,13 +93,13 @@
     display: grid;
     position: relative;
     justify-content: start;
-    align-content: center;
-    
+    align-content: start;
+    padding-top: 100px;
+    z-index: 2;
     .job-title {
       margin: 0;
-      animation-delay: 4.75s;
       z-index: 4;
-      background-color: $appBackgroundColour;
+      // background-color: $appBackgroundColour;
 
 
 
@@ -115,13 +117,12 @@
   }
 
   .middleSection {
-    max-height: 800px;
-    max-width: 800px;
+    width: max-content;
     position: absolute;
     justify-self: center;
-    z-index: 3;
+    z-index: 1;
     display: grid;
-    // display: none;
+    display: none;
 
     .SlideRevealComponent{
       .childrenContainer{
@@ -130,11 +131,12 @@
     }
 
     &:hover {
+      .blockers {
+        width: 0 !important;
+      }
       .SlideRevealComponent {
         .childrenContainer {
-          .blockers {
-            width: 0 !important;
-          }
+
 
           img {
             filter: grayscale(0);
@@ -147,7 +149,7 @@
 
     .blockers {
       background-color: $appBackgroundColour;
-      z-index: 4;
+      z-index: 3;
       transition: all 0.25s;
     }
 
@@ -169,20 +171,18 @@
   .BottomSection {
     display: grid;
     justify-content: end;
-    z-index: 3;
+    z-index: 2;
+
     position: relative;
     align-content: center;
 
 
     .name {
-      z-index: 2;
-      color: $linkArrowColour;
+      z-index: 3;
       margin: 0;
       text-align: right;
-      background-color: $appBackgroundColour;
-
-
-
+      -webkit-text-stroke: 2px $primary-text-colour;
+      color: $appBackgroundColour;
     }
 
     .SlideRevealComponent {
@@ -192,6 +192,10 @@
       .childrenContainer {
         width: 100%;
       }
+    }
+
+    img{
+      max-height: 600px;
     }
 
 

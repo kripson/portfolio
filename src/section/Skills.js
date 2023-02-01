@@ -15,7 +15,6 @@ import Figma from "../assets/figma.png";
 import LazyLoad from "react-lazy-load";
 import Spline from "@splinetool/react-spline";
 import Tshirt from "../assets/T-Shirt.svg";
-import { Parallax, useParallax } from "react-scroll-parallax";
 import { motion } from "framer-motion/dist/framer-motion";
 import { useWindowWidth } from "@react-hook/window-size";
 import { StaggerTextReveal } from "stagger-text-reveal-animation";
@@ -133,7 +132,7 @@ const Skills = () => {
           // >
           //   {skill.name}
           // </motion.div>
-          // <Parallax speed={idx * (Math.random() < 1 ? -1.25 : 1.25 )}>
+
           //   <motion.div
           //     drag
           //     key={idx}
@@ -150,7 +149,7 @@ const Skills = () => {
           //     {skill.iconPath ? <img src={skill.iconPath} alt={skill.name} />: skill.name}
           //     {/* {skill.name} */}
           //   </motion.div>
-          // </Parallax>
+
           <div className="skill" key={idx}>
             <span className="h4">{skill.name}</span>
             <div className="toolsContainer">

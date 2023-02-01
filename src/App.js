@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useRef } from "react";
+import React, { useState, useMemo, useRef, useLayoutEffect } from "react";
 import "./App.scss";
 import Homesection from "./section/Homesection";
 import AboutMe from "./section/AboutMe";
@@ -6,9 +6,9 @@ import Skills from "./section/Skills";
 import Projects from "./section/Projects";
 import Contacts from "./section/Contacts";
 import Contactblock from "./components/Contactblock/Contactblock";
-import { ParallaxProvider } from "react-scroll-parallax";
-import logo from "./assets/Kripson Logo 1.svg";
-import { Cursor } from "./components/Cursor/cursor";
+
+import logo from "./assets/logo.png";
+// import { Cursor } from "./components/Cursor/cursor";
 import Spline from "@splinetool/react-spline";
 import LazyLoad from "react-lazy-load";
 import { DoubleMouseCursor } from "kripson-ui";
@@ -19,12 +19,18 @@ import { useEffect } from "react";
 import CountUp from "react-countup";
 import SlideRevealComponent from "./components/SlideRevealComponent/SlideRevealComponent";
 import { motion, useScroll, useTransform } from "framer-motion/dist/framer-motion";
+import backgroundVideo from "../src/assets/video(1).mp4";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 function App() {
   const [firstLoaded, setFirstLoaded] = useState(false);
+
   const { scrollYProgress } = useScroll();
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     setTimeout(() => {
       setFirstLoaded(true);
     }, 4250);
@@ -36,45 +42,63 @@ function App() {
     });
   }, [scrollYProgress]);
 
+
+  useLayoutEffect(()=>{
+    gsap.to('.logoContainer', {
+      width: 150,
+      height: 128,
+      duration: 1,
+      delay: 3.5
+    })
+
+    gsap.to('.logo', {
+      width: 110,
+      height: 64,
+      duration: 1,
+      delay: 3.5
+
+    })
+  }, [])
+
   return (
     <BrowserRouter>
-      <ParallaxProvider>
-        <div className="App">
-          <DoubleMouseCursor />
-          <div className="first">
-            <div className="progressBar h6">
-              <CountUp end={100} suffix={"%"} duration={3.5} />
+      <div className="App">
+        <DoubleMouseCursor />
+        {/* <div className="background">
+          <video src={backgroundVideo} autoPlay loop></video>
+        </div> */}
+      <div className="logoContainer">
+        <img className="logo" src={logo} alt="kripson-tshirt" />
+      </div>
 
-              <motion.div initial={{ width: "1%", backgroundColor: "white", height: "100%" }} animate={{ width: "100%", transition: { duration: 5, type: "spring", stiffness: 10 } }}></motion.div>
-            </div>
+        <div className="first">
+          <div className="progressBar h6">
+            <CountUp end={100} suffix={"%"} duration={3.5} />
+
+            <motion.div initial={{ width: "1%", backgroundColor: "white", height: "100%" }} animate={{ width: "100%", transition: { duration: 5, type: "spring", stiffness: 10 } }}></motion.div>
           </div>
-          {firstLoaded ? (
-            <>
-              <Nav></Nav>
-              <Homesection></Homesection>
-              <div id="aboutme" className="sectionContainer">
-                <AboutMe />
-              </div>
+        </div>
 
-              <div id="skills" className="sectionContainer">
+        <>
+          <Nav></Nav>
+          <Homesection></Homesection>
+          <div id="aboutme" className="sectionContainer">
+            <AboutMe />
+          </div>
+
+          {/* <div id="skills" className="sectionContainer">
                 <LazyLoad>
                   <Skills />
                 </LazyLoad>
-              </div>
+              </div> */}
 
-              <div id="projects" className="sectionContainer">
-                <Projects />
-              </div>
+          <Projects />
 
-              <div id="contacts" className="sectionContainer">
-                <Contacts />
-              </div>
-            </>
-          ) : (
-            ""
-          )}
-        </div>
-      </ParallaxProvider>
+          <div id="contacts" className="sectionContainer">
+            <Contacts />
+          </div>
+        </>
+      </div>
     </BrowserRouter>
   );
 }

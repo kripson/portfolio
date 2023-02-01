@@ -10,8 +10,13 @@ export const projectsarray = [
         websiteUrl: 'https://smileyourwaytohappy.com',
         ready:true,
         height: '35vh',
-        year: '2022/23',
-        tools:['NextJs']
+        year: '2022-23',
+        tools:['NextJs'],
+        helperImage: require("../assets/smileyourwaytohappyhelper.webp"),
+        styles:{
+            backgroundColor: '#D0503E',
+            color: '#DFD3C3'
+        }
     },
     {
         id:2,
@@ -25,7 +30,12 @@ export const projectsarray = [
         ready:true,
         year: '2022',
         height: '45vh',
-        tools:['React']
+        tools:['React'],
+        helperImage: require("../assets/kzen8helper.png"),
+        styles:{
+            backgroundColor: '#133A74',
+            color: '#DFD3C3'
+        }
     },
     {
         id:3,
@@ -39,7 +49,12 @@ export const projectsarray = [
         ready:true,
         year: '2021',
         height: '40vh',
-        tools:['react','node']
+        tools:['react','node'],
+        helperImage: require("../assets/littlehideouthelper.webp"),
+        styles:{
+            backgroundColor: '#FFFBF1',
+            color: 'black'
+        }
     },
     {
         id:4,
@@ -53,7 +68,11 @@ export const projectsarray = [
         ready:true,
         year: '2022',
         height: '50vh',
-        tools:['React','Redux','NodeJs','MongoDB']
+        tools:['React','Redux','NodeJs','MongoDB'],
+        styles:{
+            backgroundColor: '#7C44F1',
+            color: 'white'
+        }
     },
     {
         id:5,
@@ -67,11 +86,16 @@ export const projectsarray = [
         ready:true,
         year: '2020',
         height: '30vh',
-        tools:['NextJs']
+        tools:['NextJs'],
+        helperImage: require("../assets/onewishcleaninghelper.png"),
+        styles:{
+            backgroundColor: '#1096D0',
+            color: '#DFD3C3'
+        }
     },
     {
         id:6,
-        title:'Kripson Clothing Store',
+        title:'Kripson Store',
         imageUrl:require("../assets/clothingapp.jpeg"),
         mobileLayout: require("../assets/storemobile.png"),
         laptopLayout: require("../assets/storelaptop.png"),
@@ -82,7 +106,12 @@ export const projectsarray = [
         ready: true,
         year: '2021',
         height: '40vh',
-        tools:['react','node']
+        tools:['react','node'],
+        helperImage: require("../assets/kripsonstorehelper.png"),
+        styles:{
+            backgroundColor: '#0D0D0D',
+            color: '#DFD3C3'
+        }
 
     },
     // {
@@ -99,7 +128,7 @@ export const projectsarray = [
     // },
     {
         id:7,
-        title:'Hans Driving Training Center',
+        title:'Hans Driving',
         imageUrl:require("../assets/Drivingschool.jpeg"),
         mobileLayout: require("../assets/hansmobile.png"),
         laptopLayout: require("../assets/hanslaptop.png"),
@@ -109,6 +138,11 @@ export const projectsarray = [
         ready:true,
         year: '2020',
         height: '25vh',
-        tools:['react','node']
+        tools:['react','node'],
+        helperImage: require("../assets/hansdrivinghelper.png"),
+        styles:{
+            backgroundColor: '#171717',
+            color: '#FFA500'
+        }
     },
 ];

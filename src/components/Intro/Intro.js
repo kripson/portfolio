@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./Intro.scss";
-import HeroImage from "../../assets/Hero-Image-2.png";
+import HeroImage from "../../assets/portrait.jpg";
 import Button from "../Button/Button";
-import { Parallax, useParallax } from "react-scroll-parallax";
+
 import { useWindowWidth } from "@react-hook/window-size";
 import { CircularText } from "../CircularText/CircularText";
 import Arrow from "../../assets/Arrow 1.svg";
@@ -29,7 +29,7 @@ const Intro = ({ firstLoaded }) => {
     {
       style: {
         top: "0",
-        right:"0",
+        right: "0",
         height: "40%",
         width: "10%",
       },
@@ -53,60 +53,52 @@ const Intro = ({ firstLoaded }) => {
 
   return (
     <div className="Intro">
-      <div className="arrowDown">
+      {/* <div className="arrowDown">
         {" "}
         <img src={Arrow} alt="" />
         Scroll
-      </div>
+      </div> */}
 
       <div className="TopSection">
-        {/* <SlideRevealComponent
-          delay={2}
-          reveal={"bottomReveal"}
-          children={ */}
-        <h1 className={`billboard job-title primary-text slideUpAnimation`}>
-          SANKIT
-          <br />
-          SHRESTHA
-          {/* <CircularText text="What I do" deg={12} color="white" backgroundColor="black" /> */}
-        </h1>
-        {/* }
-        ></SlideRevealComponent> */}
-        <div>
-          <SlideRevealComponent delay={2} reveal={"bottomReveal"} children={<span className={`primary-text`}>WHO I AM</span>}></SlideRevealComponent>
-        </div>
+        <SlideRevealComponent delay={10} reveal={"bottomReveal"}>
+          <h1 className={`billboard job-title primary-text`}>
+            SANKIT <br /> SHRESTHA
+          </h1>
+        </SlideRevealComponent>
+        <div>{/* <SlideRevealComponent delay={2} reveal={"bottomReveal"} children={<span className={`primary-text`}>WHO I AM</span>}></SlideRevealComponent> */}</div>
       </div>
 
-      <a href="#contacts">
+      {/* <a href="#contacts">
         <div className="GetInTouchSection">
           <img src={Arrow} alt="" />
           Let's work together
         </div>
-      </a>
+      </a> */}
       <div className="middleSection">
         <SlideRevealComponent delay={1} reveal={"rightReveal"}>
           {heroImageBlockers.map((blocker) => (
             <div className="blockers" style={{ position: "absolute", ...blocker.style }}></div>
           ))}
-          <img src={HeroImage} alt="Wevdev"  border="0" />
+          <img src={HeroImage} alt="Wevdev" border="0" />
         </SlideRevealComponent>
 
         {/* <img src={HeroImage} alt="Wevdev" /> */}
       </div>
       <div className="BottomSection">
-        <SlideRevealComponent delay={2} reveal={"rightReveal"} children={<span className={`primary-text`}>WHAT I DO</span>}></SlideRevealComponent>
-
         {/* <SlideRevealComponent.2
         0
           delay={2}
           reveal={"rightReveal"}
           children={ */}
-        <h1 className={`name billboard`}>
-          Software
-          <br />
-          Developer
-          {/* <CircularText text="Who I am" deg={12} color="black" backgroundColor="white" /> */}
-        </h1>
+
+        {/* <SlideRevealComponent delay={2} reveal={"rightReveal"} children={<span className={`primary-text`}>WHAT I DO</span>}></SlideRevealComponent> */}
+        {/* 
+          <h1 className={`name billboard`}>
+            Software
+            Developer
+          </h1> */}
+        <img src={HeroImage} alt="Wevdev" border="0" />
+
         {/* }
         ></SlideRevealComponent> */}
       </div>

@@ -5,13 +5,13 @@
   display: grid;
   align-content: center;
   justify-items: center;
-  padding: $s10 $s8;
+  margin-top: $s10;
+  padding: $s2 $s8;
   position: relative;
-  z-index: 4;
   gap: $s4;
   background-color: $appBackgroundColour;
 
-  h1{
+  h1 {
     margin: 0;
   }
 
@@ -93,6 +93,7 @@
       .button {
         margin-right: auto;
       }
+
       .nameemail {
         grid-template-columns: 1fr;
         grid-row-gap: 20px;
@@ -119,7 +120,7 @@
       .button {
         margin-right: auto;
       }
-      
+
       .nameemail {
         grid-template-columns: 1fr;
         grid-row-gap: 20px;
@@ -137,6 +138,6 @@
 
 @media screen and (max-width: 500px) {
   .Contacts {
-    // margin: $s10 $s2;
+    padding: $s10 $s2;
   }
 }
