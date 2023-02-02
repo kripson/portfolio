@@ -66,9 +66,9 @@ function App() {
           <video src={backgroundVideo} autoPlay loop></video>
         </div> */}
         <div className="logoContainer">
-          <Link to="#home">
+          <a href="#home">
             <img className="logo" src={logo} alt="kripson-tshirt" />
-          </Link>
+          </a>
         </div>
 
         <div className="first">

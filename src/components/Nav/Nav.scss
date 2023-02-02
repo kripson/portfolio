@@ -75,30 +75,30 @@
         font-size: $s4;
       }
 
-      &::after {
-        content: '';
-        position: absolute;
-        background-color: $primary-text-colour;
-        width: 0;
-        height: 0;
-        top: -50%;
-        left: -50%;
-        border-radius: 1000px;
-        transition: all 0.25s;
-        z-index: -1;
-      }
+      // &::after {
+      //   content: '';
+      //   position: absolute;
+      //   background-color: $primary-text-colour;
+      //   width: 0;
+      //   height: 0;
+      //   top: -50%;
+      //   left: -50%;
+      //   border-radius: 1000px;
+      //   transition: all 0.25s;
+      //   z-index: -1;
+      // }
 
-      &:hover {
-        label span {
-          background-color: black;
-        }
+      // &:hover {
+      //   label span {
+      //     background-color: black;
+      //   }
 
-        &::after {
-          width: 200%;
-          height: 200%;
-        }
+      //   &::after {
+      //     width: 200%;
+      //     height: 200%;
+      //   }
 
-      }
+      // }
     }
 
     .hamburgermenu {
@@ -107,7 +107,7 @@
       left: 0;
       width: 100vw;
       height: 100vh;
-      transition: 0.75s cubic-bezier(1, .01, .62, 1.01);
+      transition: 0.75s cubic-bezier(0.455, 0.03, 0.515, 0.955);
       z-index: 10;
       display: flex;
       justify-content: center;
@@ -127,7 +127,7 @@
         }
       }
 
-      .socials{
+      .socials {
         position: absolute;
         left: $s10;
         bottom: $s10;
@@ -136,13 +136,13 @@
         width: 50vw;
         min-width: 250px;
         justify-items: center;
-        
-        .socialLinks{
+
+        .socialLinks {
           display: flex;
           gap: $s1;
           align-content: center;
 
-          a{
+          a {
             display: flex;
             text-decoration: none;
             color: $primary-text-colour;
@@ -151,34 +151,38 @@
         }
       }
 
-      .email a{
-        text-decoration: none;
-        color: $primary-text-colour;
-        max-width: 400px;
-        height: 150px;
-        width: 50vw;
-        min-width: 250px;
+      .email {
         position: absolute;
         left: $s10;
         bottom: calc($s1 * 17.5);
 
-        display: grid;
-        justify-items: center;
-        align-content: center;
+        a {
+          text-decoration: none;
+          color: $primary-text-colour;
+          max-width: 400px;
+          height: 150px;
+          width: 50vw;
+          min-width: 250px;
 
-        svg{
-          position: absolute;
-          width: 100%;
 
-          path{
-            transition: all 0.25s;
+          display: grid;
+          justify-items: center;
+          align-content: center;
+
+          svg {
+            position: absolute;
+            width: 100%;
+
+            path {
+              transition: all 0.25s;
+            }
           }
-        }
 
-        &:hover{
-          svg path{
-            fill: $primary-text-colour !important;
+          &:hover {
+            svg path {
+              fill: $primary-text-colour !important;
 
+            }
           }
         }
       }
@@ -282,11 +286,24 @@
     .rightSection {
       .hamburgermenu {
 
+        .email,
+        .socials {
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .email{
+          left: unset;
+        }
+
         ul {
           justify-content: center;
         }
       }
     }
+
+
+
 
 
 
