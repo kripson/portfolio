@@ -1,12 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useLayoutEffect } from "react";
 import "./Intro.scss";
-import HeroImage from "../../assets/portrait.jpg";
+import HeroImage from "../../assets/hero-image.webp";
 import Button from "../Button/Button";
 
 import { useWindowWidth } from "@react-hook/window-size";
 import { CircularText } from "../CircularText/CircularText";
 import Arrow from "../../assets/Arrow 1.svg";
 import SlideRevealComponent from "../SlideRevealComponent/SlideRevealComponent";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import { SplitText } from "../../utils/splitText";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Intro = ({ firstLoaded }) => {
   const onlyWidth = useWindowWidth();
@@ -51,20 +56,46 @@ const Intro = ({ firstLoaded }) => {
     },
   ];
 
+  useLayoutEffect(() => {
+    const text = document.querySelector(".job-title");
+
+    const splitText = new SplitText(text);
+
+    gsap.from(splitText.chars, {
+      duration: 1,
+      y: 100,
+      autoAlpha: 0,
+      stagger: 0.05,
+      delay: 4,
+    });
+
+    gsap.fromTo(
+      ".BottomSection img",
+      {
+        scale: 2,
+        opacity: 0
+      },
+      {
+        duration: 1,
+        scale: 1,
+        opacity: 1,
+        stagger: 0.05,
+        delay: 4,
+      }
+    );
+  }, []);
+
   return (
     <div className="Intro">
-      {/* <div className="arrowDown">
+      <div className="arrowDown h6">
         {" "}
         <img src={Arrow} alt="" />
         Scroll
-      </div> */}
+      </div>
 
       <div className="TopSection">
-        <SlideRevealComponent delay={10} reveal={"bottomReveal"}>
-          <h1 className={`billboard job-title primary-text`}>
-            SANKIT <br /> SHRESTHA
-          </h1>
-        </SlideRevealComponent>
+        <h1 className={`billboard job-title primary-text`}>SANKIT SHRESTHA</h1>
+
         <div>{/* <SlideRevealComponent delay={2} reveal={"bottomReveal"} children={<span className={`primary-text`}>WHO I AM</span>}></SlideRevealComponent> */}</div>
       </div>
 

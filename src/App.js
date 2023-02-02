@@ -13,7 +13,7 @@ import Spline from "@splinetool/react-spline";
 import LazyLoad from "react-lazy-load";
 import { DoubleMouseCursor } from "kripson-ui";
 import "kripson-ui/dist/style.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Nav from "./components/Nav/Nav";
 import { useEffect } from "react";
 import CountUp from "react-countup";
@@ -42,23 +42,21 @@ function App() {
     });
   }, [scrollYProgress]);
 
-
-  useLayoutEffect(()=>{
-    gsap.to('.logoContainer', {
+  useLayoutEffect(() => {
+    gsap.to(".logoContainer", {
       width: 150,
       height: 128,
       duration: 1,
-      delay: 3.5
-    })
+      delay: 3.5,
+    });
 
-    gsap.to('.logo', {
+    gsap.to(".logo", {
       width: 110,
       height: 64,
       duration: 1,
-      delay: 3.5
-
-    })
-  }, [])
+      delay: 3.5,
+    });
+  }, []);
 
   return (
     <BrowserRouter>
@@ -67,9 +65,11 @@ function App() {
         {/* <div className="background">
           <video src={backgroundVideo} autoPlay loop></video>
         </div> */}
-      <div className="logoContainer">
-        <img className="logo" src={logo} alt="kripson-tshirt" />
-      </div>
+        <div className="logoContainer">
+          <Link to="#home">
+            <img className="logo" src={logo} alt="kripson-tshirt" />
+          </Link>
+        </div>
 
         <div className="first">
           <div className="progressBar h6">
@@ -81,16 +81,12 @@ function App() {
 
         <>
           <Nav></Nav>
-          <Homesection></Homesection>
+          <div id="home">
+            <Homesection></Homesection>
+          </div>
           <div id="aboutme" className="sectionContainer">
             <AboutMe />
           </div>
-
-          {/* <div id="skills" className="sectionContainer">
-                <LazyLoad>
-                  <Skills />
-                </LazyLoad>
-              </div> */}
 
           <Projects />
 

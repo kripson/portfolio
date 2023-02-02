@@ -127,7 +127,7 @@ const Contacts = () => {
 
   return (
     <div className="Contacts">
-      <h1 className="billboard">
+      <h1 className="h1">
         Let's build your <br />
       </h1>
       {currentService ? (

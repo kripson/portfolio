@@ -4,15 +4,41 @@
   min-height: 100vh;
   display: grid;
   position: relative;
-  align-items: center;
+  align-items: start;
   padding: $s10 $s8;
   text-align: left;
   gap: $s8;
-
+  margin-bottom: $s10;
   box-sizing: border-box;
 
-  p{
-    font-size: $s4;
+  .background{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+
+    img{
+      height: 100%;
+    }
+  }
+
+  .photoContainer {
+    display: flex;
+    justify-content: center;
+    gap: 5vw;
+    img {
+      position: relative;
+      max-height: 400px;
+      max-width: 40vw;
+      clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+    }
+  }
+
+
+  .aboutmeparagraph>div>div>span>span {
+    background-color: red;
   }
 
   h1 {
@@ -40,7 +66,6 @@
     justify-content: center;
     align-items: center;
     gap: $s2;
-    min-height: 50vh;
 
 
 
@@ -48,7 +73,7 @@
     p {
       position: relative;
       top: -$s5;
-      
+
     }
 
     img {
@@ -66,7 +91,6 @@
     justify-content: center;
     align-items: center;
     gap: $s2;
-    min-height: 50vh;
 
     img {
       position: absolute;
@@ -91,7 +115,6 @@
     justify-content: center;
     align-items: center;
     gap: $s2;
-    min-height: 50vh;
 
     img {
       position: absolute;
@@ -117,7 +140,12 @@
   p {
     line-height: 1.2em;
     // font-size: $header5;
-    max-width: 300px;
+    max-width: 1500px;
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+
 
     a {
       color: unset;

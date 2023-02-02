@@ -8,13 +8,12 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Homesection = ({ firstLoaded }) => {
   useLayoutEffect(() => {
-    gsap.to(".jobSection", {
+    gsap.to(".jobSection svg", {
       top: 0,
       scrollTrigger: {
         trigger: ".jobSection",
-        markers: true,
         scrub: 1,
-        start: "200px top",
+        markers: true,
       },
     });
 
@@ -25,9 +24,9 @@ const Homesection = ({ firstLoaded }) => {
 
       scrollTrigger: {
         trigger: ".jobSection",
-        markers: true,
         scrub: 1,
-        start: "center top",
+        markers: true,
+        start: "top bottom",
         end: "bottom bottom",
       },
     });
@@ -36,9 +35,8 @@ const Homesection = ({ firstLoaded }) => {
       fillOpacity: 1,
       scrollTrigger: {
         trigger: ".jobSection",
-        markers: true,
         scrub: 1,
-        start: "center top",
+        start: "top bottom",
         end: "bottom bottom",
       },
     });

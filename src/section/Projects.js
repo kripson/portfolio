@@ -207,7 +207,7 @@ const Projects = () => {
   return (
     <>
       <div className="Projects full-width-element" id="projects" onMouseLeave={onMouseLeave}>
-        <span className="sectionTitle h6" style={{ textAlign: "left" }}>
+        <span className="sectionTitle h5" style={{ textAlign: "left" }}>
           Selected work
         </span>
 
@@ -216,7 +216,7 @@ const Projects = () => {
               <div className="project" key={idx} data-project-number={idx} onMouseEnter={onMouseOver} id={`project-${idx}`} onClick={onProjectClick}>
                 <div className="projectDetails" data-project-number={idx}>
                   <h1 className="h6" data-project-number={idx}>
-                    -0{project.id}
+                    <span>-0{project.id}</span>
                   </h1>
 
                   <div className="markee" key={idx} data-project-number={idx}>

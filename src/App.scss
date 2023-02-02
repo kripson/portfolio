@@ -25,8 +25,8 @@ body {}
   scroll-behavior: smooth;
   background-color: $appBackgroundColour;
   min-height: 100vh;
-  color: white;
-  // overflow: hidden;
+  color: $primary-text-colour;
+  overflow: hidden;
 
   // cursor: none !important;
 
@@ -109,7 +109,7 @@ body {}
   position: fixed;
   top: 0;
   left: 0;
-  height: 50vh;
+  height: 60vh;
   z-index: 20;
   overflow: visible;
   box-sizing: border-box;

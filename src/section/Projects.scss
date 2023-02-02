@@ -25,6 +25,8 @@
     -webkit-text-stroke: 1px solid white;
   }
 
+
+
   .project {
     max-width: 100%;
     min-width: 0;
@@ -53,6 +55,16 @@
       display: grid;
       gap: $s10;
 
+
+      h1{
+        display: grid;
+        justify-content: center;
+
+        *{
+          position: relative;
+          right: 40vw;
+        }
+      }
 
       .markee {
         display: flex;
