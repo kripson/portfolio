@@ -23,7 +23,7 @@ const Homesection = ({ firstLoaded }) => {
 
       scrollTrigger: {
         trigger: ".jobSection",
-        scrub: 1
+        scrub: 1,
         start: "top bottom",
         end: "bottom bottom",
       },
