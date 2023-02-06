@@ -113,79 +113,77 @@
       justify-content: center;
       align-items: center;
 
-      .socials {
-        position: absolute;
-        bottom: 8px;
-        right: 100px;
-        display: flex;
-        gap: 16px;
-        align-items: center;
 
-        svg {
-          width: 24px;
-          height: 24px;
-        }
-      }
 
-      .socials {
+      .contacts {
         position: absolute;
         left: $s10;
         bottom: $s10;
-        display: grid;
+        width: 90vw;
         max-width: 400px;
-        width: 50vw;
-        min-width: 250px;
+        display: grid;
         justify-items: center;
 
-        .socialLinks {
-          display: flex;
-          gap: $s1;
-          align-content: center;
-
+        .email {
           a {
-            display: flex;
             text-decoration: none;
             color: $primary-text-colour;
-            font-size: $s2;
+            max-width: 400px;
+            height: 150px;
+            width: 50vw;
+            min-width: 250px;
+
+
+            display: grid;
+            justify-items: center;
+            align-content: center;
+
+            svg {
+              position: absolute;
+              width: 100%;
+
+              path {
+                transition: all 0.25s;
+              }
+            }
+
+            &:hover {
+              svg path {
+                fill: $primary-text-colour !important;
+
+              }
+            }
           }
         }
-      }
 
-      .email {
-        position: absolute;
-        left: $s10;
-        bottom: calc($s1 * 17.5);
-
-        a {
-          text-decoration: none;
-          color: $primary-text-colour;
-          max-width: 400px;
-          height: 150px;
-          width: 50vw;
-          min-width: 250px;
-
-
-          display: grid;
-          justify-items: center;
-          align-content: center;
+        .socials {
+          display: flex;
+          gap: 16px;
+          align-items: center;
+          flex-wrap: wrap;
+          justify-content: center;
 
           svg {
-            position: absolute;
-            width: 100%;
-
-            path {
-              transition: all 0.25s;
-            }
+            width: 24px;
+            height: 24px;
           }
 
-          &:hover {
-            svg path {
-              fill: $primary-text-colour !important;
+          .socialLinks {
+            display: flex;
+            gap: $s1;
+            align-content: center;
 
+            a {
+              display: flex;
+              text-decoration: none;
+              color: $primary-text-colour;
+              font-size: $s2;
             }
           }
         }
       }
+
+
 
       ul {
         display: grid;
@@ -199,7 +197,7 @@
 
         li {
           justify-self: center;
-          font-size: max(calc(100vw/20), $s6);
+          font-size: max(calc(100vw/20), $s4);
           display: grid;
           font-family: $headerFont;
           font-weight: bold;
@@ -286,14 +284,14 @@
     .rightSection {
       .hamburgermenu {
 
-        .email,
-        .socials {
+        .contacts{
           margin-left: auto;
           margin-right: auto;
         }
 
-        .email{
+        .contacts {
           left: unset;
+          right: unset;
         }
 
         ul {

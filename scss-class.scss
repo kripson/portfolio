@@ -1,12 +1,12 @@
 @import './variables.scss';
 @font-face {
     font-family: Proxima Nova;
-    src: url('/fonts/FreightSansProMedium-Regular.ttf');
+    src: url('/fonts/Intro.otf');
 }
 
 @font-face {
-    font-family: Tusker Grotesk;
-    src: url('/fonts/TuskerGrotesk-4500Medium.otf');
+    font-family: Freight Sans;
+    src: url('/fonts/FreightSansProMedium-Regular.ttf');
 }
 //typography classes
 .heading, h1, h2, h3, h4, h5, h6{
@@ -20,6 +20,7 @@
 
 .billboard{
     font-size: $billboard;
+    font-family: $billBoardFont;
 }
 
 
@@ -34,6 +35,7 @@
 
 .h3, h3{
     font-size: $header3;
+    
 }
 
 .h4, h4{  
