@@ -125,6 +125,10 @@
         justify-items: center;
 
         .email {
+          width: 100%;
+          display: grid;
+          justify-content: center;
+          
           a {
             text-decoration: none;
             color: $primary-text-colour;
