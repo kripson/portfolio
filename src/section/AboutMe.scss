@@ -10,6 +10,7 @@
   gap: $s10;
   margin-bottom: $s10;
   box-sizing: border-box;
+  justify-items: center;
 
   .background{
     position: absolute;
@@ -142,8 +143,6 @@
     // font-size: $header5;
     max-width: 1500px;
     width: 90vw;
-    margin-left: auto;
-    margin-right: auto;
     text-align: center;
 
 
