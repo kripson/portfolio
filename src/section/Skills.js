@@ -1,7 +1,5 @@
 import React, { useRef } from "react";
 import "./Skills.scss";
-import Html from "../assets/html-5.png";
-import Css from "../assets/css.png";
 import ReactIcon from "../assets/react.png";
 import Angular from "../assets/angular.png";
 import Node from "../assets/nodejs.png";
@@ -11,13 +9,7 @@ import Mongodb from "../assets/mongodb.png";
 import Vue from "../assets/vue.png";
 import Figma from "../assets/figma.png";
 
-
-import LazyLoad from "react-lazy-load";
-import Spline from "@splinetool/react-spline";
-import Tshirt from "../assets/T-Shirt.svg";
-import { motion } from "framer-motion/dist/framer-motion";
 import { useWindowWidth } from "@react-hook/window-size";
-import { StaggerTextReveal } from "stagger-text-reveal-animation";
 // import React  from "../assets/react.png"
 
 const Skills = () => {
@@ -154,7 +146,7 @@ const Skills = () => {
             <span className="h4">{skill.name}</span>
             <div className="toolsContainer">
               {skill.tools.map((tool, idx) => {
-                return <span className="h6 tool">{tool.iconPath ? <img src={tool.iconPath} alt={tool.name} />: ''}<StaggerTextReveal text={tool.name} fontSize={24} triggerAfter={2}></StaggerTextReveal></span>;
+                return <span className="h6 tool">{tool.iconPath ? <img src={tool.iconPath} alt={tool.name} />: ''}</span>;
               })}
             </div>
           </div>

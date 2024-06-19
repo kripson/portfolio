@@ -1,12 +1,12 @@
 @import './variables.scss';
 @font-face {
     font-family: Proxima Nova;
-    src: url('/fonts/Intro.otf');
+    src: url('./assets/fonts/Intro.otf');
 }
 
 @font-face {
     font-family: Freight Sans;
-    src: url('/fonts/FreightSansProMedium-Regular.ttf');
+    src: url('./assets/fonts/FreightSansProMedium-Regular.ttf');
 }
 //typography classes
 .heading, h1, h2, h3, h4, h5, h6{

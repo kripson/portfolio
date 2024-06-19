@@ -2,24 +2,18 @@ import React, { useState, useMemo, useRef, useLayoutEffect } from "react";
 import "./App.scss";
 import Homesection from "./section/Homesection";
 import AboutMe from "./section/AboutMe";
-import Skills from "./section/Skills";
 import Projects from "./section/Projects";
 import Contacts from "./section/Contacts";
-import Contactblock from "./components/Contactblock/Contactblock";
 
 import logo from "./assets/logo.png";
-// import { Cursor } from "./components/Cursor/cursor";
-import Spline from "@splinetool/react-spline";
-import LazyLoad from "react-lazy-load";
+
 import { DoubleMouseCursor } from "kripson-ui";
 import "kripson-ui/dist/style.css";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Nav from "./components/Nav/Nav";
 import { useEffect } from "react";
 import CountUp from "react-countup";
-import SlideRevealComponent from "./components/SlideRevealComponent/SlideRevealComponent";
-import { motion, useScroll, useTransform } from "framer-motion/dist/framer-motion";
-import backgroundVideo from "../src/assets/video(1).mp4";
+import { motion, useScroll, useTransform } from "framer-motion";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);

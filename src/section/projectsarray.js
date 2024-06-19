@@ -20,7 +20,7 @@ export const projectsarray = [
     },
     {
         id:2,
-        title:'Kzen8',
+        title:'Kzen8 Website',
         imageUrl:require("../assets/Kzen8-project.png"),
         mobileLayout: require("../assets/kzen8mobile.png"),
         laptopLayout: require("../assets/kzen8laptop.png"),

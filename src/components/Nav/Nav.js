@@ -1,11 +1,7 @@
 import React, { useLayoutEffect, useState } from "react";
 import "./Nav.scss";
-import logo from "../../assets/logo.png";
-import { TfiFacebook, TfiLinkedin, TfiGithub } from "react-icons/tfi";
 import { RiArrowRightDownLine } from "react-icons/ri";
 import { HamburgerMenuButton } from "../HamburgerMenuButton/HamburgerMenuButton";
-import { Link } from "react-router-dom";
-import { StaggerTextReveal } from "stagger-text-reveal-animation";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
@@ -51,18 +47,19 @@ const Nav = () => {
           <ul>
             <li className="heading">
               <a className="animatedBorderBottomOnHover" href="https://www.linkedin.com/in/sankit-shrestha-14a397170/" target="_blank" rel="noreferrer">
-                <StaggerTextReveal text={"LINKEDIN"} fontSize={24} direction={"down"}></StaggerTextReveal> <RiArrowRightDownLine />
+                LINKEDIN
+                <RiArrowRightDownLine />
               </a>
             </li>
             <li className="heading">
               <a className="animatedBorderBottomOnHover" href="https://github.com/kripson" target="_blank" rel="noreferrer">
-                <StaggerTextReveal text={"GITHUB"} fontSize={24}></StaggerTextReveal>
+                GITHUB
                 <RiArrowRightDownLine />
               </a>
             </li>
             <li className="heading">
               <a className="animatedBorderBottomOnHover" href="https://www.instagram.com/kripson.dev/" target="_blank" rel="noreferrer">
-                <StaggerTextReveal text={"INSTAGRAM"} fontSize={24} direction={"down"}></StaggerTextReveal>
+                INSTAGRAM
                 <RiArrowRightDownLine />
               </a>
             </li>
@@ -101,7 +98,7 @@ const Nav = () => {
             </li>
           </ul>
           <div className="contacts">
-          <div className="email">
+            <div className="email">
               <a href="mailto:sankit.jobs@gmail.com">
                 <svg width="147.50822mm" height="35.658401mm" viewBox="0 0 147.50822 35.658401" version="1.1" id="svg5">
                   <defs id="defs2">
@@ -130,16 +127,17 @@ const Nav = () => {
             <div className="socials">
               <div className="socialLinks">
                 <a className="animatedBorderBottomOnHover" href="https://www.linkedin.com/in/sankit-shrestha-14a397170/" target="_blank" rel="noreferrer">
-                  <StaggerTextReveal text={"LINKEDIN"} fontSize={16} direction={"down"}></StaggerTextReveal> <RiArrowRightDownLine />
+                  LINKEDIN
+                  <RiArrowRightDownLine />
                 </a>
 
                 <a className="animatedBorderBottomOnHover" href="https://github.com/kripson" target="_blank" rel="noreferrer">
-                  <StaggerTextReveal text={"GITHUB"} fontSize={16}></StaggerTextReveal>
+                  GITHUB
                   <RiArrowRightDownLine />
                 </a>
 
                 <a className="animatedBorderBottomOnHover" href="https://www.instagram.com/kripson.dev/" target="_blank" rel="noreferrer">
-                  <StaggerTextReveal text={"INSTAGRAM"} fontSize={16} direction={"down"}></StaggerTextReveal>
+                  INSTAGRAM
                   <RiArrowRightDownLine />
                 </a>
               </div>

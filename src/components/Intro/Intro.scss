@@ -1,4 +1,4 @@
-@import '../../../variables.scss';
+@import "../../variables.scss";
 
 .Intro {
   height: calc(100vh - 144px);
@@ -99,6 +99,9 @@
       font-size: max(calc(100vw / 13.5), $s5);
       // background-color: $appBackgroundColour;
 
+      &>div{
+        width: 100%;
+      }
 
 
       .CircularText {
@@ -280,7 +283,7 @@
       display: grid;
 
       .job-title {
-        max-width: 500px;
+        max-width: 600px;
         left: unset;
 
 
@@ -332,7 +335,6 @@
     min-height: unset;
     align-items: center;
     padding: 0 $s3;
-    align-content: center;
 
     a {
       position: relative;

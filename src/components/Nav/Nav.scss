@@ -1,8 +1,8 @@
-@import "../../../variables.scss";
+@import "../../variables.scss";
 
 .Nav {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 2fr;
   justify-content: space-between;
   padding: $s4 $s8;
   z-index: 11;
