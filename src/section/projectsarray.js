@@ -20,6 +20,25 @@ export const projectsarray = [
     },
     {
         id:2,
+        title:'Learn your way to happy',
+        imageUrl:require("../assets/learnyourwaytohappy.webp"),
+        mobileLayout: require("../assets/learnyourwaytohappymobile.webp"),
+        laptopLayout: require("../assets/learnyouwaytohappylaptop.webp"),
+        description: ["Project developed for Bernie Hayne. This project serves as a landing page for Bernie's second children book called learnyourwaytohappy. I was responsible for designing, developing, testing and deploying the application.",
+            "The front-end was created using NextJs and styled using custom css."],
+        websiteUrl: 'https://learnyourwaytohappy.com',
+        ready:true,
+        height: '35vh',
+        year: '2023-24',
+        tools:['NextJs'],
+        helperImage: require("../assets/learnyourwaytohappymobile.webp"),
+        styles:{
+            backgroundColor: '#7C44F1',
+            color: 'white'
+        }
+    },
+    {
+        id:3,
         title:'Kzen8 Website',
         imageUrl:require("../assets/Kzen8-project.png"),
         mobileLayout: require("../assets/kzen8mobile.png"),
@@ -38,7 +57,7 @@ export const projectsarray = [
         }
     },
     {
-        id:3,
+        id:4,
         title:'Little Hideout Cafe',
         imageUrl:require("../assets/littlehideout.webp"),
         mobileLayout: require("../assets/littlehideoutmobile.png"),
@@ -54,24 +73,6 @@ export const projectsarray = [
         styles:{
             backgroundColor: '#FFFBF1',
             color: 'black'
-        }
-    },
-    {
-        id:4,
-        title:'Studio K',
-        imageUrl:require("../assets/studiok.webp"),
-        mobileLayout: require("../assets/studio-k-mobile.png"),
-        laptopLayout: require("../assets/studio-k-laptop.png"),
-        description: ["Studio K is a platform that I developed and personally use to store all of my design ideas and assets. It is currently under construction and will be available to everyone soon." ,
-    "Please, use the guest login to get a demo of the platform. Features are deliberately limited until the platform is ready to be released."],
-        websiteUrl: 'https://studiok.pro',
-        ready:true,
-        year: '2022',
-        height: '50vh',
-        tools:['React','Redux','NodeJs','MongoDB'],
-        styles:{
-            backgroundColor: '#7C44F1',
-            color: 'white'
         }
     },
     {
@@ -113,36 +114,5 @@ export const projectsarray = [
             color: '#DFD3C3'
         }
 
-    },
-    // {
-    //     id:6,
-    //     title:'Kripson Eportfolio',
-    //     imageUrl:require("../assets/Eportfolio.jpeg"),
-    //     websiteUrl: 'https://portfolio-kripson.web.app/',
-    //     mobileLayout: require("../assets/portfoliomobile.png"),
-    //     laptopLayout: require("../assets/portfoliolaptop.png"),
-    //     description: ["This is a showcase for my projects.",
-    //         " The front-end was created using React and styled using custom css."],
-    //     ready:true,
-    //     tools:['react']
-    // },
-    {
-        id:7,
-        title:'Hans Driving',
-        imageUrl:require("../assets/Drivingschool.jpeg"),
-        mobileLayout: require("../assets/hansmobile.png"),
-        laptopLayout: require("../assets/hanslaptop.png"),
-        description: ["Project developed for Hans Driving Training Center. The project's objective was to establish the client's online presence. The website is a part of a bigger branding project for the client. I was responsible for designing, developing, testing and deploying the application. Hence, this is entirely my creation.",
-            " The front-end was created using React and styled using custom css. The back-end server was developed using Express Js which is connected to a MongoDB database."],
-        websiteUrl: 'https://hans-driving.web.app',
-        ready:true,
-        year: '2020',
-        height: '25vh',
-        tools:['react','node'],
-        helperImage: require("../assets/hansdrivinghelper.png"),
-        styles:{
-            backgroundColor: '#171717',
-            color: '#FFA500'
-        }
-    },
+    }
 ];
