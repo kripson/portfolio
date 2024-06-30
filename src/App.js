@@ -4,7 +4,7 @@ import Homesection from "./section/Homesection";
 import AboutMe from "./section/AboutMe";
 import Projects from "./section/Projects";
 import Contacts from "./section/Contacts";
-
+import BackgroundImage from './assets/Group 1(3).svg';
 import logo from "./assets/logo.png";
 
 import { DoubleMouseCursor } from "kripson-ui";
@@ -50,15 +50,26 @@ function App() {
       duration: 1,
       delay: 3.5,
     });
+
+    gsap.to(["#home", ".background"], {
+      transform: 'scale(2)',
+      opacity: 0,
+      scrollTrigger: {
+        trigger: ".jobSection",
+        scrub: 1,
+        start: "top bottom",
+        end: "center center",
+      }
+    });
   }, []);
 
   return (
     <BrowserRouter>
       <div className="App">
-        <DoubleMouseCursor />
-        {/* <div className="background">
-          <video src={backgroundVideo} autoPlay loop></video>
-        </div> */}
+
+        <div className="background">
+          <img src={BackgroundImage} alt="background image" />
+        </div>
         <div className="logoContainer">
           <a href="#home">
             <img className="logo" src={logo} alt="kripson-tshirt" />
@@ -72,7 +83,7 @@ function App() {
             <motion.div initial={{ width: "1%", backgroundColor: "white", height: "100%" }} animate={{ width: "100%", transition: { duration: 5, type: "spring", stiffness: 10 } }}></motion.div>
           </div>
         </div>
-
+        <DoubleMouseCursor />
         <>
           <Nav></Nav>
           <div id="home">

@@ -1,7 +1,7 @@
 @import "../../variables.scss";
 
 .Nav {
-  display: grid;
+  display: flex;
   grid-template-columns: 1fr 2fr;
   justify-content: space-between;
   padding: $s4 $s8;
@@ -68,7 +68,10 @@
       justify-self: start;
       z-index: 11;
       position: relative;
-      // mix-blend-mode: difference;
+
+      &:hover {
+        cursor: pointer;
+      }
 
 
       svg {
@@ -112,23 +115,25 @@
       display: flex;
       justify-content: center;
       align-items: center;
-
+      flex-direction: row-reverse;
+      overflow: hidden;
 
 
       .contacts {
-        position: absolute;
         left: $s10;
         bottom: $s10;
         width: 90vw;
         max-width: 400px;
+        height: 100%;
         display: grid;
-        justify-items: center;
+        align-content: end;
+        padding: 0 0 5rem 5rem;
 
         .email {
           width: 100%;
           display: grid;
           justify-content: center;
-          
+
           a {
             text-decoration: none;
             color: $primary-text-colour;
@@ -144,6 +149,7 @@
             svg {
               position: absolute;
               width: 100%;
+              max-width: 400px;
 
               path {
                 transition: all 0.25s;
@@ -197,6 +203,7 @@
         gap: $s2;
         margin: 0;
         padding: $s8;
+        align-content: center;
 
         li {
           justify-self: center;
@@ -282,12 +289,23 @@
   padding: $s4 $s8;
 }
 
-@media only screen and (max-width: 968px) {
+@media only screen and (max-width: $tabletScreen) {
+  
+  .intro-circular{
+    display: none;
+  }
+  
   .Nav {
     .rightSection {
       .hamburgermenu {
+        display: grid;
+        align-content: center;
+        justify-items: center;
 
-        .contacts{
+        .contacts {
+          height: unset;
+
+          padding: 0;
           margin-left: auto;
           margin-right: auto;
         }
@@ -299,6 +317,7 @@
 
         ul {
           justify-content: center;
+          padding: $s5;
         }
       }
     }

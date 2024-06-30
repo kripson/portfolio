@@ -40,7 +40,7 @@ const Nav = () => {
 
   return (
     <div className="Nav">
-      <div className="leftSection"></div>
+      <div className="leftSection"><span></span></div>
 
       <div className="rightSection">
         <div className="ContactLinks">

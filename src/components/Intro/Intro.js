@@ -87,14 +87,16 @@ const Intro = ({ firstLoaded }) => {
 
   return (
     <div className="Intro">
-      <div className="arrowDown h6">
+      {/* <div className="arrowDown h6">
         {" "}
         <img src={Arrow} alt="" />
         Scroll
-      </div>
+      </div> */}
 
       <div className="TopSection">
         <h1 className={`billboard job-title primary-text`}>SANKIT SHRESTHA</h1>
+        <h6 className={`primary-text body`} style={{paddingLeft: '4px'}}>FULL STACK DEVELOPER</h6>
+        <CircularText className="intro-circular" text='All THINGS WEB' deg={20} color={'orange'}/>
 
         <div>{/* <SlideRevealComponent delay={2} reveal={"bottomReveal"} children={<span className={`primary-text`}>WHO I AM</span>}></SlideRevealComponent> */}</div>
       </div>
