@@ -16,6 +16,15 @@ body {}
     object-fit: cover;
 
   }
+
+  .gradient-background{
+    min-height: 100vh;
+    background: linear-gradient(to top, black, #1d1d1d34);
+    position: absolute;
+    top:0;
+    min-width: 100vw;
+
+  }
 }
 
 .App {

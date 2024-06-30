@@ -4,7 +4,7 @@ import Homesection from "./section/Homesection";
 import AboutMe from "./section/AboutMe";
 import Projects from "./section/Projects";
 import Contacts from "./section/Contacts";
-import BackgroundImage from './assets/Group 1(3).svg';
+import BackgroundImage from './assets/Group 1(6).svg';
 import logo from "./assets/logo.png";
 
 import { DoubleMouseCursor } from "kripson-ui";
@@ -69,6 +69,9 @@ function App() {
 
         <div className="background">
           <img src={BackgroundImage} alt="background image" />
+          <div className="gradient-background">
+
+          </div>
         </div>
         <div className="logoContainer">
           <a href="#home">
