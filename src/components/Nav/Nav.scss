@@ -137,11 +137,10 @@
           a {
             text-decoration: none;
             color: $primary-text-colour;
-            max-width: 400px;
+            max-width: 90vw;
             height: 150px;
-            min-width: 250px;
-
-
+            width: 350px;
+            position: relative;
             display: grid;
             justify-items: center;
             align-content: center;
@@ -149,7 +148,6 @@
             svg {
               position: absolute;
               width: 100%;
-              max-width: 400px;
 
               path {
                 transition: all 0.25s;
