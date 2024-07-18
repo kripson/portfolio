@@ -21,20 +21,12 @@ gsap.registerPlugin(ScrollTrigger);
 function App() {
   const [firstLoaded, setFirstLoaded] = useState(false);
 
-  const { scrollYProgress } = useScroll();
-
   useEffect(() => {
     window.scrollTo(0, 0);
     setTimeout(() => {
       setFirstLoaded(true);
     }, 4250);
   }, []);
-
-  useEffect(() => {
-    scrollYProgress.onChange((e) => {
-      console.log(e);
-    });
-  }, [scrollYProgress]);
 
   useLayoutEffect(() => {
     gsap.to(".logoContainer", {
@@ -51,17 +43,69 @@ function App() {
       delay: 3.5,
     });
 
-    gsap.to(["#home", ".background"], {
-      transform: 'scale(2)',
-      opacity: 0,
-      scrollTrigger: {
-        trigger: ".jobSection",
-        scrub: 1,
-        start: "top bottom",
-        end: "center center",
+    gsap.fromTo([".background"],
+      {
+        transform: 'scale(2)'
+      },
+      {
+        transform: 'scale(1)',
+        opacity: 1,
+        delay: 4,
+        duration: 3
+      });
+
+    gsap.fromTo(
+      [".background"],
+      {
+        transform: 'scale(1)',
+        opacity: 1,
+        delay: 4,
+        duration: 3
+      },
+      {
+        transform: 'scale(2)',
+        opacity: 0,
+        scrollTrigger: {
+          trigger: ".jobSection",
+          scrub: 1,
+          start: "top bottom",
+          end: "center center",
+        }
       }
-    });
+    );
+
   }, []);
+
+
+
+
+
+
+  // useLayoutEffect(() => {
+  //   const html = document.getElementsByTagName('html')[0];
+
+  //   const scrollYPerView = html.clientHeight;
+  //   html.addEventListener('wheel', function (event) {
+  //     event.preventDefault();
+
+  //     console.log(event);
+  //     if (event.deltaY > 0) {
+  //       scrollDown();
+  //     } else {
+  //       scrollUp();
+  //     }
+  //   });
+
+  //   function scrollUp() {
+  //     let currentScrollY = html.scrollTop;
+  //     html.scroll({ top: currentScrollY - scrollYPerView, left: 0, behavior: 'smooth' });
+  //   }
+
+  //   function scrollDown() {
+  //     let currentScrollY = html.scrollTop;
+  //     html.scroll({ top: currentScrollY + scrollYPerView, left: 0, behavior: 'smooth' });
+  //   }
+  // }, [])
 
   return (
     <BrowserRouter>
@@ -88,10 +132,13 @@ function App() {
         </div>
         <DoubleMouseCursor />
         <>
-          <Nav></Nav>
-          <div id="home">
-            <Homesection></Homesection>
+          <div className="HeroSection">
+            <Nav></Nav>
+            <div id="home">
+              <Homesection></Homesection>
+            </div>
           </div>
+
           <div id="aboutme" className="sectionContainer">
             <AboutMe />
           </div>

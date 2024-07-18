@@ -9,34 +9,63 @@
 }
 
 .Projects {
-  background-color: $primary-text-colour;
-  display: grid;
+
   width: 100vw;
-  padding: $s10 ;
+  padding: $s10 0;
   justify-content: center;
   box-sizing: border-box;
-  overflow: hidden;
-  transform-origin: 50% 50%;
 
-  .skeletonId {
-    position: absolute;
-    left: 0;
-    color: unset;
-    -webkit-text-stroke: 1px solid white;
+  .projectsContainer {
+
+    section {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      scroll-snap-align: center;
+      scroll-margin-bottom: 1px;
+      perspective: 500px;
+
+      h3{
+        position: relative;
+        left: -$s5;
+        font-size: medium;
+        // mix-blend-mode: exclusion;
+      }
+    }
+    
+    section > div {
+      max-width: 800px;
+      max-height: 400px;
+      position: relative;
+      max-height: 90vh;
+      margin: 20px;
+      background: var(--white);
+      overflow: hidden;
+
+      .projectBanner{
+        max-width: 100%;
+      }
+
+
+    }
   }
-
-
 
   .project {
     max-width: 100%;
     min-width: 0;
-    height: 560px;
     padding: $s10 $s8;
     box-sizing: border-box;
     display: grid;
     justify-content: center;
     align-content: center;
-    border-bottom: calc($s1/2) solid white;
+
+
+    img {
+      max-height: 500px;
+      max-width: 100%;
+    }
 
     &:last-child {
       border: none !important;
@@ -56,11 +85,11 @@
       gap: $s10;
 
 
-      h1{
+      h1 {
         display: grid;
         justify-content: center;
 
-        *{
+        * {
           position: relative;
           right: 40vw;
         }
@@ -96,8 +125,6 @@
 
 @media screen and (max-width: $tabletScreen) {
   .Projects {
-    padding: $s5 ;
-
     .project {
       height: 400px;
       padding: $s5 $s8;

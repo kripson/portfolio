@@ -17,7 +17,7 @@
     left: calc($s1 * 12);
     width: calc($s1 * 10);
     height: calc($s1 * 10);
-    
+
     display: grid;
     justify-content: center;
     transform: rotateZ(90deg);
@@ -93,13 +93,30 @@
     align-content: start;
     padding-top: 100px;
     z-index: 2;
+
+    .countUpSection {
+      display: flex;
+      gap: $s5;
+
+      div {
+        display: flex;
+        gap: $s2;
+        align-items: center;
+
+        span {
+          font-size: $s5;
+          color: $primary-colour;
+        }
+      }
+    }
+
     .job-title {
       margin: 0;
       z-index: 4;
       font-size: max(calc(100vw / 13.5), $s5);
       // background-color: $appBackgroundColour;
 
-      &>div{
+      &>div {
         width: 100%;
       }
 
@@ -125,8 +142,8 @@
     display: grid;
     display: none;
 
-    .SlideRevealComponent{
-      .childrenContainer{
+    .SlideRevealComponent {
+      .childrenContainer {
         line-height: 0;
       }
     }
@@ -135,6 +152,7 @@
       .blockers {
         width: 0 !important;
       }
+
       .SlideRevealComponent {
         .childrenContainer {
 
@@ -158,7 +176,7 @@
 
     img {
       width: 50vh;
-      height:auto;
+      height: auto;
       justify-self: center;
       filter: grayscale(1);
       border-style: none;
@@ -195,9 +213,33 @@
       }
     }
 
-    img{
+    .imageContainer {
+      position: relative;
+    }
+
+    img {
       max-height: 600px;
-      max-width: 80vw;
+      max-width: min(600px, 30vw);
+      position: relative;
+      z-index: 2;
+
+      &:hover {
+        &~div {
+          top: 0 !important;
+          left: 0 !important;
+        }
+      }
+    }
+
+    .imageShadowBox {
+      position: absolute;
+      min-height: 100%;
+      min-width: 100%;
+      top: 0;
+      left: 0;
+      border: 1px solid $primary-text-colour;
+      opacity: 0;
+      transition: all 0.25s;
     }
 
 
@@ -251,7 +293,7 @@
 @media screen and (max-width: $largeScreen) {
   .Intro {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
 
 
     .TopSection {
@@ -276,7 +318,7 @@
 
   .Intro {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: $s4;
 
     .TopSection {
@@ -320,12 +362,29 @@
   .Cursor {
     display: none;
   }
+
 }
 
 @media screen and (max-width: $tabletScreen) {
   .Cursor {
     display: none;
   }
+  .Intro {
+    grid-template-columns: 1fr;
+
+    .BottomSection{
+      .imageContainer{
+        margin-top: $s5;
+
+        img{
+          max-width: 90vw;
+          max-height: min(75vh, 600px);
+        }
+
+      }
+    }
+  }
+
 }
 
 
@@ -335,6 +394,15 @@
     min-height: unset;
     align-items: center;
     padding: 0 $s3;
+
+
+    .BottomSection{
+      .imageContainer{
+        .imageShadowBox{
+          display: none;
+        }
+      }
+    }
 
     a {
       position: relative;

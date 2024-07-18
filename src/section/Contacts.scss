@@ -10,6 +10,7 @@
   position: relative;
   gap: $s4;
   background-color: $appBackgroundColour;
+  scroll-snap-align: center;
 
   h1 {
     margin: 0;

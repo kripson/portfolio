@@ -14,33 +14,24 @@ const AboutMe = () => {
   const width = useWindowWidth();
 
   useLayoutEffect(() => {
-    const texts = document.querySelectorAll(".aboutmeparagraph");
+    // const texts = document.querySelectorAll(".aboutmeparagraph");
 
-    texts.forEach((text) => {
-      const splitText = new SplitText(text);
+    // texts.forEach((text) => {
+    //   const splitText = new SplitText(text);
 
-      gsap.from(splitText.chars, {
-        duration: 1,
-        y: 100,
-        autoAlpha: 0,
-        stagger: 0.025,
-        scrollTrigger: {
-          trigger: ".AboutMe",
-          scrub: 1,
-          end: "center+=300 bottom"
-        },
-      });
-    });
+    //   gsap.from(splitText.chars, {
+    //     duration: 1,
+    //     y: 100,
+    //     autoAlpha: 0,
+    //     stagger: 0.025,
+    //     scrollTrigger: {
+    //       trigger: ".AboutMe",
+    //       scrub: 1,
+    //       end: "center+=300 bottom"
+    //     },
+    //   });
+    // });
 
-    gsap.to('.photoContainer img', {
-      transform: 'scale(2)',
-      stagger: 0.5,
-      // clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-      scrollTrigger: {
-        trigger: ".aboutmeparagraph",
-        scrub: 1
-      },
-    });
 
   }, []);
 
@@ -48,11 +39,7 @@ const AboutMe = () => {
     <div className="AboutMe full-width-element">
 
       <p className="h3 aboutmeparagraph">Hi, I am Sankit but I go by kripson on all my socials. I was born in Butwal, Nepal. Currently, I am based in Gold Coast, Australia and working as a software engineer at Kzen8.</p>
-      {/* <div className="photoContainer">
-        <img src={Nepal} alt={"Nepal"} />
 
-        <img src={GoldCoast} alt={"GoldCoast"} />
-      </div> */}
     </div>
   );
 };

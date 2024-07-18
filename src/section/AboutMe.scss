@@ -11,6 +11,8 @@
   margin-bottom: $s10;
   box-sizing: border-box;
   justify-items: center;
+  align-content: center;
+  scroll-snap-align: center;
 
   .background{
     position: absolute;

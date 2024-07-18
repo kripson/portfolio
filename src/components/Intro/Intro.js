@@ -2,6 +2,7 @@ import React, { useState, useEffect, useLayoutEffect } from "react";
 import "./Intro.scss";
 import HeroImage from "../../assets/hero-image.webp";
 import Button from "../Button/Button";
+import CountUp from "react-countup";
 
 import { useWindowWidth } from "@react-hook/window-size";
 import { CircularText } from "../CircularText/CircularText";
@@ -69,6 +70,14 @@ const Intro = ({ firstLoaded }) => {
       delay: 4,
     });
 
+
+    gsap.to(".imageShadowBox", {
+      top: '40px',
+      left: '40px',
+      delay: 7,
+      opacity: 1
+    })
+
     gsap.fromTo(
       ".BottomSection img",
       {
@@ -95,45 +104,25 @@ const Intro = ({ firstLoaded }) => {
 
       <div className="TopSection">
         <h1 className={`billboard job-title primary-text`}>SANKIT SHRESTHA</h1>
-        <h6 className={`primary-text body`} style={{paddingLeft: '4px'}}>FULL STACK DEVELOPER</h6>
-        <CircularText className="intro-circular" text='All THINGS WEB' deg={20} color={'orange'}/>
+        <h6 className={`primary-text body`} style={{ paddingLeft: '4px' }}>FULL STACK DEVELOPER</h6>
 
-        <div>{/* <SlideRevealComponent delay={2} reveal={"bottomReveal"} children={<span className={`primary-text`}>WHO I AM</span>}></SlideRevealComponent> */}</div>
-      </div>
-
-      {/* <a href="#contacts">
-        <div className="GetInTouchSection">
-          <img src={Arrow} alt="" />
-          Let's work together
+        <div className="countUpSection">
+          <div><CountUp end={5} suffix={"+"} duration={4.5} delay={4} /> Years of Experience</div>
+          <div><CountUp end={20} suffix={"+"} duration={4.5} delay={4} />Projects Completed</div>
         </div>
-      </a> */}
-      <div className="middleSection">
-        <SlideRevealComponent delay={1} reveal={"rightReveal"}>
-          {heroImageBlockers.map((blocker) => (
-            <div className="blockers" style={{ position: "absolute", ...blocker.style }}></div>
-          ))}
-          <img src={HeroImage} alt="Wevdev" border="0" />
-        </SlideRevealComponent>
 
-        {/* <img src={HeroImage} alt="Wevdev" /> */}
+
+        <div></div>
       </div>
+
+
+
       <div className="BottomSection">
-        {/* <SlideRevealComponent.2
-        0
-          delay={2}
-          reveal={"rightReveal"}
-          children={ */}
+        <div className="imageContainer">
+          <img src={HeroImage} alt="Wevdev" border="0" />
+          <div className="imageShadowBox"></div>
 
-        {/* <SlideRevealComponent delay={2} reveal={"rightReveal"} children={<span className={`primary-text`}>WHAT I DO</span>}></SlideRevealComponent> */}
-        {/* 
-          <h1 className={`name billboard`}>
-            Software
-            Developer
-          </h1> */}
-        <img src={HeroImage} alt="Wevdev" border="0" />
-
-        {/* }
-        ></SlideRevealComponent> */}
+        </div>
       </div>
     </div>
   );

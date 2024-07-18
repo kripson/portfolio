@@ -11,8 +11,45 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import { useLayoutEffect } from "react";
 import Button from "../components/Button/Button";
 import SlideRevealComponent from "../components/SlideRevealComponent/SlideRevealComponent";
+import { useRef } from "react";
+import {
+  motion,
+  useScroll,
+  useSpring,
+  useTransform,
+  MotionValue
+} from "framer-motion";
+
+function useParallax(value, distance) {
+  return useTransform(value, [0, 1], [-distance, distance]);
+}
 
 gsap.registerPlugin(ScrollTrigger);
+
+
+
+function Project({ project, id, onClick }) {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({ target: ref });
+  const y = useParallax(scrollYProgress, 300);
+  const y2 = useParallax(scrollYProgress, 400);
+
+  const ySpring = useSpring(y, {stiffness: 800, damping: 40})
+  const ySpring2 = useSpring(y2, {stiffness: 1000, damping: 40})
+
+
+  return (
+    <section data-project-number={id} onClick={onClick} style={{backgroundColor: project.styles.backgroundColor}}>
+      <div ref={ref} data-project-number={id}>
+        <img className="projectBanner" style={{filter: project.styles?.filter}} src={project.imageUrl} data-project-number={id} alt="A London skyscraper" />
+      </div>
+      <motion.h3 data-project-number={id} style={{ y: ySpring, color: project.styles.color }}>{`0${id + 1}`}</motion.h3>
+      <motion.h2 data-project-number={id} style={{ y: ySpring2, color: project.styles.color }}>{project.title}</motion.h2>
+
+    </section>
+  );
+}
+
 
 const Projects = () => {
   const [detailedProject, setdetailedProject] = useState(null);
@@ -53,12 +90,6 @@ const Projects = () => {
     console.log(e);
     let project = projects[e.target.attributes["data-project-number"].value];
 
-    gsap.to(".Projects", {
-      backgroundColor: projectsarray[e.target.attributes["data-project-number"].value].styles.backgroundColor,
-      color: projectsarray[e.target.attributes["data-project-number"].value].styles.color,
-      ease: "none",
-      duration: 0.25,
-    });
 
     if (detailedProject === e.target.attributes["data-project-number"].value) {
       setdetailedProject(null);
@@ -96,102 +127,107 @@ const Projects = () => {
   useLayoutEffect(() => {
     let projects = gsap.utils.toArray(".project");
 
-    gsap.fromTo(
-      ".Projects",
-      {
-        scaleX: 0.75,
-        scaleY: 0.9,
-      },
-      {
-        scaleX: 1,
-        scaleY: 1,
-        scrollTrigger: {
-          trigger: ".Projects",
-          toggleActions: "play none none reverse",
-          onLeave: () => {
-            gsap.to(".Projects", {
-              backgroundColor: "unset",
-            });
-          }
-        },
-      }
-    );
-    console.log(projects);
-    projects.forEach((project, idx) => {
-      let proxy = { skew: 0 },
-        skewSetter = gsap.quickSetter(".projectTitle", "skewX", "deg"), // fast
-        clamp = gsap.utils.clamp(-30, 30); // don't let the skew go beyond 20 degrees.
+    // gsap.fromTo(
+    //   ".Projects",
+    //   {
+    //     scaleX: 0.75,
+    //     scaleY: 0.9,
+    //   },
+    //   {
+    //     scaleX: 1,
+    //     scaleY: 1,
+    //     scrollTrigger: {
+    //       trigger: ".Projects",
+    //       toggleActions: "play none none reverse",
+    //       onLeave: () => {
+    //         gsap.to(".Projects", {
+    //           backgroundColor: "unset",
+    //         });
+    //       }
+    //     },
+    //   }
+    // );
 
-      gsap.to(project.childNodes[0].childNodes[1], {
-        translateX: animationTranslation(),
 
-        ease: "none",
-        scrollTrigger: {
-          trigger: project,
-          onUpdate: (self) => {
-            let skew = clamp(self.getVelocity() / -300);
-            // only do something if the skew is MORE severe. Remember, we're always tweening back to 0, so if the user slows their scrolling quickly, it's more natural to just let the tween handle that smoothly rather than jumping to the smaller skew.
-            if (Math.abs(skew) > Math.abs(proxy.skew)) {
-              proxy.skew = skew;
-              gsap.to(proxy, { skew: 0, duration: 0.8, ease: "power3", overwrite: true, onUpdate: () => skewSetter(proxy.skew) });
-            }
-          },
-          onEnter: function () {
-            gsap.to(".Projects", {
-              backgroundColor: projectsarray[idx].styles.backgroundColor,
-              color: projectsarray[idx].styles.color,
-              ease: "none",
-              duration: 0.25,
-            });
+    // projects.forEach((project, idx) => {
+    //   let proxy = { skew: 0 },
+    //     skewSetter = gsap.quickSetter(".projectTitle", "skewX", "deg"), // fast
+    //     clamp = gsap.utils.clamp(-30, 30); // don't let the skew go beyond 20 degrees.
 
-            gsap.to(".project", {
-              borderColor: projectsarray[idx].styles.color,
-              ease: "none",
-              duration: 0.25,
-            });
-          },
-          onEnterBack: () => {
-            gsap.to(".Projects", {
-              backgroundColor: projectsarray[idx].styles.backgroundColor,
-              color: projectsarray[idx].styles.color,
-              ease: "none",
-              duration: 0.25,
-            });
+    //   gsap.to(project.childNodes[0].childNodes[1], {
+    //     translateX: animationTranslation(),
 
-            gsap.to(".project", {
-              borderColor: projectsarray[idx].styles.color,
-              ease: "none",
-              duration: 0.25,
-            });
-          },
-          scrub: 1,
-          start: "top center",
-          end: "bottom center",
-        },
-      });
-    });
+    //     ease: "none",
+    //     scrollTrigger: {
+    //       trigger: project,
+    //       onUpdate: (self) => {
+    //         let skew = clamp(self.getVelocity() / -300);
+    //         // only do something if the skew is MORE severe. Remember, we're always tweening back to 0, so if the user slows their scrolling quickly, it's more natural to just let the tween handle that smoothly rather than jumping to the smaller skew.
+    //         if (Math.abs(skew) > Math.abs(proxy.skew)) {
+    //           proxy.skew = skew;
+    //           gsap.to(proxy, { skew: 0, duration: 0.8, ease: "power3", overwrite: true, onUpdate: () => skewSetter(proxy.skew) });
+    //         }
+    //       },
+    //       onEnter: function () {
+    //         gsap.to(".Projects", {
+    //           backgroundColor: projectsarray[idx].styles.backgroundColor,
+    //           color: projectsarray[idx].styles.color,
+    //           ease: "none",
+    //           duration: 0.25,
+    //         });
+
+    //         gsap.to(".project", {
+    //           borderColor: projectsarray[idx].styles.color,
+    //           ease: "none",
+    //           duration: 0.25,
+    //         });
+    //       },
+    //       onEnterBack: () => {
+    //         gsap.to(".Projects", {
+    //           backgroundColor: projectsarray[idx].styles.backgroundColor,
+    //           color: projectsarray[idx].styles.color,
+    //           ease: "none",
+    //           duration: 0.25,
+    //         });
+
+    //         gsap.to(".project", {
+    //           borderColor: projectsarray[idx].styles.color,
+    //           ease: "none",
+    //           duration: 0.25,
+    //         });
+    //       },
+    //       scrub: 1,
+    //       start: "top center",
+    //       end: "bottom center",
+    //     },
+    //   });
+    // });
   }, []);
 
   const [mousePos, setMousePos] = useState({});
 
+
+  const handleMouseMove = (event) => {
+    setTimeout(() => {
+      setMousePos({ x: event.clientX, y: event.clientY });
+    }, 100);
+  };
+
+  const handleScroll = (event) => {
+    gsap.to(".projectHoverCursor", {
+      display: "none",
+      duration: 0.1,
+    });
+
+    gsap.to(".kripsonui-cursor-trail", {
+      scale: 1,
+      duration: 0.25,
+    });
+  };
+
+
   useEffect(() => {
-    const handleMouseMove = (event) => {
-      setTimeout(() => {
-        setMousePos({ x: event.clientX, y: event.clientY });
-      }, 100);
-    };
 
-    const handleScroll = (event) => {
-      gsap.to(".projectHoverCursor", {
-        display: "none",
-        duration: 0.1,
-      });
-
-      gsap.to(".kripsonui-cursor-trail", {
-        scale: 1,
-        duration: 0.25,
-      });
-    };
 
     window.addEventListener("mousemove", handleMouseMove);
 
@@ -200,7 +236,7 @@ const Projects = () => {
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
 
-      window.addEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -211,7 +247,7 @@ const Projects = () => {
           Selected work
         </span>
 
-        {projectsarray && projectsarray.map
+        {/* {projectsarray && projectsarray.map
           ? projectsarray.map((project, idx) => (
               <div className="project" key={idx} data-project-number={idx} onMouseEnter={onMouseOver} id={`project-${idx}`} onClick={onProjectClick}>
                 <div className="projectDetails" data-project-number={idx}>
@@ -226,17 +262,23 @@ const Projects = () => {
                           {project.title}
                         </span>
                         <span className="h4" data-project-number={idx}>{project.year}</span>
-                        {/* <img src={project.helperImage} data-project-number={idx} /> */}
+                        <img src={project.helperImage} data-project-number={idx} />
                       </div>
                     ))}
                   </div>
-
-                  {/* <span>{project.year}</span> */}
                 </div>
-                {/* <img src={project.imageUrl}></img> */}
               </div>
             ))
-          : ""}
+          : ""} */}
+
+        <div className="projectsContainer">
+          {projectsarray && projectsarray.map
+            ? projectsarray.map((project, idx) => (
+              <Project project={project} id={idx} onClick={onProjectClick}/>
+            ))
+            : ""}
+        </div>
+
       </div>
 
       {detailedProject ? <ProjectModal project={projectsarray[detailedProject]} toggleDetail={setdetailedProject} /> : null}

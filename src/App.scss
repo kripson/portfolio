@@ -1,7 +1,16 @@
 @import './scss-class.scss';
 
-body {}
+html{
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
 
+
+.HeroSection{
+  scroll-snap-align: start;
+}
 
 .background {
   width: 100vw;
@@ -36,7 +45,6 @@ body {}
   background-color: $appBackgroundColour;
   min-height: 100vh;
   color: $primary-text-colour;
-  overflow: hidden;
 
   // cursor: none !important;
 

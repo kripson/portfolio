@@ -1,6 +1,26 @@
 export const projectsarray = [
     {
         id:1,
+        title:'One Wish Cleaning',
+        imageUrl:require("../assets/One wish cleaning no bg (2).webp"),
+        mobileLayout: require("../assets/onewishmobile.png"),
+        laptopLayout: require("../assets/onewishlaptop.png"),
+        description: ["Project developed for One Wish Cleaning Pty Ltd. The project's objective was to establish the client's online presence. I was responsible for designing, developing, testing and deploying the application.",
+            "The website is developed using NextJs for better SEO performance. Due to the nature of client's business, SEO is highly prioritized for this project. I was also responsible for performing basic SEO for the site. The site has received a score of 100 in Google's Lighthouse audit."],
+        websiteUrl: 'https://onewishcleaning.com.au',
+        ready:true,
+        year: '2020',
+        height: '30vh',
+        tools:['NextJs'],
+        helperImage: require("../assets/onewishcleaninghelper.png"),
+        styles:{
+            backgroundColor: '#a5edff',
+            color: 'white',
+            filter: `drop-shadow(-20px 40px 10px rgba(0,0,0,0.25))`
+        }
+    },
+    {
+        id:2,
         title:'Smile your way to happy',
         imageUrl:require("../assets/smileyourwaytohappy.webp"),
         mobileLayout: require("../assets/smileyourwaytohappymobile.webp"),
@@ -14,12 +34,12 @@ export const projectsarray = [
         tools:['NextJs'],
         helperImage: require("../assets/smileyourwaytohappyhelper.webp"),
         styles:{
-            backgroundColor: '#D0503E',
-            color: '#DFD3C3'
+            backgroundColor: '#ccd2d4',
+            color: 'black'
         }
     },
     {
-        id:2,
+        id:3,
         title:'Learn your way to happy',
         imageUrl:require("../assets/learnyourwaytohappy.webp"),
         mobileLayout: require("../assets/learnyourwaytohappymobile.webp"),
@@ -38,8 +58,8 @@ export const projectsarray = [
         }
     },
     {
-        id:3,
-        title:'Kzen8 Website',
+        id:4,
+        title:'Kzen8',
         imageUrl:require("../assets/Kzen8-project.png"),
         mobileLayout: require("../assets/kzen8mobile.png"),
         laptopLayout: require("../assets/kzen8laptop.png"),
@@ -52,12 +72,12 @@ export const projectsarray = [
         tools:['React'],
         helperImage: require("../assets/kzen8helper.png"),
         styles:{
-            backgroundColor: '#133A74',
+            backgroundColor: '#40469d',
             color: '#DFD3C3'
         }
     },
     {
-        id:4,
+        id:5,
         title:'Little Hideout Cafe',
         imageUrl:require("../assets/littlehideout.webp"),
         mobileLayout: require("../assets/littlehideoutmobile.png"),
@@ -71,48 +91,9 @@ export const projectsarray = [
         tools:['react','node'],
         helperImage: require("../assets/littlehideouthelper.webp"),
         styles:{
-            backgroundColor: '#FFFBF1',
+            backgroundColor: '#d5d9da',
             color: 'black'
         }
     },
-    {
-        id:5,
-        title:'One Wish Cleaning',
-        imageUrl:require("../assets/onewish.webp"),
-        mobileLayout: require("../assets/onewishmobile.png"),
-        laptopLayout: require("../assets/onewishlaptop.png"),
-        description: ["Project developed for One Wish Cleaning Pty Ltd. The project's objective was to establish the client's online presence. I was responsible for designing, developing, testing and deploying the application.",
-            "The website is developed using NextJs for better SEO performance. Due to the nature of client's business, SEO is highly prioritized for this project. I was also responsible for performing basic SEO for the site. The site has received a score of 100 in Google's Lighthouse audit."],
-        websiteUrl: 'https://onewishcleaning.com.au',
-        ready:true,
-        year: '2020',
-        height: '30vh',
-        tools:['NextJs'],
-        helperImage: require("../assets/onewishcleaninghelper.png"),
-        styles:{
-            backgroundColor: '#1096D0',
-            color: '#DFD3C3'
-        }
-    },
-    {
-        id:6,
-        title:'Kripson Store',
-        imageUrl:require("../assets/clothingapp.jpeg"),
-        mobileLayout: require("../assets/storemobile.png"),
-        laptopLayout: require("../assets/storelaptop.png"),
-        description: ["Kripson Store is a fully functioning online store which I created when I was learning React. I created this as a base to build upon if I ever want to open an online store.",
-            " The front-end was created using React and Redux and styled using custom css.",
-            "The back-end was created using Express(NodeJs) for the server and firebase as a database. Payment method is supported by Stripe."],
-        websiteUrl: 'https://kripson-store.herokuapp.com/',
-        ready: true,
-        year: '2021',
-        height: '40vh',
-        tools:['react','node'],
-        helperImage: require("../assets/kripsonstorehelper.png"),
-        styles:{
-            backgroundColor: '#0D0D0D',
-            color: '#DFD3C3'
-        }
 
-    }
 ];
