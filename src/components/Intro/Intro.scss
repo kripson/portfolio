@@ -10,6 +10,7 @@
   gap: $s2;
   max-width: 1550px;
   margin: 0 auto 0 auto;
+  scroll-snap-align: start;
 
   .arrowDown {
     position: absolute;

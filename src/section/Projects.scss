@@ -24,14 +24,31 @@
       align-items: center;
       position: relative;
       scroll-snap-align: center;
-      scroll-margin-bottom: 1px;
       perspective: 500px;
+      padding: 0 $s10;
 
       h3{
         position: relative;
         left: -$s5;
         font-size: medium;
         // mix-blend-mode: exclusion;
+      }
+
+      .projectYear{
+        position: absolute;
+        bottom: 0;
+        right: $s10;
+        mix-blend-mode: difference;
+        font-family: $billboard;
+        opacity: 0.5;
+        font-size: 128px;
+      }
+
+      img{
+        transition: all 0.25s;
+        &:hover{
+          transform: rotateZ(5deg);
+        }
       }
     }
     
@@ -40,7 +57,7 @@
       max-height: 400px;
       position: relative;
       max-height: 90vh;
-      margin: 20px;
+      margin: 20px 0;
       background: var(--white);
       overflow: hidden;
 
@@ -123,11 +140,38 @@
   display: block;
 }
 
+@media screen and (max-width: $largeScreen) {
+  .Projects {
+    .projectsContainer{
+      section{
+        h2{
+          font-size: $header3;
+        }
+
+        .projectYear{
+          font-size: $header4;
+        }
+      }
+    }
+  }
+}
+
 @media screen and (max-width: $tabletScreen) {
   .Projects {
-    .project {
-      height: 400px;
-      padding: $s5 $s8;
+    .projectsContainer{
+      section{
+        display: grid;
+        padding: 0 $s5;
+        align-items: end;
+        height: 100vh;
+        h2{
+          font-size: $header3;
+        }
+
+        .projectYear{
+          font-size: $header4;
+        }
+      }
     }
   }
 }

@@ -1,13 +1,12 @@
 @import "../../variables.scss";
 
-.ProjectModal
-{
+.ProjectModal {
   display: grid;
   grid-template-columns: 1fr 1fr;
   height: 100vh;
   width: 100vw;
   position: fixed;
-  top:0;
+  top: 0;
   left: 0;
   z-index: 12;
   transform: scale(3);
@@ -15,23 +14,20 @@
   opacity: 0;
 
 
-  .smallScreenBanner
-  {
+  .smallScreenBanner {
     display: none;
     position: relative;
     background-color: white;
     overflow: hidden;
     max-height: 50vh;
 
-    img
-    {
+    img {
       position: absolute;
     }
 
 
-    .laptoplayout
-    {
-      left:350px;
+    .laptoplayout {
+      left: 350px;
       height: 900px;
       width: 650px;
       animation-name: smalllaptopanimation;
@@ -42,9 +38,8 @@
       opacity: 0;
     }
 
-    .mobilelayout
-    {
-      left:-50px;
+    .mobilelayout {
+      left: -50px;
       height: 500px;
       animation-name: smallmobileanimation;
       animation-fill-mode: forwards;
@@ -56,8 +51,7 @@
   }
 
 
-  .ProjectModalLeftSection
-  {
+  .ProjectModalLeftSection {
     text-align: left;
     padding-left: 150px;
     display: grid;
@@ -67,27 +61,38 @@
     overflow: hidden;
     background-color: $appBackgroundColour;
 
-    .projectTitle
-    {
+
+    .tagsContainer {
+      display: flex;
+      gap: $s2;
+      flex-wrap: wrap;
+      mix-blend-mode: difference;
+
+      span {
+        border-radius: $s1;
+        padding: calc($s1/2) $s1;
+        background-color: opacify($color: $primary-text-colour, $amount: 0.5); 
+        color: $appBackgroundColour;
+      }
+    }
+
+    .projectTitle {
       font-size: 5em;
       font-weight: 800;
       position: relative;
       animation-delay: 1.5s;
     }
 
-    .projectDescription
-    {
+    .projectDescription {
       animation-delay: 1.5s;
 
-      p
-      {
+      p {
         line-height: 1.43em;
       }
     }
 
 
-    p
-    {
+    p {
       // font-size: 1.45em;
       width: 90%;
       position: relative;
@@ -95,17 +100,16 @@
 
 
 
-    .projectLinks
-    {
+    .projectLinks {
       display: flex;
       margin-bottom: 50px;
 
-      a{
+      a {
         text-decoration: none;
         color: white;
       }
-      .GoToWebsiteLink
-      {
+
+      .GoToWebsiteLink {
         width: 250px;
         height: 50px;
         display: grid;
@@ -115,16 +119,15 @@
         background-color: $primary-colour;
         transition: all 0.25s;
         animation-delay: 1s;
-        &:hover
-        {
+
+        &:hover {
           transform: translateY(-20px);
-          
+
         }
 
       }
 
-      .CloseLink
-      {
+      .CloseLink {
         margin-top: 50px;
         margin-left: 1em;
         height: 50px;
@@ -136,10 +139,9 @@
         transition: all 0.25s;
         animation-delay: 1.25s;
 
-        &:hover
-        {
+        &:hover {
           transform: translateY(-20px);
-          
+
         }
       }
 
@@ -150,20 +152,17 @@
   }
 
 
-  .ProjectModalRightSection
-  {
+  .ProjectModalRightSection {
     position: relative;
     background-color: white;
     overflow: hidden;
 
-    img
-    {
+    img {
       position: absolute;
     }
 
-    .laptoplayout
-    {
-      left:350px;
+    .laptoplayout {
+      left: 350px;
       height: 1200px;
       width: 900px;
       animation-name: laptopanimation;
@@ -174,9 +173,8 @@
       opacity: 0;
     }
 
-    .mobilelayout
-    {
-      left:-50px;
+    .mobilelayout {
+      left: -50px;
       height: 800px;
       transform: scale(0.75);
       animation-name: mobileanimation;
@@ -194,14 +192,11 @@
 
 
 @media only screen and (min-width:1150px) and (max-width: 1500px) {
-  .ProjectModal
-  {
-    .ProjectModalLeftSection
-    {
+  .ProjectModal {
+    .ProjectModalLeftSection {
       padding-left: 50px;
 
-      .projectTitle
-      {
+      .projectTitle {
         font-size: 3em;
       }
 
@@ -285,7 +280,7 @@
 
 
 
-@media only screen and (min-width:0px) and (max-width: 600px) and (min-height:660px){
+@media only screen and (min-width:0px) and (max-width: 600px) and (min-height:660px) {
   .ProjectModal {
 
     grid-template-columns: unset;
@@ -306,15 +301,14 @@
       }
 
 
-      .projectLinks
-      {
+      .projectLinks {
         display: grid;
         grid-template-columns: 1fr 1fr;
         margin-bottom: 2em;
         padding-right: 1em;
 
-        .GoToWebsiteLink,.CloseLink
-        {
+        .GoToWebsiteLink,
+        .CloseLink {
           margin-top: 1em;
           width: unset;
         }
@@ -327,14 +321,12 @@
     }
 
 
-    .smallScreenBanner
-    {
+    .smallScreenBanner {
       display: block;
       height: 35vh;
 
-      .laptoplayout
-      {
-        left:150px;
+      .laptoplayout {
+        left: 150px;
         height: 450px;
         width: 350px;
         animation-name: smalllaptopanimation;
@@ -344,9 +336,8 @@
         animation-delay: 2.75s;
       }
 
-      .mobilelayout
-      {
-        left:-50px;
+      .mobilelayout {
+        left: -50px;
         height: 400px;
         animation-name: smallmobileanimation;
         animation-fill-mode: forwards;
@@ -365,7 +356,7 @@
 
 
 
-@media only screen and (min-width:0px) and (max-width: 600px) and (min-height:0px) and (max-height: 660px){
+@media only screen and (min-width:0px) and (max-width: 600px) and (min-height:0px) and (max-height: 660px) {
   .ProjectModal {
 
     grid-template-columns: unset;
@@ -386,15 +377,14 @@
       }
 
 
-      .projectLinks
-      {
+      .projectLinks {
         display: grid;
         grid-template-columns: 1fr 1fr;
         margin-bottom: 2em;
         padding-right: 1em;
 
-        .GoToWebsiteLink,.CloseLink
-        {
+        .GoToWebsiteLink,
+        .CloseLink {
           margin-top: 1em;
           width: unset;
         }
@@ -407,14 +397,12 @@
     }
 
 
-    .smallScreenBanner
-    {
+    .smallScreenBanner {
       display: block;
       height: 35vh;
 
-      .laptoplayout
-      {
-        left:150px;
+      .laptoplayout {
+        left: 150px;
         height: 450px;
         width: 350px;
         animation-name: smalllaptopanimation;
@@ -423,9 +411,8 @@
         animation-duration: 1s;
       }
 
-      .mobilelayout
-      {
-        left:-50px;
+      .mobilelayout {
+        left: -50px;
         height: 400px;
         animation-name: smallmobileanimation;
         animation-fill-mode: forwards;
@@ -448,36 +435,77 @@
 
 @keyframes laptopanimation {
 
-  0%{top:1000px;opacity: 0;transform:rotateZ(0deg)}
-  100%{top:300px;opacity: 1;transform:rotateZ(-60deg)}
+  0% {
+    top: 1000px;
+    opacity: 0;
+    transform: rotateZ(0deg)
+  }
+
+  100% {
+    top: 300px;
+    opacity: 1;
+    transform: rotateZ(-60deg)
+  }
 
 }
 
 
 @keyframes mobileanimation {
-  0%{top:230px;opacity: 0;transform:rotateZ(0deg)}
-  100%{top:130px;opacity: 1;transform:rotateZ(30deg)}
+  0% {
+    top: 230px;
+    opacity: 0;
+    transform: rotateZ(0deg)
+  }
+
+  100% {
+    top: 130px;
+    opacity: 1;
+    transform: rotateZ(30deg)
+  }
 }
 
 
 @keyframes smalllaptopanimation {
 
-  0%{top:300px;opacity: 0;transform:rotateZ(0deg)}
-  100%{top:0px;opacity: 1;transform:rotateZ(-60deg)}
+  0% {
+    top: 300px;
+    opacity: 0;
+    transform: rotateZ(0deg)
+  }
+
+  100% {
+    top: 0px;
+    opacity: 1;
+    transform: rotateZ(-60deg)
+  }
 
 }
 
 
 @keyframes smallmobileanimation {
-  0%{top:230px;opacity: 0;transform:rotateZ(0deg)}
-  100%{top:0px;opacity: 1;transform:rotateZ(30deg)}
+  0% {
+    top: 230px;
+    opacity: 0;
+    transform: rotateZ(0deg)
+  }
+
+  100% {
+    top: 0px;
+    opacity: 1;
+    transform: rotateZ(30deg)
+  }
 }
 
 
 
 @keyframes layoutanimation {
-  0%{top:-230px;opacity: 0}
-  100%{top:0px;opacity: 1}
+  0% {
+    top: -230px;
+    opacity: 0
+  }
+
+  100% {
+    top: 0px;
+    opacity: 1
+  }
 }
-
-

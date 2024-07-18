@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useLayoutEffect } from "react";
 import "./Intro.scss";
-import HeroImage from "../../assets/hero-image.webp";
+import HeroImage from "../../assets/hero-image-2024.png";
 import Button from "../Button/Button";
 import CountUp from "react-countup";
 

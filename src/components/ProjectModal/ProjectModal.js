@@ -56,6 +56,10 @@ const ProjectModal = ({ project, display, toggleDetail }) => {
       <div className="ProjectModalLeftSection">
         <h1 className="projectTitle">{project.title}</h1>
 
+        <div className="tagsContainer">
+          {project.tags?.map(tag=><span>{tag}</span>)}
+        </div>
+
         <div className="projectDescription body">
           {project.description.map((descriptionpart, idx) => (
             <p key={idx}>{descriptionpart}</p>

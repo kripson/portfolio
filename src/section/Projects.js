@@ -34,29 +34,11 @@ function Project({ project, id, onClick }) {
   const y = useParallax(scrollYProgress, 300);
   const y2 = useParallax(scrollYProgress, 400);
 
-  const ySpring = useSpring(y, {stiffness: 800, damping: 40})
-  const ySpring2 = useSpring(y2, {stiffness: 1000, damping: 40})
+  const ySpring = useSpring(y, { stiffness: 800, damping: 40 })
+  const ySpring2 = useSpring(y2, { stiffness: 1000, damping: 40 })
 
-
-  return (
-    <section data-project-number={id} onClick={onClick} style={{backgroundColor: project.styles.backgroundColor}}>
-      <div ref={ref} data-project-number={id}>
-        <img className="projectBanner" style={{filter: project.styles?.filter}} src={project.imageUrl} data-project-number={id} alt="A London skyscraper" />
-      </div>
-      <motion.h3 data-project-number={id} style={{ y: ySpring, color: project.styles.color }}>{`0${id + 1}`}</motion.h3>
-      <motion.h2 data-project-number={id} style={{ y: ySpring2, color: project.styles.color }}>{project.title}</motion.h2>
-
-    </section>
-  );
-}
-
-
-const Projects = () => {
-  const [detailedProject, setdetailedProject] = useState(null);
-
-  const [image, setImage] = useState(undefined);
-  const onlyWidth = useWindowWidth();
-
+  const {color, backgroundColor, filter} = project.styles;
+  
   const onMouseOver = (e) => {
     gsap.to(".kripsonui-cursor-trail", {
       scale: 3,
@@ -68,6 +50,27 @@ const Projects = () => {
       duration: 0.01,
     });
   };
+
+  return (
+    <section data-project-number={id} onClick={onClick} style={{ backgroundColor: backgroundColor }} onMouseOver={onMouseOver}>
+      <div ref={ref} data-project-number={id}>
+        <img className="projectBanner" style={{ filter: filter }} src={project.imageUrl} data-project-number={id} alt="A London skyscraper" />
+      </div>
+      <motion.h3 data-project-number={id} style={{ y: ySpring, color: color }}>{`0${id + 1}`}</motion.h3>
+      <motion.h2 data-project-number={id} style={{ y: ySpring2, color: color }}>{project.title}</motion.h2>
+      <h1 className="projectYear">{project.year}</h1>
+    </section>
+  );
+}
+
+
+const Projects = () => {
+  const [detailedProject, setdetailedProject] = useState(null);
+
+  const [image, setImage] = useState(undefined);
+  const onlyWidth = useWindowWidth();
+
+
 
   const onMouseLeave = (e) => {
     if (e.target.className.includes("Projects full-width-element")) {
@@ -274,7 +277,7 @@ const Projects = () => {
         <div className="projectsContainer">
           {projectsarray && projectsarray.map
             ? projectsarray.map((project, idx) => (
-              <Project project={project} id={idx} onClick={onProjectClick}/>
+              <Project project={project} id={idx} onClick={onProjectClick} />
             ))
             : ""}
         </div>

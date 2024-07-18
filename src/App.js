@@ -77,36 +77,6 @@ function App() {
   }, []);
 
 
-
-
-
-
-  // useLayoutEffect(() => {
-  //   const html = document.getElementsByTagName('html')[0];
-
-  //   const scrollYPerView = html.clientHeight;
-  //   html.addEventListener('wheel', function (event) {
-  //     event.preventDefault();
-
-  //     console.log(event);
-  //     if (event.deltaY > 0) {
-  //       scrollDown();
-  //     } else {
-  //       scrollUp();
-  //     }
-  //   });
-
-  //   function scrollUp() {
-  //     let currentScrollY = html.scrollTop;
-  //     html.scroll({ top: currentScrollY - scrollYPerView, left: 0, behavior: 'smooth' });
-  //   }
-
-  //   function scrollDown() {
-  //     let currentScrollY = html.scrollTop;
-  //     html.scroll({ top: currentScrollY + scrollYPerView, left: 0, behavior: 'smooth' });
-  //   }
-  // }, [])
-
   return (
     <BrowserRouter>
       <div className="App">
