@@ -1,7 +1,7 @@
 @import "../../variables.scss";
 
 .Intro {
-  height: calc(100vh - 144px);
+  min-height: calc(100vh - 144px);
   display: grid;
   position: relative;
   grid-template-columns: 1.25fr 1fr;
@@ -10,7 +10,7 @@
   gap: $s2;
   max-width: 1550px;
   margin: 0 auto 0 auto;
-  scroll-snap-align: start;
+
 
   .arrowDown {
     position: absolute;

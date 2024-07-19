@@ -66,7 +66,7 @@ function App() {
         transform: 'scale(2)',
         opacity: 0,
         scrollTrigger: {
-          trigger: ".jobSection",
+          trigger: "#aboutme",
           scrub: 1,
           start: "top bottom",
           end: "center center",

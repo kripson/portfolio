@@ -41,6 +41,10 @@ html {
   }
 }
 
+.HeroSection{
+  scroll-snap-align: start;
+}
+
 .App {
   text-align: center;
   width: 100vw;
