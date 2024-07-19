@@ -26,7 +26,7 @@
 
         &.topReveal {
             clip-path: polygon(0% 0%, 100% 0%, 100% 0, 0% 0%);
-            top: -100%;
+            bottom: -100%;
             animation-name: topRevealAnimation;
             animation-duration: 1s;
             animation-fill-mode: forwards;
@@ -35,7 +35,6 @@
 
 
         &.bottomReveal {
-            bottom: -100%;
             clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
             animation-name: bottomRevealAnimation;
             animation-duration: 1s;
@@ -79,25 +78,25 @@
 
 @keyframes topRevealAnimation {
     0% {
-        top: -100%;
+        bottom: -100%;
+        transform: rotateZ(5deg);
         clip-path: polygon(0% 0%, 100% 0%, 100% 0, 1% 1%);
 
     }
 
     100% {
-        top: 0;
+        bottom: 0;
+        transform: rotateZ(0);
         clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0 100%);
     }
 }
 
 @keyframes bottomRevealAnimation {
     0% {
-        bottom: -100%;
         clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
     }
 
     100% {
-        bottom: 0;
         clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
     }
 }

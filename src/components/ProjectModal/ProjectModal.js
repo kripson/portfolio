@@ -68,7 +68,7 @@ const ProjectModal = ({ project, display, toggleDetail }) => {
 
         <div className="projectLinks">
           <a href={project.websiteUrl} >
-            <div className="GoToWebsiteLink scaleIn"  style={{backgroundColor: project.styles.backgroundColor, color: project.styles.color}}>Go to Website</div>
+            <div className="GoToWebsiteLink scaleIn"  style={{backgroundColor: project.styles.backgroundColor, color: project.styles?.detailColor ?? project.styles.color}}>Go to Website</div>
           </a>
           <span className="CloseLink  scaleIn" onClick={() => toggleDetail(null)}>
             Go Back

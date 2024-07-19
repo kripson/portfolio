@@ -33,6 +33,24 @@ const AboutMe = () => {
     // });
 
 
+    const childSplit = new SplitText(".aboutmeparagraph", {
+      type: "lines",
+      linesClass: "split-child"
+    });
+
+    gsap.from(childSplit.lines, {
+      duration: 1,
+      yPercent: 100,
+      opacity: 0,
+      ease: "power4",
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger: ".aboutmeparagraph",
+        start: "top bottom",
+        end: "bottom bottom"
+      }
+    });
+
   }, []);
 
   return (

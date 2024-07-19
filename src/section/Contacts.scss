@@ -51,7 +51,7 @@
       font-family: 'Lato', sans-serif;
 
       &:focus {
-        border-bottom: 2px solid aqua;
+        border-bottom: 2px solid $primary-colour;
         outline: none;
 
       }
@@ -69,7 +69,7 @@
       position: relative;
 
       &:focus {
-        border-bottom: 2px solid aqua;
+        border-bottom: 2px solid $primary-colour;
         outline: none;
       }
 

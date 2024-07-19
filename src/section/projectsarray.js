@@ -16,6 +16,7 @@ export const projectsarray = [
         styles: {
             backgroundColor: '#a5edff',
             color: 'white',
+            detailColor: 'black',
             filter: `drop-shadow(-20px 40px 10px rgba(0,0,0,0.25))`
         },
         tags: [
@@ -23,7 +24,8 @@ export const projectsarray = [
             'AWS',
             'Serverless',
             'MongoDB'
-        ]
+        ],
+        heading: 'Projects'
     },
     {
         id: 2,
@@ -42,6 +44,7 @@ export const projectsarray = [
         styles: {
             backgroundColor: '#ffb2db',
             color: 'white',
+            detailColor: 'black',
             filter: `drop-shadow(-20px 40px 10px rgba(0,0,0,0.25))`
         },
         tags: [

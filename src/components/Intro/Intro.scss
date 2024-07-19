@@ -40,53 +40,7 @@
     }
 
   }
-
-  a {
-    text-decoration: none;
-    color: white;
-    position: absolute;
-    top: 0;
-    right: calc($s1 * 12);
-
-    .GetInTouchSection {
-
-      width: $s10;
-      height: $s10;
-      border-radius: calc($s1 * 100);
-      border: 1px solid white;
-      padding: $s1;
-      display: grid;
-
-      img {
-        position: relative;
-        left: -$s1;
-        transition: all 0.25s;
-      }
-
-
-      &:hover {
-        img {
-          left: $s2;
-        }
-      }
-
-      .GetInTouch {
-        display: grid;
-        justify-content: center;
-        align-content: center;
-        transition: all 0.25s;
-
-
-        &:hover {
-          transform: translateY(-10px);
-
-        }
-      }
-
-
-    }
-  }
-
+  
   .TopSection {
     display: grid;
     position: relative;
@@ -109,6 +63,12 @@
           color: $primary-colour;
         }
       }
+    }
+
+    .buttonContainer{
+      margin-top: $s5;
+      display: flex;
+      gap: $s5;
     }
 
     .job-title {

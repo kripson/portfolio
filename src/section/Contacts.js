@@ -16,15 +16,15 @@ const Contacts = () => {
 
   const services = [
     {
-      text: "Bespoke website",
+      text: "BESPOKE WEBSITE",
       reveal: "bottomReveal",
     },
     {
-      text: "CRM solution",
+      text: "CRM SOLUTION",
       reveal: "topReveal",
     },
     {
-      text: "Ecommerce site",
+      text: "ECOMMERCE SITE",
       reveal: "bottomReveal",
     },
   ];
@@ -131,7 +131,7 @@ const Contacts = () => {
         Let's build your <br />
       </h1>
       {currentService ? (
-        <SlideRevealComponent reveal={"bottomReveal"} key={currentService}>
+        <SlideRevealComponent reveal={"topReveal"} key={currentService}>
           <span className="h2" style={{ wordBreak: "break-all" }}>
             {currentService}
           </span>

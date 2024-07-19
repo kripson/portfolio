@@ -15,6 +15,10 @@
   justify-content: center;
   box-sizing: border-box;
 
+  .sectionTitle{
+    margin: $s5;
+  }
+
   .projectsContainer {
 
     section {
@@ -26,6 +30,17 @@
       scroll-snap-align: center;
       perspective: 500px;
       padding: 0 $s10;
+
+      .projectHeading{
+        position: absolute;
+        top: 40%;
+        left: calc($s1 * -30);
+        transform: rotateZ(-90deg);
+        font-family: $billboard;
+        opacity: 0.15;
+        color: white;
+        font-size: 96px;
+      }
 
       h3{
         position: relative;
