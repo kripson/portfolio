@@ -43,7 +43,7 @@ const AboutMe = () => {
       yPercent: 100,
       opacity: 0,
       ease: "power4",
-      stagger: 0.2,
+      stagger: 0.1,
       scrollTrigger: {
         trigger: ".aboutmeparagraph",
         start: "top bottom",
