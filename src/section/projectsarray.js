@@ -21,6 +21,9 @@ export const projectsarray = [
         },
         tags: [
             'React',
+            'Typescript',
+            'PWA',
+            'NodeJs',
             'AWS',
             'Serverless',
             'MongoDB'
@@ -56,6 +59,36 @@ export const projectsarray = [
     },
     {
         id: 3,
+        title: 'Kzen8',
+        imageUrl: require("../assets/kzen8-mockup-3.webp"),
+        mobileLayout: require("../assets/kzen8mobile.png"),
+        laptopLayout: require("../assets/kzen8laptop.png"),
+        description: ["As part of the core development team at kzen8, I collaborated with 2 other developers to develop a no-code software platform from the ground up that streamlines the business software development process." 
+            ,"Implemented and optimised a variety of well-architected scalable features ranging from front-end related features such as custom theme designer, data visualisation widgets, etc to back-end associated features such as third-party API integrations, database I/O, etc."],
+        websiteUrl: 'https://nexus.kzen8.com',
+        ready: true,
+        year: '2020-24',
+        height: '45vh',
+        tools: ['React'],
+        helperImage: require("../assets/kzen8helper.png"),
+        styles: {
+            backgroundColor: '#40469d',
+            color: '#DFD3C3',
+            filter: `drop-shadow(-20px 40px 10px rgba(0,0,0,0.25))`
+        },
+        tags: [
+            'Angular',
+            'SCSS',
+            'UI/UX',
+            'ChartJs',
+            'AWS',
+            'MongoDB',
+            'Node',
+            'Express'
+        ]
+    },
+    {
+        id: 4,
         title: 'Learn your way to happy',
         imageUrl: require("../assets/Learn your way to happy.webp"),
         mobileLayout: require("../assets/learnyourwaytohappymobile.webp"),
@@ -79,25 +112,6 @@ export const projectsarray = [
             'Web Design',
             'GSAP'
         ]
-    },
-    {
-        id: 4,
-        title: 'Kzen8',
-        imageUrl: require("../assets/Kzen8-project.png"),
-        mobileLayout: require("../assets/kzen8mobile.png"),
-        laptopLayout: require("../assets/kzen8laptop.png"),
-        description: ["Project developed for Kzen8 Pty Ltd. This is an ongoing project serves as a landing page for a no-code business software platform provided by kzen8 and is part of a much bigger marketing campaign. I was responsible for designing, developing, testing and deploying the application.",
-            "The front-end was created using React and styled using custom css."],
-        websiteUrl: 'https://kzen8.com',
-        ready: true,
-        year: '2020-24',
-        height: '45vh',
-        tools: ['React'],
-        helperImage: require("../assets/kzen8helper.png"),
-        styles: {
-            backgroundColor: '#40469d',
-            color: '#DFD3C3'
-        }
     },
     {
         id: 5,

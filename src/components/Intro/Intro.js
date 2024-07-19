@@ -61,7 +61,7 @@ const Intro = ({ firstLoaded }) => {
 
         <div className="countUpSection">
           <div><CountUp end={5} suffix={"+"} duration={4.5} delay={4} /> Years of Experience</div>
-          <div><CountUp end={20} suffix={"+"} duration={4.5} delay={4} />Projects Completed</div>
+          <div><CountUp end={25} suffix={"+"} duration={4.5} delay={4} />Projects Completed</div>
         </div>
 
         <div className="buttonContainer">
