@@ -1,435 +1,254 @@
 @import "../../variables.scss";
 
 .Intro {
-  min-height: calc(100vh - 144px);
+  min-height: calc(100vh - 127px);
   display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0 $s10;
+  gap: $s1;
+  max-width: 1350px;
+  z-index: 2;
   position: relative;
-  grid-template-columns: 1.25fr 1fr;
+  margin-left: auto;
+  margin-right: auto;
   text-align: left;
-  padding: $s4 $s10;
-  gap: $s2;
-  max-width: 1550px;
-  margin: 0 auto 0 auto;
 
-
-  .arrowDown {
-    position: absolute;
-    bottom: $s10;
-    left: calc($s1 * 12);
-    width: calc($s1 * 10);
-    height: calc($s1 * 10);
-
-    display: grid;
-    justify-content: center;
-    transform: rotateZ(90deg);
+  .box {
+    border-radius: $s1;
+    background-color: #2C2C2C;
+    min-height: 150px;
+    min-width: 150px;
+    padding: $s3;
+    box-sizing: border-box;
     transition: all 0.25s;
-    padding: $s1;
-
-    img {
-      position: relative;
-      width: 75%;
-      height: 100%;
-      transition: all 0.25s;
-    }
-
-
+    overflow: hidden;
     &:hover {
-      img {
-        left: $s2;
+      background-color: rgb(32, 32, 32);
+    }
+  }
+
+  .leftSection {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $s1;
+
+    .nameBox {
+      grid-column: span 2;
+      display: grid;
+      align-content: start;
+
+      h1 {
+        margin: 0;
+        font-size: clamp(1rem, -1.5rem + 8vw, 6rem) !important;
+        font-weight: 900;
       }
     }
 
-  }
-  
-  .TopSection {
-    display: grid;
-    position: relative;
-    justify-content: start;
-    align-content: start;
-    padding-top: 100px;
-    z-index: 2;
+    .clockBox {
+      grid-row: span 2;
+      display: grid;
 
-    .countUpSection {
-      display: flex;
-      gap: $s5;
+      h1 {
+        margin: 0;
+        font-size: clamp(1rem, -1.5rem + 8vw, 6rem) !important;
+        color: $secondary-text-colour;
+      }
 
-      div {
+      .location {
         display: flex;
-        gap: $s2;
         align-items: center;
+        gap: $s1;
 
         span {
-          font-size: $s5;
-          color: $primary-colour;
+          color: rgb(134, 134, 134);
         }
       }
+
+
     }
 
-    .buttonContainer{
-      margin-top: $s5;
-      display: flex;
-      gap: $s5;
+    .getInTouchBox {
+      display: grid;
+      align-content: space-between;
+      gap: $s1;
+
+      h5 {
+        margin: 0;
+      }
     }
 
-    .job-title {
-      margin: 0;
-      z-index: 4;
-      font-size: max(calc(100vw / 13.5), $s5);
-      // background-color: $appBackgroundColour;
+    .scrollDownBox {
+      background-color: $primary-colour;
+      position: relative;
 
-      &>div {
-        width: 100%;
+      #scrollDownText {
+        transform: rotateZ(0deg);
+        animation-name: infiniteRotation;
+        animation-duration: 10s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        color: black;
       }
 
-
-      .CircularText {
-        color: white;
+      .arrowDown {
         position: absolute;
-        top: 0;
-        right: $s10;
-        font-size: $s2;
+        left: 50%;
+        top: 50%;
+        translate: -50% -50%;
       }
-
-    }
-
-
-  }
-
-  .middleSection {
-    width: max-content;
-    position: absolute;
-    justify-self: center;
-    z-index: 1;
-    display: grid;
-    display: none;
-
-    .SlideRevealComponent {
-      .childrenContainer {
-        line-height: 0;
-      }
-    }
-
-    &:hover {
-      .blockers {
-        width: 0 !important;
-      }
-
-      .SlideRevealComponent {
-        .childrenContainer {
-
-
-          img {
-            filter: grayscale(0);
-
-          }
-        }
-      }
-
-    }
-
-    .blockers {
-      background-color: $appBackgroundColour;
-      z-index: 3;
-      transition: all 0.25s;
-    }
-
-
-
-    img {
-      width: 50vh;
-      height: auto;
-      justify-self: center;
-      filter: grayscale(1);
-      border-style: none;
-      outline: 0;
-      border: 0;
-      object-fit: fill;
     }
   }
 
-
-  .BottomSection {
+  .rightSection {
     display: grid;
-    justify-content: center;
-    z-index: 2;
+    grid-template-columns: 0.7fr 1fr;
+    grid-template-rows: 1fr 0.5fr;
 
-    position: relative;
-    align-content: center;
+    gap: $s1;
 
+    .jobBox {
+      display: grid;
+      align-content: space-between;
+      gap: $s3;
 
-    .name {
-      z-index: 3;
-      margin: 0;
-      text-align: right;
-      -webkit-text-stroke: 2px $primary-text-colour;
-      color: $appBackgroundColour;
-    }
+      h5 {
+        margin: 0;
+      }
 
-    .SlideRevealComponent {
-      width: 100% !important;
-      text-align: right;
-
-      .childrenContainer {
-        width: 100%;
+      ul {
+        list-style-type: none;
+        display: grid;
+        gap: $s1;
+        padding: 0;
+        margin: 0;
+        color: $secondary-text-colour;
       }
     }
 
-    .imageContainer {
-      position: relative;
+    .photoBox {
+      padding: 0;
+      overflow: hidden;
+      display: grid;
+      align-content: center;
+      justify-content: center;
+      background-image: url("../../assets/hero-image-2024.png");
+      background-position: center center;
+      background-size: cover;
     }
 
-    img {
-      max-height: 600px;
-      max-width: min(600px, 30vw);
-      position: relative;
-      z-index: 2;
+    .experienceBox {
+      display: flex;
+      align-items: center;
+      gap: $s2;
 
-      &:hover {
-        &~div {
-          top: 0 !important;
-          left: 0 !important;
+      h2 {
+        margin: 0;
+      }
+
+      span {
+        color: $secondary-text-colour;
+      }
+
+
+      h2>span {
+        color: $primary-text-colour;
+      }
+
+
+    }
+
+    .stackBox {
+      grid-column: span 2;
+      position: relative;
+      display: grid;
+      align-items: center;
+      overflow: hidden;
+
+      h5 {
+        position: absolute;
+        right: $s1;
+        transform: rotateZ(90deg);
+        opacity: 0.25;
+        font-size: $s5;
+        font-weight: 900;
+      }
+
+
+      .stackContainer {
+        display: flex;
+        gap: $s2;
+        flex-wrap: wrap;
+
+        span {
+          background-color: rgb(14, 14, 14);
+          border-radius: $s2;
+          padding: $s1;
+          mix-blend-mode: exclusion;
+          display: flex;
+          align-items: center;
+        }
+
+        img {
+          height: 60px;
+          width: 68px;
+          object-fit: contain;
         }
       }
     }
-
-    .imageShadowBox {
-      position: absolute;
-      min-height: 100%;
-      min-width: 100%;
-      top: 0;
-      left: 0;
-      border: 1px solid $primary-text-colour;
-      opacity: 0;
-      transition: all 0.25s;
-    }
-
-
   }
 }
 
 
 
-@keyframes nameanimation {
+
+@keyframes infiniteRotation {
   0% {
-    letter-spacing: 10px;
-    opacity: 0
+    transform: rotateZ(0deg);
   }
 
   100% {
-    letter-spacing: normal;
-    opacity: 1
+    transform: rotateZ(360deg);
   }
 }
 
-@keyframes fadeInAnimation {
+@keyframes infiniteBlink {
   0% {
     opacity: 0;
   }
 
+  5% {
+    opacity: 1;
+  }
+
+  95% {
+    opacity: 1;
+  }
+
   100% {
-    opacity: 100;
-  }
-
-}
-
-
-
-
-
-
-
-@media screen and (max-width: 1550px) {
-  .Intro {
-
-    .BottomSection {
-      .name {
-        left: - calc($s1 * 15);
-        font-size: calc($s1 * 17.5);
-      }
-    }
+    opacity: 0;
   }
 }
 
 
-@media screen and (max-width: $largeScreen) {
-  .Intro {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
 
 
-    .TopSection {
-      display: flex;
-
-      .job-title {
-        max-width: 500px;
-      }
-    }
-
-    .BottomSection {
-      .name {
-        left: 0;
-      }
-    }
-
-  }
-}
-
-@media screen and (max-width: $largeScreen) {
-
-
-  .Intro {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: $s4;
-
-    .TopSection {
-      display: grid;
-
-      .job-title {
-        max-width: 600px;
-        left: unset;
-
-
-      }
-    }
-
-    .middleSection {
-      position: unset;
-
-
-      img {
-        border-radius: 100%;
-        right: $s2;
-      }
-    }
-
-    .BottomSection {
-      .name {
-        left: 0;
-        font-size: calc($s1 * 12);
-        max-width: 600px;
-      }
-
-
-    }
-
-    .arrowDown {
-      bottom: -$s2;
-    }
-  }
-}
-
-@media screen and (max-width: 1100px) {
-  .Cursor {
-    display: none;
-  }
-
-}
-
-@media screen and (max-width: $tabletScreen) {
-  .Cursor {
-    display: none;
-  }
+@media only screen and (max-width: $largeScreen) {
   .Intro {
     grid-template-columns: 1fr;
+    padding: 0 $s5;
 
-    .BottomSection{
-      .imageContainer{
-        margin-top: $s5;
+    .leftSection {
 
-        img{
-          max-width: 90vw;
-          max-height: min(75vh, 600px);
-        }
+      grid-auto-flow: column dense;
 
-      }
-    }
-  }
-
-}
-
-
-@media screen and (max-width: 600px) {
-
-  .Intro {
-    min-height: unset;
-    align-items: center;
-    padding: 0 $s3;
-
-
-    .BottomSection{
-      .imageContainer{
-        .imageShadowBox{
-          display: none;
-        }
-      }
-    }
-
-    a {
-      position: relative;
-      left: unset;
-      right: unset;
-    }
-
-    .arrowDown,
-    a .GetInTouchSection {
-      display: none;
-    }
-
-    .TopSection {
-      height: unset;
-
-      .job-title {
-        max-width: 500px;
-        font-size: calc($s1 * 6);
-        left: 0;
-        margin-bottom: 0;
-        letter-spacing: $s1;
-        word-break: keep-all;
-
-        .CircularText {
-          display: none;
-        }
-
-      }
-    }
-
-    .BottomSection {
-      display: grid;
-
-      .name {
-        font-size: calc($s1 * 8);
-
-
-
-        .CircularText {
-          display: none;
-        }
+      .nameBox {
+        grid-column: span 1;
       }
 
-      // a {
-      //   .GetInTouchSection {
-      //     position: relative !important;
-      //     right: unset !important;
-      //     left: unset !important;
-      //     width: unset;
-      //     display: flex;
-      //     justify-content: center;
-      //     align-items: center;
-
-      //     &:hover {
-      //       img {
-      //         left: unset;
-      //       }
-      //     }
-
-      //     img {
-      //       position: absolute;
-      //       left: unset;
-      //       right: -$s2;
-      //     }
-      //   }
-      // }
+      .clockBox {
+        display: none;
+      }
 
     }
   }
@@ -437,74 +256,66 @@
 
 
 
-
-// @media screen and (max-width: 1675px) {
-
-//   .Intro {
-
-
-//     .TopSection {
-
-//       .job-title {
-//         font-size: calc($s1 * 15);
-
-//       }
-//     }
-//   }
-// }
-
-// @media screen and (max-width: 1675px) {
-
-//   .Intro {
-
-
-//     .TopSection {
-
-//       .job-title {
-//         font-size: calc($s1 * 15);
-
-//       }
-//     }
-//   }
-// }
-
-
-
-
-@media screen and (max-width: 425px) {
-
+@media only screen and (max-width: $tabletScreen) {
   .Intro {
-
-
-    .TopSection {
-
-      .job-title {
-        font-size: calc($s1 * 6);
-
+    .leftSection {
+      .scrollDownBox {
+        display: none;
       }
     }
 
-    .BottomSection {
-      display: grid;
+    .rightSection{
+      grid-template-columns: 1fr 1fr;
+      .photoBox{
+        grid-column: span 1;
+      }
+    }
+  }
+}
 
-      .name {
-        font-size: calc($s1 * 8);
 
+@media only screen and (max-width: $mobileScreen) {
+  .Intro {
+    padding: $s2;
+    .box{
+      min-height: unset;
+    }
+    .leftSection {
+      grid-template-columns: 1fr;
+      grid-auto-flow: unset;
+      
+      .nameBox {
+        h1{
+          font-size: $s5 !important;
+        }
       }
 
-      // a {
-      //   .GetInTouchSection {
-      //     position: relative !important;
-      //     right: unset !important;
-      //     left: unset !important;
-      //     width: unset;
-      //     display: flex;
-      //     justify-content: center;
-      //     align-items: center;
-      //     min-width: 300px;
-      //   }
-      // }
+    .getInTouchBox{
+      display: flex;
+      justify-content: space-between;
+    }
 
+      .scrollDownBox {
+        display: none;
+      }
+
+    }
+
+    .rightSection{
+      grid-template-columns: 1fr;
+      .jobBox{
+        grid-column: span 2;
+      }
+
+      .experienceBox + .experienceBox{
+        grid-column: span 2;
+      }
+
+      .stackBox{
+        h5{
+          display: none;
+        }
+      }
     }
   }
 }

@@ -13,13 +13,13 @@
 
     img{
         position: absolute;
-        right: -$s2;
+        left: calc(90% - $s2);
         transition: all 0.25s;
     }
 
     &:hover{
         img{
-            right: -$s4;
+            left: calc(90% - $s1);
         }
     }
 }

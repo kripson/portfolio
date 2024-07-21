@@ -4,15 +4,15 @@ import Arrow from "../../assets/Arrow 1.svg";
 
 const Button = ({ label, onClick, styles, link }) => {
 
-  if(link){
+  if (link) {
     return (
-      <a  href={link} target="_blank" download={true} className="button body" onClick={onClick} style={{ ...(styles ?? {}) }}>
+      <a href={link} target={link.startsWith('#') ? "_self" : "_blank"} download={true} className="button body" onClick={onClick} style={{ ...(styles ?? {}) }}>
         {label}
         <img src={Arrow} alt="" />
-      </a> 
+      </a>
     );
   }
-  else{
+  else {
     return (
       <div className="button body" onClick={onClick} style={{ ...(styles ?? {}) }}>
         {label}
@@ -20,7 +20,7 @@ const Button = ({ label, onClick, styles, link }) => {
       </div>
     );
   }
-  
+
 };
 
 export default Button;

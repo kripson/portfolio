@@ -8,7 +8,7 @@ import BackgroundImage from './assets/Group 1(6).svg';
 import logo from "./assets/logo.png";
 
 import { DoubleMouseCursor } from "kripson-ui";
-import "kripson-ui/dist/style.css";
+
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Nav from "./components/Nav/Nav";
 import { useEffect } from "react";
@@ -82,7 +82,7 @@ function App() {
       <div className="App">
 
         <div className="background">
-          <img src={BackgroundImage} alt="background image" />
+          {/* <img src={BackgroundImage} alt="background image" /> */}
           <div className="gradient-background">
 
           </div>
