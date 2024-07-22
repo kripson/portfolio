@@ -22,6 +22,7 @@
     box-sizing: border-box;
     transition: all 0.25s;
     overflow: hidden;
+
     &:hover {
       background-color: rgb(32, 32, 32);
     }
@@ -48,20 +49,40 @@
       grid-row: span 2;
       display: grid;
 
+
       h1 {
         margin: 0;
         font-size: clamp(1rem, -1.5rem + 8vw, 6rem) !important;
         color: $secondary-text-colour;
       }
 
+      &:hover{
+
+        .location img{
+          // max-width: 160%;
+          // left: -$s8;
+        }
+      }
+
       .location {
         display: flex;
         align-items: center;
         gap: $s1;
-
+        position: relative;
+        flex-direction: row-reverse;
+        justify-content: center;
         span {
           color: rgb(134, 134, 134);
         }
+
+        img {
+          transition: all 0.25s;
+          max-width: 130%;
+          position: absolute;
+          bottom: 0;
+          left: -$s6;
+        }
+
       }
 
 
@@ -80,6 +101,9 @@
     .scrollDownBox {
       background-color: $primary-colour;
       position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
       #scrollDownText {
         transform: rotateZ(0deg);
@@ -89,6 +113,7 @@
         animation-iteration-count: infinite;
         animation-timing-function: linear;
         color: black;
+        margin: 0;
       }
 
       .arrowDown {
@@ -96,6 +121,12 @@
         left: 50%;
         top: 50%;
         translate: -50% -50%;
+        animation-name: upDown;
+        animation-duration: 1s;
+        animation-delay: 4.5s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
       }
     }
   }
@@ -135,6 +166,21 @@
       background-image: url("../../assets/hero-image-2024.png");
       background-position: center center;
       background-size: cover;
+      position: relative;
+
+      &:hover{
+        video{
+          display: block;
+        }
+      }
+
+      video{
+        position: absolute;
+        max-height: 100%;
+        width: 100%;
+        display: none;
+        object-fit: cover;
+      }
     }
 
     .experienceBox {
@@ -181,25 +227,34 @@
         flex-wrap: wrap;
 
         span {
-          background-color: rgb(14, 14, 14);
           border-radius: $s2;
-          padding: $s1;
+          padding: $s1 $s2;
           mix-blend-mode: exclusion;
           display: flex;
           align-items: center;
+          gap: $s1;
+          background: linear-gradient(to left, rgb(82, 82, 82), rgb(46, 46, 46));
+          font-weight: 900;
         }
 
         img {
-          height: 60px;
-          width: 68px;
+          height: 24px;
+          width: auto;
           object-fit: contain;
+          filter: contrast(1.25);
         }
       }
     }
   }
 }
 
+.shake{
+    /* Start the shake animation and make the animation last for 0.5 seconds */
+    animation: shake 0.5s;
 
+    /* When the animation is finished, start again */
+    animation-iteration-count: infinite; 
+}
 
 
 @keyframes infiniteRotation {
@@ -230,6 +285,28 @@
   }
 }
 
+@keyframes upDown {
+  0%{
+    transform: translateY(0px);
+  }
+
+  25%{
+    transform: translateY(-5px);
+  }
+
+  50%{
+    transform: translateY(0px);
+  }
+
+  75%{
+    transform: translateY(5px);
+  }
+
+  100%{
+    transform: translateY(0px);
+  }
+}
+
 
 
 
@@ -250,6 +327,8 @@
         display: none;
       }
 
+
+
     }
   }
 }
@@ -262,11 +341,23 @@
       .scrollDownBox {
         display: none;
       }
+
+      .getInTouchBox{
+        a.button{
+          background-color: $primary-colour;  
+          color: black;
+          border-color: black;
+          img{
+            display: none;
+          }
+        }
+      }
     }
 
-    .rightSection{
+    .rightSection {
       grid-template-columns: 1fr 1fr;
-      .photoBox{
+
+      .photoBox {
         grid-column: span 1;
       }
     }
@@ -277,23 +368,30 @@
 @media only screen and (max-width: $mobileScreen) {
   .Intro {
     padding: $s2;
-    .box{
+    padding-top: 0;
+
+    .box {
       min-height: unset;
     }
+
     .leftSection {
       grid-template-columns: 1fr;
       grid-auto-flow: unset;
-      
+
       .nameBox {
-        h1{
+        h1 {
           font-size: $s5 !important;
         }
       }
 
-    .getInTouchBox{
-      display: flex;
-      justify-content: space-between;
-    }
+      .getInTouchBox {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        
+
+      }
 
       .scrollDownBox {
         display: none;
@@ -301,21 +399,38 @@
 
     }
 
-    .rightSection{
+    .rightSection {
       grid-template-columns: 1fr;
-      .jobBox{
+
+      .jobBox {
         grid-column: span 2;
       }
 
-      .experienceBox + .experienceBox{
+      .experienceBox+.experienceBox {
         grid-column: span 2;
       }
 
-      .stackBox{
-        h5{
+      .stackBox {
+        h5 {
           display: none;
         }
       }
     }
   }
+}
+
+
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
 }

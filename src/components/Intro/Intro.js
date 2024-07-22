@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useLayoutEffect } from "react";
 import "./Intro.scss";
 import HeroImage from "../../assets/hero-image-2024.png";
+import goldCoast from "../../assets/GoldCoast.svg";
 import Button from "../Button/Button";
 import CountUp from "react-countup";
 
@@ -10,7 +11,8 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import { SplitText } from "../../utils/splitText";
 import CircleType from 'circletype';
 import { RiArrowDownFill, RiArrowDownLine, RiMapFill, RiMapPin2Fill, RiMapPin3Fill, RiMapPin4Fill, RiMapPin5Fill } from "react-icons/ri";
-
+import SlideRevealComponent from "../SlideRevealComponent/SlideRevealComponent";
+import glitchImageVideo from '../../assets/glitch-video.mp4';
 gsap.registerPlugin(ScrollTrigger);
 
 
@@ -19,8 +21,8 @@ const Clock = () => {
 
   const getFormattedTime = () => {
     const date = new Date();
-    let hours = date.getHours();
-    let minutes = date.getMinutes();
+    let hours = String(date.getHours());
+    let minutes = String(date.getMinutes());
 
     if (hours < 10) {
       hours = `0${hours}`
@@ -30,7 +32,7 @@ const Clock = () => {
       minutes = `0${minutes}`
     }
 
-    return <span>{hours} <span className="blink">:</span> {minutes} {hours.startsWith('0') ? 'AM' : 'PM'}</span>;
+    return <span>{hours} <span className="blink">:</span> {minutes} {Number(hours) < 12 ? 'AM' : 'PM'}</span>;
 
   }
 
@@ -41,6 +43,8 @@ const Clock = () => {
 
 const Intro = ({ firstLoaded }) => {
   const onlyWidth = useWindowWidth();
+
+  const [earthQuakeStarted, setEarthQuake] = useState(false);
 
 
   const skills = [
@@ -59,18 +63,45 @@ const Intro = ({ firstLoaded }) => {
   ]
 
   const stacks = [
-    require("../../assets/react.png"),
-
-    require("../../assets/angular.png"),
-
-    require("../../assets/nodejs.png"),
-
-    require("../../assets/mongodb.png")
+    {
+      url: require("../../assets/react.png"),
+      name: "React",
+    },
+    {
+      url: require("../../assets/angular.png"),
+      name: "Angular",
+    },
+    {
+      url:
+        require("../../assets/nextjs.png"),
+      name: "NextJS",
+    },
+    {
+      url: require("../../assets/nodejs.png"),
+      name: "Node Js",
+    },
+    {
+      url: require("../../assets/typescript.png"),
+      name: "Typescript",
+    },
+    {
+      url:
+        require("../../assets/mongodb.png"),
+      name: "MongoDB",
+    },
+    {
+      url:
+        require("../../assets/aws.png"),
+      name: "AWS",
+    }
   ]
 
   useLayoutEffect(() => {
     // Instantiate `CircleType` with an HTML element.
-    const circleType = new CircleType(document.getElementById('scrollDownText'));
+    const circleType = new CircleType(document.getElementById('scrollDownText')).radius(20);
+
+
+
 
   }, []);
 
@@ -85,18 +116,23 @@ const Intro = ({ firstLoaded }) => {
           <h1>Sankit Shrestha</h1>
         </div>
         <div className="getInTouchBox  box">
-          <h5>Get in <br />touch</h5>
+          <h5 className={`${earthQuakeStarted ? '' : ''}`}>Get in <br />touch</h5>
           <Button link={"#contacts"} label={'Contact Me'} styles={{ maxWidth: 'min(200px,30vw)', maxHeight: '48px', borderWidth: '2px', fontWeight: 'bolder' }} />
         </div>
         <div className="clockBox  box">
 
           <Clock />
 
-          <div className="location">
-            <RiMapPin5Fill /> <span>Gold Coast, Australia</span>
+          <div className={`location ${earthQuakeStarted ? '' : ''}`} >
+            <img src={goldCoast} className={`${earthQuakeStarted ? '' : ''}`}/>
+
+            <SlideRevealComponent reveal={'topReveal'} delay={4} duration={1}>
+              <RiMapPin5Fill />   <span> Gold Coast Australia</span>
+            </SlideRevealComponent>
           </div>
         </div>
         <div className="scrollDownBox  box">
+
           <h5 id="scrollDownText">*Scroll*Down</h5>
           <span className="arrowDown">
             <RiArrowDownLine size={'44px'} color="black" />
@@ -117,8 +153,9 @@ const Intro = ({ firstLoaded }) => {
 
           <Button label={'Download CV'} link={'/cv/Full stack developer sankit resume.pdf'} styles={{ maxWidth: '200px', maxHeight: '48px', borderWidth: '2px', fontWeight: 'bolder' }} />
         </div>
-        <div className="photoBox  box">
-          {/* <img src={HeroImage} alt="heroImage"/> */}
+        <div className={`photoBox  box ${earthQuakeStarted ? '' : ''}`} onMouseEnter={(e)=>setEarthQuake(true)} onMouseLeave={(e)=>setEarthQuake(false)}>
+          <video src={glitchImageVideo} autoPlay loop>
+          </video>
         </div>
         <div className="experienceBox  box">
           <h2><CountUp end={5} suffix="+" delay={4}></CountUp></h2>
@@ -134,7 +171,7 @@ const Intro = ({ firstLoaded }) => {
           <h5>Stack</h5>
           <div className="stackContainer">
 
-            {stacks.map(stack => <span><img src={stack} alt="stack" /></span>)}
+            {stacks.map(stack => <span><img src={stack.url} alt="stack" />{stack.name}</span>)}
 
           </div>
         </div>

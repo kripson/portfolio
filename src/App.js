@@ -29,19 +29,32 @@ function App() {
   }, []);
 
   useLayoutEffect(() => {
-    gsap.to(".logoContainer", {
+
+    const tl = gsap.timeline();
+
+    tl.to('.logo', {
+      scale: 0.75,
+      opacity: 0,
+      width: 110,
+      height: 64,
+      duration: 0.5,
+      delay: 3.75
+    })
+
+    tl.to('.logoContainer', {
       width: 150,
       height: 128,
       duration: 1,
-      delay: 3.5,
-    });
+    })
 
-    gsap.to(".logo", {
+    tl.to('.logo', {
       width: 110,
       height: 64,
-      duration: 1,
-      delay: 3.5,
-    });
+      scale: 1,
+      opacity: 1,
+      duration: 0.5,
+    })
+
 
     gsap.fromTo([".background"],
       {
@@ -94,10 +107,11 @@ function App() {
         </div>
 
         <div className="first">
+
           <div className="progressBar h6">
             <CountUp end={100} suffix={"%"} duration={3.5} />
 
-            <motion.div initial={{ width: "1%", backgroundColor: "white", height: "100%" }} animate={{ width: "100%", transition: { duration: 5, type: "spring", stiffness: 10 } }}></motion.div>
+            <motion.div initial={{ width: "1%", backgroundColor: "white", height: "100%" }} animate={{ width: "100%", transition: { duration: 5, type: "spring", stiffness: 20 } }}></motion.div>
           </div>
         </div>
         <DoubleMouseCursor />
