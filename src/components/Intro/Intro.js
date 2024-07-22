@@ -154,7 +154,7 @@ const Intro = ({ firstLoaded }) => {
           <Button label={'Download CV'} link={'/cv/Full stack developer sankit resume.pdf'} styles={{ maxWidth: '200px', maxHeight: '48px', borderWidth: '2px', fontWeight: 'bolder' }} />
         </div>
         <div className={`photoBox  box ${earthQuakeStarted ? '' : ''}`} onMouseEnter={(e)=>setEarthQuake(true)} onMouseLeave={(e)=>setEarthQuake(false)}>
-          <video src={glitchImageVideo} autoPlay={true} loop={true} muted>
+          <video src={glitchImageVideo} autoPlay={true} loop={true} muted webkit-playsinline playsinline>
           </video>
         </div>
         <div className="experienceBox  box">
