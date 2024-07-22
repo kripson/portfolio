@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useLayoutEffect } from "react";
+import React, { useState } from "react";
 import "./Intro.scss";
-import HeroImage from "../../assets/hero-image-2024.png";
 import goldCoast from "../../assets/GoldCoast.svg";
 import Button from "../Button/Button";
 import CountUp from "react-countup";
@@ -8,11 +7,11 @@ import CountUp from "react-countup";
 import { useWindowWidth } from "@react-hook/window-size";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { SplitText } from "../../utils/splitText";
-import CircleType from 'circletype';
-import { RiArrowDownFill, RiArrowDownLine, RiMapFill, RiMapPin2Fill, RiMapPin3Fill, RiMapPin4Fill, RiMapPin5Fill } from "react-icons/ri";
+import { RiArrowDownLine, RiMapPin5Fill } from "react-icons/ri";
 import SlideRevealComponent from "../SlideRevealComponent/SlideRevealComponent";
 import glitchImageVideo from '../../assets/glitch-video.mp4';
+import ScrollDownCircle from '../../assets/ScrollDownCircle.svg';
+
 gsap.registerPlugin(ScrollTrigger);
 
 
@@ -23,6 +22,12 @@ const Clock = () => {
     const date = new Date();
     let hours = String(date.getHours());
     let minutes = String(date.getMinutes());
+    let suffix = 'AM';
+
+    if(hours >= 12){
+      hours = String(hours - 12);
+      suffix = 'PM';
+    }
 
     if (hours < 10) {
       hours = `0${hours}`
@@ -32,7 +37,7 @@ const Clock = () => {
       minutes = `0${minutes}`
     }
 
-    return <span>{hours} <span className="blink">:</span> {minutes} {Number(hours) < 12 ? 'AM' : 'PM'}</span>;
+    return <span>{hours} <span className="blink">:</span> {minutes} {suffix}</span>;
 
   }
 
@@ -96,15 +101,6 @@ const Intro = ({ firstLoaded }) => {
     }
   ]
 
-  useLayoutEffect(() => {
-    // Instantiate `CircleType` with an HTML element.
-    const circleType = new CircleType(document.getElementById('scrollDownText')).radius(20);
-
-
-
-
-  }, []);
-
   return (
     <div className="Intro">
 
@@ -124,7 +120,7 @@ const Intro = ({ firstLoaded }) => {
           <Clock />
 
           <div className={`location ${earthQuakeStarted ? '' : ''}`} >
-            <img src={goldCoast} className={`${earthQuakeStarted ? '' : ''}`}/>
+            <img src={goldCoast} className={`${earthQuakeStarted ? '' : ''}`} />
 
             <SlideRevealComponent reveal={'topReveal'} delay={4} duration={1}>
               <RiMapPin5Fill />   <span> Gold Coast Australia</span>
@@ -133,7 +129,7 @@ const Intro = ({ firstLoaded }) => {
         </div>
         <div className="scrollDownBox  box">
 
-          <h5 id="scrollDownText">*Scroll*Down</h5>
+          <img id="scrollDownText" src={ScrollDownCircle} alt="scrollDownText"/>
           <span className="arrowDown">
             <RiArrowDownLine size={'44px'} color="black" />
           </span>
@@ -153,7 +149,7 @@ const Intro = ({ firstLoaded }) => {
 
           <Button label={'Download CV'} link={'/cv/Full stack developer sankit resume.pdf'} styles={{ maxWidth: '200px', maxHeight: '48px', borderWidth: '2px', fontWeight: 'bolder' }} />
         </div>
-        <div className={`photoBox  box ${earthQuakeStarted ? '' : ''}`} onMouseEnter={(e)=>setEarthQuake(true)} onMouseLeave={(e)=>setEarthQuake(false)}>
+        <div className={`photoBox  box ${earthQuakeStarted ? '' : ''}`} onMouseEnter={(e) => setEarthQuake(true)} onMouseLeave={(e) => setEarthQuake(false)}>
           <video src={glitchImageVideo} autoPlay={true} loop={true} muted webkit-playsinline playsinline>
           </video>
         </div>

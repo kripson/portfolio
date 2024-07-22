@@ -154,15 +154,15 @@ const Projects = () => {
 
   return (
     <>
-      <div className="Projects full-width-element" id="projects" onMouseLeave={onMouseLeave}>
+      <div className="Projects full-width-element" onMouseLeave={onMouseLeave}>
         <span className="sectionTitle h5" style={{ textAlign: "left" }}>
           Selected work
         </span>
 
-        <div className="projectsContainer">
+        <div className="projectsContainer"  id="projects">
           {projectsarray && projectsarray.map
             ? projectsarray.map((project, idx) => (
-              <Project project={project} id={idx} onClick={onProjectClick} />
+              <Project project={project} id={idx} key={idx} onClick={onProjectClick} />
             ))
             : ""}
         </div>

@@ -427,3 +427,11 @@ html {
   }
 
 }
+
+
+
+@media only screen and (max-width: $mobileScreen) {
+  html{
+    scroll-snap-type: y proximity;
+  }
+}
