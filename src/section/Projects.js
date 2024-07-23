@@ -53,7 +53,7 @@ function Project({ project, id, onClick }) {
 
   return (
     <section data-project-number={id} onClick={onClick} style={{ backgroundColor: backgroundColor }} onMouseOver={onMouseOver}>
-      <h2 className="projectHeading">{project.heading}</h2>
+      <h2 className="projectHeading" data-project-number={id}>{project.heading}</h2>
       <div ref={ref} data-project-number={id}>
         <img className="projectBanner" style={{ filter: filter }} src={project.imageUrl} data-project-number={id} alt="A London skyscraper" />
       </div>
