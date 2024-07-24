@@ -53,17 +53,20 @@ const Intro = ({ firstLoaded }) => {
 
 
   const skills = [
-    "UI/UX",
 
     "FRONT-END DEVELOPMENT",
 
     "UI TESTING",
 
+    "UI/UX BEST PRACTICES",
+
     "BACK-END DEVELOPMENT",
 
     "AWS TECHNOLOGIES",
 
-    "DATABASE DESIGN AND IMPLEMENTATION"
+    "DATABASE DESIGN AND IMPLEMENTATION",
+
+    "AND MANY MORE..."
 
   ]
 
