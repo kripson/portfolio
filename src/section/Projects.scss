@@ -30,6 +30,7 @@
       scroll-snap-align: center;
       perspective: 500px;
       padding: 0 $s10;
+      overflow: hidden;
 
       .projectHeading{
         position: absolute;
@@ -69,9 +70,8 @@
     
     section > div {
       max-width: 800px;
-      max-height: 400px;
       position: relative;
-      max-height: 90vh;
+      max-height: max(90vh, 750px);
       margin: 20px 0;
       background: var(--white);
       overflow: hidden;
@@ -178,7 +178,8 @@
         display: grid;
         padding: 0 $s5;
         align-items: end;
-        height: 100vh;
+        min-height: 100vh;
+        height: unset;
         h2{
           font-size: $header3;
         }

@@ -48,7 +48,7 @@ export const projectsarray = [
             backgroundColor: '#ffb2db',
             color: 'white',
             detailColor: 'black',
-            filter: `drop-shadow(-20px 40px 10px rgba(0,0,0,0.25))`
+            filter: `drop-shadow(-20px 25px 10px rgba(0,0,0,0.25))`
         },
         tags: [
             'NextJs',
@@ -104,7 +104,7 @@ export const projectsarray = [
         styles: {
             backgroundColor: '#c8afff',
             color: 'white',
-            filter: `drop-shadow(-20px 40px 10px rgba(0,0,0,0.25))`
+            filter: `drop-shadow(-20px 20px 10px rgba(0,0,0,0.25))`
         },
         tags: [
             'NextJs',

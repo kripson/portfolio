@@ -10,16 +10,35 @@
     border-radius: $s10;
     height: $s10;
     color: $primary-text-colour;
+    gap: $s1;
 
-    img{
+    .spinner{
+        animation-name: infiniteRotation;
+        animation-duration: 1s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+    }
+
+    img {
         position: absolute;
-        right: -$s2;
+        left: calc(90% - $s2);
         transition: all 0.25s;
     }
 
-    &:hover{
-        img{
-            right: -$s4;
+    &:hover {
+        img {
+            left: calc(90% - $s1);
         }
     }
 }
+
+
+@keyframes infiniteRotation {
+    0% {
+      transform: rotateZ(0deg);
+    }
+  
+    100% {
+      transform: rotateZ(360deg);
+    }
+  }
