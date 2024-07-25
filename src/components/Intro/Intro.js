@@ -64,9 +64,7 @@ const Intro = ({ firstLoaded }) => {
 
     "AWS TECHNOLOGIES",
 
-    "DATABASE DESIGN AND IMPLEMENTATION",
-
-    "AND MANY MORE..."
+    "DATABASE DESIGN AND IMPLEMENTATION"
 
   ]
 

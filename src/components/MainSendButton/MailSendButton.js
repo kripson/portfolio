@@ -14,15 +14,15 @@ const MailSendButton = ({buttonstate, SendMail})=>
 
     if(buttonstate === 'idle')
     {
-       return (<Button onClick = {SendMail} label="Send"></Button>)
+       return (<Button onClick = {SendMail} label="Send" ></Button>)
     }
     else if(buttonstate === "sending")
     {
-        return(<Button className = "sending" label="Sending"><img src={Spinner} alt = "refresher"/></Button> )
+        return(<Button className = "sending" label="Sending" loading={buttonstate === 'sending'}></Button> )
     }
     else
     {
-        return(<div className = "sent"><span>Sent</span><img src={Tick} alt = "refresher"/></div>)
+        return(<Button className = "sent" label="Sent" success={true}></Button> )
     }
 
 }

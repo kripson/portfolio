@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./Contacts.scss";
 import axios from "axios";
 import MailSendButton from "../components/MainSendButton/MailSendButton";
-import ReCAPTCHA from "react-google-recaptcha/lib/esm/recaptcha-wrapper";
 import { useEffect } from "react";
 import SlideRevealComponent from "../components/SlideRevealComponent/SlideRevealComponent";
 
@@ -11,8 +10,10 @@ const Contacts = () => {
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
+  const [testPot, setTestPot] = useState(null);
+
   const [mailstatus, setMailStatus] = useState("idle");
-  const [verified, setVerified] = useState(false);
+  const [verified, setVerified] = useState(true);
 
   const services = [
     {
@@ -37,27 +38,15 @@ const Contacts = () => {
     setEmail("");
     setSubject("");
     setMessage("");
-  };
-
-  const onCaptchaComplete = (value) => {
-    if (value) {
-      axios({
-        url: "https://drivingcenterserver.herokuapp.com/verifycaptcha",
-        method: "post",
-        data: { token: value },
-      })
-        .then((response) => {
-          if (response.data.success) {
-            setVerified(true);
-          } else {
-            alert("Captcha verification failed, Please try again");
-          }
-        })
-        .catch((err) => alert(err));
-    }
+    setTestPot("");
   };
 
   const SendMail = () => {
+    
+    if(testPot){
+      alert('No bots allowed');
+    }
+
     if (verified) {
       if (email && name && subject && message) {
         setMailStatus("sending");
@@ -106,6 +95,9 @@ const Contacts = () => {
       case "message":
         setMessage(event.target.value);
         break;
+      case "testpot":
+        setTestPot(event.target.value);
+        break;
       default:
         break;
     }
@@ -150,11 +142,9 @@ const Contacts = () => {
           <input type="text" placeholder="Name" name="name" value={name} onChange={HandleChange} required />
           <input type="text" placeholder="Email" name="email" value={email} onChange={HandleChange} required />
         </div>
+        <input type="text" placeholder="testpot" hidden name="testpot" value={testPot} onChange={HandleChange} required />
         <input type="text" name="subject" placeholder="Subject" value={subject} onChange={HandleChange} required />
         <textarea type="text" name="message" placeholder="Message" value={message} onChange={HandleChange} required></textarea>
-        <div className="RecaptchaBox">
-          <ReCAPTCHA sitekey="6Lffz-UUAAAAAJpxERIMyn2CnrLqCtwmb5IlC4vw" onChange={onCaptchaComplete} />
-        </div>
         <MailSendButton buttonstate={mailstatus} SendMail={SendMail} />
       </div>
     </div>

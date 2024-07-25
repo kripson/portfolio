@@ -1,8 +1,9 @@
 import React from "react";
 import "./Button.scss";
 import Arrow from "../../assets/Arrow 1.svg";
+import { CgCheckO, CgSpinner } from "react-icons/cg";
 
-const Button = ({ label, onClick, styles, link }) => {
+const Button = ({ label, onClick, styles, link, loading, success }) => {
 
   if (link) {
     return (
@@ -16,7 +17,8 @@ const Button = ({ label, onClick, styles, link }) => {
     return (
       <div className="button body" onClick={onClick} style={{ ...(styles ?? {}) }}>
         {label}
-        <img src={Arrow} alt="" />
+        {loading ? <CgSpinner className="spinner"/> : success ? <CgCheckO/> :<img src={Arrow} alt="" />
+        }
       </div>
     );
   }
