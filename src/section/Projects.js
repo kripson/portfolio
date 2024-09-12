@@ -1,23 +1,16 @@
 import React, { useEffect, useState } from "react";
 import "./Projects.scss";
 import { projectsarray } from "./projectsarray";
-import ProjectFrame from "../components/ProjectFrame/ProjectFrame";
 import ProjectModal from "../components/ProjectModal/ProjectModal";
-
-import { useWindowWidth } from "@react-hook/window-size";
 
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { useLayoutEffect } from "react";
-import Button from "../components/Button/Button";
-import SlideRevealComponent from "../components/SlideRevealComponent/SlideRevealComponent";
 import { useRef } from "react";
 import {
   motion,
   useScroll,
   useSpring,
   useTransform,
-  MotionValue
 } from "framer-motion";
 
 function useParallax(value, distance) {
