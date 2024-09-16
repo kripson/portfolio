@@ -11,27 +11,8 @@ import { SplitText } from "../utils/splitText";
 gsap.registerPlugin(ScrollTrigger);
 
 const AboutMe = () => {
-  const width = useWindowWidth();
 
   useLayoutEffect(() => {
-    // const texts = document.querySelectorAll(".aboutmeparagraph");
-
-    // texts.forEach((text) => {
-    //   const splitText = new SplitText(text);
-
-    //   gsap.from(splitText.chars, {
-    //     duration: 1,
-    //     y: 100,
-    //     autoAlpha: 0,
-    //     stagger: 0.025,
-    //     scrollTrigger: {
-    //       trigger: ".AboutMe",
-    //       scrub: 1,
-    //       end: "center+=300 bottom"
-    //     },
-    //   });
-    // });
-
 
     const childSplit = new SplitText(".aboutmeparagraph", {
       type: "lines",
