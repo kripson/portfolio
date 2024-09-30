@@ -65,7 +65,7 @@ export const projectsarray = [
         laptopLayout: require("../assets/kzen8laptop.png"),
         description: ["As part of the core development team at kzen8, I collaborated with 2 other developers to develop a no-code software platform from the ground up that streamlines the business software development process." 
             ,"Implemented and optimised a variety of well-architected scalable features ranging from front-end related features such as custom theme designer, data visualisation widgets, etc to back-end associated features such as third-party API integrations, database I/O, etc."],
-        websiteUrl: 'https://nexus.kzen8.com',
+        websiteUrl: 'https://hub.kzen8.com',
         ready: true,
         year: '2020-24',
         height: '45vh',
