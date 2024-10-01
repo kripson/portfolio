@@ -13,7 +13,6 @@ const Contacts = () => {
   const [testPot, setTestPot] = useState(null);
 
   const [mailstatus, setMailStatus] = useState("idle");
-  const [verified, setVerified] = useState(true);
 
   const services = [
     {
@@ -42,42 +41,37 @@ const Contacts = () => {
   };
 
   const SendMail = () => {
-    
-    if(testPot){
-      alert('No bots allowed');
+    if (testPot) {
+      alert("No bots allowed");
     }
 
-    if (verified) {
-      if (email && name && subject && message) {
-        setMailStatus("sending");
+    if (email && name && subject && message) {
+      setMailStatus("sending");
 
-        axios({
-          url: "https://formspree.io/xoqlkvyr",
-          method: "POST",
-          data: {
-            name: name,
-            _replyto: email,
-            subject: subject,
-            message: message,
-          },
-        })
-          .then((response) => {
-            setMailStatus("sent");
-            ResetForm();
+      axios({
+        url: "https://formspree.io/xoqlkvyr",
+        method: "POST",
+        data: {
+          name: name,
+          _replyto: email,
+          subject: subject,
+          message: message,
+        },
+      })
+        .then((response) => {
+          setMailStatus("sent");
+          ResetForm();
 
-            setTimeout(() => {
-              setMailStatus("idle");
-            }, 2000);
-          })
-          .catch((err) => {
-            console.log(err);
+          setTimeout(() => {
             setMailStatus("idle");
-          });
-      } else {
-        alert("Please fill all the fields");
-      }
+          }, 2000);
+        })
+        .catch((err) => {
+          console.log(err);
+          setMailStatus("idle");
+        });
     } else {
-      alert("Please, Complete the verification");
+      alert("Please fill all the fields");
     }
   };
 
@@ -139,12 +133,48 @@ const Contacts = () => {
       </span>
       <div className="form">
         <div className="nameemail">
-          <input type="text" placeholder="Name" name="name" value={name} onChange={HandleChange} required />
-          <input type="text" placeholder="Email" name="email" value={email} onChange={HandleChange} required />
+          <input
+            type="text"
+            placeholder="Name"
+            name="name"
+            value={name}
+            onChange={HandleChange}
+            required
+          />
+          <input
+            type="text"
+            placeholder="Email"
+            name="email"
+            value={email}
+            onChange={HandleChange}
+            required
+          />
         </div>
-        <input type="text" placeholder="testpot" hidden name="testpot" value={testPot} onChange={HandleChange} required />
-        <input type="text" name="subject" placeholder="Subject" value={subject} onChange={HandleChange} required />
-        <textarea type="text" name="message" placeholder="Message" value={message} onChange={HandleChange} required></textarea>
+        <input
+          type="text"
+          placeholder="testpot"
+          hidden
+          name="testpot"
+          value={testPot}
+          onChange={HandleChange}
+          required
+        />
+        <input
+          type="text"
+          name="subject"
+          placeholder="Subject"
+          value={subject}
+          onChange={HandleChange}
+          required
+        />
+        <textarea
+          type="text"
+          name="message"
+          placeholder="Message"
+          value={message}
+          onChange={HandleChange}
+          required
+        ></textarea>
         <MailSendButton buttonstate={mailstatus} SendMail={SendMail} />
       </div>
     </div>
