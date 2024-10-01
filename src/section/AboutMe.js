@@ -1,9 +1,5 @@
 import React, { useLayoutEffect } from "react";
 import "./AboutMe.scss";
-import Nepal from "../assets/Nepal.svg";
-import GoldCoast from "../assets/goldcoast.webp";
-
-import { useWindowWidth } from "@react-hook/window-size";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { SplitText } from "../utils/splitText";
