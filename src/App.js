@@ -5,7 +5,7 @@ import Homesection from "./section/Homesection";
 import AboutMe from "./section/AboutMe";
 import Projects from "./section/Projects";
 import Contacts from "./section/Contacts";
-import logo from "./assets/logo.png";
+import logo from "./assets/logo.webp";
 import { DoubleMouseCursor } from "kripson-ui";
 import { BrowserRouter } from "react-router-dom";
 import Nav from "./components/Nav/Nav";
