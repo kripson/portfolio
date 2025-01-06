@@ -29,26 +29,26 @@ function App() {
     const tl = gsap.timeline();
 
     // Logo animation sequence
-    tl.to('.logo', {
-      scale: 0.75,
-      opacity: 0,
-      width: 110,
-      height: 64,
-      duration: 0.5,
-      delay: 3.75
-    })
-    .to('.logoContainer', {
-      width: 150,
-      height: 128,
-      duration: 1,
-    })
-    .to('.logo', {
-      width: 110,
-      height: 64,
-      scale: 1,
-      opacity: 1,
-      duration: 0.5,
-    });
+    // tl.to('.logo', {
+    //   scale: 0.75,
+    //   opacity: 0,
+    //   width: 110,
+    //   height: 64,
+    //   duration: 0.5,
+    //   delay: 3.75
+    // })
+    // .to('.logoContainer', {
+    //   width: 150,
+    //   height: 128,
+    //   duration: 1,
+    // })
+    // .to('.logo', {
+    //   width: 110,
+    //   height: 64,
+    //   scale: 1,
+    //   opacity: 1,
+    //   duration: 0.5,
+    // });
 
     // Background scaling animation
     gsap.fromTo([".background"],
@@ -95,11 +95,11 @@ function App() {
         </div>
 
         {/* Logo container with link to home */}
-        <div className="logoContainer">
+        {/* <div className="logoContainer">
           <a href="#home">
             <img className="logo" src={logo} alt="kripson-tshirt" />
           </a>
-        </div>
+        </div> */}
 
         {/* Progress bar component */}
         <div className="first">

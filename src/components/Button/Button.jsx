@@ -7,7 +7,7 @@ const Button = ({ label, onClick, styles, link, loading, success }) => {
 
   if (link) {
     return (
-      <a href={link} target={link.startsWith('#') ? "_self" : "_blank"} download={true} className="button body" onClick={onClick} style={{ ...(styles ?? {}) }}>
+      <a href={link} target={link.startsWith('#') ? "_self" : "_blank"} rel="noreferrer" download={link.startsWith('#') ? false : true} className="button body" onClick={onClick} style={{ ...(styles ?? {}) }}>
         {label}
         <img src={Arrow} alt="" />
       </a>

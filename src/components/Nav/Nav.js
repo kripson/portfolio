@@ -4,6 +4,7 @@ import { RiArrowRightDownLine } from "react-icons/ri";
 import { HamburgerMenuButton } from "../HamburgerMenuButton/HamburgerMenuButton";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import logo from "../../assets/logo.webp";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -40,7 +41,11 @@ const Nav = () => {
 
   return (
     <div className="Nav">
-      <div className="leftSection"><span></span></div>
+      <div className="leftSection"><span>
+      <a href="#home">
+            <img className="logo" src={logo} alt="kripson-tshirt" />
+          </a>
+        </span></div>
 
       <div className="rightSection">
         <div className="ContactLinks">
