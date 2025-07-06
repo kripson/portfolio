@@ -34,7 +34,9 @@ const AboutMe = () => {
   return (
     <div className="AboutMe full-width-element">
 
-      <p className="h3 aboutmeparagraph">Hi, I am Sankit but I go by kripson on all my socials. I was born in Butwal, Nepal. Currently, I am based in Gold Coast, Australia and working as a software engineer at Kzen8.</p>
+      <p className="h3 aboutmeparagraph">Hi, I'm Sankit but I go by kripson on all my socials.
+Originally from Butwal, Nepal, I am now based in Gold Coast, Australia.
+Currently, I am working as a Senior Software Engineer at Ignite Travel Group.</p>
 
     </div>
   );
