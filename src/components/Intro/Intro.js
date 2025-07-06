@@ -120,7 +120,7 @@ const Intro = ({ firstLoaded }) => {
 
           <Clock />
 
-          <div className={`location ${earthQuakeStarted ? 'shake' : ''}`} >
+          <div className={`location ${earthQuakeStarted ? '' : ''}`} >
             <img src={goldCoast} className={`${earthQuakeStarted ? '' : ''}`} />
 
             <SlideRevealComponent reveal={'topReveal'} delay={4} duration={1}>
@@ -150,7 +150,7 @@ const Intro = ({ firstLoaded }) => {
 
           <Button label={'Download CV'} link={'/cv/Resume.pdf'} styles={{ maxWidth: '200px', maxHeight: '48px', borderWidth: '2px', fontWeight: 'bolder' }} />
         </div>
-        <div className={`photoBox  box ${earthQuakeStarted ? 'shake' : ''}`} onMouseEnter={(e) => setEarthQuake(true)} onMouseLeave={(e) => setEarthQuake(false)}>
+        <div className={`photoBox  box ${earthQuakeStarted ? '' : ''}`} onMouseEnter={(e) => setEarthQuake(true)} onMouseLeave={(e) => setEarthQuake(false)}>
           <video src={glitchImageVideo} autoPlay={true} loop={true} muted webkit-playsinline playsInline>
           </video>
         </div>
